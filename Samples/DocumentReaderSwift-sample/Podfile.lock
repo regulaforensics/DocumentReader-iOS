@@ -1,0 +1,18 @@
+PODS:
+  - DocumentReader (2.1.2)
+  - DocumentReaderBounds (1.0.1)
+  - DocumentReaderCore (1.1.3)
+
+DEPENDENCIES:
+  - DocumentReader
+  - DocumentReaderBounds
+  - DocumentReaderCore
+
+SPEC CHECKSUMS:
+  DocumentReader: df624822e4343b69fdbf89f28bd0dcddff439873
+  DocumentReaderBounds: 028646ac07f2e6708e91f6162dcc62e98435b4ae
+  DocumentReaderCore: 3acac18f27c3e2cfac1362e73720ea4fea8d3a64
+
+PODFILE CHECKSUM: 717c3e31264736de89b968fe2acb251fe3f81fe6
+
+COCOAPODS: 1.2.1
