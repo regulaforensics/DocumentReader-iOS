@@ -19,6 +19,8 @@
 		0A5A17651F1038A20011FB0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
 		0A5A176C1F104CAC0011FB0A /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0A5A176D1F104CAC0011FB0A /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
+		0AC371A11F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AC371A01F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist */; };
+		0AC371A31F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AC371A21F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist */; };
 		1799FEC4B6598A5E9010045F /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
 		22CE40045C6FBADCEA1EE830 /* Pods_DocumentReaderCoreSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DFE40BF3C01421DB57AAF3 /* Pods_DocumentReaderCoreSwift_sample.framework */; };
 /* End PBXBuildFile section */
@@ -30,10 +32,10 @@
 		0A5A17501F1038160011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A5A17521F1038160011FB0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A5A17551F1038170011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0A5A17571F1038170011FB0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A5A17691F1038A20011FB0A /* DocumentReaderBoundsSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderBoundsSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A5A176A1F1038A20011FB0A /* DocumentReaderSwift-sample copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderSwift-sample copy-Info.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample copy-Info.plist"; sourceTree = "<absolute>"; };
 		0A5A176B1F104CAC0011FB0A /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
+		0AC371A01F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DocumentReaderBoundsSwift-sample-Info.plist"; sourceTree = "<group>"; };
+		0AC371A21F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DocumentReaderCoreSwift-sample-Info.plist"; sourceTree = "<group>"; };
 		3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBoundsSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABFE2EDDD3ED4E3F91CF09D /* Pods-DocumentReaderBoundsSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		9A5CBA561D63011A97805602 /* Pods-DocumentReaderCoreSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderCoreSwift-sample/Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,7 +69,6 @@
 			children = (
 				0A5A174A1F1038160011FB0A /* DocumentReaderSwift-sample */,
 				0A5A17491F1038160011FB0A /* Products */,
-				0A5A176A1F1038A20011FB0A /* DocumentReaderSwift-sample copy-Info.plist */,
 				6CC4F250B38ACBE97732F056 /* Pods */,
 				11EE090EBA82249BAE2834A8 /* Frameworks */,
 			);
@@ -90,8 +91,9 @@
 				0A5A174F1F1038160011FB0A /* Main.storyboard */,
 				0A5A17521F1038160011FB0A /* Assets.xcassets */,
 				0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */,
-				0A5A17571F1038170011FB0A /* Info.plist */,
 				0A5A176B1F104CAC0011FB0A /* regula.license */,
+				0AC371A21F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist */,
+				0AC371A01F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist */,
 			);
 			path = "DocumentReaderSwift-sample";
 			sourceTree = "<group>";
@@ -171,11 +173,7 @@
 				TargetAttributes = {
 					0A5A17471F1038160011FB0A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = UP59H75SNK;
 						ProvisioningStyle = Automatic;
-					};
-					0A5A175D1F1038A20011FB0A = {
-						DevelopmentTeam = UP59H75SNK;
 					};
 				};
 			};
@@ -207,6 +205,7 @@
 				0A5A17531F1038170011FB0A /* Assets.xcassets in Resources */,
 				0A5A17511F1038160011FB0A /* Main.storyboard in Resources */,
 				0A5A176C1F104CAC0011FB0A /* regula.license in Resources */,
+				0AC371A31F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A5A17631F1038A20011FB0A /* LaunchScreen.storyboard in Resources */,
+				0AC371A11F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist in Resources */,
 				0A5A17641F1038A20011FB0A /* Assets.xcassets in Resources */,
 				0A5A17651F1038A20011FB0A /* Main.storyboard in Resources */,
 				0A5A176D1F104CAC0011FB0A /* regula.license in Resources */,
@@ -457,8 +457,8 @@
 			baseConfigurationReference = FDE9DE8F605494663A5E6C54 /* Pods-DocumentReaderCoreSwift-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UP59H75SNK;
-				INFOPLIST_FILE = "DocumentReaderSwift-sample/Info.plist";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderCoreSwift-sample-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -471,8 +471,8 @@
 			baseConfigurationReference = 9A5CBA561D63011A97805602 /* Pods-DocumentReaderCoreSwift-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UP59H75SNK;
-				INFOPLIST_FILE = "DocumentReaderSwift-sample/Info.plist";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderCoreSwift-sample-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -485,8 +485,8 @@
 			baseConfigurationReference = B91092DB30D60A419F142CD6 /* Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UP59H75SNK;
-				INFOPLIST_FILE = "DocumentReaderSwift-sample copy-Info.plist";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderBoundsSwift-sample-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -500,8 +500,8 @@
 			baseConfigurationReference = 5ABFE2EDDD3ED4E3F91CF09D /* Pods-DocumentReaderBoundsSwift-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = UP59H75SNK;
-				INFOPLIST_FILE = "DocumentReaderSwift-sample copy-Info.plist";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderBoundsSwift-sample-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
