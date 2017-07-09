@@ -2,38 +2,51 @@
 [![License](https://img.shields.io/cocoapods/l/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
 [![Platform](https://img.shields.io/cocoapods/p/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
 
-# DocumentReader
+# Regula Document Reader (iOS version)
+If you have any questions, feel free to contact us at support@regulaforensics.com
 
-## Installation
+* [How to build demo application](#how_to_build_demo_application)
+* [How to add DocumentReader library to your project](#how_to_add_documentreader_library_to_your_project)
+* [Troubleshooting license issues](#troubleshooting_license_issues)
+* [Additional information](#additional_information)
 
-DocumentReader is [available](https://cocoapods.org/pods/DocumentReader) through [CocoaPods](http://cocoapods.org). To install
+## <a name="how_to_build_demo_application"></a> How to build demo application
+1. Get trial license for demo application at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.license` file).
+1. Download or clone current repository using command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
+1. Download and install latest [Xcode](https://developer.apple.com/xcode/download).
+1. Copy file `regula.license` to `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample` folder. 
+1. Open workspace `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample.xcworkspace` in Xcode.
+1. Change bundle ID to specified during registration of your license key at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.DocumentReader` by default).
+1. Select target `Pod install` and run it. Optionally you may install pods manually by running `pod install` in `Samples/DocumentReaderSwift-sample` directory
+1. Select and run target which you would want to test:
+* DocumentReaderCoreSwift-sample - to run with DocumentReader framework (Core library edition)
+* DocumentReaderBoundsSwift-sample - to run with DocumentReader framework (Bounds library edition)
+* Pod install - runs `pod install` command in `Samples/DocumentReaderSwift-sample` directory
+![Targets](https://user-images.githubusercontent.com/15870742/27986102-ae337f5e-6402-11e7-8292-aa88455dc22e.jpg)
+
+## <a name="how_to_add_documentreader_library_to_your_project"></a> How to add DocumentReader to your project
+
+DocumentReader is [available](https://cocoapods.org/pods/DocumentReader) via [CocoaPods](http://cocoapods.org). To install
 it, simply add the following lines to your Podfile:
  
- 1. Install Core version:
+* Install Core library edition:
 ```ruby
 pod 'DocumentReader'
 pod 'DocumentReaderCore'
-```
- 
- 2. Install Bounds version:
+``` 
+* Install Bounds library edition:
 ```ruby
 pod 'DocumentReader'
 pod 'DocumentReaderBounds'
 ```
 
-## Run Sample
+## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
+If you have issues with license verification when running the application, please verify that next is true:
+1. OS you are using is the same as in the license you received (iOS).
+1. Bundle ID is the same that you specified for license.
+1. Date and time on the device you are trying to run the application is correct and inside the license validity term.
+1. You are using the latest release of the SDK.
+1. You placed the license into the correct folder as described here [How to build demo application](#how_to_build_demo_application) (`DocumentReaderSwift-sample/DocumentReaderSwift-sample`).
 
-1. Download repository
-2. Put your trial license key (`regula.license` file) in DocumentReaderSwift-sample/DocumentReaderSwift-sample folder.
-3. Open DocumentReaderSwift-sample.xcworkspace, select target "Pod install" and run it. Or install pods manually by run pod install in Samples/DocumentReaderSwift-sample directory 
-```ruby
-pod install
-```
-4. Get trial license for demo application at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.license` file).
-5. Change bundle ID in demo application, specified during registration your license key.
-6. Select and run target which you would want to test:
- * DocumentReaderCoreSwift-sample - for run DocumentReader framework with Core
- * DocumentReaderBoundsSwift-sample - for run DocumentReader framework with Bounds
- * Pod install - run pod install command in Samples/DocumentReaderSwift-sample directory
- 
-![Targets](https://user-images.githubusercontent.com/15870742/27986102-ae337f5e-6402-11e7-8292-aa88455dc22e.jpg)
+## <a name="additional_information"></a> Additional information
+If you have any questions, feel free to contact us at support@regulaforensics.com
