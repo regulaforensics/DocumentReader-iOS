@@ -1,18 +1,24 @@
 PODS:
   - DocumentReader (2.1.2)
-  - DocumentReaderBounds (1.0.1)
+  - DocumentReaderBarcode (1.0.0)
+  - DocumentReaderBounds (1.0.2)
   - DocumentReaderCore (1.1.3)
+  - DocumentReaderMRZ (1.0.0)
 
 DEPENDENCIES:
   - DocumentReader
+  - DocumentReaderBarcode
   - DocumentReaderBounds
   - DocumentReaderCore
+  - DocumentReaderMRZ
 
 SPEC CHECKSUMS:
   DocumentReader: df624822e4343b69fdbf89f28bd0dcddff439873
-  DocumentReaderBounds: 028646ac07f2e6708e91f6162dcc62e98435b4ae
+  DocumentReaderBarcode: b3bfd8609fc26d620bb185d5c00c8bcc3f043d5e
+  DocumentReaderBounds: 8ab4ab1383772cc16ceca3cf5c9dc3e5736c36f2
   DocumentReaderCore: 3acac18f27c3e2cfac1362e73720ea4fea8d3a64
+  DocumentReaderMRZ: 96a8a4263509ab7deaa3ce66ff7b631306c4d7c2
 
-PODFILE CHECKSUM: 717c3e31264736de89b968fe2acb251fe3f81fe6
+PODFILE CHECKSUM: 4d61820b0aafe2403ab520058648a5cac248a26d
 
 COCOAPODS: 1.2.1
