@@ -22,7 +22,7 @@ If you have any questions, feel free to contact us at support@regulaforensics.co
 * DocumentReaderCoreSwift-sample - to run with DocumentReader framework (Core library edition)
 * DocumentReaderBoundsSwift-sample - to run with DocumentReader framework (Bounds library edition)
 * Pod install - runs `pod install` command in `Samples/DocumentReaderSwift-sample` directory
-![Targets](https://user-images.githubusercontent.com/15870742/27986102-ae337f5e-6402-11e7-8292-aa88455dc22e.jpg)
+![Targets](https://raw.githubusercontent.com/regulaforensics/DocumentReader-iOS/master/target_image.tiff)
 
 ## <a name="how_to_add_documentreader_library_to_your_project"></a> How to add DocumentReader to your project
 
@@ -38,6 +38,16 @@ pod 'DocumentReaderCore'
 ```ruby
 pod 'DocumentReader'
 pod 'DocumentReaderBounds'
+```
+* Install Barcode library edition:
+```ruby
+pod 'DocumentReader'
+pod 'DocumentReaderBarcode'
+```
+* Install MRZ library edition:
+```ruby
+pod 'DocumentReader'
+pod 'DocumentReaderMRZ'
 ```
 
 ## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
