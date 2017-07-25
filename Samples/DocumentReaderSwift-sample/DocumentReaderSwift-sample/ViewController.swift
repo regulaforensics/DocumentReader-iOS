@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         docReader.processParams.mrz = true
         docReader.processParams.ocr = true
         docReader.processParams.locate = true
+        docReader.processParams.barcode = true
 
         //start recognize
         docReader.showScanner(self) { (action, result, error) in
@@ -79,6 +80,7 @@ class ViewController: UIViewController {
         docReader.processParams.mrz = true
         docReader.processParams.ocr = true
         docReader.processParams.locate = true
+        docReader.processParams.barcode = true
 
         //initialize DocReader, long operation
         var error: NSError? = nil
