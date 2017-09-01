@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var documentImage: UIImageView!
+    @IBOutlet weak var portraitImageView: UIImageView!
 
     // Use this code for recognize on photo from camera
     @IBAction func useCameraViewController(_ sender: UIButton) {
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
                 print("NAME: \(name ?? "empty field")")
                 self.nameLabel.text = name
                 self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
+                self.portraitImageView.image = result.getGraphicFieldImageByType(fieldType: .gf_Portrait)
             case .error:
                 print("Error")
                 guard let error = error else { return }
@@ -102,6 +104,7 @@ class ViewController: UIViewController {
                     print("NAME: \(name ?? "empty field")")
                     self.nameLabel.text = name
                     self.documentImage.image = result?.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
+                    self.portraitImageView.image = result?.getGraphicFieldImageByType(fieldType: .gf_Portrait)
                 } else {
                     print("Completed without result")
                 }
