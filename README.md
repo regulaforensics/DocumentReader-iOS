@@ -49,6 +49,11 @@ pod 'DocumentReaderBarcode'
 pod 'DocumentReader'
 pod 'DocumentReaderMRZ'
 ```
+* Install MRZ-Barcode library edition:
+```ruby
+pod 'DocumentReader'
+pod 'DocumentReaderMRZBarcode'
+```
 
 ## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
 If you have issues with license verification when running the application, please verify that next is true:
