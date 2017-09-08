@@ -21,6 +21,14 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A2E4B921F61DCDD00EA98E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174D1F1038160011FB0A /* ViewController.swift */; };
+		0A2E4B931F61DCDD00EA98E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
+		0A2E4B951F61DCDD00EA98E7 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
+		0A2E4B961F61DCDD00EA98E7 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */; };
+		0A2E4B981F61DCDD00EA98E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */; };
+		0A2E4B991F61DCDD00EA98E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17521F1038160011FB0A /* Assets.xcassets */; };
+		0A2E4B9A1F61DCDD00EA98E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
+		0A2E4B9B1F61DCDD00EA98E7 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0A5A174C1F1038160011FB0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
 		0A5A174E1F1038160011FB0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174D1F1038160011FB0A /* ViewController.swift */; };
 		0A5A17511F1038160011FB0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
@@ -49,11 +57,14 @@
 		0AD258C31F272E2C00D3BE30 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		1799FEC4B6598A5E9010045F /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
 		22CE40045C6FBADCEA1EE830 /* Pods_DocumentReaderCoreSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DFE40BF3C01421DB57AAF3 /* Pods_DocumentReaderCoreSwift_sample.framework */; };
+		BE18A9D9A2864E9B7D29CA04 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */; };
 		ECFB50376CAC7AF4E2DA37BD /* Pods_DocumentReaderBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */; };
 		EDE34639FC6FB9244D317175 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A2E4BA11F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderMRZBarcodeSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A2E4BA21F61DCDD00EA98E7 /* DocumentReaderMRZSwift-sample copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderMRZSwift-sample copy-Info.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderSwift-sample/DocumentReaderMRZSwift-sample copy-Info.plist"; sourceTree = "<absolute>"; };
 		0A5A17481F1038160011FB0A /* DocumentReaderCoreSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderCoreSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5A174B1F1038160011FB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A5A174D1F1038160011FB0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,12 +79,15 @@
 		0AC371A21F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DocumentReaderCoreSwift-sample-Info.plist"; sourceTree = "<group>"; };
 		0AD258B61F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderBarcodeSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD258C91F272E2C00D3BE30 /* DocumentReaderMRZSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderMRZSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6EE5844FD2EC1464B1A404 /* Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
+		32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		330E5E256629989F12353C04 /* Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		3A635AD05939C1E75AEA6475 /* Pods-DocumentReaderMRZSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZSwift-sample/Pods-DocumentReaderMRZSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBoundsSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5ABFE2EDDD3ED4E3F91CF09D /* Pods-DocumentReaderBoundsSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5CBA561D63011A97805602 /* Pods-DocumentReaderCoreSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderCoreSwift-sample/Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		B91092DB30D60A419F142CD6 /* Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +97,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0A2E4B941F61DCDD00EA98E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2E4B951F61DCDD00EA98E7 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */,
+				0A2E4B961F61DCDD00EA98E7 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */,
+				BE18A9D9A2864E9B7D29CA04 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A5A17451F1038160011FB0A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -127,6 +151,7 @@
 				0A5A17491F1038160011FB0A /* Products */,
 				6CC4F250B38ACBE97732F056 /* Pods */,
 				11EE090EBA82249BAE2834A8 /* Frameworks */,
+				0A2E4BA21F61DCDD00EA98E7 /* DocumentReaderMRZSwift-sample copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +162,7 @@
 				0A5A17691F1038A20011FB0A /* DocumentReaderBoundsSwift-sample.app */,
 				0AD258B61F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample.app */,
 				0AD258C91F272E2C00D3BE30 /* DocumentReaderMRZSwift-sample.app */,
+				0A2E4BA11F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +191,7 @@
 				F0DFE40BF3C01421DB57AAF3 /* Pods_DocumentReaderCoreSwift_sample.framework */,
 				6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */,
 				CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */,
+				2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,6 +207,8 @@
 				2E6EE5844FD2EC1464B1A404 /* Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig */,
 				3A635AD05939C1E75AEA6475 /* Pods-DocumentReaderMRZSwift-sample.debug.xcconfig */,
 				EB1904DEEC1318CF4E881193 /* Pods-DocumentReaderMRZSwift-sample.release.xcconfig */,
+				813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */,
+				32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -187,6 +216,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0A2E4B8F1F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A2E4B9E1F61DCDD00EA98E7 /* Build configuration list for PBXNativeTarget "DocumentReaderMRZBarcodeSwift-sample" */;
+			buildPhases = (
+				0A2E4B901F61DCDD00EA98E7 /* [CP] Check Pods Manifest.lock */,
+				0A2E4B911F61DCDD00EA98E7 /* Sources */,
+				0A2E4B941F61DCDD00EA98E7 /* Frameworks */,
+				0A2E4B971F61DCDD00EA98E7 /* Resources */,
+				0A2E4B9C1F61DCDD00EA98E7 /* [CP] Embed Pods Frameworks */,
+				0A2E4B9D1F61DCDD00EA98E7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DocumentReaderMRZBarcodeSwift-sample";
+			productName = "DocumentReaderSwift-sample";
+			productReference = 0A2E4BA11F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
 		0A5A17471F1038160011FB0A /* DocumentReaderCoreSwift-sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A5A175A1F1038170011FB0A /* Build configuration list for PBXNativeTarget "DocumentReaderCoreSwift-sample" */;
@@ -300,12 +349,24 @@
 				0A5A175D1F1038A20011FB0A /* DocumentReaderBoundsSwift-sample */,
 				0AD258A51F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample */,
 				0AD258B81F272E2C00D3BE30 /* DocumentReaderMRZSwift-sample */,
+				0A2E4B8F1F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample */,
 				0AB43C551F11069500D75A11 /* Pod install */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0A2E4B971F61DCDD00EA98E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2E4B981F61DCDD00EA98E7 /* LaunchScreen.storyboard in Resources */,
+				0A2E4B991F61DCDD00EA98E7 /* Assets.xcassets in Resources */,
+				0A2E4B9A1F61DCDD00EA98E7 /* Main.storyboard in Resources */,
+				0A2E4B9B1F61DCDD00EA98E7 /* regula.license in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A5A17461F1038160011FB0A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,6 +414,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0A2E4B901F61DCDD00EA98E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocumentReaderMRZBarcodeSwift-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A2E4B9C1F61DCDD00EA98E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample-frameworks.sh",
+				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A2E4B9D1F61DCDD00EA98E7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0AB43C591F1106A000D75A11 /* Pod install */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,6 +694,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A2E4B911F61DCDD00EA98E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2E4B921F61DCDD00EA98E7 /* ViewController.swift in Sources */,
+				0A2E4B931F61DCDD00EA98E7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0A5A17441F1038160011FB0A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -640,6 +761,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0A2E4B9F1F61DCDD00EA98E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "DocumentReaderMRZSwift-sample copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A2E4BA01F61DCDD00EA98E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "DocumentReaderMRZSwift-sample copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0A5A17581F1038170011FB0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -875,6 +1026,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A2E4B9E1F61DCDD00EA98E7 /* Build configuration list for PBXNativeTarget "DocumentReaderMRZBarcodeSwift-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A2E4B9F1F61DCDD00EA98E7 /* Debug */,
+				0A2E4BA01F61DCDD00EA98E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0A5A17431F1038160011FB0A /* Build configuration list for PBXProject "DocumentReaderSwift-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

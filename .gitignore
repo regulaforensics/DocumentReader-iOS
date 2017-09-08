@@ -72,3 +72,4 @@ Samples/DocumentReaderSwift-sample/Pods/DocumentReaderCore/DocumentReaderCore.fr
 Samples/DocumentReaderSwift-sample/Pods/Target Support Files
 Samples/DocumentReaderSwift-sample/Pods/DocumentReaderBarcode
 Samples/DocumentReaderSwift-sample/Pods/DocumentReaderMRZ
+Samples/DocumentReaderSwift-sample/Pods/DocumentReaderMRZBarcode
