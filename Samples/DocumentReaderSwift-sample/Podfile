@@ -29,3 +29,15 @@ target 'DocumentReaderMRZBarcodeSwift-sample' do
   pod 'DocumentReader'
   pod 'DocumentReaderMRZBarcode'
 end
+
+target 'DocumentReaderOCRSwift-sample' do
+  use_frameworks!
+  pod 'DocumentReader'
+  pod 'DocumentReaderOCR'
+end
+
+target 'DocumentReaderFullSwift-sample' do
+  use_frameworks!
+  pod 'DocumentReader'
+  pod 'DocumentReaderFull'
+end

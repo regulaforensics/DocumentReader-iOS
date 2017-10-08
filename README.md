@@ -54,6 +54,16 @@ pod 'DocumentReaderMRZ'
 pod 'DocumentReader'
 pod 'DocumentReaderMRZBarcode'
 ```
+* Install OCR library edition:
+```ruby
+pod 'DocumentReader'
+pod 'DocumentReaderOCR'
+```
+* Install Full library edition:
+```ruby
+pod 'DocumentReader'
+pod 'DocumentReaderFull'
+```
 
 ## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
 If you have issues with license verification when running the application, please verify that next is true:

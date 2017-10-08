@@ -41,6 +41,24 @@
 		0A5A17651F1038A20011FB0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
 		0A5A176C1F104CAC0011FB0A /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0A5A176D1F104CAC0011FB0A /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
+		0A74D5131F8AB1210055BE75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174D1F1038160011FB0A /* ViewController.swift */; };
+		0A74D5141F8AB1210055BE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
+		0A74D5161F8AB1210055BE75 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
+		0A74D5171F8AB1210055BE75 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */; };
+		0A74D5181F8AB1210055BE75 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */; };
+		0A74D51A1F8AB1210055BE75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */; };
+		0A74D51B1F8AB1210055BE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17521F1038160011FB0A /* Assets.xcassets */; };
+		0A74D51C1F8AB1210055BE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
+		0A74D51D1F8AB1210055BE75 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
+		0A74D5281F8AB14F0055BE75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174D1F1038160011FB0A /* ViewController.swift */; };
+		0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
+		0A74D52B1F8AB14F0055BE75 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
+		0A74D52C1F8AB14F0055BE75 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */; };
+		0A74D52D1F8AB14F0055BE75 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */; };
+		0A74D52F1F8AB14F0055BE75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */; };
+		0A74D5301F8AB14F0055BE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17521F1038160011FB0A /* Assets.xcassets */; };
+		0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
+		0A74D5321F8AB14F0055BE75 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0AD258A81F272E1500D3BE30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174D1F1038160011FB0A /* ViewController.swift */; };
 		0AD258A91F272E1500D3BE30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
 		0AD258AB1F272E1500D3BE30 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
@@ -57,6 +75,8 @@
 		0AD258C31F272E2C00D3BE30 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		1799FEC4B6598A5E9010045F /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
 		22CE40045C6FBADCEA1EE830 /* Pods_DocumentReaderCoreSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0DFE40BF3C01421DB57AAF3 /* Pods_DocumentReaderCoreSwift_sample.framework */; };
+		87502D97F7550313976A14F3 /* Pods_DocumentReaderOCRSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D35ABF0CCD9D2267A084733 /* Pods_DocumentReaderOCRSwift_sample.framework */; };
+		986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */; };
 		BE18A9D9A2864E9B7D29CA04 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */; };
 		ECFB50376CAC7AF4E2DA37BD /* Pods_DocumentReaderBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */; };
 		EDE34639FC6FB9244D317175 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */; };
@@ -64,7 +84,7 @@
 
 /* Begin PBXFileReference section */
 		0A2E4BA11F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderMRZBarcodeSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A2E4BA21F61DCDD00EA98E7 /* DocumentReaderMRZSwift-sample copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderMRZSwift-sample copy-Info.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderSwift-sample/DocumentReaderMRZSwift-sample copy-Info.plist"; sourceTree = "<absolute>"; };
+		0A2E4BA21F61DCDD00EA98E7 /* DocumentReaderMRZSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderMRZSwift-sample-Info.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderSwift-sample/DocumentReaderMRZSwift-sample-Info.plist"; sourceTree = "<absolute>"; };
 		0A5A17481F1038160011FB0A /* DocumentReaderCoreSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderCoreSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5A174B1F1038160011FB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A5A174D1F1038160011FB0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,8 +93,12 @@
 		0A5A17551F1038170011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A5A17691F1038A20011FB0A /* DocumentReaderBoundsSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderBoundsSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5A176B1F104CAC0011FB0A /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
+		0A74D5231F8AB1210055BE75 /* DocumentReaderOCRSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderOCRSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A74D5241F8AB1220055BE75 /* DocumentReaderMRZBarcodeSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderMRZBarcodeSwift-sample-Info.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample/DocumentReaderMRZBarcodeSwift-sample-Info.plist"; sourceTree = "<absolute>"; };
+		0A74D5381F8AB14F0055BE75 /* DocumentReaderFullSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderFullSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A74D5391F8AB14F0055BE75 /* DocumentReaderOCRSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderOCRSwift-sample-Info.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample/DocumentReaderOCRSwift-sample-Info.plist"; sourceTree = "<absolute>"; };
 		0A8BF70C1F2732EB0041CC3E /* DocumentReaderBarcodeSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderBarcodeSwift-sample-Info.plist"; sourceTree = "<group>"; };
-		0A8BF70D1F2732F70041CC3E /* DocumentReaderMRZSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderMRZSwift-sample-Info.plist"; sourceTree = "<group>"; };
+		0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderFullSwift-sample-Info.plist"; sourceTree = "<group>"; };
 		0AC371A01F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DocumentReaderBoundsSwift-sample-Info.plist"; sourceTree = "<group>"; };
 		0AC371A21F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DocumentReaderCoreSwift-sample-Info.plist"; sourceTree = "<group>"; };
 		0AD258B61F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderBarcodeSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,14 +107,20 @@
 		2E6EE5844FD2EC1464B1A404 /* Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		330E5E256629989F12353C04 /* Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderFullSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A635AD05939C1E75AEA6475 /* Pods-DocumentReaderMRZSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZSwift-sample/Pods-DocumentReaderMRZSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBoundsSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A7640EE3FDF8337261D7988 /* Pods-DocumentReaderOCRSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		5ABFE2EDDD3ED4E3F91CF09D /* Pods-DocumentReaderBoundsSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71629B858F96A0ADCCB4CC58 /* Pods-DocumentReaderOCRSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		8D35ABF0CCD9D2267A084733 /* Pods_DocumentReaderOCRSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderOCRSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A121814324EC9A2A4EACC7 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderFullSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		9A5CBA561D63011A97805602 /* Pods-DocumentReaderCoreSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderCoreSwift-sample/Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		B91092DB30D60A419F142CD6 /* Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderFullSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		EB1904DEEC1318CF4E881193 /* Pods-DocumentReaderMRZSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZSwift-sample/Pods-DocumentReaderMRZSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		F0DFE40BF3C01421DB57AAF3 /* Pods_DocumentReaderCoreSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderCoreSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE9DE8F605494663A5E6C54 /* Pods-DocumentReaderCoreSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCoreSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderCoreSwift-sample/Pods-DocumentReaderCoreSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +153,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A74D5151F8AB1210055BE75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A74D5161F8AB1210055BE75 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */,
+				0A74D5171F8AB1210055BE75 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */,
+				0A74D5181F8AB1210055BE75 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */,
+				87502D97F7550313976A14F3 /* Pods_DocumentReaderOCRSwift_sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A74D52A1F8AB14F0055BE75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A74D52B1F8AB14F0055BE75 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */,
+				0A74D52C1F8AB14F0055BE75 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */,
+				0A74D52D1F8AB14F0055BE75 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */,
+				986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AD258AA1F272E1500D3BE30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,7 +203,6 @@
 				0A5A17491F1038160011FB0A /* Products */,
 				6CC4F250B38ACBE97732F056 /* Pods */,
 				11EE090EBA82249BAE2834A8 /* Frameworks */,
-				0A2E4BA21F61DCDD00EA98E7 /* DocumentReaderMRZSwift-sample copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +214,8 @@
 				0AD258B61F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample.app */,
 				0AD258C91F272E2C00D3BE30 /* DocumentReaderMRZSwift-sample.app */,
 				0A2E4BA11F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample.app */,
+				0A74D5231F8AB1210055BE75 /* DocumentReaderOCRSwift-sample.app */,
+				0A74D5381F8AB14F0055BE75 /* DocumentReaderFullSwift-sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,7 +232,10 @@
 				0AC371A21F10D9060003E831 /* DocumentReaderCoreSwift-sample-Info.plist */,
 				0AC371A01F10D8FB0003E831 /* DocumentReaderBoundsSwift-sample-Info.plist */,
 				0A8BF70C1F2732EB0041CC3E /* DocumentReaderBarcodeSwift-sample-Info.plist */,
-				0A8BF70D1F2732F70041CC3E /* DocumentReaderMRZSwift-sample-Info.plist */,
+				0A2E4BA21F61DCDD00EA98E7 /* DocumentReaderMRZSwift-sample-Info.plist */,
+				0A74D5241F8AB1220055BE75 /* DocumentReaderMRZBarcodeSwift-sample-Info.plist */,
+				0A74D5391F8AB14F0055BE75 /* DocumentReaderOCRSwift-sample-Info.plist */,
+				0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */,
 			);
 			path = "DocumentReaderSwift-sample";
 			sourceTree = "<group>";
@@ -192,6 +248,8 @@
 				6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */,
 				CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */,
 				2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */,
+				344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */,
+				8D35ABF0CCD9D2267A084733 /* Pods_DocumentReaderOCRSwift_sample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +267,10 @@
 				EB1904DEEC1318CF4E881193 /* Pods-DocumentReaderMRZSwift-sample.release.xcconfig */,
 				813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */,
 				32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */,
+				93A121814324EC9A2A4EACC7 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */,
+				CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */,
+				4A7640EE3FDF8337261D7988 /* Pods-DocumentReaderOCRSwift-sample.debug.xcconfig */,
+				71629B858F96A0ADCCB4CC58 /* Pods-DocumentReaderOCRSwift-sample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -274,6 +336,46 @@
 			name = "DocumentReaderBoundsSwift-sample";
 			productName = "DocumentReaderSwift-sample";
 			productReference = 0A5A17691F1038A20011FB0A /* DocumentReaderBoundsSwift-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A74D5101F8AB1210055BE75 /* DocumentReaderOCRSwift-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A74D5201F8AB1210055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderOCRSwift-sample" */;
+			buildPhases = (
+				0A74D5111F8AB1210055BE75 /* [CP] Check Pods Manifest.lock */,
+				0A74D5121F8AB1210055BE75 /* Sources */,
+				0A74D5151F8AB1210055BE75 /* Frameworks */,
+				0A74D5191F8AB1210055BE75 /* Resources */,
+				0A74D51E1F8AB1210055BE75 /* [CP] Embed Pods Frameworks */,
+				0A74D51F1F8AB1210055BE75 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DocumentReaderOCRSwift-sample";
+			productName = "DocumentReaderSwift-sample";
+			productReference = 0A74D5231F8AB1210055BE75 /* DocumentReaderOCRSwift-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A74D5251F8AB14F0055BE75 /* DocumentReaderFullSwift-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A74D5351F8AB14F0055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderFullSwift-sample" */;
+			buildPhases = (
+				0A74D5261F8AB14F0055BE75 /* [CP] Check Pods Manifest.lock */,
+				0A74D5271F8AB14F0055BE75 /* Sources */,
+				0A74D52A1F8AB14F0055BE75 /* Frameworks */,
+				0A74D52E1F8AB14F0055BE75 /* Resources */,
+				0A74D5331F8AB14F0055BE75 /* [CP] Embed Pods Frameworks */,
+				0A74D5341F8AB14F0055BE75 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DocumentReaderFullSwift-sample";
+			productName = "DocumentReaderSwift-sample";
+			productReference = 0A74D5381F8AB14F0055BE75 /* DocumentReaderFullSwift-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0AD258A51F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample */ = {
@@ -350,6 +452,8 @@
 				0AD258A51F272E1500D3BE30 /* DocumentReaderBarcodeSwift-sample */,
 				0AD258B81F272E2C00D3BE30 /* DocumentReaderMRZSwift-sample */,
 				0A2E4B8F1F61DCDD00EA98E7 /* DocumentReaderMRZBarcodeSwift-sample */,
+				0A74D5101F8AB1210055BE75 /* DocumentReaderOCRSwift-sample */,
+				0A74D5251F8AB14F0055BE75 /* DocumentReaderFullSwift-sample */,
 				0AB43C551F11069500D75A11 /* Pod install */,
 			);
 		};
@@ -386,6 +490,28 @@
 				0A5A17641F1038A20011FB0A /* Assets.xcassets in Resources */,
 				0A5A17651F1038A20011FB0A /* Main.storyboard in Resources */,
 				0A5A176D1F104CAC0011FB0A /* regula.license in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A74D5191F8AB1210055BE75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A74D51A1F8AB1210055BE75 /* LaunchScreen.storyboard in Resources */,
+				0A74D51B1F8AB1210055BE75 /* Assets.xcassets in Resources */,
+				0A74D51C1F8AB1210055BE75 /* Main.storyboard in Resources */,
+				0A74D51D1F8AB1210055BE75 /* regula.license in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A74D52E1F8AB14F0055BE75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A74D52F1F8AB14F0055BE75 /* LaunchScreen.storyboard in Resources */,
+				0A74D5301F8AB14F0055BE75 /* Assets.xcassets in Resources */,
+				0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */,
+				0A74D5321F8AB14F0055BE75 /* regula.license in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,10 +566,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample-frameworks.sh",
 				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReaderMRZBarcode/DocumentReaderCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReaderCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -463,6 +591,112 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A74D5111F8AB1210055BE75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocumentReaderOCRSwift-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A74D51E1F8AB1210055BE75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample-frameworks.sh",
+				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReaderOCR/DocumentReaderCore.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReaderCore.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A74D51F1F8AB1210055BE75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A74D5261F8AB14F0055BE75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocumentReaderFullSwift-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A74D5331F8AB14F0055BE75 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh",
+				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReaderFull/DocumentReaderCore.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReaderCore.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0A74D5341F8AB14F0055BE75 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0AB43C591F1106A000D75A11 /* Pod install */ = {
@@ -721,6 +955,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0A74D5121F8AB1210055BE75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A74D5131F8AB1210055BE75 /* ViewController.swift in Sources */,
+				0A74D5141F8AB1210055BE75 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A74D5271F8AB14F0055BE75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A74D5281F8AB14F0055BE75 /* ViewController.swift in Sources */,
+				0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AD258A71F272E1500D3BE30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,7 +1019,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "DocumentReaderMRZSwift-sample copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderMRZBarcodeSwift-sample-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -782,7 +1034,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "DocumentReaderMRZSwift-sample copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderMRZBarcodeSwift-sample-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -944,6 +1196,66 @@
 			};
 			name = Release;
 		};
+		0A74D5211F8AB1210055BE75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A7640EE3FDF8337261D7988 /* Pods-DocumentReaderOCRSwift-sample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderOCRSwift-sample-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A74D5221F8AB1210055BE75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71629B858F96A0ADCCB4CC58 /* Pods-DocumentReaderOCRSwift-sample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderOCRSwift-sample-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0A74D5361F8AB14F0055BE75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93A121814324EC9A2A4EACC7 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A74D5371F8AB14F0055BE75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		0AB43C5C1F11123B00D75A11 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1058,6 +1370,24 @@
 			buildConfigurations = (
 				0A5A17671F1038A20011FB0A /* Debug */,
 				0A5A17681F1038A20011FB0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A74D5201F8AB1210055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderOCRSwift-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A74D5211F8AB1210055BE75 /* Debug */,
+				0A74D5221F8AB1210055BE75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A74D5351F8AB14F0055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderFullSwift-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A74D5361F8AB14F0055BE75 /* Debug */,
+				0A74D5371F8AB14F0055BE75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
