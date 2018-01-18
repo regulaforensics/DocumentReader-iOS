@@ -15,9 +15,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var documentImage: UIImageView!
     @IBOutlet weak var portraitImageView: UIImageView!
 
-    // Use this code for recognize on photo from camera
-    @IBAction func useCameraViewController(_ sender: UIButton) {
+    @IBOutlet weak var userRecognizeImage: UIButton!
+    @IBOutlet weak var useCameraViewControllerButton: UIButton!
 
+    @IBOutlet weak var initializationLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    var docReader: DocReader?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initializationReader()
+    }
+
+    func initializationReader() {
         //initialize license
         guard let dataPath = Bundle.main.path(forResource: "regula.license", ofType: nil) else { return }
         guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
@@ -25,22 +36,28 @@ class ViewController: UIViewController {
         //create DocReader object
         let docReader = DocReader()
 
-        //initialize DocReader, long operation
-        var error: NSError? = nil
-        let initializeCompleted = docReader.initializeReader(license: licenseData, error: &error)
-        guard initializeCompleted else {
-            print("DocReader not initialized with error: \(error?.localizedDescription ?? "Unwnown error")")
-            return
+        docReader.initilizeReader(license: licenseData) { (successfull, error) in
+            if successfull {
+                self.activityIndicator.stopAnimating()
+                self.initializationLabel.isHidden = true
+                self.userRecognizeImage.isHidden = false
+                self.useCameraViewControllerButton.isHidden = false
+            } else {
+                print(error ?? "Unknown error")
+            }
         }
 
-        //setup DocReader
         docReader.processParams.mrz = true
         docReader.processParams.ocr = true
         docReader.processParams.locate = true
         docReader.processParams.barcode = true
+        self.docReader = docReader
+    }
 
+    // Use this code for recognize on photo from camera
+    @IBAction func useCameraViewController(_ sender: UIButton) {
         //start recognize
-        docReader.showScanner(self) { (action, result, error) in
+        docReader?.showScanner(self) { (action, result, error) in
             switch action {
             case .cancel:
                 print("Cancelled by user")
@@ -68,32 +85,11 @@ class ViewController: UIViewController {
     // Use this code for recognize on photo from gallery
     @IBAction func useRecognizeImageMethod(_ sender: UIButton) {
 
-        //initialize license
-        guard let dataPath = Bundle.main.path(forResource: "regula.license", ofType: nil) else { return }
-        guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
-
         //load image from assets folder
         guard let image = UIImage(named: "testPhoto") else { return }
 
-        //create DocReader object
-        let docReader = DocReader()
-
-        //setup DocReader
-        docReader.processParams.mrz = true
-        docReader.processParams.ocr = true
-        docReader.processParams.locate = true
-        docReader.processParams.barcode = true
-
-        //initialize DocReader, long operation
-        var error: NSError? = nil
-        let initializeCompleted = docReader.initializeReader(license: licenseData, error: &error)
-        guard initializeCompleted else {
-            print("DocReader not initialized with error: \(error?.localizedDescription ?? "Unwnown error")")
-            return
-        }
-
         //start recognize
-        docReader.recognizeImage(image, completion: { (action, result, error) in
+        docReader?.recognizeImage(image, completion: { (action, result, error) in
             if action == .complete {
                 if result != nil {
                     print("Completed")
@@ -116,3 +112,4 @@ class ViewController: UIViewController {
         })
     }
 }
+
