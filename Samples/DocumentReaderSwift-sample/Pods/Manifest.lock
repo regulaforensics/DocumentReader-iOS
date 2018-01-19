@@ -1,5 +1,5 @@
 PODS:
-  - DocumentReader (3.1.0)
+  - DocumentReader (3.1.1)
   - DocumentReaderBarcode (1.3.0)
   - DocumentReaderBounds (1.3.0)
   - DocumentReaderCore (1.3.0)
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - DocumentReaderOCR
 
 SPEC CHECKSUMS:
-  DocumentReader: ef2d3651a314c81277c602385ede01e12e35e1e5
+  DocumentReader: 01fcc8543f238529e8f3ffe9a9d6ba0fab08f1a3
   DocumentReaderBarcode: 58db06e036ca479da4043f92affb0c41513f0f76
   DocumentReaderBounds: 74e891331ffda4fecbe239c2371da7534e058140
   DocumentReaderCore: df6a425c706c7f96e23a979117b9b04f921a37f0
