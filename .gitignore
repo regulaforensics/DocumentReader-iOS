@@ -75,3 +75,7 @@ Samples/DocumentReaderSwift-sample/Pods/DocumentReaderMRZ
 Samples/DocumentReaderSwift-sample/Pods/DocumentReaderMRZBarcode
 Samples/DocumentReaderSwift-sample/Pods/DocumentReaderFull
 Samples/DocumentReaderSwift-sample/Pods/DocumentReaderOCR
+Samples/DocumentReaderObjectiveC-sample/Pods/DocumentReader
+Samples/DocumentReaderObjectiveC-sample/Pods/DocumentReaderFull
+Samples/DocumentReaderObjectiveC-sample/Pods/Headers
+Samples/DocumentReaderObjectiveC-sample/Pods/Target Support Files
