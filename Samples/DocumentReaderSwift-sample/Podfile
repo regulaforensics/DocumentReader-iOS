@@ -1,41 +1,5 @@
 platform :ios, '9.0'
 
-target 'DocumentReaderBoundsSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader'
-  pod 'DocumentReaderBounds'
-end
-
-target 'DocumentReaderCoreSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader'
-  pod 'DocumentReaderCore'
-end
-
-target 'DocumentReaderBarcodeSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader'
-  pod 'DocumentReaderBarcode'
-end
-
-target 'DocumentReaderMRZSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader'
-  pod 'DocumentReaderMRZ'
-end
-
-target 'DocumentReaderMRZBarcodeSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader'
-  pod 'DocumentReaderMRZBarcode'
-end
-
-target 'DocumentReaderOCRSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader'
-  pod 'DocumentReaderOCR'
-end
-
 target 'DocumentReaderFullSwift-sample' do
   use_frameworks!
   pod 'DocumentReader'

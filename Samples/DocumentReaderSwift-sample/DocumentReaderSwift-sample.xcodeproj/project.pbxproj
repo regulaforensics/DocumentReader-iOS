@@ -23,9 +23,6 @@
 /* Begin PBXBuildFile section */
 		0A74D5281F8AB14F0055BE75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174D1F1038160011FB0A /* ViewController.swift */; };
 		0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
-		0A74D52B1F8AB14F0055BE75 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */; };
-		0A74D52C1F8AB14F0055BE75 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */; };
-		0A74D52D1F8AB14F0055BE75 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */; };
 		0A74D52F1F8AB14F0055BE75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */; };
 		0A74D5301F8AB14F0055BE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17521F1038160011FB0A /* Assets.xcassets */; };
 		0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
@@ -70,9 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A74D52B1F8AB14F0055BE75 /* Pods_DocumentReaderBoundsSwift_sample.framework in Frameworks */,
-				0A74D52C1F8AB14F0055BE75 /* Pods_DocumentReaderMRZSwift_sample.framework in Frameworks */,
-				0A74D52D1F8AB14F0055BE75 /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework in Frameworks */,
 				986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
