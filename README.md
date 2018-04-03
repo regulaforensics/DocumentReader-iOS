@@ -18,17 +18,18 @@ If you have any questions, feel free to contact us at support@regulaforensics.co
 1. Open workspace `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample.xcworkspace` in Xcode.
 1. Change bundle ID to specified during registration of your license key at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.DocumentReader` by default).
 1. Select target `Pod install` and run it. Optionally you may install pods manually by running `pod install` in `Samples/DocumentReaderSwift-sample` directory
-1. Select and run target which you would want to test:
-* DocumentReaderCoreSwift-sample - to run with DocumentReader framework (Core library edition)
-* DocumentReaderBoundsSwift-sample - to run with DocumentReader framework (Bounds library edition)
-* Pod install - runs `pod install` command in `Samples/DocumentReaderSwift-sample` directory
-![Targets](https://raw.githubusercontent.com/regulaforensics/DocumentReader-iOS/master/target_image.tiff)
+1. Your project is ready.
 
 ## <a name="how_to_add_documentreader_library_to_your_project"></a> How to add DocumentReader to your project
 
 DocumentReader is [available](https://cocoapods.org/pods/DocumentReader) via [CocoaPods](http://cocoapods.org). To install
 it, simply add the following lines to your Podfile:
  
+ * Install Full library edition:
+ ```ruby
+ pod 'DocumentReader'
+ pod 'DocumentReaderFull'
+ ```
 * Install Core library edition:
 ```ruby
 pod 'DocumentReader'
@@ -59,10 +60,10 @@ pod 'DocumentReaderMRZBarcode'
 pod 'DocumentReader'
 pod 'DocumentReaderOCR'
 ```
-* Install Full library edition:
+* Install Band Card library edition:
 ```ruby
 pod 'DocumentReader'
-pod 'DocumentReaderFull'
+pod 'DocumentReaderBankCard'
 ```
 
 ## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
