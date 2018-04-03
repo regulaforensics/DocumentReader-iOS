@@ -81,12 +81,19 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="opN-dh-zNp">
                                 <rect key="frame" x="177" y="502" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initialization..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97s-76-WAh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initialization..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97s-76-WAh">
                                 <rect key="frame" x="36" y="530" width="303" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X26-wn-eXB">
+                                <rect key="frame" x="0.0" y="479" width="375" height="93"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="wgX-Nn-0Vf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OdR-6f-X1n"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -98,6 +105,7 @@
                             <constraint firstItem="29d-EB-OHo" firstAttribute="top" secondItem="DVf-ah-Mwj" secondAttribute="bottom" constant="8" id="76p-oZ-BQe"/>
                             <constraint firstItem="szw-2D-WO8" firstAttribute="top" secondItem="gO6-zs-ejP" secondAttribute="bottom" constant="15" id="AAH-hM-Kwa"/>
                             <constraint firstItem="zaZ-u7-o9b" firstAttribute="leading" secondItem="qPc-eb-Fle" secondAttribute="trailing" constant="8" id="ALU-NI-OzS"/>
+                            <constraint firstItem="X26-wn-eXB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bgy-iB-Jjh"/>
                             <constraint firstItem="QMj-yF-STY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="CTG-zx-w0W"/>
                             <constraint firstItem="zaZ-u7-o9b" firstAttribute="leading" secondItem="QMj-yF-STY" secondAttribute="trailing" constant="8" id="DSx-4w-km4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="szw-2D-WO8" secondAttribute="bottom" constant="15" id="IGP-fQ-m9O"/>
@@ -105,17 +113,20 @@
                             <constraint firstItem="Ubc-Bq-qEQ" firstAttribute="leading" secondItem="QMj-yF-STY" secondAttribute="leading" id="Imp-FR-vWe"/>
                             <constraint firstItem="29d-EB-OHo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="Ome-qj-K2R"/>
                             <constraint firstItem="gO6-zs-ejP" firstAttribute="top" secondItem="29d-EB-OHo" secondAttribute="bottom" constant="80" id="T6f-Ff-giu"/>
+                            <constraint firstItem="gO6-zs-ejP" firstAttribute="top" secondItem="X26-wn-eXB" secondAttribute="bottom" constant="2" id="TAO-NM-dKg"/>
                             <constraint firstItem="Ubc-Bq-qEQ" firstAttribute="top" secondItem="QMj-yF-STY" secondAttribute="bottom" constant="8" id="UfG-in-ohZ"/>
                             <constraint firstItem="zaZ-u7-o9b" firstAttribute="bottom" secondItem="DVf-ah-Mwj" secondAttribute="bottom" id="bQo-vX-NOi"/>
                             <constraint firstItem="opN-dh-zNp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cMI-Oo-LkX"/>
                             <constraint firstItem="zaZ-u7-o9b" firstAttribute="leading" secondItem="Ubc-Bq-qEQ" secondAttribute="trailing" constant="8" id="gIq-2E-OAb"/>
                             <constraint firstItem="gO6-zs-ejP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iy5-2m-v0e"/>
                             <constraint firstItem="97s-76-WAh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mts-0e-dde"/>
+                            <constraint firstAttribute="trailing" secondItem="X26-wn-eXB" secondAttribute="trailing" id="oPl-sL-0bH"/>
                             <constraint firstItem="DVf-ah-Mwj" firstAttribute="top" secondItem="Ubc-Bq-qEQ" secondAttribute="bottom" constant="30" id="ouR-i0-35b"/>
                             <constraint firstItem="zaZ-u7-o9b" firstAttribute="trailing" secondItem="29d-EB-OHo" secondAttribute="trailing" id="pJy-I7-d9t"/>
                             <constraint firstAttribute="trailing" secondItem="29d-EB-OHo" secondAttribute="trailing" constant="16" id="rlS-2G-AkD"/>
                             <constraint firstItem="qPc-eb-Fle" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vQs-4w-jT6"/>
                             <constraint firstItem="QMj-yF-STY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="vik-aB-Pzi"/>
+                            <constraint firstItem="X26-wn-eXB" firstAttribute="top" secondItem="29d-EB-OHo" secondAttribute="bottom" constant="-15" id="vmn-6g-Hbi"/>
                             <constraint firstItem="opN-dh-zNp" firstAttribute="top" secondItem="29d-EB-OHo" secondAttribute="bottom" constant="8" id="z9C-0e-MFT"/>
                         </constraints>
                     </view>
@@ -124,6 +135,7 @@
                         <outlet property="documentImage" destination="29d-EB-OHo" id="0Zg-LG-7j3"/>
                         <outlet property="initializationLabel" destination="97s-76-WAh" id="qhy-TN-w55"/>
                         <outlet property="nameLabel" destination="Ubc-Bq-qEQ" id="UDR-pH-Ljm"/>
+                        <outlet property="pickerView" destination="X26-wn-eXB" id="5xA-AU-6iD"/>
                         <outlet property="portraitImageView" destination="zaZ-u7-o9b" id="haZ-yd-juU"/>
                         <outlet property="useCameraViewControllerButton" destination="szw-2D-WO8" id="Fen-br-HEa"/>
                         <outlet property="userRecognizeImage" destination="gO6-zs-ejP" id="Zuf-FF-GgC"/>

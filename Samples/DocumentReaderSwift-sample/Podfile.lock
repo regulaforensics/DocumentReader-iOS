@@ -1,12 +1,12 @@
 PODS:
   - DocumentReader (3.2.0)
-  - DocumentReaderBarcode (1.3.0)
-  - DocumentReaderBounds (1.3.0)
+  - DocumentReaderBarcode (1.4.77769)
+  - DocumentReaderBounds (1.4.77769)
   - DocumentReaderCore (1.3.0)
-  - DocumentReaderFull (1.3.0)
-  - DocumentReaderMRZ (1.3.0)
-  - DocumentReaderMRZBarcode (1.3.0)
-  - DocumentReaderOCR (1.3.0)
+  - DocumentReaderFull (1.4.77769)
+  - DocumentReaderMRZ (1.4.77769)
+  - DocumentReaderMRZBarcode (1.4.77769)
+  - DocumentReaderOCR (1.4.77769)
 
 DEPENDENCIES:
   - DocumentReader
@@ -20,13 +20,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DocumentReader: 0499c2d5576e213551aae4d32c3b06ec1f9fe37a
-  DocumentReaderBarcode: 58db06e036ca479da4043f92affb0c41513f0f76
-  DocumentReaderBounds: 74e891331ffda4fecbe239c2371da7534e058140
+  DocumentReaderBarcode: 2fea1d08c7a9ff0aa25b2f7e179f196e3f6225aa
+  DocumentReaderBounds: b312a931572d05e329d374d197236627564db494
   DocumentReaderCore: df6a425c706c7f96e23a979117b9b04f921a37f0
-  DocumentReaderFull: b4ddeb21d4c42e176992803a12b98a4fd50e4b57
-  DocumentReaderMRZ: 25468b27dcde3b2ec5a592c9258fc50f3b18ac35
-  DocumentReaderMRZBarcode: 30b119cf344da3b6828aafa169b8bb3404baf2a8
-  DocumentReaderOCR: ec480e75ccb64bfa79b1bf4ca9fea2c1eff834cf
+  DocumentReaderFull: 0b72c0b892cb5361e3d554bbd78604d6f61dc9f8
+  DocumentReaderMRZ: 1adfa10e0b0aabf149553d14f18d51257b60f29d
+  DocumentReaderMRZBarcode: fbe6e6ebec95d6fa9907b85616df18edb793b54b
+  DocumentReaderOCR: b4f33dbf9684d20f019a24a8c86f466c899b5343
 
 PODFILE CHECKSUM: 535f75bea158d85b222372f14bb8b02d24e61b20
 
