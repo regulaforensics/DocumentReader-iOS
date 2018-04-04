@@ -11,14 +11,15 @@ If you have any questions, feel free to contact us at support@regulaforensics.co
 * [Additional information](#additional_information)
 
 ## <a name="how_to_build_demo_application"></a> How to build demo application
+
+You could easily use framework in both languages Swift or Objective C. 
 1. Get trial license for demo application at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.license` file).
 1. Download or clone current repository using command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
 1. Download and install latest [Xcode](https://developer.apple.com/xcode/download).
-1. Copy file `regula.license` to `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample` folder. 
-1. Open workspace `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample.xcworkspace` in Xcode.
+1. Copy file `regula.license` to `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample` folder or `Samples/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample` for Objective C example.
+1. Open workspace `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample.xcworkspace` in Xcode or `Samples/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample.xcworkspace` for Objective C sample.
 1. Change bundle ID to specified during registration of your license key at [licensing.regulaforensics.com](https://licensing.regulaforensics.com) (`regula.DocumentReader` by default).
 1. Select target `Pod install` and run it. Optionally you may install pods manually by running `pod install` in `Samples/DocumentReaderSwift-sample` directory
-1. Your project is ready.
 
 ## <a name="how_to_add_documentreader_library_to_your_project"></a> How to add DocumentReader to your project
 
