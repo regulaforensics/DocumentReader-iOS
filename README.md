@@ -10,7 +10,7 @@ If you have any questions, feel free to [contact us](mailto:support@regulaforens
 
 <img src="DocumentReaderDemo_main.png" width="250"> <img src="DocumentReaderDemo_process.png" width="250"> <img src="DocumentReaderDemo_result.png" width="250">
 
-# Content
+# 
 
 * [How to build demo application](#how_to_build_demo_application)
 * [How to add DocumentReader library to your project](#how_to_add_documentreader_library_to_your_project)
