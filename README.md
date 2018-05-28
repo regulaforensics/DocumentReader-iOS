@@ -4,7 +4,9 @@
 
 # Regula Document Reader (iOS version)
 
-The DocumentReader is a framework for identification documents reading and validation which is working fully **offline**. It contains two parts DocumentReader.framework that use like API for frameworks users. And DocumentReaderCore.framework that performs all main logic. [Just take me to the notes!](https://github.com/regulaforensics/DocumentReader-iOS/wiki)
+The DocumentReader is a SDK to read various kinds of identification documents, passports, driving licenses, ID cards and etc. It's fully working ***offline***.
+You can use native camera to scan the documents or image from gallery for extract all data from it.
+We have provided a simple application that demonstrates the ***API*** calls you can use to interact with the DocumentReader Library. [Just take me to the notes!](https://github.com/regulaforensics/DocumentReader-iOS/wiki)
 
 If you have any questions, feel free to [contact us](mailto:support@regulaforensics.com).
 
@@ -30,49 +32,36 @@ You could easily use framework in both languages Swift or Objective C.
 
 ## <a name="how_to_add_documentreader_library_to_your_project"></a> How to add DocumentReader to your project
 
-DocumentReader is [available](https://cocoapods.org/pods/DocumentReader) via [CocoaPods](http://cocoapods.org). To install
-it, simply add the following lines to your Podfile:
- 
- * Install Full library edition:
- ```ruby
- pod 'DocumentReader'
- pod 'DocumentReaderFull'
- ```
-* Install Core library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderCore'
-``` 
-* Install Bounds library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderBounds'
-```
-* Install Barcode library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderBarcode'
-```
-* Install MRZ library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderMRZ'
-```
-* Install MRZ-Barcode library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderMRZBarcode'
-```
-* Install OCR library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderOCR'
-```
-* Install Band Card library edition:
-```ruby
-pod 'DocumentReader'
-pod 'DocumentReaderBankCard'
-```
+DocumentReader is [available](https://cocoapods.org/pods/DocumentReader) via [CocoaPods](http://cocoapods.org/). To install it, simply add the following lines to your [Podfile](https://github.com/regulaforensics/DocumentReader-iOS/blob/master/Samples/DocumentReaderSwift-sample/Podfile):
+
+`pod 'DocumentReader'`
+
+And one of library depend on functionality which you want and license abilities:
+* Install **Full** library edition:
+
+`pod 'DocumentReaderFull'`
+* Install **Core** library edition:
+
+`pod 'DocumentReaderCore'`
+* Install **Bounds** library edition:
+
+`pod 'DocumentReaderBounds'`
+* Install **Barcode** library edition:
+
+`pod 'DocumentReaderBarcode'`
+* Install **MRZ** library edition:
+
+`pod 'DocumentReaderMRZ'`
+* Install **MRZ-Barcode** library edition:
+
+`pod 'DocumentReaderMRZBarcode'`
+* Install **OCR** library edition:
+
+`pod 'DocumentReaderOCR'`
+* Install **Bank Card** library edition:
+
+`pod 'DocumentReaderBankCard'`
+
 
 ## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
 If you have issues with license verification when running the application, please verify that next is true:
