@@ -83,4 +83,5 @@ If you have issues with license verification when running the application, pleas
 1. You placed the license into the correct folder as described here [How to build demo application](#how_to_build_demo_application) (`DocumentReaderSwift-sample/DocumentReaderSwift-sample`).
 
 ## <a name="additional_information"></a> Additional information
-If you have any questions, feel free to contact us at support@regulaforensics.com
+Use [Wiki](https://github.com/regulaforensics/DocumentReader-iOS/wiki) to get more details.
+If you have any questions, feel free to [contact us](mailto:support@regulaforensics.com).
