@@ -3,7 +3,11 @@
 [![Platform](https://img.shields.io/cocoapods/p/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
 
 # Regula Document Reader (iOS version)
-If you have any questions, feel free to contact us at support@regulaforensics.com
+
+
+The DocumentReader is a framework for identification documents reading and validation which is working fully **offline**. It contains two parts DocumentReader.framework that use like API for frameworks users. And DocumentReaderCore.framework that performs all main logic. [Just take me to the notes!](https://github.com/regulaforensics/DocumentReader-iOS/wiki)
+
+If you have any questions, feel free to [contact us](mailto:support@regulaforensics.com)
 
 * [How to build demo application](#how_to_build_demo_application)
 * [How to add DocumentReader library to your project](#how_to_add_documentreader_library_to_your_project)
