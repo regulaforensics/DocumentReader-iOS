@@ -4,6 +4,7 @@
 
 # Regula Document Reader (iOS version)
 
+<img src="DocumentReaderDemo_main.png" width="250"> <img src="DocumentReaderDemo_process.png" width="250"> <img src="DocumentReaderDemo_result.png" width="250">
 
 The DocumentReader is a framework for identification documents reading and validation which is working fully **offline**. It contains two parts DocumentReader.framework that use like API for frameworks users. And DocumentReaderCore.framework that performs all main logic. [Just take me to the notes!](https://github.com/regulaforensics/DocumentReader-iOS/wiki)
 
