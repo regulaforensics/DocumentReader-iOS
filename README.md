@@ -73,6 +73,6 @@ If you have issues with license verification when running the application, pleas
 
 ## <a name="additional_information"></a> Additional information
 Use [Wiki](https://github.com/regulaforensics/DocumentReader-iOS/wiki) to get more details.
-If you have any technical questions, feel free to [contact us](mailto:support@regulaforensics.com) or creaite issue here.
+If you have any technical questions, feel free to [contact us](mailto:support@regulaforensics.com) or create issue here.
 
 To use our SDK in your own app you will need to [purchase](https://pipedrivewebforms.com/form/394a3706041290a04fbd0d18e7d7810f1841159) commercial license.
