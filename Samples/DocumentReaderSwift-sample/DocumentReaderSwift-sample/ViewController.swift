@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         }
 
         //set scenario
-        docReader.processParams.scenario = "Ocr"
+        docReader.processParams.scenario = "Mrz"
         self.docReader = docReader
     }
 
@@ -77,14 +77,7 @@ class ViewController: UIViewController {
                 print("Cancelled by user")
             case .complete:
                 print("Completed")
-                guard let result = result else { return }
-                print("Result class: \(result)")
-                // use fast getValue method
-                let name = result.getTextFieldValueByType(fieldType: .ft_Surname_And_Given_Names)
-                print("NAME: \(name ?? "empty field")")
-                self.nameLabel.text = name
-                self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
-                self.portraitImageView.image = result.getGraphicFieldImageByType(fieldType: .gf_Portrait)
+                self.handleResult(result: result)
             case .error:
                 print("Error")
                 guard let error = error else { return }
@@ -92,7 +85,26 @@ class ViewController: UIViewController {
             case .process:
                 guard let result = result else { return }
                 print("Scaning not finished. Result: \(result)")
+            case .morePagesAvailable:
+                print("This status couldn't be here, it uses for -recognizeImage function")
             }
+        }
+    }
+
+    func handleResult(result: DocumentReaderResults?) {
+        guard let result = result else { return }
+        print("Result class: \(result)")
+        // use fast getValue method
+        let name = result.getTextFieldValueByType(fieldType: .ft_Surname_And_Given_Names)
+        print("NAME: \(name ?? "empty field")")
+        self.nameLabel.text = name
+        self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
+        self.portraitImageView.image = result.getGraphicFieldImageByType(fieldType: .gf_Portrait)
+
+        //go though all text results
+        for textField in result.textResult.fields {
+            guard let value = result.getTextFieldValueByType(fieldType: textField.fieldType, lcid: textField.lcid) else { continue }
+            print("Field type name: \(textField.fieldName), value: \(value)")
         }
     }
 
@@ -151,13 +163,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                         if result != nil {
                             print("Completed")
                             print("Result class: \(result!)")
-
-                            // use fast getValue method
-                            let name = result!.getTextFieldValueByType(fieldType: .ft_Surname_And_Given_Names)
-                            print("NAME: \(name ?? "empty field")")
-                            self.nameLabel.text = name
-                            self.documentImage.image = result?.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
-                            self.portraitImageView.image = result?.getGraphicFieldImageByType(fieldType: .gf_Portrait)
+                            self.handleResult(result: result)
                         } else {
                             print("Completed without result")
                         }

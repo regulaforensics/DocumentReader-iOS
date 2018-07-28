@@ -153,7 +153,6 @@
 				0A74D52A1F8AB14F0055BE75 /* Frameworks */,
 				0A74D52E1F8AB14F0055BE75 /* Resources */,
 				0A74D5331F8AB14F0055BE75 /* [CP] Embed Pods Frameworks */,
-				0A74D5341F8AB14F0055BE75 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,21 +243,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0A74D5341F8AB14F0055BE75 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0AB43C591F1106A000D75A11 /* Pod install */ = {
