@@ -10,7 +10,7 @@
 @import DocumentReader;
 @import Photos;
 
-@interface ViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate>
+@interface ViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
     @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
     @property (weak, nonatomic) IBOutlet UIImageView *documentImage;
@@ -80,13 +80,7 @@
 
                 case DocReaderActionComplete: {
                     NSLog(@"Completed");
-
-                    // use fast getValue method
-                    NSString *name = [result getTextFieldValueByTypeWithFieldType:FieldTypeFt_Surname_And_Given_Names];
-                    NSLog(@"%@", name);
-                    self.nameLabel.text = name;
-                    self.documentImage.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_DocumentFront source:ResultTypeRawImage];
-                    self.portraitImageView.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_Portrait];
+                    [self handleScanResults:result];
                 }
                 break;
 
@@ -151,6 +145,20 @@
         }];
     }
 
+    - (void)handleScanResults:(DocumentReaderResults *)result {
+        // use fast getValue method
+        NSString *name = [result getTextFieldValueByTypeWithFieldType:FieldTypeFt_Surname_And_Given_Names];
+        NSLog(@"%@", name);
+        self.nameLabel.text = name;
+        self.documentImage.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_DocumentFront source:ResultTypeRawImage];
+        self.portraitImageView.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_Portrait];
+
+        for (DocumentReaderTextField *textField in result.textResult.fields) {
+            NSString *value = [result getTextFieldValueByTypeWithFieldType:textField.fieldType lcid:textField.lcid];
+            NSLog(@"Field type name: %@, value: %@", textField.fieldName, value);
+        }
+    }
+
     - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^{
@@ -159,12 +167,7 @@
                 if (action == DocReaderActionComplete) {
                     if (result != nil) {
                         NSLog(@"Completed");
-                        // use fast getValue method
-                        NSString *name = [result getTextFieldValueByTypeWithFieldType:FieldTypeFt_Surname_And_Given_Names];
-                        NSLog(@"%@", name);
-                        self.nameLabel.text = name;
-                        self.documentImage.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_DocumentFront source:ResultTypeRawImage];
-                        self.portraitImageView.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_Portrait];
+                        [self handleScanResults:result];
                     }
                 } else if (action == DocReaderActionError) {
                     [self dismissViewControllerAnimated:YES completion:nil];
