@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C521F4CA8F3D8BA2D48633B9394E142 /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5135C95C34B7A43A3AE6553883E84827 /* Pods-DocumentReaderFullSwift-sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		92C770B881D69EF1857CB14085082948 /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8516DD3AC5E8B69EF9F8208FE72C98C4 /* Pods-DocumentReaderFullSwift-sample-dummy.m */; };
-		CC9B08E64527ACB7D61518B307271140 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		124197476722E315C9DEBC2408CA3C9B /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8516DD3AC5E8B69EF9F8208FE72C98C4 /* Pods-DocumentReaderFullSwift-sample-dummy.m */; };
+		AE5B03AE9A0F4D8691D1CEC62C0915FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		B051ACE85E792B29294CD367BAED1539 /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5135C95C34B7A43A3AE6553883E84827 /* Pods-DocumentReaderFullSwift-sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +31,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A8A77EB5E4C3EA23CC8BDD58A363117D /* Frameworks */ = {
+		BA7463695B681C761E36FF5DD9CF4A3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9B08E64527ACB7D61518B307271140 /* Foundation.framework in Frameworks */,
+				AE5B03AE9A0F4D8691D1CEC62C0915FD /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,24 +149,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		9319A7FD3D25075423453FCA1669D348 /* Headers */ = {
+		8BA3BB5B0451EB38FB71FEF64FA0B64C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C521F4CA8F3D8BA2D48633B9394E142 /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */,
+				B051ACE85E792B29294CD367BAED1539 /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8919D128B3552EC48F137D3954153FB3 /* Pods-DocumentReaderFullSwift-sample */ = {
+		FAAD3C5BF9796CCFB6E673CA8335353E /* Pods-DocumentReaderFullSwift-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6A2F0D40D0DD5BB455A48BDF509E2DE3 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */;
+			buildConfigurationList = 97BEEB909FC86D9762C58C1758BB45F5 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */;
 			buildPhases = (
-				40BD0527E74A65671FB9C10C24977292 /* Sources */,
-				A8A77EB5E4C3EA23CC8BDD58A363117D /* Frameworks */,
-				9319A7FD3D25075423453FCA1669D348 /* Headers */,
+				8BA3BB5B0451EB38FB71FEF64FA0B64C /* Headers */,
+				25DED1A57BD93109D37678867E1CDAF6 /* Sources */,
+				BA7463695B681C761E36FF5DD9CF4A3C /* Frameworks */,
+				0A471D5A1C07662ED9DFB7109F09A8D5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -198,24 +199,101 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8919D128B3552EC48F137D3954153FB3 /* Pods-DocumentReaderFullSwift-sample */,
+				FAAD3C5BF9796CCFB6E673CA8335353E /* Pods-DocumentReaderFullSwift-sample */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0A471D5A1C07662ED9DFB7109F09A8D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		40BD0527E74A65671FB9C10C24977292 /* Sources */ = {
+		25DED1A57BD93109D37678867E1CDAF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92C770B881D69EF1857CB14085082948 /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */,
+				124197476722E315C9DEBC2408CA3C9B /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+		1DEA3E4A4DF4E973007D797A924ECB47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 199EB732723E34AB5934F22251A619C8 /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3B5C75649A14BA115C7EA0F14D2CA635 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F74ACEAC484F13A20262B56712A3801 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -269,7 +347,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -278,74 +357,7 @@
 			};
 			name = Debug;
 		};
-		6D83B51DF69E27946A646E46E76C52C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 199EB732723E34AB5934F22251A619C8 /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F5DF3CE452EA7591DD0DA7960A3D70BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F74ACEAC484F13A20262B56712A3801 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -397,6 +409,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -409,17 +422,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
-				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
+				C4EAA84F44D044E108500A81C635F21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6A2F0D40D0DD5BB455A48BDF509E2DE3 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */ = {
+		97BEEB909FC86D9762C58C1758BB45F5 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5DF3CE452EA7591DD0DA7960A3D70BA /* Debug */,
-				6D83B51DF69E27946A646E46E76C52C2 /* Release */,
+				3B5C75649A14BA115C7EA0F14D2CA635 /* Debug */,
+				1DEA3E4A4DF4E973007D797A924ECB47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

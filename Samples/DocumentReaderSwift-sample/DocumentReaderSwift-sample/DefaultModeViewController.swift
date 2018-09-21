@@ -1,45 +1,45 @@
 //
-//  ViewController.swift
-//  DocumentReaderSwift-sample
+//  DefaultModeViewController.swift
+//  DocumentReaderFullSwift-sample
 //
-//  Created by Dmitry Smolyakov on 6/13/17.
-//  Copyright © 2017 Dmitry Smolyakov. All rights reserved.
+//  Created by Dmitry Smolyakov on 9/21/18.
+//  Copyright © 2018 Dmitry Smolyakov. All rights reserved.
 //
 
 import UIKit
 import DocumentReader
 import Photos
 
-class ViewController: UIViewController {
+class DefaultModeViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var documentImage: UIImageView!
     @IBOutlet weak var portraitImageView: UIImageView!
-
+    
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var userRecognizeImage: UIButton!
     @IBOutlet weak var useCameraViewControllerButton: UIButton!
-
+    
     @IBOutlet weak var initializationLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-
+    
     var imagePicker = UIImagePickerController()
-
+    
     var docReader: DocReader?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializationReader()
     }
-
+    
     func initializationReader() {
         //initialize license
         guard let dataPath = Bundle.main.path(forResource: "regula.license", ofType: nil) else { return }
         guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
-
+        
         //create DocReader object
         let docReader = DocReader()
-
+        
         docReader.initilizeReader(license: licenseData) { (successfull, error) in
             if successfull {
                 self.activityIndicator.stopAnimating()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 self.pickerView.isHidden = false
                 self.pickerView.reloadAllComponents()
                 self.pickerView.selectRow(0, inComponent: 0, animated: false)
-
+                
                 //Get available scenarios
                 for scenario in docReader.availableScenarios {
                     print(scenario)
@@ -62,12 +62,12 @@ class ViewController: UIViewController {
                 print(licenseError)
             }
         }
-
+        
         //set scenario
         docReader.processParams.scenario = "Mrz"
         self.docReader = docReader
     }
-
+    
     // Use this code for recognize on photo from camera
     @IBAction func useCameraViewController(_ sender: UIButton) {
         //start recognize
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
     func handleResult(result: DocumentReaderResults?) {
         guard let result = result else { return }
         print("Result class: \(result)")
@@ -100,20 +100,20 @@ class ViewController: UIViewController {
         self.nameLabel.text = name
         self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
         self.portraitImageView.image = result.getGraphicFieldImageByType(fieldType: .gf_Portrait)
-
+        
         //go though all text results
         for textField in result.textResult.fields {
             guard let value = result.getTextFieldValueByType(fieldType: textField.fieldType, lcid: textField.lcid) else { continue }
             print("Field type name: \(textField.fieldName), value: \(value)")
         }
     }
-
+    
     // Use this code for recognize on photo from gallery
     @IBAction func useRecognizeImageMethod(_ sender: UIButton) {
         //load image from assets folder
         getImageFromGallery()
     }
-
+    
     func getImageFromGallery() {
         PHPhotoLibrary .requestAuthorization { (status) in
             switch status {
@@ -133,10 +133,10 @@ class ViewController: UIViewController {
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert manager, OK button tittle"), style: .cancel, handler: nil))
                 alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .default, handler: { action in
                     if #available(iOS 10.0, *) {
-                        guard let settingsURL = URL(string: UIApplicationOpenSettingsURLString) else { return }
-                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+                        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+                        UIApplication.shared.open(settingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                     } else {
-                        UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+                        UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
                     }
                 }))
                 self.present(alertController, animated: true, completion: nil)
@@ -149,14 +149,16 @@ class ViewController: UIViewController {
             }
         }
     }
-
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+extension DefaultModeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        
+        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             self.dismiss(animated: true, completion: {
-
+                
                 //start recognize
                 self.docReader?.recognizeImage(image, completion: { (action, result, error) in
                     if action == .complete {
@@ -173,7 +175,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                         print("Eror: \(error)")
                     }
                 })
-
+                
             })
         } else {
             self.dismiss(animated: true, completion: nil)
@@ -182,25 +184,40 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     }
 }
 
-extension ViewController: UIPickerViewDataSource {
+extension DefaultModeViewController: UIPickerViewDataSource {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-
+    
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         guard let docReader = docReader else { return 0 }
         return docReader.availableScenarios.count
     }
 }
 
-extension ViewController: UIPickerViewDelegate {
+extension DefaultModeViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return docReader?.availableScenarios[row].identifier
     }
-
+    
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard let docReader = docReader else { return }
         self.docReader?.processParams.scenario = docReader.availableScenarios[row].identifier
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+    return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+    return input.rawValue
+}
