@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		88A1710AEC5E1D90B98147E443A0368D /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE26A72F532B10DB4424BCBE735B69C6 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */; };
+		652B70496C8D226A11EAB82A67DA0B97 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE26A72F532B10DB4424BCBE735B69C6 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B1E45F29FF1E418A2C2214D0EDB47E94 /* Frameworks */ = {
+		44DCB8CBEB94FAE1D4D29EBD3BE200F5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -129,13 +129,24 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		BCB7610CA0DDDA1C3F87A843A4B35B52 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		5E40E77F2CC875B9185043BBA93E1ADF /* Pods-DocumentReaderFullObjectiveC-sample */ = {
+		DCC1723E97881DDCC25A64687A265514 /* Pods-DocumentReaderFullObjectiveC-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 41F3819CF837828D8DFCC6DCD2BA6F28 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */;
+			buildConfigurationList = 3D5901532970BB2B182E24C81C1D89AB /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */;
 			buildPhases = (
-				6A60F15569BAB719D15C5AD74B4CC35C /* Sources */,
-				B1E45F29FF1E418A2C2214D0EDB47E94 /* Frameworks */,
+				BCB7610CA0DDDA1C3F87A843A4B35B52 /* Headers */,
+				72E85E32F634B58D4CBADBAE7FC4C8D5 /* Sources */,
+				44DCB8CBEB94FAE1D4D29EBD3BE200F5 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,24 +178,24 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5E40E77F2CC875B9185043BBA93E1ADF /* Pods-DocumentReaderFullObjectiveC-sample */,
+				DCC1723E97881DDCC25A64687A265514 /* Pods-DocumentReaderFullObjectiveC-sample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6A60F15569BAB719D15C5AD74B4CC35C /* Sources */ = {
+		72E85E32F634B58D4CBADBAE7FC4C8D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A1710AEC5E1D90B98147E443A0368D /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */,
+				652B70496C8D226A11EAB82A67DA0B97 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+		60DAF49CA7A9F362148D49C3C3123B2A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -238,7 +249,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -247,7 +259,7 @@
 			};
 			name = Debug;
 		};
-		A19BAA47D61DEB28198373233C7F5022 /* Release */ = {
+		7A3687B5A0990FAEC159A4319A92BCDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 55A1F2BBD43A9D8E8E979A2124009663 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */;
 			buildSettings = {
@@ -269,7 +281,7 @@
 			};
 			name = Release;
 		};
-		EFC9B33AD8EADB78C31722A4D0DCD755 /* Debug */ = {
+		9C5CA018F99776B03B2E7AEB70E4F1B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 91352FD9FA092EA795894A50570DAF84 /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */;
 			buildSettings = {
@@ -290,7 +302,7 @@
 			};
 			name = Debug;
 		};
-		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+		C4EAA84F44D044E108500A81C635F21E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -342,6 +354,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -354,17 +367,17 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
-				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+				60DAF49CA7A9F362148D49C3C3123B2A /* Debug */,
+				C4EAA84F44D044E108500A81C635F21E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41F3819CF837828D8DFCC6DCD2BA6F28 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */ = {
+		3D5901532970BB2B182E24C81C1D89AB /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EFC9B33AD8EADB78C31722A4D0DCD755 /* Debug */,
-				A19BAA47D61DEB28198373233C7F5022 /* Release */,
+				9C5CA018F99776B03B2E7AEB70E4F1B4 /* Debug */,
+				7A3687B5A0990FAEC159A4319A92BCDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

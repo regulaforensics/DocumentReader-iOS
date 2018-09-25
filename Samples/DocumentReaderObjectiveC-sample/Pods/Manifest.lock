@@ -1,5 +1,5 @@
 PODS:
-  - DocumentReader (3.4.83817)
+  - DocumentReader (3.5.0)
   - DocumentReaderFull (3.4.83817)
 
 DEPENDENCIES:
@@ -7,14 +7,14 @@ DEPENDENCIES:
   - DocumentReaderFull
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - DocumentReader
     - DocumentReaderFull
 
 SPEC CHECKSUMS:
-  DocumentReader: a1523ccb6725de58b6b433fffaf12a28de63f905
+  DocumentReader: cc8d84b821c34227260ddd8856a52e124f4ea580
   DocumentReaderFull: 62d69edf7bc8d54d8ea7fd9890015fba01144a97
 
 PODFILE CHECKSUM: d8a0762fb0194e6d5d60570ea4b62895b4595c54
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
