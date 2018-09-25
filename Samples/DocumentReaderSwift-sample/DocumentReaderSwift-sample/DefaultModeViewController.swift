@@ -39,6 +39,7 @@ class DefaultModeViewController: UIViewController {
         
         //create DocReader object
         let docReader = DocReader()
+        self.docReader = docReader
         
         DispatchQueue.global().async {
             docReader.initilizeReader(license: licenseData) { (successfull, error) in
@@ -65,7 +66,6 @@ class DefaultModeViewController: UIViewController {
                     }
                     //set scenario
                     docReader.processParams.scenario = "Mrz"
-                    self.docReader = docReader
                 }
             }
         }
