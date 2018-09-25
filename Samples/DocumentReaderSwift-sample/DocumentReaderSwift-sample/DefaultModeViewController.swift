@@ -40,32 +40,35 @@ class DefaultModeViewController: UIViewController {
         //create DocReader object
         let docReader = DocReader()
         
-        docReader.initilizeReader(license: licenseData) { (successfull, error) in
-            if successfull {
-                self.activityIndicator.stopAnimating()
-                self.initializationLabel.isHidden = true
-                self.userRecognizeImage.isHidden = false
-                self.useCameraViewControllerButton.isHidden = false
-                self.pickerView.isHidden = false
-                self.pickerView.reloadAllComponents()
-                self.pickerView.selectRow(0, inComponent: 0, animated: false)
-                
-                //Get available scenarios
-                for scenario in docReader.availableScenarios {
-                    print(scenario)
-                    print("--------")
+        DispatchQueue.global().async {
+            docReader.initilizeReader(license: licenseData) { (successfull, error) in
+                DispatchQueue.main.async {
+                    if successfull {
+                        self.activityIndicator.stopAnimating()
+                        self.initializationLabel.isHidden = true
+                        self.userRecognizeImage.isHidden = false
+                        self.useCameraViewControllerButton.isHidden = false
+                        self.pickerView.isHidden = false
+                        self.pickerView.reloadAllComponents()
+                        self.pickerView.selectRow(0, inComponent: 0, animated: false)
+                        
+                        //Get available scenarios
+                        for scenario in docReader.availableScenarios {
+                            print(scenario)
+                            print("--------")
+                        }
+                    } else {
+                        self.activityIndicator.stopAnimating()
+                        let licenseError = error ?? "Unknown error"
+                        self.initializationLabel.text = "Initialization error: \(licenseError)"
+                        print(licenseError)
+                    }
+                    //set scenario
+                    docReader.processParams.scenario = "Mrz"
+                    self.docReader = docReader
                 }
-            } else {
-                self.activityIndicator.stopAnimating()
-                let licenseError = error ?? "Unknown error"
-                self.initializationLabel.text = "Initialization error: \(licenseError)"
-                print(licenseError)
             }
         }
-        
-        //set scenario
-        docReader.processParams.scenario = "Mrz"
-        self.docReader = docReader
     }
     
     // Use this code for recognize on photo from camera
