@@ -118,7 +118,7 @@ class DefaultModeViewController: UIViewController {
     }
     
     func getImageFromGallery() {
-        PHPhotoLibrary .requestAuthorization { (status) in
+        PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .authorized:
                 if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
@@ -155,13 +155,12 @@ class DefaultModeViewController: UIViewController {
 }
 
 extension DefaultModeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // Local variable inserted by Swift 4.2 migrator.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-        
+
         if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             self.dismiss(animated: true, completion: {
-                
+
                 //start recognize
                 self.docReader?.recognizeImage(image, completion: { (action, result, error) in
                     if action == .complete {
@@ -178,7 +177,7 @@ extension DefaultModeViewController: UIImagePickerControllerDelegate, UINavigati
                         print("Eror: \(error)")
                     }
                 })
-                
+
             })
         } else {
             self.dismiss(animated: true, completion: nil)
