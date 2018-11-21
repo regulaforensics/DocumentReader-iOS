@@ -34,32 +34,39 @@ class ChildModeViewController: UIViewController {
         let docReader = DocReader()
         
         presentButton.isHidden = true
-        docReader.initilizeReader(license: licenseData) { (successfull, error) in
-            if successfull {
-                self.activityIndicator.stopAnimating()
-                self.initializationLabel.isHidden = true
-                self.presentButton.isHidden = false
-                
-                //Get available scenarios
-                for scenario in docReader.availableScenarios {
-                    print(scenario)
-                    print("--------")
+        
+        docReader.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
+            let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
+            self.initializationLabel.text = "Downloading database: \(progressValue)%"
+        }, completion: { (successfull, error) in
+            self.initializationLabel.text = "Initialization..."
+            docReader.initilizeReader(license: licenseData) { (successfull, error) in
+                if successfull {
+                    self.activityIndicator.stopAnimating()
+                    self.initializationLabel.isHidden = true
+                    self.presentButton.isHidden = false
+                    
+                    //Get available scenarios
+                    for scenario in docReader.availableScenarios {
+                        print(scenario)
+                        print("--------")
+                    }
+                } else {
+                    self.activityIndicator.stopAnimating()
+                    let licenseError = error ?? "Unknown error"
+                    self.initializationLabel.text = "Initialization error: \(licenseError)"
+                    print(licenseError)
                 }
-            } else {
-                self.activityIndicator.stopAnimating()
-                let licenseError = error ?? "Unknown error"
-                self.initializationLabel.text = "Initialization error: \(licenseError)"
-                print(licenseError)
             }
-        }
-        
-        //set scenario
-        docReader.processParams.scenario = "MrzOrBarcodeOrOcr"
-        
-        //scan window will not be closed automatically, you should close it manually
-        docReader.singleResult = false
-        
-        self.docReader = docReader
+            
+            //set scenario
+            docReader.processParams.scenario = "MrzOrBarcodeOrOcr"
+            
+            //scan window will not be closed automatically, you should close it manually
+            docReader.functionality.singleResult = false
+            
+            self.docReader = docReader
+        })
     }
     
     @IBAction func presentTapped(_ sender: UIButton) {

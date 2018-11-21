@@ -42,32 +42,38 @@ class DefaultModeViewController: UIViewController {
         self.docReader = docReader
         
         DispatchQueue.global().async {
-            docReader.initilizeReader(license: licenseData) { (successfull, error) in
-                DispatchQueue.main.async {
-                    if successfull {
-                        self.activityIndicator.stopAnimating()
-                        self.initializationLabel.isHidden = true
-                        self.userRecognizeImage.isHidden = false
-                        self.useCameraViewControllerButton.isHidden = false
-                        self.pickerView.isHidden = false
-                        self.pickerView.reloadAllComponents()
-                        self.pickerView.selectRow(0, inComponent: 0, animated: false)
-                        
-                        //Get available scenarios
-                        for scenario in docReader.availableScenarios {
-                            print(scenario)
-                            print("--------")
+            
+            docReader.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
+                let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
+                self.initializationLabel.text = "Downloading database: \(progressValue)%"
+            }, completion: { (successfull, error) in
+                docReader.initilizeReader(license: licenseData) { (successfull, error) in
+                    DispatchQueue.main.async {
+                        if successfull {
+                            self.activityIndicator.stopAnimating()
+                            self.initializationLabel.isHidden = true
+                            self.userRecognizeImage.isHidden = false
+                            self.useCameraViewControllerButton.isHidden = false
+                            self.pickerView.isHidden = false
+                            self.pickerView.reloadAllComponents()
+                            self.pickerView.selectRow(0, inComponent: 0, animated: false)
+                            
+                            //Get available scenarios
+                            for scenario in docReader.availableScenarios {
+                                print(scenario)
+                                print("--------")
+                            }
+                        } else {
+                            self.activityIndicator.stopAnimating()
+                            let licenseError = error ?? "Unknown error"
+                            self.initializationLabel.text = "Initialization error: \(licenseError)"
+                            print(licenseError)
                         }
-                    } else {
-                        self.activityIndicator.stopAnimating()
-                        let licenseError = error ?? "Unknown error"
-                        self.initializationLabel.text = "Initialization error: \(licenseError)"
-                        print(licenseError)
+                        //set scenario
+                        docReader.processParams.scenario = "Mrz"
                     }
-                    //set scenario
-                    docReader.processParams.scenario = "Mrz"
                 }
-            }
+            })
         }
     }
     
