@@ -43,25 +43,35 @@
         NSData *licenseData = [NSData dataWithContentsOfFile:dataPath];
 
         ProcessParams *params = [[ProcessParams alloc] init];
-        DocReader *docReader = [[DocReader alloc] initWithProcessParams:params] ;
-
-        [docReader initilizeReaderWithLicense:licenseData completion:^(BOOL successful, NSString * _Nullable error ) {
+        DocReader *docReader = [[DocReader alloc] initWithProcessParams:params];
+        
+        [docReader prepareDatabaseWithDatabaseID:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
+            self.initializationLabel.text = [NSString stringWithFormat:@"%.1f", progress.fractionCompleted * 100];
+        } completion:^(BOOL successful, NSString * _Nullable error) {
             if (successful) {
-                [self.activityIndicator stopAnimating];
-                [self.initializationLabel setHidden:YES];
-                [self.userRecognizeImage setHidden:NO];
-                [self.useCameraViewControllerButton setHidden:NO];
-                [self.pickerView setHidden:NO];
-                [self.pickerView reloadAllComponents];
-                [self.pickerView selectRow:0 inComponent:0 animated:NO];
+                self.initializationLabel.text = @"Initialization...";
+                [docReader initilizeReaderWithLicense:licenseData completion:^(BOOL successful, NSString * _Nullable error ) {
+                    if (successful) {
+                        [self.activityIndicator stopAnimating];
+                        [self.initializationLabel setHidden:YES];
+                        [self.userRecognizeImage setHidden:NO];
+                        [self.useCameraViewControllerButton setHidden:NO];
+                        [self.pickerView setHidden:NO];
+                        [self.pickerView reloadAllComponents];
+                        [self.pickerView selectRow:0 inComponent:0 animated:NO];
 
-                for (Scenario *scenario in docReader.availableScenarios) {
-                    NSLog(@"%@", scenario);
-                    NSLog(@"---------");
-                }
+                        for (Scenario *scenario in docReader.availableScenarios) {
+                            NSLog(@"%@", scenario);
+                            NSLog(@"---------");
+                        }
+                    } else {
+                        [self.activityIndicator stopAnimating];
+                        self.initializationLabel.text = [NSString stringWithFormat:@"Initialization error: %@", error];
+                        NSLog(@"%@", error);
+                    }
+                }];
             } else {
-                [self.activityIndicator stopAnimating];
-                self.initializationLabel.text = [NSString stringWithFormat:@"Initialization error: %@", error];
+                self.initializationLabel.text = [NSString stringWithFormat:@"Downloading database error: %@", error];
                 NSLog(@"%@", error);
             }
         }];
