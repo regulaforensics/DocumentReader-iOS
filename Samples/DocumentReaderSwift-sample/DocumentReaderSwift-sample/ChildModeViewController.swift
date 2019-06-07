@@ -51,6 +51,12 @@ class ChildModeViewController: UIViewController {
                         print(scenario)
                         print("--------")
                     }
+                  
+                    //set scenario
+                    if let firstScenario = docReader.availableScenarios.first {
+                      docReader.processParams.scenario = firstScenario.identifier
+                    }
+
                 } else {
                     self.activityIndicator.stopAnimating()
                     let licenseError = error ?? "Unknown error"
@@ -58,10 +64,7 @@ class ChildModeViewController: UIViewController {
                     print(licenseError)
                 }
             }
-            
-            //set scenario
-            docReader.processParams.scenario = "MrzOrBarcodeOrOcr"
-            
+          
             //scan window will not be closed automatically, you should close it manually
             docReader.functionality.singleResult = false
             

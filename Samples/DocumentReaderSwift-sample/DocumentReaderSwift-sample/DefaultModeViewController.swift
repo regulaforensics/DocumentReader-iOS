@@ -57,7 +57,12 @@ class DefaultModeViewController: UIViewController {
                             self.pickerView.isHidden = false
                             self.pickerView.reloadAllComponents()
                             self.pickerView.selectRow(0, inComponent: 0, animated: false)
-                            
+                          
+                            //set scenario
+                            if let firstScenario = docReader.availableScenarios.first {
+                              docReader.processParams.scenario = firstScenario.identifier
+                            }
+                          
                             //Get available scenarios
                             for scenario in docReader.availableScenarios {
                                 print(scenario)
@@ -69,8 +74,6 @@ class DefaultModeViewController: UIViewController {
                             self.initializationLabel.text = "Initialization error: \(licenseError)"
                             print(licenseError)
                         }
-                        //set scenario
-                        docReader.processParams.scenario = "Mrz"
                     }
                 }
             })
