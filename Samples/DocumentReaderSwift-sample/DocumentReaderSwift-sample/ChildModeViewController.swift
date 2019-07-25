@@ -30,31 +30,28 @@ class ChildModeViewController: UIViewController {
         guard let dataPath = Bundle.main.path(forResource: "regula.license", ofType: nil) else { return }
         guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
         
-        //create DocReader object
-        let docReader = DocReader()
-        
         presentButton.isHidden = true
         
-        docReader.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
+        DocReader.shared.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
             let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
             self.initializationLabel.text = "Downloading database: \(progressValue)%"
         }, completion: { (successfull, error) in
             self.initializationLabel.text = "Initialization..."
-            docReader.initilizeReader(license: licenseData) { (successfull, error) in
+            DocReader.shared.initializeReader(license: licenseData) { (successfull, error) in
                 if successfull {
                     self.activityIndicator.stopAnimating()
                     self.initializationLabel.isHidden = true
                     self.presentButton.isHidden = false
                     
                     //Get available scenarios
-                    for scenario in docReader.availableScenarios {
+                    for scenario in DocReader.shared.availableScenarios {
                         print(scenario)
                         print("--------")
                     }
                   
                     //set scenario
-                    if let firstScenario = docReader.availableScenarios.first {
-                      docReader.processParams.scenario = firstScenario.identifier
+                    if let firstScenario = DocReader.shared.availableScenarios.first {
+                      DocReader.shared.processParams.scenario = firstScenario.identifier
                     }
 
                 } else {
@@ -66,15 +63,13 @@ class ChildModeViewController: UIViewController {
             }
           
             //scan window will not be closed automatically, you should close it manually
-            docReader.functionality.singleResult = false
-            
-            self.docReader = docReader
+            DocReader.shared.functionality.singleResult = false
         })
     }
     
     @IBAction func presentTapped(_ sender: UIButton) {
         
-        let vc = docReader?.prepareCameraViewController(cameraHandler: { (action, result, error) in
+        let vc = DocReader.shared.prepareCameraViewController(cameraHandler: { (action, result, error) in
             switch action {
             case .complete:
                 print("COMPLETED")

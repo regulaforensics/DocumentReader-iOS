@@ -25,8 +25,6 @@ class DefaultModeViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     
-    var docReader: DocReader?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializationReader()
@@ -37,17 +35,13 @@ class DefaultModeViewController: UIViewController {
         guard let dataPath = Bundle.main.path(forResource: "regula.license", ofType: nil) else { return }
         guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
         
-        //create DocReader object
-        let docReader = DocReader()
-        self.docReader = docReader
-        
         DispatchQueue.global().async {
             
-            docReader.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
+            DocReader.shared.runAutoUpdate(databaseID: "Full", progressHandler: { (progress) in
                 let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
                 self.initializationLabel.text = "Downloading database: \(progressValue)%"
             }, completion: { (successfull, error) in
-                docReader.initilizeReader(license: licenseData) { (successfull, error) in
+                DocReader.shared.initializeReader(license: licenseData) { (successfull, error) in
                     DispatchQueue.main.async {
                         if successfull {
                             self.activityIndicator.stopAnimating()
@@ -59,12 +53,12 @@ class DefaultModeViewController: UIViewController {
                             self.pickerView.selectRow(0, inComponent: 0, animated: false)
                           
                             //set scenario
-                            if let firstScenario = docReader.availableScenarios.first {
-                              docReader.processParams.scenario = firstScenario.identifier
+                            if let firstScenario = DocReader.shared.availableScenarios.first {
+                              DocReader.shared.processParams.scenario = firstScenario.identifier
                             }
                           
                             //Get available scenarios
-                            for scenario in docReader.availableScenarios {
+                            for scenario in DocReader.shared.availableScenarios {
                                 print(scenario)
                                 print("--------")
                             }
@@ -76,6 +70,8 @@ class DefaultModeViewController: UIViewController {
                         }
                     }
                 }
+                
+                DocReader.shared.functionality.singleResult = true
             })
         }
     }
@@ -83,7 +79,7 @@ class DefaultModeViewController: UIViewController {
     // Use this code for recognize on photo from camera
     @IBAction func useCameraViewController(_ sender: UIButton) {
         //start recognize
-        docReader?.showScanner(self) { (action, result, error) in
+        DocReader.shared.showScanner(self) { (action, result, error) in
             switch action {
             case .cancel:
                 print("Cancelled by user")
@@ -110,7 +106,7 @@ class DefaultModeViewController: UIViewController {
         let name = result.getTextFieldValueByType(fieldType: .ft_Surname_And_Given_Names)
         print("NAME: \(name ?? "empty field")")
         self.nameLabel.text = name
-        self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentFront, source: .rawImage)
+        self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentImage, source: .rawImage)
         self.portraitImageView.image = result.getGraphicFieldImageByType(fieldType: .gf_Portrait)
         
         //go though all text results
@@ -171,7 +167,7 @@ extension DefaultModeViewController: UIImagePickerControllerDelegate, UINavigati
             self.dismiss(animated: true, completion: {
 
                 //start recognize
-                self.docReader?.recognizeImage(image, completion: { (action, result, error) in
+                DocReader.shared.recognizeImage(image, completion: { (action, result, error) in
                     if action == .complete {
                         if result != nil {
                             print("Completed")
@@ -201,19 +197,17 @@ extension DefaultModeViewController: UIPickerViewDataSource {
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        guard let docReader = docReader else { return 0 }
-        return docReader.availableScenarios.count
+        return DocReader.shared.availableScenarios.count
     }
 }
 
 extension DefaultModeViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return docReader?.availableScenarios[row].identifier
+        return DocReader.shared.availableScenarios[row].identifier
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard let docReader = docReader else { return }
-        self.docReader?.processParams.scenario = docReader.availableScenarios[row].identifier
+        DocReader.shared.processParams.scenario = DocReader.shared.availableScenarios[row].identifier
     }
 }
 
