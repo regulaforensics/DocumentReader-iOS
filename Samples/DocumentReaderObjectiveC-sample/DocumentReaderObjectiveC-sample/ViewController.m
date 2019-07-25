@@ -22,8 +22,6 @@
     @property (weak, nonatomic) IBOutlet UILabel *initializationLabel;
     @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-    @property (strong, nonatomic) DocReader *docReader;
-
     @property (strong, nonatomic) UIImagePickerController *imagePicker;
 
 @end
@@ -41,16 +39,13 @@
         //initialize license
         NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"regula.license" ofType:nil];
         NSData *licenseData = [NSData dataWithContentsOfFile:dataPath];
-
-        ProcessParams *params = [[ProcessParams alloc] init];
-        DocReader *docReader = [[DocReader alloc] initWithProcessParams:params];
         
-        [docReader prepareDatabaseWithDatabaseID:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
+        [RGLDocReader.shared prepareDatabase:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
             self.initializationLabel.text = [NSString stringWithFormat:@"%.1f", progress.fractionCompleted * 100];
         } completion:^(BOOL successful, NSString * _Nullable error) {
             if (successful) {
                 self.initializationLabel.text = @"Initialization...";
-                [docReader initilizeReaderWithLicense:licenseData completion:^(BOOL successful, NSString * _Nullable error ) {
+                [RGLDocReader.shared initializeReader:licenseData completion:^(BOOL successful, NSString * _Nullable error ) {
                     if (successful) {
                         [self.activityIndicator stopAnimating];
                         [self.initializationLabel setHidden:YES];
@@ -60,7 +55,12 @@
                         [self.pickerView reloadAllComponents];
                         [self.pickerView selectRow:0 inComponent:0 animated:NO];
 
-                        for (Scenario *scenario in docReader.availableScenarios) {
+                        RGLScenario *scenario = [RGLDocReader shared].availableScenarios.firstObject;
+                        if (scenario) {
+                            [RGLDocReader shared].processParams.scenario = scenario.identifier;
+                        }
+                        
+                        for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
                             NSLog(@"%@", scenario);
                             NSLog(@"---------");
                         }
@@ -75,31 +75,28 @@
                 NSLog(@"%@", error);
             }
         }];
-
-        docReader.processParams.scenario = @"Ocr";
-        self.docReader = docReader;
     }
 
     - (IBAction)useCameraViewController:(UIButton *)sender {
-        [self.docReader showScanner:self completion:^(enum DocReaderAction action, DocumentReaderResults * _Nullable result, NSString * _Nullable error) {
+        [RGLDocReader.shared showScanner:self completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSString * _Nullable error) {
             switch (action) {
-                case DocReaderActionCancel: {
+                case RGLDocReaderActionCancel: {
                     NSLog(@"Cancelled by user");
                 }
                 break;
 
-                case DocReaderActionComplete: {
+                case RGLDocReaderActionComplete: {
                     NSLog(@"Completed");
                     [self handleScanResults:result];
                 }
                 break;
 
-                case DocReaderActionError: {
+                case RGLDocReaderActionError: {
                     NSLog(@"Error string: %@", error);
                 }
                 break;
 
-                case DocReaderActionProcess: {
+                case RGLDocReaderActionProcess: {
                     NSLog(@"Scaning not finished. Result: %@", result);
                 }
                 break;
@@ -155,16 +152,16 @@
         }];
     }
 
-    - (void)handleScanResults:(DocumentReaderResults *)result {
+    - (void)handleScanResults:(RGLDocumentReaderResults *)result {
         // use fast getValue method
-        NSString *name = [result getTextFieldValueByTypeWithFieldType:FieldTypeFt_Surname_And_Given_Names];
+        NSString *name = [result getTextFieldValueByType:RGLFieldTypeFt_Surname_And_Given_Names];
         NSLog(@"%@", name);
         self.nameLabel.text = name;
-        self.documentImage.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_DocumentFront source:ResultTypeRawImage];
-        self.portraitImageView.image = [result getGraphicFieldImageByTypeWithFieldType:GraphicFieldTypeGf_Portrait];
+        self.documentImage.image = [result getGraphicFieldImageByType:RGLGraphicFieldTypeGf_DocumentImage source:RGLResultTypeRawImage];
+        self.portraitImageView.image = [result getGraphicFieldImageByType:RGLGraphicFieldTypeGf_Portrait];
 
-        for (DocumentReaderTextField *textField in result.textResult.fields) {
-            NSString *value = [result getTextFieldValueByTypeWithFieldType:textField.fieldType lcid:textField.lcid];
+        for (RGLDocumentReaderTextField *textField in result.textResult.fields) {
+            NSString *value = [result getTextFieldValueByType:textField.fieldType lcid:textField.lcid];
             NSLog(@"Field type name: %@, value: %@", textField.fieldName, value);
         }
     }
@@ -173,18 +170,17 @@
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         [self dismissViewControllerAnimated:YES completion:^{
 
-            [self.docReader recognizeImage:image cameraMode:NO completion:^(enum DocReaderAction action, DocumentReaderResults * _Nullable result, NSString * _Nullable error) {
-                if (action == DocReaderActionComplete) {
-                    if (result != nil) {
+            [RGLDocReader.shared recognizeImage:image cameraMode:NO completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSString * _Nullable error) {
+                if (action == RGLDocReaderActionComplete) {
+                    if (results != nil) {
                         NSLog(@"Completed");
-                        [self handleScanResults:result];
+                        [self handleScanResults:results];
                     }
-                } else if (action == DocReaderActionError) {
+                } else if (action == RGLDocReaderActionError) {
                     [self dismissViewControllerAnimated:YES completion:nil];
                     NSLog(@"Something went wrong");
                 }
             }];
-
         }];
     }
 
@@ -193,15 +189,15 @@
     }
 
     - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-        return self.docReader.availableScenarios.count;
+        return RGLDocReader.shared.availableScenarios.count;
     }
 
 
     - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-        return self.docReader.availableScenarios[row].identifier;
+        return RGLDocReader.shared.availableScenarios[row].identifier;
     }
 
     - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-        self.docReader.processParams.scenario = self.docReader.availableScenarios[row].identifier;
+        RGLDocReader.shared.processParams.scenario = RGLDocReader.shared.availableScenarios[row].identifier;
     }
 @end
