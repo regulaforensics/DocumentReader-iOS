@@ -56,6 +56,7 @@ class DefaultModeViewController: UIViewController {
                             if let firstScenario = DocReader.shared.availableScenarios.first {
                               DocReader.shared.processParams.scenario = firstScenario.identifier
                             }
+                            DocReader.shared.functionality.singleResult = true
                           
                             //Get available scenarios
                             for scenario in DocReader.shared.availableScenarios {
@@ -70,8 +71,6 @@ class DefaultModeViewController: UIViewController {
                         }
                     }
                 }
-                
-                DocReader.shared.functionality.singleResult = true
             })
         }
     }

@@ -59,6 +59,7 @@
                         if (scenario) {
                             [RGLDocReader shared].processParams.scenario = scenario.identifier;
                         }
+                        [RGLDocReader shared].functionality.singleResult = YES;
                         
                         for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
                             NSLog(@"%@", scenario);
