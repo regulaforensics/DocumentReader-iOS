@@ -1,6 +1,6 @@
 platform :ios, '9.0'
 
 target 'DocumentReaderFullObjectiveC-sample' do
-  pod 'DocumentReader'
-  pod 'DocumentReaderFull'
+  pod 'DocumentReaderBeta'
+  pod 'DocumentReaderFullBeta'
 end
