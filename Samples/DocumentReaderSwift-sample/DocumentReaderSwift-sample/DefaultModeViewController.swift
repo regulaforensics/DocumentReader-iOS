@@ -37,7 +37,7 @@ class DefaultModeViewController: UIViewController {
         
         DispatchQueue.global().async {
             
-            DocReader.shared.runAutoUpdate(databaseID: "Full", progressHandler: { (progress) in
+            DocReader.shared.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
                 let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
                 self.initializationLabel.text = "Downloading database: \(progressValue)%"
             }, completion: { (successfull, error) in
