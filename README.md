@@ -10,16 +10,16 @@ You can use native camera to scan the documents or image from gallery for extrac
 
 We have provided a simple application that demonstrates the ***API*** calls you can use to interact with the DocumentReader Library. [Just take me to the notes!](https://github.com/regulaforensics/DocumentReader-iOS/wiki)
 
-<img src="DocumentReaderDemo_main.png" width="250"> <img src="DocumentReaderDemo_process.png" width="250"> <img src="DocumentReaderDemo_result.png" width="250">
+<img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_1.png" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_2.png" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_3.png" width="250">
 
-# 
+# Content
 
-* [How to build demo application](#how_to_build_demo_application)
-* [How to add DocumentReader library to your project](#how_to_add_documentreader_library_to_your_project)
-* [Troubleshooting license issues](#troubleshooting_license_issues)
-* [Additional information](#additional_information)
+* [How to build demo application](#how-to-build-demo-application)
+* [How to add DocumentReader library to your project](#how-to-add-documentreader-to-your-project)
+* [Troubleshooting license issues](#troubleshooting-license-issues)
+* [Additional information](#additional-information)
 
-## <a name="how_to_build_demo_application"></a> How to build demo application
+## How to build demo application
 
 You can easily use framework in both languages Swift or Objective C. 
 1.  Download or clone current repository using command  `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
@@ -31,7 +31,7 @@ You can easily use framework in both languages Swift or Objective C.
 7.  Change bundle ID to specified during registration of your license key at  [licensing.regulaforensics.com](https://licensing.regulaforensics.com/)(`regula.DocumentReader`  by default).
 8.  Select target  `Pod install`  and run it. Optionally you may install pods manually by running  `pod install`  in  `Samples/DocumentReaderSwift-sample`  directory
 
-## <a name="how_to_add_documentreader_library_to_your_project"></a> How to add DocumentReader to your project
+## How to add DocumentReader to your project
 
 DocumentReader is [available](https://cocoapods.org/pods/DocumentReader) via [CocoaPods](http://cocoapods.org/). To install it, simply add the following lines to your [Podfile](https://github.com/regulaforensics/DocumentReader-iOS/blob/master/Samples/DocumentReaderSwift-sample/Podfile):
 
@@ -64,15 +64,15 @@ And one of library depend on functionality which you want and license abilities:
 `pod 'DocumentReaderBankCard'`
 
 
-## <a name="troubleshooting_license_issues"></a> Troubleshooting license issues
+## Troubleshooting license issues
 If you have issues with license verification when running the application, please verify that next is true:
 1. OS you are using is the same as in the license you received (iOS).
 1. Bundle ID is the same that you specified for license.
 1. Date and time on the device you are trying to run the application is correct and inside the license validity period.
 1. You are using the latest release of the SDK.
-1. You placed the license into the correct folder as described here [How to build demo application](#how_to_build_demo_application) (`DocumentReaderSwift-sample/DocumentReaderSwift-sample`).
+1. You placed the license into the correct folder as described here [How to build demo application](#how-to-build-demo-application) (`DocumentReaderSwift-sample/DocumentReaderSwift-sample`).
 
-## <a name="additional_information"></a> Additional information
+## Additional information
 Use [Wiki](https://github.com/regulaforensics/DocumentReader-iOS/wiki) to get more details.
 If you have any technical questions, feel free to [contact us](mailto:support@regulaforensics.com) or create issue here.
 
