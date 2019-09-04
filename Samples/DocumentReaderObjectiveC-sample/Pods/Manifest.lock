@@ -1,6 +1,6 @@
 PODS:
   - DocumentReader (5.0.531)
-  - DocumentReaderFull (5.0.1058)
+  - DocumentReaderFull (5.0.1108)
 
 DEPENDENCIES:
   - DocumentReader
@@ -13,7 +13,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   DocumentReader: ff10a002c0a1c75130c5f6f88b1ad2f32303ff8f
-  DocumentReaderFull: 81a2db6e01837f6a5770fbebe7324a31b51e5bf3
+  DocumentReaderFull: caa1a9621055373c3631c1d704fd04dae47278df
 
 PODFILE CHECKSUM: d8a0762fb0194e6d5d60570ea4b62895b4595c54
 
