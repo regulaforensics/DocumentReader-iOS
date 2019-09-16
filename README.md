@@ -9,7 +9,7 @@ You can use native camera to scan the documents or image from gallery for extrac
 
 We have provided a simple application that demonstrates the ***API*** calls you can use to interact with the DocumentReader Library.
 
-<img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_1.png" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_2.png" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_3.png" width="250">
+<img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_1.jpg" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_2.jpg" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_3.jpg" width="250">
 
 # Content
 * [How to build demo application](#how-to-build-demo-application)
