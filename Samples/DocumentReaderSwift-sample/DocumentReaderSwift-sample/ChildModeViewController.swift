@@ -72,8 +72,12 @@ class ChildModeViewController: UIViewController {
         let vc = DocReader.shared.prepareCameraViewController(cameraHandler: { (action, result, error) in
             switch action {
             case .complete:
+                // pause current scanning session
+                DocReader.shared.isCameraSessionIsPaused = true
+                
                 print("COMPLETED")
                 print("RESULTS:")
+                
                 // handle results and stop scan
                 // go though all text results
                 // more info: https://github.com/regulaforensics/DocumentReader-iOS/wiki/Handle-scan-results
@@ -82,8 +86,13 @@ class ChildModeViewController: UIViewController {
                     guard let value = result.getTextFieldValueByType(fieldType: textField.fieldType, lcid: textField.lcid) else { continue }
                     print("Field type name: \(textField.fieldName), value: \(value)")
                 }
-                // stop scan
-                self.stopScan()
+                                
+                // continue scan if you want to get another one results
+                DocReader.shared.startNewSession()
+                DocReader.shared.isCameraSessionIsPaused = false
+                
+                // or stop scanining
+//              self.stopScan()
             case .morePagesAvailable:
                 print("MORE PAGES AVAILABLE")
             case .cancel:
