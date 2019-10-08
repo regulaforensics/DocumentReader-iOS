@@ -88,6 +88,8 @@ class DefaultModeViewController: UIViewController {
                 print("Completed")
                 if self.readRFID.isOn {
                     self.startRFIDReading()
+                } else {
+                    self.handleResult(result: result)
                 }
             case .error:
                 print("Error")
