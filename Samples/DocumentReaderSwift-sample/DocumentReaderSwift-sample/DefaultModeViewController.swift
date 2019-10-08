@@ -22,6 +22,8 @@ class DefaultModeViewController: UIViewController {
     
     @IBOutlet weak var initializationLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var readRFID: UISwitch!
+  
     
     var imagePicker = UIImagePickerController()
     
@@ -84,7 +86,9 @@ class DefaultModeViewController: UIViewController {
                 print("Cancelled by user")
             case .complete:
                 print("Completed")
-                self.handleResult(result: result)
+                if self.readRFID.isOn {
+                    self.startRFIDReading()
+                }
             case .error:
                 print("Error")
                 guard let error = error else { return }
@@ -126,13 +130,13 @@ class DefaultModeViewController: UIViewController {
             switch status {
             case .authorized:
                 if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+                  DispatchQueue.main.async {
                     self.imagePicker.delegate = self
                     self.imagePicker.sourceType = .photoLibrary;
                     self.imagePicker.allowsEditing = false
-                    DispatchQueue.main.async {
-                        self.imagePicker.navigationBar.tintColor = .black
-                        self.present(self.imagePicker, animated: true, completion: nil)
-                    }
+                    self.imagePicker.navigationBar.tintColor = .black
+                    self.present(self.imagePicker, animated: true, completion: nil)
+                  }
                 }
             case .denied:
                 let message = NSLocalizedString("Application doesn't have permission to use the camera, please change privacy settings", comment: "Alert message when the user has denied access to the gallery")
@@ -155,6 +159,23 @@ class DefaultModeViewController: UIViewController {
                 print("PHPhotoLibrary status: restricted")
             }
         }
+    }
+    
+    func startRFIDReading() {
+        DocReader.shared.startRFIDReader(fromPresenter: self, completion: { (action, results, error) in
+            switch action {
+            case .complete:
+                print("complete")
+                self.handleResult(result: results)
+            case .cancel:
+                print("Cancelled")
+            case .error:
+                print("Error")
+                self.nameLabel.text = error
+            default:
+                break
+            }
+        })
     }
 }
 

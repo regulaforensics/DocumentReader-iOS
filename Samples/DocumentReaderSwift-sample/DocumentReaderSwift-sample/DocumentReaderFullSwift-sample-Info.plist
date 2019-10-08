@@ -20,6 +20,8 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>NFC tag to read NDEF messages</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Make a shot</string>
 	<key>NSPhotoLibraryUsageDescription</key>
@@ -43,6 +45,13 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string>A0000002471001</string>
+		<string>00000000000000</string>
+		<string>63000000000001</string>
+		<string>D4100000030001</string>
 	</array>
 </dict>
 </plist>

@@ -28,6 +28,7 @@
 		0A74D5321F8AB14F0055BE75 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0A88C194215559A000CF494D /* DefaultModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C193215559A000CF494D /* DefaultModeViewController.swift */; };
 		0A88C1962155860F00CF494D /* ChildModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C1952155860F00CF494D /* ChildModeViewController.swift */; };
+		0AA7BE84234CE04600CB9FE7 /* RFIDReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7BE83234CE04600CB9FE7 /* RFIDReadViewController.swift */; };
 		986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,8 @@
 		0A88C193215559A000CF494D /* DefaultModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModeViewController.swift; sourceTree = "<group>"; };
 		0A88C1952155860F00CF494D /* ChildModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModeViewController.swift; sourceTree = "<group>"; };
 		0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderFullSwift-sample-Info.plist"; sourceTree = "<group>"; };
+		0AA7BE83234CE04600CB9FE7 /* RFIDReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFIDReadViewController.swift; sourceTree = "<group>"; };
+		0AA7BE85234CE48400CB9FE7 /* DocumentReaderFullSwift-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DocumentReaderFullSwift-sample.entitlements"; sourceTree = "<group>"; };
 		2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6EE5844FD2EC1464B1A404 /* Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,6 +82,7 @@
 		0A5A173F1F1038160011FB0A = {
 			isa = PBXGroup;
 			children = (
+				0AA7BE85234CE48400CB9FE7 /* DocumentReaderFullSwift-sample.entitlements */,
 				0A5A174A1F1038160011FB0A /* DocumentReaderSwift-sample */,
 				0A5A17491F1038160011FB0A /* Products */,
 				6CC4F250B38ACBE97732F056 /* Pods */,
@@ -105,6 +109,7 @@
 				0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */,
 				0A5A176B1F104CAC0011FB0A /* regula.license */,
 				0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */,
+				0AA7BE83234CE04600CB9FE7 /* RFIDReadViewController.swift */,
 			);
 			path = "DocumentReaderSwift-sample";
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				ORGANIZATIONNAME = "Dmitry Smolyakov";
 				TargetAttributes = {
 					0A74D5251F8AB14F0055BE75 = {
+						DevelopmentTeam = H6WR54S268;
 						LastSwiftMigration = 1000;
 					};
 				};
@@ -186,6 +192,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -240,9 +247,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework.dSYM",
-				"${PODS_ROOT}/DocumentReaderFull/DocumentReaderCore.framework",
+				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework.dSYM",
+				"${PODS_ROOT}/DocumentReaderFullRFIDBeta/DocumentReaderCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -279,6 +286,7 @@
 				0A88C194215559A000CF494D /* DefaultModeViewController.swift in Sources */,
 				0A88C1962155860F00CF494D /* ChildModeViewController.swift in Sources */,
 				0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */,
+				0AA7BE84234CE04600CB9FE7 /* RFIDReadViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +428,8 @@
 			baseConfigurationReference = 93A121814324EC9A2A4EACC7 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = "DocumentReaderFullSwift-sample.entitlements";
+				DEVELOPMENT_TEAM = H6WR54S268;
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -436,7 +445,8 @@
 			baseConfigurationReference = CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_ENTITLEMENTS = "DocumentReaderFullSwift-sample.entitlements";
+				DEVELOPMENT_TEAM = H6WR54S268;
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
