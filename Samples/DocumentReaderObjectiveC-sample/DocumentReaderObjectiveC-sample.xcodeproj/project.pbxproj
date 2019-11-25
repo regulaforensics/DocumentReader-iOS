@@ -29,6 +29,7 @@
 		0AFFDE64205FDCF10012DEAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFDDDB205FD98C0012DEAB /* Assets.xcassets */; };
 		0AFFDE65205FDCF10012DEAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFDDD8205FD98C0012DEAB /* Main.storyboard */; };
 		7A92B1C8F17ED97AADCAB209 /* libPods-DocumentReaderFullObjectiveC-sample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40F10989623AA6A09BFF6A86 /* libPods-DocumentReaderFullObjectiveC-sample.a */; };
+		7DE1723B238BFAA900D75D64 /* DocumentReaderFullObjectiveC-sample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DE1723A238BFAA800D75D64 /* DocumentReaderFullObjectiveC-sample.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,6 @@
 		0AFFDDDE205FD98C0012DEAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0AFFDDE1205FD98C0012DEAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AFFDE69205FDCF10012DEAB /* DocumentReaderFullObjectiveC-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderFullObjectiveC-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AFFDE6A205FDCF20012DEAB /* DocumentReaderFullObjectiveC-sample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DocumentReaderFullObjectiveC-sample.plist"; path = "/Volumes/Drive/xCode/Work/Regula/DocumentReader-iOS/Samples/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample/DocumentReaderFullObjectiveC-sample.plist"; sourceTree = "<absolute>"; };
 		1D0A982869EDE87153B9DC9D /* Pods-DocumentReaderOCRObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRObjectiveC-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRObjectiveC-sample/Pods-DocumentReaderOCRObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
 		1D276032631204FE2EA56B2B /* Pods-DocumentReaderBarcodeObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeObjectiveC-sample/Pods-DocumentReaderBarcodeObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		2714E5973EB27DEB86F86081 /* Pods-DocumentReaderMRZObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZObjectiveC-sample/Pods-DocumentReaderMRZObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +53,7 @@
 		4D32FF1D6E6A336275EECF57 /* Pods-DocumentReaderBoundsObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsObjectiveC-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsObjectiveC-sample/Pods-DocumentReaderBoundsObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
 		53EAB96549F877EF3838D55D /* Pods-DocumentReaderOCRObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRObjectiveC-sample/Pods-DocumentReaderOCRObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		7624038345E599791CB40CB8 /* Pods-DocumentReaderMRZBarcodeObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeObjectiveC-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeObjectiveC-sample/Pods-DocumentReaderMRZBarcodeObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
+		7DE1723A238BFAA800D75D64 /* DocumentReaderFullObjectiveC-sample.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DocumentReaderFullObjectiveC-sample.plist"; sourceTree = "<group>"; };
 		8410A8BF4DC9722FFB054981 /* Pods-DocumentReaderBoundsObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsObjectiveC-sample/Pods-DocumentReaderBoundsObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		97E2FCD4E5FE5282740DA99E /* Pods-DocumentReaderMRZObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZObjectiveC-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZObjectiveC-sample/Pods-DocumentReaderMRZObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
 		BFE8C07F3E140E883732DAD4 /* Pods-DocumentReaderMRZBarcodeObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeObjectiveC-sample/Pods-DocumentReaderMRZBarcodeObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		0AFFDDD1205FD98C0012DEAB /* DocumentReaderObjectiveC-sample */ = {
 			isa = PBXGroup;
 			children = (
+				7DE1723A238BFAA800D75D64 /* DocumentReaderFullObjectiveC-sample.plist */,
 				0AFFDDD2205FD98C0012DEAB /* AppDelegate.h */,
 				0AFFDDD3205FD98C0012DEAB /* AppDelegate.m */,
 				0AFFDDD5205FD98C0012DEAB /* ViewController.h */,
@@ -107,7 +109,6 @@
 				0AFFDDDB205FD98C0012DEAB /* Assets.xcassets */,
 				0AA218DF2060411D0083997B /* regula.license */,
 				0AFFDDDD205FD98C0012DEAB /* LaunchScreen.storyboard */,
-				0AFFDE6A205FDCF20012DEAB /* DocumentReaderFullObjectiveC-sample.plist */,
 				0AFFDDE1205FD98C0012DEAB /* main.m */,
 			);
 			path = "DocumentReaderObjectiveC-sample";
@@ -215,6 +216,7 @@
 				0AFFDE63205FDCF10012DEAB /* LaunchScreen.storyboard in Resources */,
 				0AFFDE64205FDCF10012DEAB /* Assets.xcassets in Resources */,
 				0AFFDE65205FDCF10012DEAB /* Main.storyboard in Resources */,
+				7DE1723B238BFAA900D75D64 /* DocumentReaderFullObjectiveC-sample.plist in Resources */,
 				0AA218E62060411D0083997B /* regula.license in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
