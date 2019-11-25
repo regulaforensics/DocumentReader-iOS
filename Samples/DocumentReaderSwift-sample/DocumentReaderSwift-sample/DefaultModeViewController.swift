@@ -61,7 +61,7 @@ class DefaultModeViewController: UIViewController {
                             
                             if DocReader.shared.isUseAuthenticatorAvailable {
                                 DocReader.shared.functionality.isUseAuthenticator = true
-                                DocReader.shared.functionality.btDeviceName = "Regula 0122" // set up name of the 1120 device
+                                DocReader.shared.functionality.btDeviceName = "Regula 0000" // set up name of the 1120 device
                             }
                             
                             //Get available scenarios

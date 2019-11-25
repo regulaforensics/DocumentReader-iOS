@@ -65,7 +65,7 @@
                         
                         if (RGLDocReader.shared.isUseAuthenticatorAvailable) {
                             RGLDocReader.shared.functionality.useAuthenticator = YES;
-                            RGLDocReader.shared.functionality.btDeviceName = @"Regula 0122"; // set up name of the 1120 device
+                            RGLDocReader.shared.functionality.btDeviceName = @"Regula 0000"; // set up name of the 1120 device
                         }
                         
                         for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
