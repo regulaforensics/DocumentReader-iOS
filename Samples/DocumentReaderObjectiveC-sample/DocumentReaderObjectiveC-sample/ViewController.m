@@ -40,7 +40,7 @@
         NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"regula.license" ofType:nil];
         NSData *licenseData = [NSData dataWithContentsOfFile:dataPath];
         
-        [RGLDocReader.shared prepareDatabase:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
+        [RGLDocReader.shared prepareDatabase:@"FullAuth" progressHandler:^(NSProgress * _Nonnull progress) {
             self.initializationLabel.text = [NSString stringWithFormat:@"%.1f", progress.fractionCompleted * 100];
         } completion:^(BOOL successful, NSString * _Nullable error) {
             if (successful) {
@@ -60,6 +60,11 @@
                             [RGLDocReader shared].processParams.scenario = scenario.identifier;
                         }
                         [RGLDocReader shared].functionality.singleResult = YES;
+                        
+                        if (RGLDocReader.shared.isUseAuthenticatorAvailable) {
+                            RGLDocReader.shared.functionality.useAuthenticator = YES;
+                            RGLDocReader.shared.functionality.btDeviceName = @"Regula 0000"; // set up name of the 1120 device
+                        }
                         
                         for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
                             NSLog(@"%@", scenario);
@@ -158,7 +163,12 @@
         NSString *name = [result getTextFieldValueByType:RGLFieldTypeFt_Surname_And_Given_Names];
         NSLog(@"%@", name);
         self.nameLabel.text = name;
-        self.documentImage.image = [result getGraphicFieldImageByType:RGLGraphicFieldTypeGf_DocumentImage source:RGLResultTypeRawImage];
+        UIImage *uvDocImage = [result getGraphicFieldImageByType:RGLGraphicFieldTypeGf_DocumentImage source:RGLResultTypeRawImage pageIndex:0 light:RGLGraphicFieldLightUV];
+        if (uvDocImage) {
+            self.documentImage.image = uvDocImage;
+        } else {
+            self.documentImage.image = [result getGraphicFieldImageByType:RGLGraphicFieldTypeGf_DocumentImage source:RGLResultTypeRawImage];
+        }
         self.portraitImageView.image = [result getGraphicFieldImageByType:RGLGraphicFieldTypeGf_Portrait];
 
         for (RGLDocumentReaderTextField *textField in result.textResult.fields) {

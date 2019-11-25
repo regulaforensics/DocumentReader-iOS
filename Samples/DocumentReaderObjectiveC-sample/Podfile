@@ -1,6 +1,7 @@
 platform :ios, '9.0'
 
 target 'DocumentReaderFullObjectiveC-sample' do
-  pod 'DocumentReader'
-  pod 'DocumentReaderFull'
+  pod 'DocumentReaderBeta', '5.0.687'
+  pod 'DocumentReaderFullAuthRFIDBeta'
+  pod 'BTDeviceBeta', '5.0.52'
 end

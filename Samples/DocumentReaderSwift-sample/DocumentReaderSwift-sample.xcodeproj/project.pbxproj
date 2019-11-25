@@ -186,6 +186,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -240,12 +241,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework.dSYM",
-				"${PODS_ROOT}/DocumentReaderFull/DocumentReaderCore.framework",
+				"${PODS_ROOT}/BTDeviceBeta/BTDevice.framework",
+				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework.dSYM",
+				"${PODS_ROOT}/DocumentReaderFullAuthRFIDBeta/DocumentReaderCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BTDevice.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/DocumentReader.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReaderCore.framework",

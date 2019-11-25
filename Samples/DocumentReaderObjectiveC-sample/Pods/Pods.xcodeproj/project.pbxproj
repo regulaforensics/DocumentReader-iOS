@@ -7,64 +7,82 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		A66EC006F00F0BFCF640E7ACE4FEC8B1 /* DocumentReader */ = {
+		0D279C3FCD01ED79F345FA37874FD78C /* DocumentReaderBeta */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 3562DF8B8EC9534650AEADF237A8690D /* Build configuration list for PBXAggregateTarget "DocumentReader" */;
+			buildConfigurationList = C79FBCCBE4B64AE33BC61D0DB241A407 /* Build configuration list for PBXAggregateTarget "DocumentReaderBeta" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
-			name = DocumentReader;
+			name = DocumentReaderBeta;
 		};
-		DCA7D958E2E871E19A659768AEEF5963 /* DocumentReaderFull */ = {
+		122947DF3468CE7A4616347B9D949DB5 /* BTDeviceBeta */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 0BF24F08F7DF76FC3446D4C52CC27619 /* Build configuration list for PBXAggregateTarget "DocumentReaderFull" */;
+			buildConfigurationList = A6B21524A882FD4BBA4CC6C52CA7A698 /* Build configuration list for PBXAggregateTarget "BTDeviceBeta" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
-			name = DocumentReaderFull;
+			name = BTDeviceBeta;
+		};
+		85F4CFACE0B92EB5D404C8F0007F9993 /* DocumentReaderFullAuthRFIDBeta */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4253C069A6C23F5ECBD7AE4DB6E44858 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullAuthRFIDBeta" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = DocumentReaderFullAuthRFIDBeta;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		2FB093B99190B916B766A6B79DA6657F /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F37ED661783C8444E55333772626C1C3 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */; };
+		5A7D1825F116781482B5400961C1011C /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C04EA10D7E560403B11ADEE10DCCD30 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B3FEF389973A9509BC701FA97FED2189 /* PBXContainerItemProxy */ = {
+		50213857756036F50868FB26C8810563 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DCA7D958E2E871E19A659768AEEF5963;
-			remoteInfo = DocumentReaderFull;
+			remoteGlobalIDString = 85F4CFACE0B92EB5D404C8F0007F9993;
+			remoteInfo = DocumentReaderFullAuthRFIDBeta;
 		};
-		BCE515891FDA33FBDBDF9B1A49D62184 /* PBXContainerItemProxy */ = {
+		D6E7A7A532F2046B952F6B29F795E75B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A66EC006F00F0BFCF640E7ACE4FEC8B1;
-			remoteInfo = DocumentReader;
+			remoteGlobalIDString = 122947DF3468CE7A4616347B9D949DB5;
+			remoteInfo = BTDeviceBeta;
+		};
+		DF0CE8B2CD093B658E20741E2A62EE0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0D279C3FCD01ED79F345FA37874FD78C;
+			remoteInfo = DocumentReaderBeta;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BE05B6710FD1486C94CF59B8AB05ECC /* DocumentReaderCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReaderCore.framework; sourceTree = "<group>"; };
-		568ED152EF0DDBD8EADE3AB3419E8413 /* DocumentReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReader.framework; sourceTree = "<group>"; };
-		6C17849B14FD9A9D8F6A3F556B48CA42 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		815C429355A9B226A8F3FCBB58FC3811 /* DocumentReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReader.xcconfig; sourceTree = "<group>"; };
-		9313C6522E7A4B2EA581D940D853C280 /* DocumentReaderFull.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFull.xcconfig; sourceTree = "<group>"; };
+		3C04EA10D7E560403B11ADEE10DCCD30 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DocumentReaderFullObjectiveC-sample-dummy.m"; sourceTree = "<group>"; };
+		4A75E74C08B376FE0BE3BFF290322E9C /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		826419D84001B507AE6E93F9B8027B54 /* DocumentReaderCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReaderCore.framework; sourceTree = "<group>"; };
+		8BA81538DD25DBEE83C3BAC580BBDC12 /* DocumentReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReader.framework; sourceTree = "<group>"; };
+		93792A0A2E232D07BCA92428AFBED775 /* DocumentReaderBeta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderBeta.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B254301CF4912F03CDA55ABA41396F08 /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
-		B38EED7C5BF649397AB9D6CD316AA7D2 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
-		CCA53F044F31E7B1A87A437259859B3C /* Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh"; sourceTree = "<group>"; };
-		E70AF26CEA958016D1295E1E66FD2EB4 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist"; sourceTree = "<group>"; };
-		F217F9115E40BBC3D329A84BE140EB0E /* libPods-DocumentReaderFullObjectiveC-sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-DocumentReaderFullObjectiveC-sample.a"; path = "libPods-DocumentReaderFullObjectiveC-sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F37ED661783C8444E55333772626C1C3 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DocumentReaderFullObjectiveC-sample-dummy.m"; sourceTree = "<group>"; };
+		C06E2E115C464DA97AD87A3ABFFFE81E /* DocumentReaderFullAuthRFIDBeta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullAuthRFIDBeta.xcconfig; sourceTree = "<group>"; };
+		C88F7CD7CC6472709CF641050EFC0F84 /* libPods-DocumentReaderFullObjectiveC-sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-DocumentReaderFullObjectiveC-sample.a"; path = "libPods-DocumentReaderFullObjectiveC-sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA80C94BE21D4A489458DEF8EEE3D051 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
+		CF4CB9E67D95AA17CAAF325BE69F79B6 /* BTDevice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BTDevice.framework; sourceTree = "<group>"; };
+		E176B80664A294F29DBDAD3FA0D8BAE6 /* BTDeviceBeta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BTDeviceBeta.xcconfig; sourceTree = "<group>"; };
+		E4AB602DDCAA37AE90EB2AEFF1250684 /* Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh"; sourceTree = "<group>"; };
+		EB48BCC814DD31528DDBEB8D8490CEE2 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist"; sourceTree = "<group>"; };
+		F9FA53C73C25C838FF161D13D384D7CF /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA76B60E6B0F616ECAAD63C83D3ABDE1 /* Frameworks */ = {
+		15AC8D13B922253C1CB4CEA7BE56A3AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,88 +92,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02F9067722DA68D303984BA00A93B0DD /* Support Files */ = {
+		019D83FDBDC70B7400EFFF3B09D6C8D9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				815C429355A9B226A8F3FCBB58FC3811 /* DocumentReader.xcconfig */,
+				E176B80664A294F29DBDAD3FA0D8BAE6 /* BTDeviceBeta.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/DocumentReader";
+			path = "../Target Support Files/BTDeviceBeta";
 			sourceTree = "<group>";
 		};
-		0402D46A50B36280EFF1B65FA74893A8 /* Pods-DocumentReaderFullObjectiveC-sample */ = {
+		061CE950EFBD5C1D51BE8D5AEA012CB8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C17849B14FD9A9D8F6A3F556B48CA42 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown */,
-				E70AF26CEA958016D1295E1E66FD2EB4 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist */,
-				F37ED661783C8444E55333772626C1C3 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */,
-				CCA53F044F31E7B1A87A437259859B3C /* Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh */,
-				B254301CF4912F03CDA55ABA41396F08 /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */,
-				B38EED7C5BF649397AB9D6CD316AA7D2 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */,
+				F8A852832E48FFA0211AAF5846BF4891 /* BTDeviceBeta */,
+				D9F8538AEB02CA89BFB040576D0E39FC /* DocumentReaderBeta */,
+				CA42A5E2644299598EB2B76EE8F70C61 /* DocumentReaderFullAuthRFIDBeta */,
 			);
-			name = "Pods-DocumentReaderFullObjectiveC-sample";
-			path = "Target Support Files/Pods-DocumentReaderFullObjectiveC-sample";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		19C17E1D583AE2F093153B11AB31ECDF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F217F9115E40BBC3D329A84BE140EB0E /* libPods-DocumentReaderFullObjectiveC-sample.a */,
+				C88F7CD7CC6472709CF641050EFC0F84 /* libPods-DocumentReaderFullObjectiveC-sample.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E9BB8220DA40033FE4606D7CADF8165 /* Support Files */ = {
+		2FB30039BFE2FBFD3C999776DF6B30D2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9313C6522E7A4B2EA581D940D853C280 /* DocumentReaderFull.xcconfig */,
+				93792A0A2E232D07BCA92428AFBED775 /* DocumentReaderBeta.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/DocumentReaderFull";
-			sourceTree = "<group>";
-		};
-		516FD7350C95B9A1A6E34822D1EF456A /* DocumentReader */ = {
-			isa = PBXGroup;
-			children = (
-				60D71699FB3FD646F1AC513110C6953D /* Frameworks */,
-				02F9067722DA68D303984BA00A93B0DD /* Support Files */,
-			);
-			name = DocumentReader;
-			path = DocumentReader;
+			path = "../Target Support Files/DocumentReaderBeta";
 			sourceTree = "<group>";
 		};
 		5BE70871A02175324AE5930D4717E97A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0402D46A50B36280EFF1B65FA74893A8 /* Pods-DocumentReaderFullObjectiveC-sample */,
+				9CFAAAC4AD3AC1EFA60DBBB39A4E65A4 /* Pods-DocumentReaderFullObjectiveC-sample */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		60D71699FB3FD646F1AC513110C6953D /* Frameworks */ = {
+		63BB5D8B04816AE3857795EAB4D78EBA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				568ED152EF0DDBD8EADE3AB3419E8413 /* DocumentReader.framework */,
+				C06E2E115C464DA97AD87A3ABFFFE81E /* DocumentReaderFullAuthRFIDBeta.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DocumentReaderFullAuthRFIDBeta";
+			sourceTree = "<group>";
+		};
+		78D0B4456169CC013EAD3AC00DCD71F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BA81538DD25DBEE83C3BAC580BBDC12 /* DocumentReader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9CA6019944C2C4E57CE27B498ADD3B44 /* Frameworks */ = {
+		93FBEFBE4266FAAC7A62A4B91C24F52A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1BE05B6710FD1486C94CF59B8AB05ECC /* DocumentReaderCore.framework */,
+				826419D84001B507AE6E93F9B8027B54 /* DocumentReaderCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A94DB5F07C40F59459F99048E866EAD5 /* DocumentReaderFull */ = {
+		9CFAAAC4AD3AC1EFA60DBBB39A4E65A4 /* Pods-DocumentReaderFullObjectiveC-sample */ = {
 			isa = PBXGroup;
 			children = (
-				9CA6019944C2C4E57CE27B498ADD3B44 /* Frameworks */,
-				2E9BB8220DA40033FE4606D7CADF8165 /* Support Files */,
+				4A75E74C08B376FE0BE3BFF290322E9C /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown */,
+				EB48BCC814DD31528DDBEB8D8490CEE2 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist */,
+				3C04EA10D7E560403B11ADEE10DCCD30 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */,
+				E4AB602DDCAA37AE90EB2AEFF1250684 /* Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh */,
+				F9FA53C73C25C838FF161D13D384D7CF /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */,
+				CA80C94BE21D4A489458DEF8EEE3D051 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */,
 			);
-			name = DocumentReaderFull;
-			path = DocumentReaderFull;
+			name = "Pods-DocumentReaderFullObjectiveC-sample";
+			path = "Target Support Files/Pods-DocumentReaderFullObjectiveC-sample";
+			sourceTree = "<group>";
+		};
+		B8BD37A31BDD4CD5C830678986D72061 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CB9E67D95AA17CAAF325BE69F79B6 /* BTDevice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA42A5E2644299598EB2B76EE8F70C61 /* DocumentReaderFullAuthRFIDBeta */ = {
+			isa = PBXGroup;
+			children = (
+				93FBEFBE4266FAAC7A62A4B91C24F52A /* Frameworks */,
+				63BB5D8B04816AE3857795EAB4D78EBA /* Support Files */,
+			);
+			name = DocumentReaderFullAuthRFIDBeta;
+			path = DocumentReaderFullAuthRFIDBeta;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -163,19 +198,10 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				D099F17A19D19BDDC286EF9FDCDFA50D /* Pods */,
+				061CE950EFBD5C1D51BE8D5AEA012CB8 /* Pods */,
 				19C17E1D583AE2F093153B11AB31ECDF /* Products */,
 				5BE70871A02175324AE5930D4717E97A /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D099F17A19D19BDDC286EF9FDCDFA50D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				516FD7350C95B9A1A6E34822D1EF456A /* DocumentReader */,
-				A94DB5F07C40F59459F99048E866EAD5 /* DocumentReaderFull */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -185,10 +211,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D9F8538AEB02CA89BFB040576D0E39FC /* DocumentReaderBeta */ = {
+			isa = PBXGroup;
+			children = (
+				78D0B4456169CC013EAD3AC00DCD71F6 /* Frameworks */,
+				2FB30039BFE2FBFD3C999776DF6B30D2 /* Support Files */,
+			);
+			name = DocumentReaderBeta;
+			path = DocumentReaderBeta;
+			sourceTree = "<group>";
+		};
+		F8A852832E48FFA0211AAF5846BF4891 /* BTDeviceBeta */ = {
+			isa = PBXGroup;
+			children = (
+				B8BD37A31BDD4CD5C830678986D72061 /* Frameworks */,
+				019D83FDBDC70B7400EFFF3B09D6C8D9 /* Support Files */,
+			);
+			name = BTDeviceBeta;
+			path = BTDeviceBeta;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		621D00CB12F9AAF57F024188AC4784B4 /* Headers */ = {
+		97ED0AAB809EB274A680C800D17FEA08 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,23 +244,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		A02280C66302EA6B6EA6FF7824AB8F5B /* Pods-DocumentReaderFullObjectiveC-sample */ = {
+		FA934E572F5F8A6E148EC46785E74C55 /* Pods-DocumentReaderFullObjectiveC-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D7B0169DD6FAAEC4D955A7214105179D /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */;
+			buildConfigurationList = 3B84E706E46FEC4D2E5B9DF4F79225C1 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */;
 			buildPhases = (
-				621D00CB12F9AAF57F024188AC4784B4 /* Headers */,
-				2B873BA09EDE7500E566DCA6965159BC /* Sources */,
-				DA76B60E6B0F616ECAAD63C83D3ABDE1 /* Frameworks */,
+				97ED0AAB809EB274A680C800D17FEA08 /* Headers */,
+				8C0DCADCA83275A8656FF84C66746BB9 /* Sources */,
+				15AC8D13B922253C1CB4CEA7BE56A3AD /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				87BA30213FE5F36268B4618B7429B954 /* PBXTargetDependency */,
-				388675987F4D174CE1AF7A7F0A03F45D /* PBXTargetDependency */,
+				9695F306CC2E17DF8A39F396FFA24DE2 /* PBXTargetDependency */,
+				1C62FD4BE9298C306EE639782A16CED0 /* PBXTargetDependency */,
+				E146E3725E0257926AFAFD52AC0986AD /* PBXTargetDependency */,
 			);
 			name = "Pods-DocumentReaderFullObjectiveC-sample";
 			productName = "Pods-DocumentReaderFullObjectiveC-sample";
-			productReference = F217F9115E40BBC3D329A84BE140EB0E /* libPods-DocumentReaderFullObjectiveC-sample.a */;
+			productReference = C88F7CD7CC6472709CF641050EFC0F84 /* libPods-DocumentReaderFullObjectiveC-sample.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -223,12 +270,12 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -238,149 +285,48 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A66EC006F00F0BFCF640E7ACE4FEC8B1 /* DocumentReader */,
-				DCA7D958E2E871E19A659768AEEF5963 /* DocumentReaderFull */,
-				A02280C66302EA6B6EA6FF7824AB8F5B /* Pods-DocumentReaderFullObjectiveC-sample */,
+				122947DF3468CE7A4616347B9D949DB5 /* BTDeviceBeta */,
+				0D279C3FCD01ED79F345FA37874FD78C /* DocumentReaderBeta */,
+				85F4CFACE0B92EB5D404C8F0007F9993 /* DocumentReaderFullAuthRFIDBeta */,
+				FA934E572F5F8A6E148EC46785E74C55 /* Pods-DocumentReaderFullObjectiveC-sample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2B873BA09EDE7500E566DCA6965159BC /* Sources */ = {
+		8C0DCADCA83275A8656FF84C66746BB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FB093B99190B916B766A6B79DA6657F /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */,
+				5A7D1825F116781482B5400961C1011C /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		388675987F4D174CE1AF7A7F0A03F45D /* PBXTargetDependency */ = {
+		1C62FD4BE9298C306EE639782A16CED0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DocumentReaderFull;
-			target = DCA7D958E2E871E19A659768AEEF5963 /* DocumentReaderFull */;
-			targetProxy = B3FEF389973A9509BC701FA97FED2189 /* PBXContainerItemProxy */;
+			name = DocumentReaderBeta;
+			target = 0D279C3FCD01ED79F345FA37874FD78C /* DocumentReaderBeta */;
+			targetProxy = DF0CE8B2CD093B658E20741E2A62EE0B /* PBXContainerItemProxy */;
 		};
-		87BA30213FE5F36268B4618B7429B954 /* PBXTargetDependency */ = {
+		9695F306CC2E17DF8A39F396FFA24DE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = DocumentReader;
-			target = A66EC006F00F0BFCF640E7ACE4FEC8B1 /* DocumentReader */;
-			targetProxy = BCE515891FDA33FBDBDF9B1A49D62184 /* PBXContainerItemProxy */;
+			name = BTDeviceBeta;
+			target = 122947DF3468CE7A4616347B9D949DB5 /* BTDeviceBeta */;
+			targetProxy = D6E7A7A532F2046B952F6B29F795E75B /* PBXContainerItemProxy */;
+		};
+		E146E3725E0257926AFAFD52AC0986AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DocumentReaderFullAuthRFIDBeta;
+			target = 85F4CFACE0B92EB5D404C8F0007F9993 /* DocumentReaderFullAuthRFIDBeta */;
+			targetProxy = 50213857756036F50868FB26C8810563 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2B43ACD6A07682DA00E023D1F1FC88E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9313C6522E7A4B2EA581D940D853C280 /* DocumentReaderFull.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2E399128FDB45FF4BB5E90F1A11B3F75 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 815C429355A9B226A8F3FCBB58FC3811 /* DocumentReader.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		3CED8D2E65666D38382A0C52909CD316 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B254301CF4912F03CDA55ABA41396F08 /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8F17DC3A99F99FBAD606CE6963886315 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		916E0404255105F480DC4950B7625F7A /* Debug */ = {
+		07488D4657FB0A78086563621D425F8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -439,14 +385,28 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		9AE7E66DE8AB0583A95C6839AC3305B2 /* Release */ = {
+		1CD2AF9E2325CB5FC5D266368095E315 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B38EED7C5BF649397AB9D6CD316AA7D2 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */;
+			baseConfigurationReference = 93792A0A2E232D07BCA92428AFBED775 /* DocumentReaderBeta.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E35AC288AB1528BA6C78D0F0F9C9A83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA80C94BE21D4A489458DEF8EEE3D051 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -466,9 +426,108 @@
 			};
 			name = Release;
 		};
-		D374F6FFD26C877AE037F90D7FC91183 /* Release */ = {
+		3C0A3992A3063E9EC26C2EFF180F615A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9313C6522E7A4B2EA581D940D853C280 /* DocumentReaderFull.xcconfig */;
+			baseConfigurationReference = 93792A0A2E232D07BCA92428AFBED775 /* DocumentReaderBeta.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67DF82303E4474BA03E0D08521904309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C06E2E115C464DA97AD87A3ABFFFE81E /* DocumentReaderFullAuthRFIDBeta.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1962E6FF39BBAC201A2E5DDF99557DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AC182F85CE7209F8910602F04F450106 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E176B80664A294F29DBDAD3FA0D8BAE6 /* BTDeviceBeta.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB35CB276728A5B764E1E8A823992563 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C06E2E115C464DA97AD87A3ABFFFE81E /* DocumentReaderFullAuthRFIDBeta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -480,9 +539,9 @@
 			};
 			name = Release;
 		};
-		ED065A2A15A7A81A471866C38EF3E5DD /* Debug */ = {
+		EF7142DD44823D80DA1FD4A01116234D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 815C429355A9B226A8F3FCBB58FC3811 /* DocumentReader.xcconfig */;
+			baseConfigurationReference = E176B80664A294F29DBDAD3FA0D8BAE6 /* BTDeviceBeta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -490,26 +549,48 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1CC20894F8D05CBADE5C27983273F88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9FA53C73C25C838FF161D13D384D7CF /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0BF24F08F7DF76FC3446D4C52CC27619 /* Build configuration list for PBXAggregateTarget "DocumentReaderFull" */ = {
+		3B84E706E46FEC4D2E5B9DF4F79225C1 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B43ACD6A07682DA00E023D1F1FC88E8 /* Debug */,
-				D374F6FFD26C877AE037F90D7FC91183 /* Release */,
+				F1CC20894F8D05CBADE5C27983273F88 /* Debug */,
+				1E35AC288AB1528BA6C78D0F0F9C9A83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3562DF8B8EC9534650AEADF237A8690D /* Build configuration list for PBXAggregateTarget "DocumentReader" */ = {
+		4253C069A6C23F5ECBD7AE4DB6E44858 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullAuthRFIDBeta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ED065A2A15A7A81A471866C38EF3E5DD /* Debug */,
-				2E399128FDB45FF4BB5E90F1A11B3F75 /* Release */,
+				67DF82303E4474BA03E0D08521904309 /* Debug */,
+				DB35CB276728A5B764E1E8A823992563 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -517,17 +598,26 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				916E0404255105F480DC4950B7625F7A /* Debug */,
-				8F17DC3A99F99FBAD606CE6963886315 /* Release */,
+				07488D4657FB0A78086563621D425F8A /* Debug */,
+				A1962E6FF39BBAC201A2E5DDF99557DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D7B0169DD6FAAEC4D955A7214105179D /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullObjectiveC-sample" */ = {
+		A6B21524A882FD4BBA4CC6C52CA7A698 /* Build configuration list for PBXAggregateTarget "BTDeviceBeta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3CED8D2E65666D38382A0C52909CD316 /* Debug */,
-				9AE7E66DE8AB0583A95C6839AC3305B2 /* Release */,
+				AC182F85CE7209F8910602F04F450106 /* Debug */,
+				EF7142DD44823D80DA1FD4A01116234D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C79FBCCBE4B64AE33BC61D0DB241A407 /* Build configuration list for PBXAggregateTarget "DocumentReaderBeta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C0A3992A3063E9EC26C2EFF180F615A /* Debug */,
+				1CD2AF9E2325CB5FC5D266368095E315 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

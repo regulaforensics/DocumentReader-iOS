@@ -37,7 +37,7 @@ class DefaultModeViewController: UIViewController {
         
         DispatchQueue.global().async {
             
-            DocReader.shared.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
+            DocReader.shared.prepareDatabase(databaseID: "FullAuth", progressHandler: { (progress) in
                 let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
                 self.initializationLabel.text = "Downloading database: \(progressValue)%"
             }, completion: { (successfull, error) in
@@ -57,7 +57,12 @@ class DefaultModeViewController: UIViewController {
                               DocReader.shared.processParams.scenario = firstScenario.identifier
                             }
                             DocReader.shared.functionality.singleResult = true
-                          
+                            
+                            if DocReader.shared.isUseAuthenticatorAvailable {
+                                DocReader.shared.functionality.isUseAuthenticator = true
+                                DocReader.shared.functionality.btDeviceName = "Regula 0000" // set up name of the 1120 device
+                            }
+                            
                             //Get available scenarios
                             for scenario in DocReader.shared.availableScenarios {
                                 print(scenario)
@@ -105,7 +110,11 @@ class DefaultModeViewController: UIViewController {
         let name = result.getTextFieldValueByType(fieldType: .ft_Surname_And_Given_Names)
         print("NAME: \(name ?? "empty field")")
         self.nameLabel.text = name
-        self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentImage, source: .rawImage)
+        if let uvDocImage = result.getGraphicFieldImageByType(fieldType: .gf_DocumentImage, source: .rawImage, pageIndex: 0, light: .UV) {
+            self.documentImage.image = uvDocImage
+        } else {
+            self.documentImage.image = result.getGraphicFieldImageByType(fieldType: .gf_DocumentImage, source: .rawImage)
+        }
         self.portraitImageView.image = result.getGraphicFieldImageByType(fieldType: .gf_Portrait)
         
         //go though all text results
