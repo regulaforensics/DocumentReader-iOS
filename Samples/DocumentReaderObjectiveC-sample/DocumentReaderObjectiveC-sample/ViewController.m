@@ -24,6 +24,8 @@
 
     @property (strong, nonatomic) UIImagePickerController *imagePicker;
 
+    @property (weak, nonatomic) IBOutlet UISwitch *rfidCheckBox;
+
 @end
 
 @implementation ViewController
@@ -63,7 +65,7 @@
                         
                         if (RGLDocReader.shared.isUseAuthenticatorAvailable) {
                             RGLDocReader.shared.functionality.useAuthenticator = YES;
-                            RGLDocReader.shared.functionality.btDeviceName = @"Regula 0000"; // set up name of the 1120 device
+                            RGLDocReader.shared.functionality.btDeviceName = @"Regula 0122"; // set up name of the 1120 device
                         }
                         
                         for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
@@ -93,7 +95,11 @@
 
                 case RGLDocReaderActionComplete: {
                     NSLog(@"Completed");
-                    [self handleScanResults:result];
+                    if (self.rfidCheckBox.on) {
+                        [self startRFIDReading:result];
+                    } else {
+                        [self handleScanResults:result];
+                    }
                 }
                 break;
 
@@ -210,5 +216,50 @@
 
     - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
         RGLDocReader.shared.processParams.scenario = RGLDocReader.shared.availableScenarios[row].identifier;
+    }
+
+    - (void)startRFIDReading:(RGLDocumentReaderResults *)result {
+        NSString *mrzAccessKey = [[result getTextFieldValueByType:RGLFieldTypeFt_MRZ_Strings_ICAO_RFID] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        if (mrzAccessKey) {
+            RGLDocReader.shared.processParams.rfidOptions.mrz = mrzAccessKey;
+            RGLDocReader.shared.processParams.rfidOptions.pacePasswordType = RGLRFIDPasswordTypeMrz;
+            RGLDocReader.shared.processParams.rfidOptions.readEDL = [mrzAccessKey length] == 30 && [mrzAccessKey characterAtIndex:0] == 'D';
+        }
+        NSString *stringAccessKey = [[result getTextFieldValueByType:RGLFieldTypeFt_MRZ_Strings] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        if (stringAccessKey) {
+            RGLDocReader.shared.processParams.rfidOptions.mrz = stringAccessKey;
+            RGLDocReader.shared.processParams.rfidOptions.pacePasswordType = RGLRFIDPasswordTypeMrz;
+            RGLDocReader.shared.processParams.rfidOptions.readEDL = [stringAccessKey length] == 30 && [stringAccessKey characterAtIndex:0] == 'D';
+        }
+        NSString *accessNumberKey = [result getTextFieldValueByType:RGLFieldTypeFt_Card_Access_Number];
+        if (accessNumberKey) {
+            RGLDocReader.shared.processParams.rfidOptions.mrz = accessNumberKey;
+            RGLDocReader.shared.processParams.rfidOptions.pacePasswordType = RGLRFIDPasswordTypeCan;
+            RGLDocReader.shared.processParams.rfidOptions.readEDL = [accessNumberKey length] == 30 && [accessNumberKey characterAtIndex:0] == 'D';
+        }
+        
+        [RGLDocReader.shared startRFIDReaderFromPresenter:self completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSString * _Nullable error) {
+            switch (action) {
+                case RGLDocReaderActionCancel: {
+                    NSLog(@"Cancelled by user");
+                    [self handleScanResults:result];
+                }
+                    break;
+                    
+                case RGLDocReaderActionComplete: {
+                    NSLog(@"Completed");
+                    [self handleScanResults:results];
+                }
+                    break;
+                    
+                case RGLDocReaderActionError: {
+                    NSLog(@"Error string: %@", error);
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+        }];
     }
 @end

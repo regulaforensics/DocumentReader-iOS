@@ -22,6 +22,7 @@ class DefaultModeViewController: UIViewController {
     
     @IBOutlet weak var initializationLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var readRFID: UISwitch!
     
     var imagePicker = UIImagePickerController()
     
@@ -60,7 +61,7 @@ class DefaultModeViewController: UIViewController {
                             
                             if DocReader.shared.isUseAuthenticatorAvailable {
                                 DocReader.shared.functionality.isUseAuthenticator = true
-                                DocReader.shared.functionality.btDeviceName = "Regula 0000" // set up name of the 1120 device
+                                DocReader.shared.functionality.btDeviceName = "Regula 0122" // set up name of the 1120 device
                             }
                             
                             //Get available scenarios
@@ -89,7 +90,11 @@ class DefaultModeViewController: UIViewController {
                 print("Cancelled by user")
             case .complete:
                 print("Completed")
-                self.handleResult(result: result)
+                if self.readRFID.isOn {
+                    self.startRFIDReading(result: result)
+                } else {
+                    self.handleResult(result: result)
+                }
             case .error:
                 print("Error")
                 guard let error = error else { return }
@@ -135,10 +140,10 @@ class DefaultModeViewController: UIViewController {
             switch status {
             case .authorized:
                 if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-                    self.imagePicker.delegate = self
-                    self.imagePicker.sourceType = .photoLibrary;
-                    self.imagePicker.allowsEditing = false
                     DispatchQueue.main.async {
+                        self.imagePicker.delegate = self
+                        self.imagePicker.sourceType = .photoLibrary;
+                        self.imagePicker.allowsEditing = false
                         self.imagePicker.navigationBar.tintColor = .black
                         self.present(self.imagePicker, animated: true, completion: nil)
                     }
@@ -164,6 +169,40 @@ class DefaultModeViewController: UIViewController {
                 print("PHPhotoLibrary status: restricted")
             }
         }
+    }
+    
+    func startRFIDReading(result: DocumentReaderResults?) {
+        guard let result = result else { return }
+        
+        if let mrzAccessKey = result.getTextFieldValueByType(fieldType: .ft_MRZ_Strings_ICAO_RFID)?.replacingOccurrences(of: "\n", with: "") {
+            DocReader.shared.processParams.rfidOptions.mrz = mrzAccessKey
+            DocReader.shared.processParams.rfidOptions.pacePasswordType = .mrz
+            DocReader.shared.processParams.rfidOptions.readEDL = mrzAccessKey.count == 30 && mrzAccessKey.first == "D"
+        } else if let stringAccessKey = result.getTextFieldValueByType(fieldType: .ft_MRZ_Strings)?.replacingOccurrences(of: "\n", with: "") {
+            DocReader.shared.processParams.rfidOptions.mrz = stringAccessKey
+            DocReader.shared.processParams.rfidOptions.pacePasswordType = .mrz
+            DocReader.shared.processParams.rfidOptions.readEDL = stringAccessKey.count == 30 && stringAccessKey.first == "D"
+        } else if let accessNumberKey = result.getTextFieldValueByType(fieldType: .ft_Card_Access_Number) {
+            DocReader.shared.processParams.rfidOptions.mrz = accessNumberKey
+            DocReader.shared.processParams.rfidOptions.pacePasswordType = .can
+            DocReader.shared.processParams.rfidOptions.readEDL = accessNumberKey.count == 30 && accessNumberKey.first == "D"
+        }
+        
+        DocReader.shared.startRFIDReader(fromPresenter: self, completion: { (action, results, error) in
+            switch action {
+            case .complete:
+                print("complete")
+                self.handleResult(result: results)
+            case .cancel:
+                print("Cancelled")
+                self.handleResult(result: result)
+            case .error:
+                print("Error")
+                self.nameLabel.text = error
+            default:
+                break
+            }
+        })
     }
 }
 
