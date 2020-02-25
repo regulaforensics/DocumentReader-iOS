@@ -24,6 +24,7 @@ class DefaultModeViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var readRFID: UISwitch!
   
+    var customRfid = false
     
     var imagePicker = UIImagePickerController()
     
@@ -164,20 +165,27 @@ class DefaultModeViewController: UIViewController {
     }
     
     func startRFIDReading() {
-        DocReader.shared.startRFIDReader(fromPresenter: self, completion: { (action, results, error) in
-            switch action {
-            case .complete:
-                print("complete")
-                self.handleResult(result: results)
-            case .cancel:
-                print("Cancelled")
-            case .error:
-                print("Error")
-                self.nameLabel.text = error
-            default:
-                break
-            }
-        })
+        if customRfid {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "CustomRfidViewController")
+            controller.modalPresentationStyle = .fullScreen
+            self.present(controller, animated: true, completion: nil)
+        } else {
+            DocReader.shared.startRFIDReader(fromPresenter: self, completion: { (action, results, error) in
+                switch action {
+                case .complete:
+                    print("complete")
+                    self.handleResult(result: results)
+                case .cancel:
+                    print("Cancelled")
+                case .error:
+                    print("Error")
+                    self.nameLabel.text = error
+                default:
+                    break
+                }
+            })
+        }
     }
 }
 
