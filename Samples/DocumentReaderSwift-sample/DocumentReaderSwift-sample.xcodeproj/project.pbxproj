@@ -29,6 +29,9 @@
 		0A88C194215559A000CF494D /* DefaultModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C193215559A000CF494D /* DefaultModeViewController.swift */; };
 		0A88C1962155860F00CF494D /* ChildModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C1952155860F00CF494D /* ChildModeViewController.swift */; };
 		0AA7BE84234CE04600CB9FE7 /* CustomRfidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7BE83234CE04600CB9FE7 /* CustomRfidViewController.swift */; };
+		7DC517A824158C1E0030FC62 /* CertificatesPA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DC517A724158C1E0030FC62 /* CertificatesPA.bundle */; };
+		7DC517AA24158C7B0030FC62 /* CertificatesTA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DC517A924158C7B0030FC62 /* CertificatesTA.bundle */; };
+		7DC517AC24158CAD0030FC62 /* Certificates.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7DC517AB24158CAD0030FC62 /* Certificates.bundle */; };
 		7DF94C072401CEBF001A975E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF94C062401CEBF001A975E /* MainViewController.swift */; };
 		7DF94C0D2404070A001A975E /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 7DF94C0C2404070A001A975E /* db.dat */; };
 		986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */; };
@@ -57,6 +60,9 @@
 		5ABFE2EDDD3ED4E3F91CF09D /* Pods-DocumentReaderBoundsSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71629B858F96A0ADCCB4CC58 /* Pods-DocumentReaderOCRSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
+		7DC517A724158C1E0030FC62 /* CertificatesPA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CertificatesPA.bundle; sourceTree = "<group>"; };
+		7DC517A924158C7B0030FC62 /* CertificatesTA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CertificatesTA.bundle; sourceTree = "<group>"; };
+		7DC517AB24158CAD0030FC62 /* Certificates.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Certificates.bundle; sourceTree = "<group>"; };
 		7DF94C062401CEBF001A975E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7DF94C0C2404070A001A975E /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +122,9 @@
 				0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */,
 				0AA7BE83234CE04600CB9FE7 /* CustomRfidViewController.swift */,
 				7DF94C062401CEBF001A975E /* MainViewController.swift */,
+				7DC517A724158C1E0030FC62 /* CertificatesPA.bundle */,
+				7DC517A924158C7B0030FC62 /* CertificatesTA.bundle */,
+				7DC517AB24158CAD0030FC62 /* Certificates.bundle */,
 			);
 			path = "DocumentReaderSwift-sample";
 			sourceTree = "<group>";
@@ -218,11 +227,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC517A824158C1E0030FC62 /* CertificatesPA.bundle in Resources */,
+				7DC517AC24158CAD0030FC62 /* Certificates.bundle in Resources */,
 				7DF94C0D2404070A001A975E /* db.dat in Resources */,
 				0A74D52F1F8AB14F0055BE75 /* LaunchScreen.storyboard in Resources */,
 				0A74D5301F8AB14F0055BE75 /* Assets.xcassets in Resources */,
 				0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */,
 				0A74D5321F8AB14F0055BE75 /* regula.license in Resources */,
+				7DC517AA24158C7B0030FC62 /* CertificatesTA.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
