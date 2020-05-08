@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RZJ-HE-R6W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="RZJ-HE-R6W">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -231,10 +231,10 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="OdR-6f-X1n"/>
                                 </connections>
                             </pickerView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-v7-CjF">
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-v7-CjF">
                                 <rect key="frame" x="308" y="621" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read RFID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elw-zq-xvG">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Read RFID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elw-zq-xvG">
                                 <rect key="frame" x="279" y="592" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Pig-mt-kcJ"/>
@@ -292,6 +292,7 @@
                         <outlet property="pickerView" destination="X26-wn-eXB" id="5xA-AU-6iD"/>
                         <outlet property="portraitImageView" destination="zaZ-u7-o9b" id="haZ-yd-juU"/>
                         <outlet property="readRFID" destination="Ex6-v7-CjF" id="ysW-7K-A66"/>
+                        <outlet property="readRFIDLabel" destination="elw-zq-xvG" id="4Af-EW-Cor"/>
                         <outlet property="useCameraViewControllerButton" destination="szw-2D-WO8" id="Fen-br-HEa"/>
                         <outlet property="userRecognizeImage" destination="gO6-zs-ejP" id="Zuf-FF-GgC"/>
                     </connections>
@@ -465,11 +466,11 @@
             <point key="canvasLocation" x="-714.39999999999998" y="34.632683658170919"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="nfc_logo" width="36" height="36"/>
-        <image name="xmark" catalog="system" width="64" height="56"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3N7-HD-MZf"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="nfc_logo" width="36" height="36"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
 </document>

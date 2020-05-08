@@ -22,6 +22,7 @@ class DefaultModeViewController: UIViewController {
     
     @IBOutlet weak var initializationLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var readRFIDLabel: UILabel!
     @IBOutlet weak var readRFID: UISwitch!
   
     var customRfid = false
@@ -51,6 +52,12 @@ class DefaultModeViewController: UIViewController {
                             self.initializationLabel.isHidden = true
                             self.userRecognizeImage.isHidden = false
                             self.useCameraViewControllerButton.isHidden = false
+                            
+                            if DocReader.shared.isRfidAvailable {
+                                self.readRFIDLabel.isHidden = false
+                                self.readRFID.isHidden = false
+                            }
+                            
                             self.pickerView.isHidden = false
                             self.pickerView.reloadAllComponents()
                             self.pickerView.selectRow(0, inComponent: 0, animated: false)
@@ -87,7 +94,7 @@ class DefaultModeViewController: UIViewController {
                 print("Cancelled by user")
             case .complete:
                 print("Completed")
-                if self.readRFID.isOn {
+                if self.readRFID.isOn && result?.chipPage != 0 {
                     self.startRFIDReading()
                 } else {
                     self.handleResult(result: result)
