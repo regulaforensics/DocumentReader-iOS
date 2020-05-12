@@ -73,6 +73,15 @@ class DefaultModeViewController: UIViewController {
                                 print(scenario)
                                 print("--------")
                             }
+                            
+                            // add cerificates. Don't forget to comment set up of rfidDelegate below if this option is used
+//                            let certificates = self.getRfidCertificates(bundleName: "Certificates.bundle")
+//                            if certificates.count > 0 {
+//                                DocReader.shared.addPKDCertificates(certificates: certificates)
+//                            }
+                                                        
+                            // set up delegate to get request for certificates in runtime. Don't forget to comment 3 lines above if this option is used
+//                            DocReader.shared.rfidDelegate = self;
                         } else {
                             self.activityIndicator.stopAnimating()
                             let licenseError = error ?? "Unknown error"
@@ -194,6 +203,63 @@ class DefaultModeViewController: UIViewController {
             })
         }
     }
+    
+    func getRfidCertificates(bundleName: String) -> [PKDCertificate] {
+        var certificates: [PKDCertificate] = []
+        let masterListURL = Bundle.main.bundleURL.appendingPathComponent(bundleName)
+        do {
+            let contents = try FileManager.default.contentsOfDirectory(at: masterListURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+            
+            for content in contents {
+                if let cert = try? Data(contentsOf: content)  {
+                    certificates.append(PKDCertificate.init(binaryData: cert, resourceType: PKDCertificate.findResourceType(typeName: content.pathExtension), privateKey: nil))
+                }
+            }
+          } catch {
+            print(error.localizedDescription)
+        }
+        
+        return certificates
+    }
+    
+    func getRfidTACertificates() -> [PKDCertificate] {
+        var paCertificates: [PKDCertificate] = []
+        let masterListURL = Bundle.main.bundleURL.appendingPathComponent("CertificatesTA.bundle")
+        do {
+            let contents = try FileManager.default.contentsOfDirectory(at: masterListURL, includingPropertiesForKeys: [URLResourceKey.nameKey, URLResourceKey.isDirectoryKey], options: .skipsHiddenFiles)
+            
+            var filesCertMap: [String: [URL]] = [:]
+            
+            for content in contents {
+                let fileName = content.deletingPathExtension().lastPathComponent
+                if filesCertMap[fileName] == nil {
+                    filesCertMap[fileName] = []
+                }
+                filesCertMap[fileName]?.append(content.absoluteURL)
+            }
+            
+            for (_, certificates) in filesCertMap {
+                var binaryData: Data?
+                var privateKey: Data?
+                for cert in certificates {
+                    if let data = try? Data(contentsOf: cert) {
+                        if cert.pathExtension.elementsEqual("cvCert") {
+                            binaryData = data
+                        } else {
+                            privateKey = data
+                        }
+                    }
+                }
+                if let data = binaryData {
+                    paCertificates.append(PKDCertificate.init(binaryData: data, resourceType: .certificate_TA, privateKey: privateKey))
+                }
+            }
+          } catch {
+            print(error.localizedDescription)
+        }
+        
+        return paCertificates
+    }
 }
 
 extension DefaultModeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -245,6 +311,47 @@ extension DefaultModeViewController: UIPickerViewDelegate {
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         DocReader.shared.processParams.scenario = DocReader.shared.availableScenarios[row].identifier
+    }
+}
+
+extension PKDCertificate {
+    static func findResourceType(typeName: String) -> PKDResourceType {
+        switch typeName.lowercased() {
+        case "pa":
+            return PKDResourceType.certificate_PA
+        case "ta":
+            return PKDResourceType.certificate_TA
+        case "ldif":
+            return PKDResourceType.LDIF
+        case "crl":
+            return PKDResourceType.CRL
+        case "ml":
+            return PKDResourceType.ML
+        case "defl":
+            return PKDResourceType.defL
+        case "devl":
+            return PKDResourceType.devL
+        case "bl":
+            return PKDResourceType.BL
+        default:
+            return PKDResourceType.certificate_PA
+        }
+    }
+}
+
+extension DefaultModeViewController: RGLDocReaderRFIDDelegate {
+    func onRequestPACertificates(withSerial serialNumber: Data!, issuer: PAResourcesIssuer!, callback: (([PKDCertificate]?) -> Void)!) {
+        let certificates = self.getRfidCertificates(bundleName: "Certificates.bundle")
+        callback(certificates)
+    }
+    
+    func onRequestTACertificates(withKey keyCAR: String!, callback: (([PKDCertificate]?) -> Void)!) {
+        let certificates = self.getRfidTACertificates()
+        callback(certificates)
+    }
+    
+    func onRequestTASignature(with challenge: TAChallenge!, callback: ((Data?) -> Void)!) {
+        callback(nil)
     }
 }
 
