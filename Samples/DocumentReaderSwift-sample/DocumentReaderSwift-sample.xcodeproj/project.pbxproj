@@ -28,6 +28,7 @@
 		0A74D5321F8AB14F0055BE75 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0A88C194215559A000CF494D /* DefaultModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C193215559A000CF494D /* DefaultModeViewController.swift */; };
 		0A88C1962155860F00CF494D /* ChildModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C1952155860F00CF494D /* ChildModeViewController.swift */; };
+		0A9375EB246DDDFA004FC7FF /* FaceVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9375EA246DDDFA004FC7FF /* FaceVerificationViewController.swift */; };
 		986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		0A88C193215559A000CF494D /* DefaultModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultModeViewController.swift; sourceTree = "<group>"; };
 		0A88C1952155860F00CF494D /* ChildModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildModeViewController.swift; sourceTree = "<group>"; };
 		0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderFullSwift-sample-Info.plist"; sourceTree = "<group>"; };
+		0A9375EA246DDDFA004FC7FF /* FaceVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceVerificationViewController.swift; sourceTree = "<group>"; };
 		2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6EE5844FD2EC1464B1A404 /* Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				0A5A174B1F1038160011FB0A /* AppDelegate.swift */,
 				0A88C193215559A000CF494D /* DefaultModeViewController.swift */,
 				0A88C1952155860F00CF494D /* ChildModeViewController.swift */,
+				0A9375EA246DDDFA004FC7FF /* FaceVerificationViewController.swift */,
 				0A5A174F1F1038160011FB0A /* Main.storyboard */,
 				0A5A17521F1038160011FB0A /* Assets.xcassets */,
 				0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */,
@@ -186,6 +189,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -240,15 +244,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework.dSYM",
-				"${PODS_ROOT}/DocumentReaderFull/DocumentReaderCore.framework",
+				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework.dSYM",
+				"${PODS_ROOT}/DocumentReaderFullRFIDBeta/DocumentReaderCore.framework",
+				"${PODS_ROOT}/FaceSDKBeta/FaceSDK.framework",
+				"${PODS_ROOT}/FaceSDKBeta/FaceSDK.framework.dSYM",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/DocumentReader.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReaderCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FaceSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/FaceSDK.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -276,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9375EB246DDDFA004FC7FF /* FaceVerificationViewController.swift in Sources */,
 				0A88C194215559A000CF494D /* DefaultModeViewController.swift in Sources */,
 				0A88C1962155860F00CF494D /* ChildModeViewController.swift in Sources */,
 				0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */,
