@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A5D527A24C5C75000DF4F1E /* RGRecognizeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D527924C5C75000DF4F1E /* RGRecognizeImageViewController.m */; };
+		0A5D527D24C5C7D600DF4F1E /* RGPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5D527C24C5C7D600DF4F1E /* RGPreviewView.m */; };
 		0AA218E62060411D0083997B /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0AA218DF2060411D0083997B /* regula.license */; };
 		0AFFDE5E205FDCF10012DEAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFDDD6205FD98C0012DEAB /* ViewController.m */; };
 		0AFFDE5F205FDCF10012DEAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFDDE1205FD98C0012DEAB /* main.m */; };
@@ -32,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A5D527824C5C75000DF4F1E /* RGRecognizeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGRecognizeImageViewController.h; sourceTree = "<group>"; };
+		0A5D527924C5C75000DF4F1E /* RGRecognizeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGRecognizeImageViewController.m; sourceTree = "<group>"; };
+		0A5D527B24C5C7D600DF4F1E /* RGPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGPreviewView.h; sourceTree = "<group>"; };
+		0A5D527C24C5C7D600DF4F1E /* RGPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGPreviewView.m; sourceTree = "<group>"; };
 		0AA218DF2060411D0083997B /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
 		0AFFDDD2205FD98C0012DEAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AFFDDD3205FD98C0012DEAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +109,10 @@
 				0AFFDDD3205FD98C0012DEAB /* AppDelegate.m */,
 				0AFFDDD5205FD98C0012DEAB /* ViewController.h */,
 				0AFFDDD6205FD98C0012DEAB /* ViewController.m */,
+				0A5D527824C5C75000DF4F1E /* RGRecognizeImageViewController.h */,
+				0A5D527924C5C75000DF4F1E /* RGRecognizeImageViewController.m */,
+				0A5D527B24C5C7D600DF4F1E /* RGPreviewView.h */,
+				0A5D527C24C5C7D600DF4F1E /* RGPreviewView.m */,
 				0AFFDDD8205FD98C0012DEAB /* Main.storyboard */,
 				0AFFDDDB205FD98C0012DEAB /* Assets.xcassets */,
 				0AA218DF2060411D0083997B /* regula.license */,
@@ -262,7 +272,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullObjectiveC-sample/Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh",
 				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
 				"${PODS_ROOT}/DocumentReader/DocumentReader.framework.dSYM",
-				"${PODS_ROOT}/DocumentReaderFull/DocumentReaderCore.framework",
+				"${PODS_ROOT}/DocumentReaderFullRFID/DocumentReaderCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -282,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5D527A24C5C75000DF4F1E /* RGRecognizeImageViewController.m in Sources */,
 				0AFFDE5E205FDCF10012DEAB /* ViewController.m in Sources */,
+				0A5D527D24C5C7D600DF4F1E /* RGPreviewView.m in Sources */,
 				0AFFDE5F205FDCF10012DEAB /* main.m in Sources */,
 				0AFFDE60205FDCF10012DEAB /* AppDelegate.m in Sources */,
 			);
@@ -425,7 +437,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H6WR54S268;
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderObjectiveC-sample/DocumentReaderFullObjectiveC-sample.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
@@ -441,7 +453,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H6WR54S268;
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderObjectiveC-sample/DocumentReaderFullObjectiveC-sample.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
