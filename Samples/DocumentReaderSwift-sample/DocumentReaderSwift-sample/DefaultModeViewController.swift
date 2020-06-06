@@ -53,7 +53,7 @@ class DefaultModeViewController: UIViewController {
                             self.userRecognizeImage.isHidden = false
                             self.useCameraViewControllerButton.isHidden = false
                             
-                            if DocReader.shared.isRfidAvailable {
+                            if DocReader.shared.isRFIDAvailableForUse {
                                 self.readRFIDLabel.isHidden = false
                                 self.readRFID.isHidden = false
                             }
