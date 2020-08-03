@@ -13,7 +13,6 @@ We have provided a simple application that demonstrates the ***API*** calls you 
 
 # Content
 * [How to build demo application](#how-to-build-demo-application)
-* [How to add DocumentReader library to your project](#how-to-add-documentreader-to-your-project)
 * [Troubleshooting license issues](#troubleshooting-license-issues)
 * [Documentation](#documentation)
 * [Additional information](#additional-information)
@@ -27,51 +26,6 @@ We have provided a simple application that demonstrates the ***API*** calls you 
 6.  Open the workspace `Samples/DocumentReaderSwift-sample/DocumentReaderSwift-sample.xcworkspace` in Xcode or `Samples/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample.xcworkspace` (for Objective-C example).
 7.  Change the Bundle ID to the one specified during registration at [licensing.regulaforensics.com](https://licensing.regulaforensics.com/)(`regula.DocumentReader` by default).
 8.  Select the target `Pod install` and run it. Optionally you may install pods manually running `pod install` in `Samples/DocumentReaderSwift-sample` directory
-
-## How to add DocumentReader to your project
-
-Document Reader libraries are available via [CocoaPods](https://cocoapods.org/owners/22498).
-First of all, install API library, simply adding the following lines to the `Podfile` file of your project:
-```
-pod 'DocumentReader'
-```
-
-And then add one of the Core libraries depend on the functionality that you wish and the license capabilities:
-
-* Install **Barcode** library edition:
-```
-pod 'DocumentReaderBarcode'
-```
-
-* Install **Bounds** library edition:
-```
-pod 'DocumentReaderBounds'
-```
-
-* Install **DocType** library edition:
-```
-pod 'DocumentReaderDocType'
-```
-
-* Install **Full** library edition:
-```
-pod 'DocumentReaderFull'
-```
-
-* Install **MRZ** library edition:
-```
-pod 'DocumentReaderMRZ'
-```
-
-* Install **MRZBarcode** library edition:
-```
-pod 'DocumentReaderMRZBarcode'
-```
-
-* Install **OCR** library edition:
-```
-pod 'DocumentReaderOCR'
-```
 
 ## Troubleshooting license issues
 If you have issues with license verification when running the application, please verify that next is true:
