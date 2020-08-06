@@ -84,7 +84,7 @@ class CustomRfidViewController: UIViewController {
                 self.rfidImageView.tintColor = UIColor.red
                 if let err = error {
                     let newError = "RFID Failed: \(err) (custom)"
-                    self.rfidStateLabel.text = err
+                    self.rfidStateLabel.text = err.localizedDescription
                     DocReader.shared.rfidSessionStatus = newError
                 }
             case .sessionRestarted:

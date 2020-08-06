@@ -84,9 +84,8 @@ class DefaultModeViewController: UIViewController {
 //                            DocReader.shared.rfidDelegate = self;
                         } else {
                             self.activityIndicator.stopAnimating()
-                            let licenseError = error ?? "Unknown error"
-                            self.initializationLabel.text = "Initialization error: \(licenseError)"
-                            print(licenseError)
+                            self.initializationLabel.text = "Initialization error: \(error?.localizedDescription)"
+                            print(error?.localizedDescription)
                         }
                     }
                 }
@@ -196,7 +195,7 @@ class DefaultModeViewController: UIViewController {
                     print("Cancelled")
                 case .error:
                     print("Error")
-                    self.nameLabel.text = error
+                    self.nameLabel.text = error?.localizedDescription
                 default:
                     break
                 }

@@ -49,20 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		15F650D35D595962E9B165FFA8FAF53C /* DocumentReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReader.debug.xcconfig; sourceTree = "<group>"; };
+		347271B22133D8D2E7C42C2C3F0DC30D /* DocumentReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReader.xcconfig; sourceTree = "<group>"; };
 		6C17849B14FD9A9D8F6A3F556B48CA42 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7C60E088182C825B9C3E1BA0D7346E89 /* DocumentReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReader.framework; sourceTree = "<group>"; };
-		8638CF3956B9103C4258E75A7F1365DD /* DocumentReaderFullRFID.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullRFID.debug.xcconfig; sourceTree = "<group>"; };
+		8DCA1273D5F1F6D5A8B0BEC90DB494CE /* DocumentReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReader.framework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AB9B21B2E44F1D2076C03756BBB9D776 /* DocumentReaderCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReaderCore.framework; sourceTree = "<group>"; };
 		B254301CF4912F03CDA55ABA41396F08 /* Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		B38EED7C5BF649397AB9D6CD316AA7D2 /* Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
+		C8D9928A5DD19A1D7A51F2FA8BEA7E9D /* DocumentReaderCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReaderCore.framework; sourceTree = "<group>"; };
 		CCA53F044F31E7B1A87A437259859B3C /* Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh"; sourceTree = "<group>"; };
 		E70AF26CEA958016D1295E1E66FD2EB4 /* Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DocumentReaderFullObjectiveC-sample-acknowledgements.plist"; sourceTree = "<group>"; };
-		F150FF8A0A89B953B45B6542FF76B6EC /* DocumentReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReader.release.xcconfig; sourceTree = "<group>"; };
+		EB50D0B027EB829FC857DA24C44923EF /* DocumentReaderFullRFID.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullRFID.xcconfig; sourceTree = "<group>"; };
 		F217F9115E40BBC3D329A84BE140EB0E /* libPods-DocumentReaderFullObjectiveC-sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-DocumentReaderFullObjectiveC-sample.a"; path = "libPods-DocumentReaderFullObjectiveC-sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F37ED661783C8444E55333772626C1C3 /* Pods-DocumentReaderFullObjectiveC-sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DocumentReaderFullObjectiveC-sample-dummy.m"; sourceTree = "<group>"; };
-		F6EA0EB3E31FB3AB9AF87D3A01264716 /* DocumentReaderFullRFID.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullRFID.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,42 +96,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1EDF698CA2CE2D750A8F7FCC0AE7BA6B /* Frameworks */ = {
+		31B18CF984F7D83A2BECB504C816B83C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C60E088182C825B9C3E1BA0D7346E89 /* DocumentReader.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		2DF4728DE01397EA11E635A2ACBF96B5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				15F650D35D595962E9B165FFA8FAF53C /* DocumentReader.debug.xcconfig */,
-				F150FF8A0A89B953B45B6542FF76B6EC /* DocumentReader.release.xcconfig */,
+				347271B22133D8D2E7C42C2C3F0DC30D /* DocumentReader.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DocumentReader";
 			sourceTree = "<group>";
 		};
-		532D5B59BADDC2446215A46BADC3494A /* Support Files */ = {
+		4AEA0C1A9BA72A274584018507A0D441 /* DocumentReaderFullRFID */ = {
 			isa = PBXGroup;
 			children = (
-				8638CF3956B9103C4258E75A7F1365DD /* DocumentReaderFullRFID.debug.xcconfig */,
-				F6EA0EB3E31FB3AB9AF87D3A01264716 /* DocumentReaderFullRFID.release.xcconfig */,
+				C5D33C487EDE2BCB4C04834DCD09DFA2 /* Frameworks */,
+				65D982DBDF7BE36177882BC70A9805EB /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DocumentReaderFullRFID";
-			sourceTree = "<group>";
-		};
-		53B377C9C7945639E1233333D7DE2C5C /* DocumentReader */ = {
-			isa = PBXGroup;
-			children = (
-				1EDF698CA2CE2D750A8F7FCC0AE7BA6B /* Frameworks */,
-				2DF4728DE01397EA11E635A2ACBF96B5 /* Support Files */,
-			);
-			name = DocumentReader;
-			path = DocumentReader;
+			name = DocumentReaderFullRFID;
+			path = DocumentReaderFullRFID;
 			sourceTree = "<group>";
 		};
 		5BE70871A02175324AE5930D4717E97A /* Targets Support Files */ = {
@@ -144,10 +123,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		6000CEAB800AECDCFB9E4BA54EF61543 /* Frameworks */ = {
+		65D982DBDF7BE36177882BC70A9805EB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB9B21B2E44F1D2076C03756BBB9D776 /* DocumentReaderCore.framework */,
+				EB50D0B027EB829FC857DA24C44923EF /* DocumentReaderFullRFID.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/DocumentReaderFullRFID";
+			sourceTree = "<group>";
+		};
+		723F37F9D876163DFFFE2DE8F3284CED /* DocumentReader */ = {
+			isa = PBXGroup;
+			children = (
+				7BA766B92E5157D39AB5B344B62AB4F3 /* Frameworks */,
+				31B18CF984F7D83A2BECB504C816B83C /* Support Files */,
+			);
+			name = DocumentReader;
+			path = DocumentReader;
+			sourceTree = "<group>";
+		};
+		7BA766B92E5157D39AB5B344B62AB4F3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DCA1273D5F1F6D5A8B0BEC90DB494CE /* DocumentReader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -155,10 +153,18 @@
 		A50A8046553E198773F8851FC581332F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				53B377C9C7945639E1233333D7DE2C5C /* DocumentReader */,
-				D9D5A45F73D4CB010E11E94828F7516F /* DocumentReaderFullRFID */,
+				723F37F9D876163DFFFE2DE8F3284CED /* DocumentReader */,
+				4AEA0C1A9BA72A274584018507A0D441 /* DocumentReaderFullRFID */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C5D33C487EDE2BCB4C04834DCD09DFA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8D9928A5DD19A1D7A51F2FA8BEA7E9D /* DocumentReaderCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -177,16 +183,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D9D5A45F73D4CB010E11E94828F7516F /* DocumentReaderFullRFID */ = {
-			isa = PBXGroup;
-			children = (
-				6000CEAB800AECDCFB9E4BA54EF61543 /* Frameworks */,
-				532D5B59BADDC2446215A46BADC3494A /* Support Files */,
-			);
-			name = DocumentReaderFullRFID;
-			path = DocumentReaderFullRFID;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,9 +273,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		17657AEC2258487D518E6C48CADAE79C /* Debug */ = {
+		2E399128FDB45FF4BB5E90F1A11B3F75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15F650D35D595962E9B165FFA8FAF53C /* DocumentReader.debug.xcconfig */;
+			baseConfigurationReference = 347271B22133D8D2E7C42C2C3F0DC30D /* DocumentReader.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -287,8 +283,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		78BEF50EA7350D3FA49F7A426868E4C3 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -307,6 +304,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FEBAE39E55469AB63E99EB26CA43B67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB50D0B027EB829FC857DA24C44923EF /* DocumentReaderFullRFID.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -436,9 +447,9 @@
 			};
 			name = Debug;
 		};
-		CBD12B07C8DFCC29ED2430B55FE966D1 /* Release */ = {
+		953F4CBD7DBB03C86DE3308C22E2B3EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6EA0EB3E31FB3AB9AF87D3A01264716 /* DocumentReaderFullRFID.release.xcconfig */;
+			baseConfigurationReference = EB50D0B027EB829FC857DA24C44923EF /* DocumentReaderFullRFID.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -446,9 +457,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		DF713384250F81F02309A1B2472C07F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -471,9 +481,9 @@
 			};
 			name = Debug;
 		};
-		E8108C500FE3FB7A25A988915BAEE3F1 /* Debug */ = {
+		ED065A2A15A7A81A471866C38EF3E5DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8638CF3956B9103C4258E75A7F1365DD /* DocumentReaderFullRFID.debug.xcconfig */;
+			baseConfigurationReference = 347271B22133D8D2E7C42C2C3F0DC30D /* DocumentReader.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -484,28 +494,14 @@
 			};
 			name = Debug;
 		};
-		F23C37B72F6C561F7E1C946553FFF25B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F150FF8A0A89B953B45B6542FF76B6EC /* DocumentReader.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		3562DF8B8EC9534650AEADF237A8690D /* Build configuration list for PBXAggregateTarget "DocumentReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17657AEC2258487D518E6C48CADAE79C /* Debug */,
-				F23C37B72F6C561F7E1C946553FFF25B /* Release */,
+				ED065A2A15A7A81A471866C38EF3E5DD /* Debug */,
+				2E399128FDB45FF4BB5E90F1A11B3F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -531,8 +527,8 @@
 		B4F32756D078CB15C13DABCA74315639 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullRFID" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E8108C500FE3FB7A25A988915BAEE3F1 /* Debug */,
-				CBD12B07C8DFCC29ED2430B55FE966D1 /* Release */,
+				953F4CBD7DBB03C86DE3308C22E2B3EA /* Debug */,
+				7FEBAE39E55469AB63E99EB26CA43B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

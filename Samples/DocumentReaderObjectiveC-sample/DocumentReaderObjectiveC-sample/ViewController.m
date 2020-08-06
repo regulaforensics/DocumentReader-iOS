@@ -46,10 +46,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     
     [RGLDocReader.shared prepareDatabase:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
         self.initializationLabel.text = [NSString stringWithFormat:@"%.1f", progress.fractionCompleted * 100];
-    } completion:^(BOOL successful, NSString * _Nullable error) {
+    } completion:^(BOOL successful, NSError * _Nullable error) {
         if (successful) {
             self.initializationLabel.text = @"Initialization...";
-            [RGLDocReader.shared initializeReader:licenseData completion:^(BOOL successful, NSString * _Nullable error ) {
+            [RGLDocReader.shared initializeReader:licenseData completion:^(BOOL successful, NSError * _Nullable error ) {
                 if (successful) {
                     [self.activityIndicator stopAnimating];
                     [self.initializationLabel setHidden:YES];
@@ -84,7 +84,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 }
 
 - (IBAction)useCameraViewController:(UIButton *)sender {
-    [RGLDocReader.shared showScanner:self completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSString * _Nullable error) {
+    [RGLDocReader.shared showScanner:self completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSError * _Nullable error) {
         switch (action) {
             case RGLDocReaderActionCancel: {
                 NSLog(@"Cancelled by user");
@@ -183,7 +183,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self dismissViewControllerAnimated:YES completion:^{
 
-        [RGLDocReader.shared recognizeImage:image cameraMode:NO completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSString * _Nullable error) {
+        [RGLDocReader.shared recognizeImage:image cameraMode:NO completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
             if (action == RGLDocReaderActionComplete) {
                 if (results != nil) {
                     NSLog(@"Completed");
