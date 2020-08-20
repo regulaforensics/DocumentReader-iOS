@@ -244,9 +244,9 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh",
-				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework",
-				"${PODS_ROOT}/DocumentReaderBeta/DocumentReader.framework.dSYM",
-				"${PODS_ROOT}/DocumentReaderFullRFIDBeta/DocumentReaderCore.framework",
+				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
+				"${PODS_ROOT}/DocumentReader/DocumentReader.framework.dSYM",
+				"${PODS_ROOT}/DocumentReaderFullRFID/DocumentReaderCore.framework",
 				"${PODS_ROOT}/FaceSDKBeta/FaceSDK.framework",
 				"${PODS_ROOT}/FaceSDKBeta/FaceSDK.framework.dSYM",
 			);

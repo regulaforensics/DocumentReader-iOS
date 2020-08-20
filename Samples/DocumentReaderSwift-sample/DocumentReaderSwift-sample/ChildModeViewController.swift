@@ -56,9 +56,8 @@ class ChildModeViewController: UIViewController {
 
                 } else {
                     self.activityIndicator.stopAnimating()
-                    let licenseError = error ?? "Unknown error"
-                    self.initializationLabel.text = "Initialization error: \(licenseError)"
-                    print(licenseError)
+                    self.initializationLabel.text = "Initialization error: \(error?.localizedDescription)"
+                    print(error?.localizedDescription)
                 }
             }
           

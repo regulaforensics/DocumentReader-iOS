@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		22EA838BBD9B0F26FF45E747FD6426D3 /* DocumentReaderFullRFID */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B4F32756D078CB15C13DABCA74315639 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullRFID" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = DocumentReaderFullRFID;
+		};
 		9E7EEC1A222127A41C0AEDD587E2369D /* FaceSDKBeta */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 7321BB7279805D4C6B104098E0E22552 /* Build configuration list for PBXAggregateTarget "FaceSDKBeta" */;
@@ -16,110 +25,87 @@
 			);
 			name = FaceSDKBeta;
 		};
-		B952218F1075F1EBF809CF6684DDA419 /* DocumentReaderFullRFIDBeta */ = {
+		A66EC006F00F0BFCF640E7ACE4FEC8B1 /* DocumentReader */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 9BEE677729E8AADA1C3968491B87F2D4 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullRFIDBeta" */;
+			buildConfigurationList = 3562DF8B8EC9534650AEADF237A8690D /* Build configuration list for PBXAggregateTarget "DocumentReader" */;
 			buildPhases = (
 			);
 			dependencies = (
 			);
-			name = DocumentReaderFullRFIDBeta;
-		};
-		F279716AFA5BEC2ED1EE82D90D83509A /* DocumentReaderBeta */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = C79FBCCBE4B64AE33BC61D0DB241A407 /* Build configuration list for PBXAggregateTarget "DocumentReaderBeta" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = DocumentReaderBeta;
+			name = DocumentReader;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0F4320D5F97CF6AD42AE7CF07791B4D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		42D6708DE8FC3A987537DD802AED8B2C /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11C901D5C42FBDF3F543EE99B64AEB2D /* Pods-DocumentReaderFullSwift-sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		792E1DA915E71CCFE631D5E117003D30 /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 158BD18AA84950CD4BB26C609213A59E /* Pods-DocumentReaderFullSwift-sample-dummy.m */; };
+		0B55BB756E321F58337C3B783322D320 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		300B6851D3204B2DD2D7FB1836180FC1 /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 11C901D5C42FBDF3F543EE99B64AEB2D /* Pods-DocumentReaderFullSwift-sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB015D03DA9CF92240BB4229A18FCE23 /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 158BD18AA84950CD4BB26C609213A59E /* Pods-DocumentReaderFullSwift-sample-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		55186D3A91DB0048540EC5BEE9167D2C /* PBXContainerItemProxy */ = {
+		523EC73A4B61B81A0E509337A1A5B847 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F279716AFA5BEC2ED1EE82D90D83509A;
-			remoteInfo = DocumentReaderBeta;
+			remoteGlobalIDString = A66EC006F00F0BFCF640E7ACE4FEC8B1;
+			remoteInfo = DocumentReader;
 		};
-		9E6C9514293C2ED6B902EBE291031DF7 /* PBXContainerItemProxy */ = {
+		66831B91BD4292DAF10C170620A01996 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22EA838BBD9B0F26FF45E747FD6426D3;
+			remoteInfo = DocumentReaderFullRFID;
+		};
+		9DA4ACAD96E3B9237013B44AAB4720F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9E7EEC1A222127A41C0AEDD587E2369D;
 			remoteInfo = FaceSDKBeta;
 		};
-		D2A1C4AC3D40FDD931B9D9305F15A3D1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B952218F1075F1EBF809CF6684DDA419;
-			remoteInfo = DocumentReaderFullRFIDBeta;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		11C901D5C42FBDF3F543EE99B64AEB2D /* Pods-DocumentReaderFullSwift-sample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DocumentReaderFullSwift-sample-umbrella.h"; sourceTree = "<group>"; };
-		12C0B8914253F9C753A01CC355684026 /* DocumentReaderFullRFIDBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullRFIDBeta.debug.xcconfig; sourceTree = "<group>"; };
 		13CF65593CA07E800F996A94D57F552F /* Pods-DocumentReaderFullSwift-sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DocumentReaderFullSwift-sample-frameworks.sh"; sourceTree = "<group>"; };
 		158BD18AA84950CD4BB26C609213A59E /* Pods-DocumentReaderFullSwift-sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DocumentReaderFullSwift-sample-dummy.m"; sourceTree = "<group>"; };
-		29D182132893E01B41B16EED13E78B58 /* DocumentReaderFullRFIDBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullRFIDBeta.release.xcconfig; sourceTree = "<group>"; };
+		1B6571A817EB4E96FCAA17FD9FE167D1 /* DocumentReaderCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReaderCore.framework; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3C4C971C4BC90A24D854149911575D0C /* Pods-DocumentReaderFullSwift-sample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DocumentReaderFullSwift-sample.modulemap"; sourceTree = "<group>"; };
-		5103184D53BD829BCF920F31D6DF7437 /* DocumentReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReader.framework; sourceTree = "<group>"; };
 		535C938FF9DF578DE779E050D3739EA7 /* Pods-DocumentReaderFullSwift-sample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DocumentReaderFullSwift-sample-Info.plist"; sourceTree = "<group>"; };
 		6CC19F1E234C0725DFB935E1B8563DAA /* Pods-DocumentReaderFullSwift-sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DocumentReaderFullSwift-sample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		7F368E0A7EA768612A156E6E84C081F4 /* FaceSDKBeta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceSDKBeta.xcconfig; sourceTree = "<group>"; };
+		9AFE9F4C353799FE2E1BEAFC8F66635F /* FaceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FaceSDK.framework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A89FF0261200CD42DF7251D10021D3C6 /* FaceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FaceSDK.framework; sourceTree = "<group>"; };
-		B0CDE38E32EA95846EF0C91CCE976321 /* DocumentReaderBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderBeta.debug.xcconfig; sourceTree = "<group>"; };
 		B30931DAF7F9991FB1A6D558824B55DE /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
-		B7DF2767E7997C43F879FA9FC3572A68 /* DocumentReaderBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderBeta.release.xcconfig; sourceTree = "<group>"; };
+		BA7461F61DC89F824805D5CAEDFA0D58 /* DocumentReader.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReader.xcconfig; sourceTree = "<group>"; };
 		BF5E03406769F2996B78D616C7A5C67B /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DocumentReaderFullSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		C1D16484BC253EE388F4F550136ED636 /* DocumentReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReader.framework; sourceTree = "<group>"; };
 		C340517504FF42249543020A8BBE582D /* Pods_DocumentReaderFullSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DocumentReaderFullSwift_sample.framework; path = "Pods-DocumentReaderFullSwift-sample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5DA1DFD4FBE600314E97E469AA1619D /* Pods-DocumentReaderFullSwift-sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DocumentReaderFullSwift-sample-acknowledgements.plist"; sourceTree = "<group>"; };
-		C8BE2C7856FE81911BDBCA53330BF10D /* FaceSDKBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceSDKBeta.debug.xcconfig; sourceTree = "<group>"; };
-		D62F64414FB060351BD3C15724C4DF03 /* DocumentReaderCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentReaderCore.framework; sourceTree = "<group>"; };
-		DF7C844898CEEBE808727EB0735C7396 /* FaceSDKBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FaceSDKBeta.release.xcconfig; sourceTree = "<group>"; };
+		EF089FE60005E87DA680E5D341010C0C /* DocumentReaderFullRFID.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DocumentReaderFullRFID.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AD907507360A5E4D27CCC12DBFF033C7 /* Frameworks */ = {
+		CC6E480C45229F838CD8BE3BECF2B229 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F4320D5F97CF6AD42AE7CF07791B4D1 /* Foundation.framework in Frameworks */,
+				0B55BB756E321F58337C3B783322D320 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28BBBF1DAA0403AB1358B451EDF094CD /* DocumentReaderBeta */ = {
+		3A7BEB11A2A863314DBC983E308B1A24 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				90016BA94DEC14D608448A9B971A735E /* Frameworks */,
-				E6A8CB00657A20D9176E290EAE3392E8 /* Support Files */,
+				EF089FE60005E87DA680E5D341010C0C /* DocumentReaderFullRFID.xcconfig */,
 			);
-			name = DocumentReaderBeta;
-			path = DocumentReaderBeta;
-			sourceTree = "<group>";
-		};
-		29FE3411D1B22687A7ADD0913F07CA61 /* DocumentReaderFullRFIDBeta */ = {
-			isa = PBXGroup;
-			children = (
-				7A6D774385F35D1414FB3C57369B007A /* Frameworks */,
-				B52798BDB53E03DE07754A369E77A3D8 /* Support Files */,
-			);
-			name = DocumentReaderFullRFIDBeta;
-			path = DocumentReaderFullRFIDBeta;
+			name = "Support Files";
+			path = "../Target Support Files/DocumentReaderFullRFID";
 			sourceTree = "<group>";
 		};
 		3C9D84CFB8D9A7D7260B4DA085E5D036 /* Targets Support Files */ = {
@@ -147,48 +133,41 @@
 			path = "Target Support Files/Pods-DocumentReaderFullSwift-sample";
 			sourceTree = "<group>";
 		};
-		4B5055D8DFCA71DEEE737FCDE9D8AD7C /* Support Files */ = {
+		69949668461B3C950315AA6D05DA0F7C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8BE2C7856FE81911BDBCA53330BF10D /* FaceSDKBeta.debug.xcconfig */,
-				DF7C844898CEEBE808727EB0735C7396 /* FaceSDKBeta.release.xcconfig */,
+				7F368E0A7EA768612A156E6E84C081F4 /* FaceSDKBeta.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FaceSDKBeta";
 			sourceTree = "<group>";
 		};
-		7A6D774385F35D1414FB3C57369B007A /* Frameworks */ = {
+		7471F2E1F5206C8C0B99D18DB3EFA74C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D62F64414FB060351BD3C15724C4DF03 /* DocumentReaderCore.framework */,
+				C1D16484BC253EE388F4F550136ED636 /* DocumentReader.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		90016BA94DEC14D608448A9B971A735E /* Frameworks */ = {
+		A39FD041B9FDE0E79D32D5BEE8A2B7C1 /* DocumentReaderFullRFID */ = {
 			isa = PBXGroup;
 			children = (
-				5103184D53BD829BCF920F31D6DF7437 /* DocumentReader.framework */,
+				C0ACB06C391F7FFE678B6520F89ACF88 /* Frameworks */,
+				3A7BEB11A2A863314DBC983E308B1A24 /* Support Files */,
 			);
-			name = Frameworks;
+			name = DocumentReaderFullRFID;
+			path = DocumentReaderFullRFID;
 			sourceTree = "<group>";
 		};
-		AF9069601B7B05E44CD1311D835C1076 /* Frameworks */ = {
+		ABD54EA88A4AFD057688CB20ACDE68BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A89FF0261200CD42DF7251D10021D3C6 /* FaceSDK.framework */,
+				D019325BD22DFA8B0B8E4A86DACBDCEF /* DocumentReader */,
+				A39FD041B9FDE0E79D32D5BEE8A2B7C1 /* DocumentReaderFullRFID */,
+				F4D4D88D7BF22585624598E2AD60B8F6 /* FaceSDKBeta */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B52798BDB53E03DE07754A369E77A3D8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				12C0B8914253F9C753A01CC355684026 /* DocumentReaderFullRFIDBeta.debug.xcconfig */,
-				29D182132893E01B41B16EED13E78B58 /* DocumentReaderFullRFIDBeta.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DocumentReaderFullRFIDBeta";
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
@@ -199,15 +178,33 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C0ACB06C391F7FFE678B6520F89ACF88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B6571A817EB4E96FCAA17FD9FE167D1 /* DocumentReaderCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				DB5A6BBCEC698C498DE4402A33CB24C5 /* Pods */,
+				ABD54EA88A4AFD057688CB20ACDE68BC /* Pods */,
 				F70C9CA40B924769288B06553DAFDF23 /* Products */,
 				3C9D84CFB8D9A7D7260B4DA085E5D036 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D019325BD22DFA8B0B8E4A86DACBDCEF /* DocumentReader */ = {
+			isa = PBXGroup;
+			children = (
+				7471F2E1F5206C8C0B99D18DB3EFA74C /* Frameworks */,
+				D23586E87B582D7BAAE3F85846EAABC3 /* Support Files */,
+			);
+			name = DocumentReader;
+			path = DocumentReader;
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -218,31 +215,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DB5A6BBCEC698C498DE4402A33CB24C5 /* Pods */ = {
+		D23586E87B582D7BAAE3F85846EAABC3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				28BBBF1DAA0403AB1358B451EDF094CD /* DocumentReaderBeta */,
-				29FE3411D1B22687A7ADD0913F07CA61 /* DocumentReaderFullRFIDBeta */,
-				E8BAF9F79614CFC0E7A9806605015908 /* FaceSDKBeta */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E6A8CB00657A20D9176E290EAE3392E8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B0CDE38E32EA95846EF0C91CCE976321 /* DocumentReaderBeta.debug.xcconfig */,
-				B7DF2767E7997C43F879FA9FC3572A68 /* DocumentReaderBeta.release.xcconfig */,
+				BA7461F61DC89F824805D5CAEDFA0D58 /* DocumentReader.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/DocumentReaderBeta";
+			path = "../Target Support Files/DocumentReader";
 			sourceTree = "<group>";
 		};
-		E8BAF9F79614CFC0E7A9806605015908 /* FaceSDKBeta */ = {
+		EBD905768633EC0338C7BB997E70CE99 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF9069601B7B05E44CD1311D835C1076 /* Frameworks */,
-				4B5055D8DFCA71DEEE737FCDE9D8AD7C /* Support Files */,
+				9AFE9F4C353799FE2E1BEAFC8F66635F /* FaceSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4D4D88D7BF22585624598E2AD60B8F6 /* FaceSDKBeta */ = {
+			isa = PBXGroup;
+			children = (
+				EBD905768633EC0338C7BB997E70CE99 /* Frameworks */,
+				69949668461B3C950315AA6D05DA0F7C /* Support Files */,
 			);
 			name = FaceSDKBeta;
 			path = FaceSDKBeta;
@@ -259,11 +253,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6C26F074F6B407AD4B67C830F3672149 /* Headers */ = {
+		76E37150E5DC777F370EA261849274B1 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42D6708DE8FC3A987537DD802AED8B2C /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */,
+				300B6851D3204B2DD2D7FB1836180FC1 /* Pods-DocumentReaderFullSwift-sample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,19 +266,19 @@
 /* Begin PBXNativeTarget section */
 		C4CF118F245AD5DDB9F31C3D9B4B71CC /* Pods-DocumentReaderFullSwift-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C253183E5375CDB432E9918CA8D8ED71 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */;
+			buildConfigurationList = 41A08C4C14FBF249F8DE51BCEF3BA971 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */;
 			buildPhases = (
-				6C26F074F6B407AD4B67C830F3672149 /* Headers */,
-				342608BAF427F3DF18FAD068E8E41A40 /* Sources */,
-				AD907507360A5E4D27CCC12DBFF033C7 /* Frameworks */,
-				C852F0F2AA00C90E17AC73B86164BA40 /* Resources */,
+				76E37150E5DC777F370EA261849274B1 /* Headers */,
+				95869501865F58CA0AE0BEAE1E475F28 /* Sources */,
+				CC6E480C45229F838CD8BE3BECF2B229 /* Frameworks */,
+				CAE5B6674F2993002D194E3FBB88B522 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5398F413C11B13F36C48F814342E089B /* PBXTargetDependency */,
-				8CDC04DE229B0FE0EA01CE3A12AAEB49 /* PBXTargetDependency */,
-				9047C4A7CC9052C374BC79D834B91792 /* PBXTargetDependency */,
+				E03B2D9B053E0ECE8886C00E7FC20162 /* PBXTargetDependency */,
+				D7B48C2337DEC491E46858433057EABE /* PBXTargetDependency */,
+				8091780836A7833D81318277D588EE30 /* PBXTargetDependency */,
 			);
 			name = "Pods-DocumentReaderFullSwift-sample";
 			productName = "Pods-DocumentReaderFullSwift-sample";
@@ -313,8 +307,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F279716AFA5BEC2ED1EE82D90D83509A /* DocumentReaderBeta */,
-				B952218F1075F1EBF809CF6684DDA419 /* DocumentReaderFullRFIDBeta */,
+				A66EC006F00F0BFCF640E7ACE4FEC8B1 /* DocumentReader */,
+				22EA838BBD9B0F26FF45E747FD6426D3 /* DocumentReaderFullRFID */,
 				9E7EEC1A222127A41C0AEDD587E2369D /* FaceSDKBeta */,
 				C4CF118F245AD5DDB9F31C3D9B4B71CC /* Pods-DocumentReaderFullSwift-sample */,
 			);
@@ -322,7 +316,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C852F0F2AA00C90E17AC73B86164BA40 /* Resources */ = {
+		CAE5B6674F2993002D194E3FBB88B522 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,41 +326,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		342608BAF427F3DF18FAD068E8E41A40 /* Sources */ = {
+		95869501865F58CA0AE0BEAE1E475F28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				792E1DA915E71CCFE631D5E117003D30 /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */,
+				CB015D03DA9CF92240BB4229A18FCE23 /* Pods-DocumentReaderFullSwift-sample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5398F413C11B13F36C48F814342E089B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DocumentReaderBeta;
-			target = F279716AFA5BEC2ED1EE82D90D83509A /* DocumentReaderBeta */;
-			targetProxy = 55186D3A91DB0048540EC5BEE9167D2C /* PBXContainerItemProxy */;
-		};
-		8CDC04DE229B0FE0EA01CE3A12AAEB49 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DocumentReaderFullRFIDBeta;
-			target = B952218F1075F1EBF809CF6684DDA419 /* DocumentReaderFullRFIDBeta */;
-			targetProxy = D2A1C4AC3D40FDD931B9D9305F15A3D1 /* PBXContainerItemProxy */;
-		};
-		9047C4A7CC9052C374BC79D834B91792 /* PBXTargetDependency */ = {
+		8091780836A7833D81318277D588EE30 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FaceSDKBeta;
 			target = 9E7EEC1A222127A41C0AEDD587E2369D /* FaceSDKBeta */;
-			targetProxy = 9E6C9514293C2ED6B902EBE291031DF7 /* PBXContainerItemProxy */;
+			targetProxy = 9DA4ACAD96E3B9237013B44AAB4720F4 /* PBXContainerItemProxy */;
+		};
+		D7B48C2337DEC491E46858433057EABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DocumentReaderFullRFID;
+			target = 22EA838BBD9B0F26FF45E747FD6426D3 /* DocumentReaderFullRFID */;
+			targetProxy = 66831B91BD4292DAF10C170620A01996 /* PBXContainerItemProxy */;
+		};
+		E03B2D9B053E0ECE8886C00E7FC20162 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DocumentReader;
+			target = A66EC006F00F0BFCF640E7ACE4FEC8B1 /* DocumentReader */;
+			targetProxy = 523EC73A4B61B81A0E509337A1A5B847 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0C056989D93515C7672C7033301F285D /* Debug */ = {
+		18E2B9029D78766725D1294A7F96D25D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12C0B8914253F9C753A01CC355684026 /* DocumentReaderFullRFIDBeta.debug.xcconfig */;
+			baseConfigurationReference = 7F368E0A7EA768612A156E6E84C081F4 /* FaceSDKBeta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -377,9 +371,9 @@
 			};
 			name = Debug;
 		};
-		0C14639F7D9DC69F5A96D0AF80D36C16 /* Release */ = {
+		24BC40D3C38642BD06424A5646A2FCFE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7DF2767E7997C43F879FA9FC3572A68 /* DocumentReaderBeta.release.xcconfig */;
+			baseConfigurationReference = 7F368E0A7EA768612A156E6E84C081F4 /* FaceSDKBeta.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -391,9 +385,9 @@
 			};
 			name = Release;
 		};
-		2503E04344B306411FA543239AE8C89E /* Release */ = {
+		2E399128FDB45FF4BB5E90F1A11B3F75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29D182132893E01B41B16EED13E78B58 /* DocumentReaderFullRFIDBeta.release.xcconfig */;
+			baseConfigurationReference = BA7461F61DC89F824805D5CAEDFA0D58 /* DocumentReader.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -405,22 +399,9 @@
 			};
 			name = Release;
 		};
-		6F3534933966870B0606FED9BAB58237 /* Debug */ = {
+		7FEBAE39E55469AB63E99EB26CA43B67 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0CDE38E32EA95846EF0C91CCE976321 /* DocumentReaderBeta.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		85F0EE4C753C9F34A380912E6C01FBF1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF7C844898CEEBE808727EB0735C7396 /* FaceSDKBeta.release.xcconfig */;
+			baseConfigurationReference = EF089FE60005E87DA680E5D341010C0C /* DocumentReaderFullRFID.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -492,6 +473,39 @@
 			};
 			name = Release;
 		};
+		904DD7E2D3E3F45AC1C58256A585D198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF5E03406769F2996B78D616C7A5C67B /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		916E0404255105F480DC4950B7625F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -556,7 +570,33 @@
 			};
 			name = Debug;
 		};
-		AE2FBC5DE9F456AE5EA9E047DB6731B0 /* Release */ = {
+		953F4CBD7DBB03C86DE3308C22E2B3EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF089FE60005E87DA680E5D341010C0C /* DocumentReaderFullRFID.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED065A2A15A7A81A471866C38EF3E5DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA7461F61DC89F824805D5CAEDFA0D58 /* DocumentReader.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED3EB7C92FB3DC2F57E96A55838897D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B30931DAF7F9991FB1A6D558824B55DE /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */;
 			buildSettings = {
@@ -590,55 +630,27 @@
 			};
 			name = Release;
 		};
-		BF5EDC2D15D88F3A033BADCA4AB02C72 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF5E03406769F2996B78D616C7A5C67B /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C6B718A8FBEF993844A8AC3AF06A55C1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8BE2C7856FE81911BDBCA53330BF10D /* FaceSDKBeta.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3562DF8B8EC9534650AEADF237A8690D /* Build configuration list for PBXAggregateTarget "DocumentReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED065A2A15A7A81A471866C38EF3E5DD /* Debug */,
+				2E399128FDB45FF4BB5E90F1A11B3F75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41A08C4C14FBF249F8DE51BCEF3BA971 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				904DD7E2D3E3F45AC1C58256A585D198 /* Debug */,
+				ED3EB7C92FB3DC2F57E96A55838897D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -651,35 +663,17 @@
 		7321BB7279805D4C6B104098E0E22552 /* Build configuration list for PBXAggregateTarget "FaceSDKBeta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6B718A8FBEF993844A8AC3AF06A55C1 /* Debug */,
-				85F0EE4C753C9F34A380912E6C01FBF1 /* Release */,
+				18E2B9029D78766725D1294A7F96D25D /* Debug */,
+				24BC40D3C38642BD06424A5646A2FCFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9BEE677729E8AADA1C3968491B87F2D4 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullRFIDBeta" */ = {
+		B4F32756D078CB15C13DABCA74315639 /* Build configuration list for PBXAggregateTarget "DocumentReaderFullRFID" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C056989D93515C7672C7033301F285D /* Debug */,
-				2503E04344B306411FA543239AE8C89E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C253183E5375CDB432E9918CA8D8ED71 /* Build configuration list for PBXNativeTarget "Pods-DocumentReaderFullSwift-sample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF5EDC2D15D88F3A033BADCA4AB02C72 /* Debug */,
-				AE2FBC5DE9F456AE5EA9E047DB6731B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C79FBCCBE4B64AE33BC61D0DB241A407 /* Build configuration list for PBXAggregateTarget "DocumentReaderBeta" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6F3534933966870B0606FED9BAB58237 /* Debug */,
-				0C14639F7D9DC69F5A96D0AF80D36C16 /* Release */,
+				953F4CBD7DBB03C86DE3308C22E2B3EA /* Debug */,
+				7FEBAE39E55469AB63E99EB26CA43B67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

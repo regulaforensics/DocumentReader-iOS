@@ -68,9 +68,8 @@ class FaceVerificationViewController: UIViewController {
                             }
                         } else {
                             self.activityIndicator.stopAnimating()
-                            let licenseError = error ?? "Unknown error"
-                            self.initializationLabel.text = "Initialization error: \(licenseError)"
-                            print(licenseError)
+                            self.initializationLabel.text = "Initialization error: \(error?.localizedDescription)"
+                            print(error)
                         }
                     }
                 }
@@ -121,6 +120,8 @@ class FaceVerificationViewController: UIViewController {
     }
 
     func startFaceComparison(results: DocumentReaderResults?) {
+        RGLFaceSDK.service.serviceURL = "https://faceapi.regulaforensics.com"
+        
         RGLFaceSDK.service.presentFaceCaptureViewController(from: self, animated: true, onCapture: { (image) in
             if (image != nil) {
                 let portrait = results?.getGraphicFieldImageByType(fieldType: .gf_Portrait)
@@ -141,7 +142,7 @@ class FaceVerificationViewController: UIViewController {
                 }
                             
                 if matchRequestImages.count > 1 {
-                    let request = RGLMatchFacesRequest(images: matchRequestImages, similarityThreshold: 0)
+                    let request = RGLMatchFacesRequest(images: matchRequestImages, similarityThreshold: 0, customMetadata: nil)
                     RGLFaceSDK.service.matchFaces(request, completion: { (response: RGLMatchFacesResponse?, error: Error?) in
                         if let response = response {
                             for face in request.images {

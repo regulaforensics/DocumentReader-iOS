@@ -1,24 +1,24 @@
 PODS:
-  - DocumentReaderBeta (5.1.1087)
-  - DocumentReaderFullRFIDBeta (5.1.2314)
-  - FaceSDKBeta (5.1.33)
+  - DocumentReader (5.2.1315)
+  - DocumentReaderFullRFID (5.2.3112)
+  - FaceSDKBeta (5.2.50)
 
 DEPENDENCIES:
-  - DocumentReaderBeta (= 5.1.1087)
-  - DocumentReaderFullRFIDBeta (= 5.1.2314)
-  - FaceSDKBeta (= 5.1.33)
+  - DocumentReader
+  - DocumentReaderFullRFID
+  - FaceSDKBeta (= 5.2.50)
 
 SPEC REPOS:
   trunk:
-    - DocumentReaderBeta
-    - DocumentReaderFullRFIDBeta
+    - DocumentReader
+    - DocumentReaderFullRFID
     - FaceSDKBeta
 
 SPEC CHECKSUMS:
-  DocumentReaderBeta: 734d65f5a2efe6fa511bc631c0e28c492b985ca7
-  DocumentReaderFullRFIDBeta: 1497b66ecf5016c75672b8efe7410ca69642cbb8
-  FaceSDKBeta: 75ffe89af2ea84031cf36695085fb559771a7f01
+  DocumentReader: 4bf46e4fd4e15bccb835d0defdecb2efd8fcf27c
+  DocumentReaderFullRFID: 290d29a6f80976b393bdca0ae68e3cca401da5d8
+  FaceSDKBeta: c3d61f114af30d6815973aa68903fd139c811738
 
-PODFILE CHECKSUM: c47c0c07cd0f0c06976938f91ecf2f457f856ed3
+PODFILE CHECKSUM: 4ffc3590bac713270961f0dfe8d1b337cffcd41a
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.8.4
