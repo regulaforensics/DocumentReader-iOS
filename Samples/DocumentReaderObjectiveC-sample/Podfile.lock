@@ -1,6 +1,6 @@
 PODS:
-  - DocumentReader (5.2.1315)
-  - DocumentReaderFullRFID (5.2.3112)
+  - DocumentReader (5.3.1509)
+  - DocumentReaderFullRFID (5.3.3493)
 
 DEPENDENCIES:
   - DocumentReader
@@ -12,8 +12,8 @@ SPEC REPOS:
     - DocumentReaderFullRFID
 
 SPEC CHECKSUMS:
-  DocumentReader: 4bf46e4fd4e15bccb835d0defdecb2efd8fcf27c
-  DocumentReaderFullRFID: 290d29a6f80976b393bdca0ae68e3cca401da5d8
+  DocumentReader: b2d1dcc1a81f93e3f0c5ce8ec25fe10c1ee3ebee
+  DocumentReaderFullRFID: 79a6b0b6e154f44ad00727719d48e634a6c4fcd4
 
 PODFILE CHECKSUM: aedfba8b9622aba4d7cef142bfff825294d12478
 
