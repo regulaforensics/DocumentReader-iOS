@@ -1,24 +1,24 @@
 PODS:
   - BTDeviceBeta (5.0.52)
-  - DocumentReaderBeta (5.0.687)
-  - DocumentReaderFullAuthRFIDBeta (5.0.1233)
+  - DocumentReaderBeta (5.2.1402)
+  - DocumentReaderFullAuthRFIDBeta (5.2.3295)
 
 DEPENDENCIES:
-  - BTDeviceBeta (~> 5.0.52)
-  - DocumentReaderBeta (~> 5.0.687)
-  - DocumentReaderFullAuthRFIDBeta
+  - BTDeviceBeta (= 5.0.52)
+  - DocumentReaderBeta (= 5.2.1402)
+  - DocumentReaderFullAuthRFIDBeta (= 5.2.3295)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - BTDeviceBeta
     - DocumentReaderBeta
     - DocumentReaderFullAuthRFIDBeta
 
 SPEC CHECKSUMS:
   BTDeviceBeta: d4d55536d0da1314bb2b7da9c9e7573fa2fa4f4a
-  DocumentReaderBeta: 84b4fa27e4254b6078b9634b9965e5d61f40172a
-  DocumentReaderFullAuthRFIDBeta: 70408ae22dba84a47d8d3d0aaf30b22669c97c81
+  DocumentReaderBeta: 6e13acbb8a901f904589e6f8d3e89829777b51bb
+  DocumentReaderFullAuthRFIDBeta: 8cbdcec01b7140ccf6aca0b60603984b9ab5e763
 
-PODFILE CHECKSUM: 63d66b7b9547a36cd58d580835c37799e7796ea3
+PODFILE CHECKSUM: 78828484cb9c4c12edac0aa48f4a5290511ce0aa
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.9.1
