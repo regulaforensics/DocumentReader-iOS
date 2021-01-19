@@ -175,6 +175,8 @@ class DefaultModeViewController: UIViewController {
                 print("PHPhotoLibrary status: notDetermined")
             case .restricted:
                 print("PHPhotoLibrary status: restricted")
+            case .limited:
+                print("PHPhotoLibrary status: limited")
             }
         }
     }
