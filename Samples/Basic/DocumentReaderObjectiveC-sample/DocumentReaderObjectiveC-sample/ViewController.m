@@ -129,10 +129,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
         switch (status) {
             case PHAuthorizationStatusAuthorized: {
                 if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
-                    self.imagePicker.delegate = self;
-                    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-                    self.imagePicker.allowsEditing = NO;
                     dispatch_async(dispatch_get_main_queue(), ^{
+                        self.imagePicker.delegate = self;
+                        self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                        self.imagePicker.allowsEditing = NO;
                         self.imagePicker.navigationBar.tintColor = [UIColor blackColor];
                         [self presentViewController:self.imagePicker animated:YES completion:nil];
                     });
