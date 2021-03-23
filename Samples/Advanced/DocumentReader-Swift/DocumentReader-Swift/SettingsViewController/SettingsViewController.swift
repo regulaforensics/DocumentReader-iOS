@@ -247,7 +247,17 @@ class SettingsViewController: UIViewController {
         } state: {
             DocReader.shared.processParams.perspectiveAngle
         }
-        let detectionGroup = SettingsGroup(title: "Detection", items: [focusingCheck, perspectiveAngle])
+        let motionDetection = SettingsBoolItem(title: "Motion detection") { enabled in
+            ApplicationSettings.shared.functionality.videoCaptureMotionControl = enabled
+        } state: {
+            ApplicationSettings.shared.functionality.videoCaptureMotionControl
+        }
+        let focusingDetection = SettingsBoolItem(title: "Focusing detection") { enabled in
+            ApplicationSettings.shared.functionality.skipFocusingFrames = enabled
+        } state: {
+            ApplicationSettings.shared.functionality.skipFocusingFrames
+        }
+        let detectionGroup = SettingsGroup(title: "Detection", items: [focusingCheck, perspectiveAngle, motionDetection, focusingDetection])
         apiGroups.append(detectionGroup)
         
         // 11. Output images
@@ -284,21 +294,7 @@ class SettingsViewController: UIViewController {
         let customParamsGroup = SettingsGroup(title: "Custom params", items: [customParams])
         apiGroups.append(customParamsGroup)
         
-        // 13. Detection
-        let motionDetection = SettingsBoolItem(title: "Motion detection") { enabled in
-            ApplicationSettings.shared.functionality.videoCaptureMotionControl = enabled
-        } state: {
-            ApplicationSettings.shared.functionality.videoCaptureMotionControl
-        }
-        let focusingDetection = SettingsBoolItem(title: "Focusing detection") { enabled in
-            ApplicationSettings.shared.functionality.skipFocusingFrames = enabled
-        } state: {
-            ApplicationSettings.shared.functionality.skipFocusingFrames
-        }
-        let funcDetectionGroup = SettingsGroup(title: "Detection", items: [motionDetection, focusingDetection])
-        apiGroups.append(funcDetectionGroup)
-        
-        // 14. Scanning mode
+        // 13. Scanning mode
         let captureMode = SettingsActionItem(title: "Capture mode") { [weak self] in
             guard let self = self else { return }
             self.showCaptureModeList { self.tableView.reloadData() }
@@ -309,7 +305,7 @@ class SettingsViewController: UIViewController {
         let scanningModeGroup = SettingsGroup(title: "Scanning mode", items: [captureMode])
         apiGroups.append(scanningModeGroup)
         
-        // 15. Video settings
+        // 14. Video settings
         let adjustZoom = SettingsBoolItem(title: "Adjust zoom level") { enabled in
             ApplicationSettings.shared.functionality.isZoomEnabled = enabled
         } state: {
@@ -323,7 +319,7 @@ class SettingsViewController: UIViewController {
         let videoSettingsGroup = SettingsGroup(title: "Video settings", items: [adjustZoom, zoomFactor])
         apiGroups.append(videoSettingsGroup)
         
-        // 16. Capture device position
+        // 15. Capture device position
         let cameraPosition = SettingsActionItem(title: "Camera position") { [weak self] in
             guard let self = self else { return }
             self.showCameraPositionList { self.tableView.reloadData() }
@@ -334,7 +330,7 @@ class SettingsViewController: UIViewController {
         let cameraPositionGroup = SettingsGroup(title: "Capture device position", items: [cameraPosition])
         apiGroups.append(cameraPositionGroup)
         
-        // 17. Extra info
+        // 16. Extra info
         let showMetadata = SettingsBoolItem(title: "Show metadata") { enabled in
             ApplicationSettings.shared.functionality.showMetadataInfo = enabled
         } state: {
@@ -343,7 +339,7 @@ class SettingsViewController: UIViewController {
         let extraInfoGroup = SettingsGroup(title: "Extra info", items: [showMetadata])
         apiGroups.append(extraInfoGroup)
         
-        // 18. Camera frame
+        // 17. Camera frame
         let cameraFrame = SettingsActionItem(title: "Frame type") { [weak self] in
             guard let self = self else { return }
             self.showCameraFrameList { self.tableView.reloadData() }
