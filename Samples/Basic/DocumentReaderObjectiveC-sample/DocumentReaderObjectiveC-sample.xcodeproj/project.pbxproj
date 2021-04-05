@@ -271,13 +271,11 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullObjectiveC-sample/Pods-DocumentReaderFullObjectiveC-sample-frameworks.sh",
 				"${PODS_ROOT}/DocumentReader/DocumentReader.framework",
-				"${PODS_ROOT}/DocumentReader/DocumentReader.framework.dSYM",
 				"${PODS_ROOT}/DocumentReaderFullRFID/DocumentReaderCore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReader.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/DocumentReader.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DocumentReaderCore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
