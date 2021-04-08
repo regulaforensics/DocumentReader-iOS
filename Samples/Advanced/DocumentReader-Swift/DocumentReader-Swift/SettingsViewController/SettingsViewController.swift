@@ -59,7 +59,7 @@ class SettingsViewController: UIViewController {
             DocReader.shared.processParams.scenario = scenario?.identifier
             let defaultFunctionality = Functionality()
             ApplicationSettings.shared.functionality = defaultFunctionality
-            
+            DocReader.shared.functionality = defaultFunctionality
         default:
             break
         }
@@ -95,6 +95,45 @@ class SettingsViewController: UIViewController {
     }
     
     private func initAPISettings() {
+        // 1. Buttons
+        let torchButton = SettingsBoolItem(title: "Torch button") { enabled in
+            DocReader.shared.functionality.showTorchButton = enabled
+        } state: {
+            DocReader.shared.functionality.showTorchButton
+        }
+        let cameraSwitchButton = SettingsBoolItem(title: "Camera Switch button") { enabled in
+            DocReader.shared.functionality.showCameraSwitchButton = enabled
+        } state: {
+            DocReader.shared.functionality.showCameraSwitchButton
+        }
+        let captureButton = SettingsBoolItem(title: "Capture button") { enabled in
+            DocReader.shared.functionality.showCaptureButton = enabled
+        } state: {
+            DocReader.shared.functionality.showCaptureButton
+        }
+        let delayFromStart = SettingsIntItem(title: "Capture button delay (from start)", format: "%d sec") { value in
+            DocReader.shared.functionality.showCaptureButtonDelayFromStart = TimeInterval(value)
+        } state: {
+            Int(DocReader.shared.functionality.showCaptureButtonDelayFromStart)
+        }
+        let delayFromDetect = SettingsIntItem(title: "Capture button delay (from detect)", format: "%d sec") { value in
+            DocReader.shared.functionality.showCaptureButtonDelayFromDetect = TimeInterval(value)
+        } state: {
+            Int(DocReader.shared.functionality.showCaptureButtonDelayFromDetect)
+        }
+        let changeFrameButton = SettingsBoolItem(title: "Change Frame button") { enabled in
+            DocReader.shared.functionality.showChangeFrameButton = enabled
+        } state: {
+            DocReader.shared.functionality.showChangeFrameButton
+        }
+        let closeButton = SettingsBoolItem(title: "Close button") { enabled in
+            DocReader.shared.functionality.showCloseButton = enabled
+        } state: {
+            DocReader.shared.functionality.showCloseButton
+        }
+        let buttonsGroup = SettingsGroup(title: "Buttons", items: [torchButton, cameraSwitchButton, captureButton, delayFromStart, delayFromDetect, changeFrameButton, closeButton])
+        apiGroups.append(buttonsGroup)
+        
         // 2. Document processing
         let multipageProcessing = SettingsBoolItem(title: "Multipage processing") { enabled in
             DocReader.shared.processParams.multipageProcessing = enabled
