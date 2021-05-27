@@ -92,6 +92,15 @@ class SettingsViewController: UIViewController {
         }
         let rfidGroup = SettingsGroup(title: "RFID", items: [readRfid, customRfid])
         applicationGroups.append(rfidGroup)
+        
+        // 2. Data encryption
+        let dataEncryption = SettingsBoolItem(title: "Data encryption") { enabled in
+            ApplicationSettings.shared.isDataEncryptionEnabled = enabled
+        } state: {
+            ApplicationSettings.shared.isDataEncryptionEnabled
+        }
+        let securityGroup = SettingsGroup(title: "Security", items: [dataEncryption])
+        applicationGroups.append(securityGroup)
     }
     
     private func initAPISettings() {

@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
     
     var imagePicker = UIImagePickerController()
     private var sectionsData: [CustomizationSection] = []
+    private var pickerImages: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,18 +57,29 @@ class MainViewController: UIViewController {
             DocReader.shared.functionality = ApplicationSettings.shared.functionality
         }
         defaultScanner.resetFunctionality = false
-        let stillImage = CustomizationItem("Gallery (recognizeImage)")
+        let stillImage = CustomizationItem("Gallery (recognizeImages)")
         stillImage.actionType = .gallery
         let defaultSection = CustomizationSection("Default", [defaultScanner, stillImage])
         sectionsData.append(defaultSection)
         
-        // 2. Child mode
+        // 2. Custom modes
         let childModeScanner = CustomizationItem("Child mode") { [weak self] in
             guard let self = self else { return }
             self.showAsChildViewController()
         }
         childModeScanner.actionType = .custom
-        let childModeSection = CustomizationSection("Custom", [childModeScanner])
+        let manualMultipageMode = CustomizationItem("Manual multipage mode") { [weak self] in
+            guard let self = self else { return }
+            // Set default copy of functionality
+            DocReader.shared.functionality = ApplicationSettings.shared.functionality
+            // Manual multipage mode
+            DocReader.shared.functionality.manualMultipageMode = true
+            DocReader.shared.startNewSession()
+            self.showScannerForManualMultipage()
+        }
+        manualMultipageMode.resetFunctionality = false
+        manualMultipageMode.actionType = .custom
+        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode])
         sectionsData.append(childModeSection)
         
         // 3. Custom camera frame
@@ -285,6 +297,36 @@ class MainViewController: UIViewController {
         }
     }
     
+    private func showScannerForManualMultipage() {
+        DocReader.shared.showScanner(self) { [weak self] (action, result, error) in
+            guard let self = self else { return }
+            switch action {
+            case .cancel:
+                print("Cancelled by user")
+            case .complete:
+                guard let results = result else {
+                    return
+                }
+                if results.morePagesAvailable != 0 {
+                    // Scan next page in manual mode
+                    DocReader.shared.startNewPage()
+                    self.showScannerForManualMultipage()
+                } else if !results.isResultsEmpty() {
+                    self.showResultScreen(results)
+                }
+            case .error:
+                print("Error")
+                guard let error = error else { return }
+                print("Error string: \(error)")
+            case .process:
+                guard let result = result else { return }
+                print("Scaning not finished. Result: \(result)")
+            default:
+                break
+            }
+        }
+    }
+    
     private func showAsChildViewController() {
         let mainStoryboard = UIStoryboard(name: kMainStoryboardId, bundle: nil)
         guard let childViewController = mainStoryboard.instantiateViewController(withIdentifier: kChildViewController) as? ChildViewController else {
@@ -318,12 +360,12 @@ class MainViewController: UIViewController {
                 guard let self = self else { return }
                 switch action {
                 case .complete:
-                    guard let results = results, !results.isResultsEmpty() else {
+                    guard let results = results else {
                         return
                     }
                     self.showResultScreen(results)
                 case .cancel:
-                    guard let results = opticalResults, !results.isResultsEmpty() else {
+                    guard let results = opticalResults else {
                         return
                     }
                     self.showResultScreen(results)
@@ -337,12 +379,33 @@ class MainViewController: UIViewController {
     }
     
     private func showResultScreen(_ results: DocumentReaderResults) {
+        if ApplicationSettings.shared.isDataEncryptionEnabled {
+            statusLabel.text = "Decrypting data..."
+            activityIndicator.startAnimating()
+            loaderContainer.isHidden = false
+            processEncryptedResults(results) { decryptedResult in
+                DispatchQueue.main.async {
+                    self.loaderContainer.isHidden = true
+                    
+                    guard let results = decryptedResult else {
+                        print("Can't decrypt result")
+                        return
+                    }
+                    self.presentResults(results)
+                }
+            }
+        } else {
+            presentResults(results)
+        }
+    }
+    
+    private func presentResults(_ results: DocumentReaderResults) {
         let mainStoryboard = UIStoryboard(name: kMainStoryboardId, bundle: nil)
         guard let resultsViewController = mainStoryboard.instantiateViewController(withIdentifier: kResultsViewControllerId) as? ResultsViewController else {
             return
         }
         resultsViewController.results = results
-        self.navigationController?.pushViewController(resultsViewController, animated: true)
+        navigationController?.pushViewController(resultsViewController, animated: true)
     }
     
     private func showSettingsScreen() {
@@ -350,7 +413,7 @@ class MainViewController: UIViewController {
         guard let settingsViewController = mainStoryboard.instantiateViewController(withIdentifier: kSettingsViewControllerId) as? SettingsViewController else {
             return
         }
-        self.navigationController?.pushViewController(settingsViewController, animated: true)
+        navigationController?.pushViewController(settingsViewController, animated: true)
     }
     
     private func showHelpPopup() {
@@ -417,6 +480,7 @@ class MainViewController: UIViewController {
             case .authorized:
                 if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
                     DispatchQueue.main.async {
+                        self.pickerImages.removeAll()
                         self.imagePicker.delegate = self
                         self.imagePicker.sourceType = .photoLibrary;
                         self.imagePicker.allowsEditing = false
@@ -449,6 +513,69 @@ class MainViewController: UIViewController {
                 return
             }
         }
+    }
+  
+    // MARK: - Encrypted processing
+    private func processEncryptedResults(_ encrypted: DocumentReaderResults, completion: ((DocumentReaderResults?) -> (Void))?) {
+        let json = encrypted.rawResult
+        
+        let data = Data(json.utf8)
+
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                guard let containers = json["ContainerList"] as? [String: Any] else {
+                    completion?(nil)
+                    return
+                }
+                guard let list = containers["List"] as? [[String: Any]] else {
+                    completion?(nil)
+                    return
+                }
+                
+                let processParam:[String: Any] = [
+                    "scenario": RGL_SCENARIO_FULL_PROCESS,
+                    "alreadyCropped": true
+                ]
+                let params:[String: Any] = [
+                    "List": list,
+                    "processParam": processParam
+                ]
+                
+                guard let jsonData = try? JSONSerialization.data(withJSONObject: params, options: []) else {
+                    completion?(nil)
+                    return
+                }
+                sendDecryptionRequest(jsonData) { result in
+                    completion?(result)
+                }
+            }
+        } catch let error as NSError {
+            print("Failed to load: \(error.localizedDescription)")
+        }
+    }
+    
+    private func sendDecryptionRequest(_ jsonData: Data, _ completion: ((DocumentReaderResults?) -> (Void))? ) {
+        guard let url = URL(string: "https://test-api.regulaforensics.com/api/process") else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+            guard let jsonData = data else {
+                completion?(nil)
+                return
+            }
+            
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            let decryptedResult = DocumentReaderResults.initWithRawString(jsonString)
+            
+            completion?(decryptedResult)
+        })
+
+        task.resume()
     }
     
     // MARK: - RFID additions
@@ -590,20 +717,33 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
         guard let image = info[.originalImage] as? UIImage else {
             return
         }
-        DocReader.shared.recognizeImage(image, completion: { [weak self] (action, results, error) in
-            guard let self = self else { return }
-            if action == .complete {
-                guard let results = results else {
-                    print("Completed without result")
-                    return
+        pickerImages.append(image)
+        
+        let alert = UIAlertController(title: nil, message: "One more image?",
+                                      preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "Yes", style: .default) { _ in
+            self.present(self.imagePicker, animated: true, completion: nil)
+        }
+        let recognizeAction = UIAlertAction(title: "No", style: .default) { _ in
+            DocReader.shared.recognizeImages(self.pickerImages, completion: { [weak self] (action, results, error) in
+                guard let self = self else { return }
+                if action == .complete {
+                    guard let results = results else {
+                        print("Completed without result")
+                        return
+                    }
+                    self.showResultScreen(results)
+                } else if action == .error {
+                    print("Error")
+                    guard let error = error else { return }
+                    print("Error: \(error)")
                 }
-                self.showResultScreen(results)
-            } else if action == .error {
-                print("Error")
-                guard let error = error else { return }
-                print("Error: \(error)")
-            }
-        })
+            })
+        }
+
+        alert.addAction(addAction)
+        alert.addAction(recognizeAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 

@@ -22,6 +22,11 @@
 	<true/>
 	<key>NFCReaderUsageDescription</key>
 	<string>NFC tag to read NDEF messages</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>To use the Regula devices</string>
 	<key>NSCameraUsageDescription</key>

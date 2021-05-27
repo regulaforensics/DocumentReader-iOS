@@ -317,6 +317,7 @@ extension ResultsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let selected = pickerView.selectedRow(inComponent: 0)
+        guard sectionsData.count > 0 else { return nil }
         return sectionsData[selected].type
     }
     
@@ -326,6 +327,7 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let selected = pickerView.selectedRow(inComponent: 0)
+        guard sectionsData.count > 0 else { return 0 }
         return sectionsData[selected].items.count
     }
     
@@ -400,6 +402,8 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard sectionsData.count > 0 else { return nil }
+        
         let selected = pickerView.selectedRow(inComponent: 0)
         let title = sectionsData[selected].type
         var hasButton = title.contains(".mrz") || title.contains(".visual") || title.contains(".barCodes") || title.contains("Data Groups") || title.contains("Data Status")

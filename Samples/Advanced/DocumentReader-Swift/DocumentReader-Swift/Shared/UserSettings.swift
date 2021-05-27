@@ -13,6 +13,7 @@ import DocumentReader
 class ApplicationSettings {
     static var shared: ApplicationSettings = ApplicationSettings()
     
+    var isDataEncryptionEnabled: Bool = false
     var isRfidEnabled: Bool = false
     var useCustomRfidController: Bool = false
     
