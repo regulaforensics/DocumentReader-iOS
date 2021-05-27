@@ -555,7 +555,7 @@ class MainViewController: UIViewController {
     }
     
     private func sendDecryptionRequest(_ jsonData: Data, _ completion: ((DocumentReaderResults?) -> (Void))? ) {
-        guard let url = URL(string: "https://test-api.regulaforensics.com/api/process") else { return }
+        guard let url = URL(string: "https://api.regulaforensics.com/api/process") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
