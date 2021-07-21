@@ -103,6 +103,8 @@ class ViewController: UIViewController {
                 print("Scaning not finished. Result: \(result)")
             case .morePagesAvailable:
                 print("This status couldn't be here, it uses for -recognizeImage function")
+            case .processWhiteFlashLight:
+                print("Flash light")
             }
         }
     }
