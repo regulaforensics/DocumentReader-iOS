@@ -15,6 +15,10 @@ typealias IntClosure = ((Int) -> (Void))
 typealias IntReturnClosure = (() -> (Int))
 typealias StringReturnClosure = (() -> (String))
 typealias DocumentReaderResultsClosure = ((DocumentReaderResults) -> (Void))
+typealias OptionalBoolClosure = ((Bool?) -> (Void))
+typealias OptionalIntClosure = ((Int?) -> (Void))
+typealias NSNumberArrayClosure = (([NSNumber]?) -> (Void))
+typealias OptionalFloatClosure = ((Float?) -> (Void))
 
 // MARK: - Main screen
 enum CustomizationAction {
