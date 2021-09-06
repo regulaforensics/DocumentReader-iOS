@@ -419,7 +419,7 @@ class SettingsViewController: UIViewController {
         let generateDoublePageSpreadImage = SettingsActionItem(title: "Generate Double Page Spread Image") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.generateDoublePageSpreadImage) { value in
-                DocReader.shared.processParams.generateDoublePageSpreadImage = value as NSNumber?
+                DocReader.shared.processParams.generateDoublePageSpreadImage = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -430,7 +430,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showIntegerValueController(title: "Image Dpi Out Max", initalValue: String(DocReader.shared.processParams.imageDpiOutMax?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.imageDpiOutMax = value as NSNumber?
+                DocReader.shared.processParams.imageDpiOutMax = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -439,7 +439,7 @@ class SettingsViewController: UIViewController {
         let alreadyCropped = SettingsActionItem(title: "Already Cropped") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.alreadyCropped) { value in
-                DocReader.shared.processParams.alreadyCropped = value as NSNumber?
+                DocReader.shared.processParams.alreadyCropped = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -450,7 +450,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showIntegerValueController(title: "Force Doc ID", initalValue: String(DocReader.shared.processParams.forceDocID?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.forceDocID = value as NSNumber?
+                DocReader.shared.processParams.forceDocID = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -459,7 +459,7 @@ class SettingsViewController: UIViewController {
         let matchTextFieldMask = SettingsActionItem(title: "Match Text Field Mask") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.matchTextFieldMask) { value in
-                DocReader.shared.processParams.matchTextFieldMask = value as NSNumber?
+                DocReader.shared.processParams.matchTextFieldMask = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -469,7 +469,7 @@ class SettingsViewController: UIViewController {
         let fastDocDetect = SettingsActionItem(title: "Fast Doc Detect") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.fastDocDetect) { value in
-                DocReader.shared.processParams.fastDocDetect = value as NSNumber?
+                DocReader.shared.processParams.fastDocDetect = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -479,7 +479,7 @@ class SettingsViewController: UIViewController {
         let updateOCRValidityByGlare = SettingsActionItem(title: "Update OCR Validity By Glare") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.updateOCRValidityByGlare) { value in
-                DocReader.shared.processParams.updateOCRValidityByGlare = value as NSNumber?
+                DocReader.shared.processParams.updateOCRValidityByGlare = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -489,7 +489,7 @@ class SettingsViewController: UIViewController {
         let noGraphics = SettingsActionItem(title: "No Graphics") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.noGraphics) { value in
-                DocReader.shared.processParams.noGraphics = value as NSNumber?
+                DocReader.shared.processParams.noGraphics = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -500,7 +500,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showFloatValueController(title: "Document Area Min", initalValue: String(DocReader.shared.processParams.documentAreaMin?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.documentAreaMin = value as NSNumber?
+                DocReader.shared.processParams.documentAreaMin = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -520,7 +520,7 @@ class SettingsViewController: UIViewController {
         let multiDocOnImage = SettingsActionItem(title: "Multi Doc On Image") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.multiDocOnImage) { value in
-                DocReader.shared.processParams.multiDocOnImage = value as NSNumber?
+                DocReader.shared.processParams.multiDocOnImage = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -531,7 +531,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showIntegerValueController(title: "Shift Expiry Date", initalValue: String(DocReader.shared.processParams.shiftExpiryDate?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.shiftExpiryDate = value as NSNumber?
+                DocReader.shared.processParams.shiftExpiryDate = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -541,7 +541,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showIntegerValueController(title: "Minimal Holder Age", initalValue: String(DocReader.shared.processParams.minimalHolderAge?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.minimalHolderAge = value as NSNumber?
+                DocReader.shared.processParams.minimalHolderAge = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -561,7 +561,7 @@ class SettingsViewController: UIViewController {
         let forceReadMrzBeforeLocate = SettingsActionItem(title: "Force Read Mrz Before Locate") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.forceReadMrzBeforeLocate) { value in
-                DocReader.shared.processParams.forceReadMrzBeforeLocate = value as NSNumber?
+                DocReader.shared.processParams.forceReadMrzBeforeLocate = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -576,7 +576,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showIntegerValueController(title: "DPI Threshold", initalValue: String(DocReader.shared.processParams.imageQA.dpiThreshold?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.imageQA.dpiThreshold = value as NSNumber?
+                DocReader.shared.processParams.imageQA.dpiThreshold = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -586,7 +586,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             self.showIntegerValueController(title: "Angle Threshold", initalValue: String(DocReader.shared.processParams.imageQA.angleThreshold?.stringValue ?? ""))
             { value in
-                DocReader.shared.processParams.imageQA.angleThreshold = value as NSNumber?
+                DocReader.shared.processParams.imageQA.angleThreshold = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -595,7 +595,7 @@ class SettingsViewController: UIViewController {
         let focusCheck = SettingsActionItem(title: "Focus Check") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.imageQA.focusCheck) { value in
-                DocReader.shared.processParams.imageQA.focusCheck = value as NSNumber?
+                DocReader.shared.processParams.imageQA.focusCheck = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -605,7 +605,7 @@ class SettingsViewController: UIViewController {
         let glaresCheck = SettingsActionItem(title: "Glares Check") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.imageQA.glaresCheck) { value in
-                DocReader.shared.processParams.imageQA.glaresCheck = value as NSNumber?
+                DocReader.shared.processParams.imageQA.glaresCheck = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -615,7 +615,7 @@ class SettingsViewController: UIViewController {
         let colornessCheck = SettingsActionItem(title: "Colorness Check") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.imageQA.colornessCheck) { value in
-                DocReader.shared.processParams.imageQA.colornessCheck = value as NSNumber?
+                DocReader.shared.processParams.imageQA.colornessCheck = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
@@ -625,7 +625,7 @@ class SettingsViewController: UIViewController {
         let moireCheck = SettingsActionItem(title: "Moire Check") { [weak self] in
             guard let self = self else { return }
             self.showOptionalBoolAlertController(parameter: DocReader.shared.processParams.imageQA.moireCheck) { value in
-                DocReader.shared.processParams.imageQA.moireCheck = value as NSNumber?
+                DocReader.shared.processParams.imageQA.moireCheck = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
             }
         } state: {
