@@ -448,7 +448,7 @@ class SettingsViewController: UIViewController {
         }
         let forceDocID = SettingsActionItem(title: "Force Doc ID") { [weak self] in
             guard let self = self else { return }
-            self.showIntegerValueController(title: "Force Doc ID", initalValue: String(DocReader.shared.processParams.forceDocID?.stringValue ?? ""))
+            self.showIntegerValueController(title: "Force Doc ID", initalValue: String(DocReader.shared.processParams.forceDocID?.stringValue ?? ""), isNegativeValuePossible: true)
             { value in
                 DocReader.shared.processParams.forceDocID = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
@@ -529,7 +529,7 @@ class SettingsViewController: UIViewController {
         }
         let shiftExpiryDate = SettingsActionItem(title: "Shift Expiry Date") { [weak self] in
             guard let self = self else { return }
-            self.showIntegerValueController(title: "Shift Expiry Date", initalValue: String(DocReader.shared.processParams.shiftExpiryDate?.stringValue ?? ""))
+            self.showIntegerValueController(title: "Shift Expiry Date", initalValue: String(DocReader.shared.processParams.shiftExpiryDate?.stringValue ?? ""), isNegativeValuePossible: true)
             { value in
                 DocReader.shared.processParams.shiftExpiryDate = value.map { NSNumber(value: $0) }
                 self.tableView.reloadData()
@@ -863,7 +863,7 @@ class SettingsViewController: UIViewController {
         present(actionSheet, animated: true, completion: nil)
     }
     
-    private func showIntegerValueController(title: String, placeholder: String = "123", initalValue: String, _ completion: OptionalIntClosure? = nil) {
+    private func showIntegerValueController(title: String, placeholder: String = "123", initalValue: String, isNegativeValuePossible: Bool = false, _ completion: OptionalIntClosure? = nil) {
         let mainStoryboard = UIStoryboard(name: kMainStoryboardId, bundle: nil)
         guard let viewController = mainStoryboard.instantiateViewController(withIdentifier: kTextFieldViewControllerId) as? TextFieldViewController else {
             return
@@ -872,6 +872,7 @@ class SettingsViewController: UIViewController {
         viewController.placeholder = placeholder
         viewController.isInputForNumbersOnly = true
         viewController.initalValue = initalValue
+        viewController.isSupportNegativeValues = isNegativeValuePossible
         viewController.completion = { result in
             completion?(Int(result))
         }

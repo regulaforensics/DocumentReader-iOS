@@ -12,6 +12,7 @@ class TextFieldViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     var isInputForNumbersOnly: Bool = false
+    var isSupportNegativeValues: Bool = false
     var placeholder: String = ""
     var initalValue: String = ""
     var completion: ((String) -> Void)?
@@ -31,7 +32,9 @@ class TextFieldViewController: UIViewController {
         textField.placeholder = placeholder
         textField.delegate = self
         textField.text = initalValue
-        if isInputForNumbersOnly {
+        if isSupportNegativeValues {
+            textField.keyboardType = .numbersAndPunctuation
+        } else if isInputForNumbersOnly {
             textField.keyboardType = .numberPad
         }
     }
@@ -61,6 +64,9 @@ extension TextFieldViewController: UITextFieldDelegate {
             guard !updatedText.isEmpty else { return true }
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .none
+            if isSupportNegativeValues, updatedText.count == 1, updatedText.first == "-" {
+                return true
+            }
             return numberFormatter.number(from: updatedText)?.intValue != nil
         } else {
             return true
