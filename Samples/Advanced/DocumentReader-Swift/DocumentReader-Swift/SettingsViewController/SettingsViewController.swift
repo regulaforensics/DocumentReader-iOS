@@ -335,14 +335,16 @@ class SettingsViewController: UIViewController {
         }
         let forceDocFormat = SettingsActionItem(title: "Force Doc Format") { [weak self] in
             guard let self = self else { return }
-            self.showIntegerArrayEditor(title: "Force Doc Format", inputArray: DocReader.shared.processParams.forceDocFormat as? [Int]) { output in
-                DocReader.shared.processParams.forceDocFormat = output
+            let currentValue = params.forceDocFormat.map { $0.intValue }.flatMap { DocFormat(rawValue: $0)?.description } ?? "nil"
+            let options: [String] = DocFormat.allCases.map { $0.description } + ["nil"]
+            self.showOptionsPicker(title: "Force Doc Format", current: currentValue, options: options) { (result) in
+                let param = DocFormat(result).map { NSNumber(value: $0.rawValue) }
+                DocReader.shared.processParams.forceDocFormat = param
                 self.tableView.reloadData()
             }
         } state: {
-            let currentList = DocReader.shared.processParams.forceDocFormat ?? []
-            let value = currentList.compactMap { $0.stringValue }.joined(separator: ", ")
-            return value.isEmpty ? "nil" : value
+            let currentValue = params.forceDocFormat.map { $0.intValue }.flatMap { DocFormat(rawValue: $0)?.description } ?? "nil"
+            return currentValue
         }
         let multiDocOnImage = SettingsOptionalBoolItem(title: "Multi Doc On Image", object: params, keypath: \.multiDocOnImage)
         let shiftExpiryDate = SettingsOptionalIntItem(title: "Shift Expiry Date", object: params, keypath: \.shiftExpiryDate)
@@ -531,6 +533,21 @@ class SettingsViewController: UIViewController {
         actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
         present(actionSheet, animated: true, completion: nil)
     }
+
+  private func showOptionsPicker(title: String, current: String, options: [String], completion: @escaping (String) -> Void) {
+      let actionSheet = UIAlertController(title: nil, message: title, preferredStyle: self.alertStyleForDevice())
+      for option in options {
+        let action = UIAlertAction(title: option, style: .default) { _ in
+              completion(option)
+          }
+          if option == current {
+              action.setValue(true, forKey: "checked")
+          }
+          actionSheet.addAction(action)
+      }
+      actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+      present(actionSheet, animated: true, completion: nil)
+  }
 
     private func showCaptureModeList(_ completion: VoidClosure? = nil) {
         let modes: [CaptureMode] = [.auto, .captureVideo, .captureFrame]
