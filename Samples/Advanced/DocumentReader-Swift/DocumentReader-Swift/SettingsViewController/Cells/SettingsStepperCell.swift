@@ -22,8 +22,8 @@ class SettingsStepperCell: UITableViewCell {
         didSet {
             guard let item = item else { return }
             titleLabel.text = item.title
-            stepperControl.value = Double(item.state())
-            valueLabel.text = String(format: item.format, arguments: [item.state()])
+            stepperControl.value = Double(item.getter())
+            valueLabel.text = String(format: item.format, arguments: [item.getter()])
         }
     }
     
@@ -36,6 +36,6 @@ class SettingsStepperCell: UITableViewCell {
     @objc func stepperAction(_ sender: UIStepper!) {
         guard let item = item else { return }
         delegate?.valueChangedFor(item, Int(sender.value))
-        valueLabel.text = String(format: item.format, arguments: [item.state()])
+        valueLabel.text = String(format: item.format, arguments: [item.getter()])
     }
 }

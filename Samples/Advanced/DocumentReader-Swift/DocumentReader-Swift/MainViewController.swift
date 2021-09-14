@@ -279,7 +279,8 @@ class MainViewController: UIViewController {
                     print(error.localizedDescription)
                     return
                 }
-                DocReader.shared.initializeReader(license: licenseData) { (success, error) in
+                let config = DocReader.Config(license: licenseData)
+                DocReader.shared.initializeReader(config: config, completion: { (success, error) in
                     DispatchQueue.main.async {
                         self.statusLabel.text = "Initializing..."
                         self.activityIndicator.stopAnimating()
@@ -292,7 +293,7 @@ class MainViewController: UIViewController {
                             print(error.localizedDescription)
                         }
                     }
-                }
+                })
             })
         }
     }

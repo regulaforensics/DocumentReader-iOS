@@ -30,10 +30,6 @@ let kComparisonCellId = "ComparisonCell"
 let kFieldCellId = "FieldCell"
 let kRfidStatusCellId = "RfidStatusCell"
 
-let kSettingsSwitchCellId = "SettingsSwitchCell"
-let kSettingsStepperCellId = "SettingsStepperCell"
-let kSettingsActionCellId = "SettingsActionCell"
-
 let kInfoTextMrz = """
 MRZ
 

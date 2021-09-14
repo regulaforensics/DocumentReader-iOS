@@ -8,15 +8,28 @@
 
 import DocumentReader
 
+fileprivate func _setter<Object: AnyObject, Value>(
+    for object: Object,
+    keyPath: ReferenceWritableKeyPath<Object, Value>
+) -> (Value) -> Void {
+    return { [weak object] value in
+        object?[keyPath: keyPath] = value
+    }
+}
+
+fileprivate func _getter<Object: AnyObject, Value>(
+    for object: Object,
+    keyPath: ReferenceWritableKeyPath<Object, Value>
+) -> () -> Value {
+    return { [weak object] in
+        return object![keyPath: keyPath]
+    }
+}
+
 typealias VoidClosure = (() -> (Void))
-typealias BoolClosure = ((Bool) -> (Void))
-typealias BoolReturnClosure = (() -> (Bool))
-typealias IntClosure = ((Int) -> (Void))
-typealias IntReturnClosure = (() -> (Int))
 typealias StringReturnClosure = (() -> (String))
 typealias DocumentReaderResultsClosure = ((DocumentReaderResults) -> (Void))
 typealias OptionalBoolClosure = ((Bool?) -> (Void))
-typealias OptionalIntClosure = ((Int?) -> (Void))
 typealias NSNumberArrayClosure = (([NSNumber]?) -> (Void))
 typealias OptionalFloatClosure = ((Float?) -> (Void))
 
@@ -58,25 +71,94 @@ class SettingsItem {
 }
 
 class SettingsBoolItem: SettingsItem {
-    var action: BoolClosure
-    var state: BoolReturnClosure
-    init(title: String, action: @escaping BoolClosure, state: @escaping BoolReturnClosure) {
-        self.action = action
-        self.state = state
+    var setter: ((Bool) -> (Void))
+    var getter: (() -> (Bool))
+
+    init(title: String, setter: @escaping ((Bool) -> (Void)), getter: @escaping (() -> (Bool))) {
+        self.setter = setter
+        self.getter = getter
         super.init(title)
+    }
+
+    convenience init<Object: AnyObject>(title: String, object: Object, keypath: ReferenceWritableKeyPath<Object, Bool>) {
+        let setter = _setter(for: object, keyPath: keypath)
+        let getter = _getter(for: object, keyPath: keypath)
+        self.init(title: title, setter: setter, getter: getter)
     }
 }
 
+class SettingsOptionalBoolItem: SettingsItem {
+    var setter: (Bool?) -> Void
+    var getter: () -> Bool?
+
+    init(title: String, setter: @escaping (Bool?) -> Void, getter: @escaping () -> Bool?) {
+        self.setter = setter
+        self.getter = getter
+        super.init(title)
+    }
+
+    convenience init(title: String, setter: @escaping (NSNumber?) -> Void, getter: @escaping () -> NSNumber?) {
+        let wrappedSetter: (Bool?) -> Void = { (bool: Bool?) -> Void in
+            let number = bool.map { NSNumber(value: $0) }
+            setter(number)
+        }
+        let wrappedGetter: () -> Bool? = {
+            return getter()?.boolValue
+        }
+        self.init(title: title, setter: wrappedSetter, getter: wrappedGetter)
+    }
+
+    convenience init<Object: AnyObject>(title: String, object: Object, keypath: ReferenceWritableKeyPath<Object, NSNumber?>) {
+        let setter = _setter(for: object, keyPath: keypath)
+        let getter = _getter(for: object, keyPath: keypath)
+        self.init(title: title, setter: setter, getter: getter)
+    }
+}
+
+
 class SettingsIntItem: SettingsItem {
     var format: String
-    var action: IntClosure
-    var state: IntReturnClosure
-    init(title: String, format: String = "%d", action: @escaping IntClosure,
-         state: @escaping IntReturnClosure) {
+    var setter: (Int) -> Void
+    var getter: () -> Int
+
+    init(title: String, format: String = "%d", setter: @escaping (Int) -> Void, getter: @escaping () -> Int) {
         self.format = format
-        self.action = action
-        self.state = state
+        self.setter = setter
+        self.getter = getter
         super.init(title)
+    }
+
+    convenience init<Object: AnyObject>(title: String, format: String = "%d", object: Object, keypath: ReferenceWritableKeyPath<Object, Int>) {
+        let setter = _setter(for: object, keyPath: keypath)
+        let getter = _getter(for: object, keyPath: keypath)
+        self.init(title: title, setter: setter, getter: getter)
+    }
+}
+
+class SettingsOptionalIntItem: SettingsItem {
+    var format: String
+    var setter: (Int?) -> Void
+    var getter: () -> Int?
+
+    init(title: String, format: String = "%d", setter: @escaping (NSNumber?) -> Void, getter: @escaping () -> NSNumber?) {
+        self.format = format
+
+        let wrappedSetter: (Int?) -> Void = { (int: Int?) -> Void in
+            let number = int.map { NSNumber(value: $0) }
+            setter(number)
+        }
+        let wrappedGetter: () -> Int? = {
+            return getter()?.intValue
+        }
+        self.setter = wrappedSetter
+        self.getter = wrappedGetter
+        super.init(title)
+    }
+
+    convenience init<Object: AnyObject>(title: String, format: String = "%d", object: Object, keypath: ReferenceWritableKeyPath<Object, NSNumber?>) {
+        let setter = _setter(for: object, keyPath: keypath)
+        let getter = _getter(for: object, keyPath: keypath)
+        self.init(title: title, format:format, setter: setter, getter: getter)
     }
 }
 

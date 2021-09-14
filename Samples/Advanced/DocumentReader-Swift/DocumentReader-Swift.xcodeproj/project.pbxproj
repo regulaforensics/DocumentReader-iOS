@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86878F0626EF96360082F481 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86878F0526EF96360082F481 /* NSObject+ClassName.swift */; };
 		9D00FDD225D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00FDD125D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift */; };
 		9D00FDD525D3C34300D6FEF1 /* BarcodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00FDD425D3C34300D6FEF1 /* BarcodeListViewController.swift */; };
 		9D053B6F25CD6D770014EE23 /* FieldType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D053B6E25CD6D770014EE23 /* FieldType+Extensions.swift */; };
@@ -54,6 +55,7 @@
 		0BBE1365BE97A7AE1B68DF58 /* Pods-DocumentReader-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-Swift.release.xcconfig"; path = "Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		0DC5DA1B48C6A7B2425AF7F0 /* Pods_DocumentReader_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReader_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391B685CCD628B0DFA19E1A /* Pods-DocumentReader-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-Swift.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		86878F0526EF96360082F481 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		9D00FDD125D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarcodeTypes+Extensions.swift"; sourceTree = "<group>"; };
 		9D00FDD425D3C34300D6FEF1 /* BarcodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeListViewController.swift; sourceTree = "<group>"; };
 		9D053B6E25CD6D770014EE23 /* FieldType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldType+Extensions.swift"; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				9D9F7DB225D56E9B0091C675 /* LCID+Extensions.swift */,
 				9DC45D2F25D692AC0077AE4A /* DocReaderFrame+Extensions.swift */,
 				9DFBD7D925E6689900428089 /* RFIDAccessControlProcedureType+Extensions.swift */,
+				86878F0526EF96360082F481 /* NSObject+ClassName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				9D4B75C525D5315D00EB4EA4 /* CustomRfidViewController.swift in Sources */,
 				9DF08E5C25D3F84B00880F7E /* TextFieldViewController.swift in Sources */,
 				9DF08E5225D3C9C700880F7E /* SettingsActionCell.swift in Sources */,
+				86878F0626EF96360082F481 /* NSObject+ClassName.swift in Sources */,
 				9D6D108C25D29CC2001E9158 /* SettingsStepperCell.swift in Sources */,
 				9D658B1425CC02F700DDB739 /* ImageCell.swift in Sources */,
 				9D9560B725D286D100C0673F /* SettingsSwitchCell.swift in Sources */,
