@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController {
         tableView.tableFooterView = UIView(frame: .zero)
         
         segmentedControl.selectedSegmentIndex = 0
-        segmentedControl.addTarget(self, action: #selector(segmentedControlAction(_:)), for: .valueChanged)
+        segmentedControl.addTarget(self, action: #selector(onSegmentControlValueChange(_:)), for: .valueChanged)
         navigationItem.titleView = segmentedControl
         
         let resetBarButton = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(resetButtonAction(_:)))
@@ -55,6 +55,9 @@ class SettingsViewController: UIViewController {
         case 0:
             ApplicationSettings.shared.isRfidEnabled = false
             ApplicationSettings.shared.useCustomRfidController = false
+
+            initApplicationSettings()
+            sectionsData = applicationGroups
         case 1:
             let scenario = DocReader.shared.selectedScenario()
             let defaultProcessParams = ProcessParams()
@@ -63,14 +66,17 @@ class SettingsViewController: UIViewController {
             let defaultFunctionality = Functionality()
             ApplicationSettings.shared.functionality = defaultFunctionality
             DocReader.shared.functionality = defaultFunctionality
+
+            initAPISettings()
+            sectionsData = apiGroups
         default:
             break
         }
         tableView.reloadData()
     }
     
-    @objc func segmentedControlAction(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
+    @objc func onSegmentControlValueChange(_ sender: UISegmentedControl) {
+        switch segmentedControl.selectedSegmentIndex {
         case 0:
             sectionsData = applicationGroups
         case 1:
@@ -82,6 +88,8 @@ class SettingsViewController: UIViewController {
     }
     
     private func initApplicationSettings() {
+        self.applicationGroups.removeAll()
+
         let settings = ApplicationSettings.shared
 
         // 1. RFID
@@ -97,6 +105,8 @@ class SettingsViewController: UIViewController {
     }
     
     private func initAPISettings() {
+        self.apiGroups.removeAll()
+
         let functionality = DocReader.shared.functionality
         let params = DocReader.shared.processParams
 
@@ -337,7 +347,7 @@ class SettingsViewController: UIViewController {
             guard let self = self else { return }
             let currentValue = params.forceDocFormat.map { $0.intValue }.flatMap { DocFormat(rawValue: $0)?.description } ?? "nil"
             let options: [String] = DocFormat.allCases.map { $0.description } + ["nil"]
-            self.showOptionsPicker(title: "Force Doc Format", current: currentValue, options: options) { (result) in
+            self.showOptionsPicker(title: "Force Doc Format", current: [currentValue], options: options) { (result) in
                 let param = DocFormat(result).map { NSNumber(value: $0.rawValue) }
                 DocReader.shared.processParams.forceDocFormat = param
                 self.tableView.reloadData()
@@ -352,13 +362,24 @@ class SettingsViewController: UIViewController {
 
         let mrzFormatsFilter = SettingsActionItem(title: "MRZ Formats Filter") { [weak self] in
             guard let self = self else { return }
-            self.showIntegerArrayEditor(title: "MRZ Formats Filter", inputArray: DocReader.shared.processParams.mrzFormatsFilter as? [Int]) { output in
-                DocReader.shared.processParams.mrzFormatsFilter = output
+            let currentValue = params.mrzFormatsFilter?.map { $0.intValue }.compactMap { MRZFormat(rawValue: $0)?.description } ?? []
+            let options: [String] = MRZFormat.allCases.map { $0.description }
+            self.showOptionsPicker(title: "MRZ Formats Filter", current: currentValue, options: options) { (result) in
+                guard let param = MRZFormat(result).map({ NSNumber(value: $0.rawValue) }) else { return }
+
+                var filters = params.mrzFormatsFilter ?? []
+                if let paramIndex = filters.firstIndex(of: param) {
+                    filters.remove(at: paramIndex)
+                } else {
+                    filters.append(param)
+                }
+
+                DocReader.shared.processParams.mrzFormatsFilter = filters
                 self.tableView.reloadData()
             }
         } state: {
             let currentList = DocReader.shared.processParams.mrzFormatsFilter ?? []
-            let value = currentList.compactMap { $0.stringValue }.joined(separator: ", ")
+            let value = currentList.compactMap { MRZFormat(rawValue: $0.intValue)?.description }.joined(separator: ", ")
             return value.isEmpty ? "nil" : value
         }
 
@@ -534,20 +555,24 @@ class SettingsViewController: UIViewController {
         present(actionSheet, animated: true, completion: nil)
     }
 
-  private func showOptionsPicker(title: String, current: String, options: [String], completion: @escaping (String) -> Void) {
-      let actionSheet = UIAlertController(title: nil, message: title, preferredStyle: self.alertStyleForDevice())
-      for option in options {
-        let action = UIAlertAction(title: option, style: .default) { _ in
-              completion(option)
-          }
-          if option == current {
-              action.setValue(true, forKey: "checked")
-          }
-          actionSheet.addAction(action)
-      }
-      actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-      present(actionSheet, animated: true, completion: nil)
-  }
+    private func showOptionsPicker(title: String, current: [String], options: [String], completion: @escaping (String) -> Void) {
+        let actionSheet = UIAlertController(title: nil, message: title, preferredStyle: self.alertStyleForDevice())
+
+        for option in options {
+            let action = UIAlertAction(title: option, style: .default) { _ in
+                completion(option)
+            }
+
+            for selected in current where selected == option {
+                action.setValue(true, forKey: "checked")
+            }
+
+            actionSheet.addAction(action)
+        }
+
+        actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        present(actionSheet, animated: true, completion: nil)
+    }
 
     private func showCaptureModeList(_ completion: VoidClosure? = nil) {
         let modes: [CaptureMode] = [.auto, .captureVideo, .captureFrame]
