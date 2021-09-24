@@ -18,12 +18,14 @@ extension DocFormat: CaseIterable {
         .NON,
         .A4,
         .id3_x2,
+        .id2_Turkey,
         .ID1_90,
         .ID1_180,
         .ID1_270,
         .ID2_180,
         .ID3_180,
         .custom,
+        .photo,
         .flexible,
     ]
 }
@@ -37,13 +39,16 @@ extension DocFormat: LosslessStringConvertible {
         case .NON: return "NON"
         case .A4: return "A4"
         case .id3_x2: return "id3_x2"
+        case .id2_Turkey: return "id2_Turkey"
         case .ID1_90: return "ID1_90"
         case .ID1_180: return "ID1_180"
         case .ID1_270: return "ID1_270"
         case .ID2_180: return "ID2_180"
         case .ID3_180: return "ID3_180"
         case .custom: return "custom"
+        case .photo: return "photo"
         case .flexible: return "flexible"
+        case .unknown: return "unknown"
         @unknown default:
             fatalError()
         }

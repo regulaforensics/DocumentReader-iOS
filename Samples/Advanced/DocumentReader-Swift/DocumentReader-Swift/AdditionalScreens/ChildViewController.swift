@@ -46,6 +46,8 @@ class ChildViewController: UIViewController {
             case .process:
                 // you can handle intermediate result here
                 break
+            case .processWhiteFlashLight:
+                break;
             @unknown default:
                 break
             }

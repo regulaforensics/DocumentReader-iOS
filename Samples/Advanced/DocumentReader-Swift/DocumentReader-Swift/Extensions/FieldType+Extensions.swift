@@ -8,7 +8,7 @@
 
 import DocumentReader
 
-extension FieldType {    
+extension FieldType {
     var stringValue: String {
         switch self {
         case .ft_Document_Class_Code:
@@ -1159,6 +1159,19 @@ extension FieldType {
             return ".ft_DLClassCode_CA_To"
         case .ft_DLClassCode_CA_Notes:
             return ".ft_DLClassCode_CA_Notes"
+        case .ft_Citizenship_Status: return ".ft_Citizenship_Status"
+        case .ft_Military_Service_From: return ".ft_Military_Service_From"
+        case .ft_Military_Service_To: return ".ft_Military_Service_To"
+        case .ft_DLClassCode_NT_From: return ".ft_DLClassCode_NT_From"
+        case .ft_DLClassCode_NT_To: return ".ft_DLClassCode_NT_To"
+        case .ft_DLClassCode_NT_Notes: return ".ft_DLClassCode_NT_Notes"
+        case .ft_DLClassCode_TN_From: return ".ft_DLClassCode_TN_From"
+        case .ft_DLClassCode_TN_To: return ".ft_DLClassCode_TN_To"
+        case .ft_DLClassCode_TN_Notes: return ".ft_DLClassCode_TN_Notes"
+        case .ft_DLClassCode_D3_From: return ".ft_DLClassCode_D3_From"
+        case .ft_DLClassCode_D3_To: return ".ft_DLClassCode_D3_To"
+        case .ft_DLClassCode_D3_Notes: return ".ft_DLClassCode_D3_Notes"
+        case .ft_Alt_Date_Of_Expiry: return ".ft_Alt_Date_Of_Expiry"
         @unknown default:
             return ""
         }
@@ -1321,6 +1334,11 @@ extension FieldType {
         .ft_DLClassCode_MC_From, .ft_DLClassCode_MC_To, .ft_DLClassCode_MC_Notes,
         .ft_DLClassCode_RE_From, .ft_DLClassCode_RE_To, .ft_DLClassCode_RE_Notes,
         .ft_DLClassCode_R_From, .ft_DLClassCode_R_To, .ft_DLClassCode_R_Notes,
-        .ft_DLClassCode_CA_From, .ft_DLClassCode_CA_To, .ft_DLClassCode_CA_Notes
+        .ft_DLClassCode_CA_From, .ft_DLClassCode_CA_To, .ft_DLClassCode_CA_Notes,
+        .ft_Citizenship_Status, .ft_Military_Service_From, .ft_Military_Service_To,
+        .ft_DLClassCode_NT_From, .ft_DLClassCode_NT_To, .ft_DLClassCode_NT_Notes,
+        .ft_DLClassCode_TN_From, .ft_DLClassCode_TN_To, .ft_DLClassCode_TN_Notes,
+        .ft_DLClassCode_D3_From, .ft_DLClassCode_D3_To, .ft_DLClassCode_D3_Notes,
+        .ft_Alt_Date_Of_Expiry,
     ]
 }
