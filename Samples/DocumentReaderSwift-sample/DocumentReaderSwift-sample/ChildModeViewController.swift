@@ -102,6 +102,8 @@ class ChildModeViewController: UIViewController {
                 print("ERROR")
             case .process:
                 print("PROCESS") // you can handle intermediate result here
+            case .processWhiteFlashLight:
+                print("processWhiteFlashLight")
             }
         })
         cameraViewController = vc
