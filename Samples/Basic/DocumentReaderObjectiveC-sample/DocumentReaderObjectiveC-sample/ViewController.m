@@ -47,39 +47,43 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     [RGLDocReader.shared prepareDatabase:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
         self.initializationLabel.text = [NSString stringWithFormat:@"%.1f", progress.fractionCompleted * 100];
     } completion:^(BOOL successful, NSError * _Nullable error) {
-        if (successful) {
-            self.initializationLabel.text = @"Initialization...";
-            [RGLDocReader.shared initializeReader:licenseData completion:^(BOOL successful, NSError * _Nullable error ) {
-                if (successful) {
-                    [self.activityIndicator stopAnimating];
-                    [self.initializationLabel setHidden:YES];
-                    [self.userRecognizeImage setHidden:NO];
-                    [self.useCameraViewControllerButton setHidden:NO];
-                    [self.customCamera setHidden:NO];
-                    [self.pickerView setHidden:NO];
-                    [self.pickerView reloadAllComponents];
-                    [self.pickerView selectRow:0 inComponent:0 animated:NO];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (successful) {
+                self.initializationLabel.text = @"Initialization...";
+                RGLConfig *config = [RGLConfig configWithLicenseData:licenseData licenseUpdateCheck:YES databasePath:nil];
+                
+                [RGLDocReader.shared initializeReaderWithConfig:config completion:^(BOOL successful, NSError * _Nullable error ) {
+                    if (successful) {
+                        [self.activityIndicator stopAnimating];
+                        [self.initializationLabel setHidden:YES];
+                        [self.userRecognizeImage setHidden:NO];
+                        [self.useCameraViewControllerButton setHidden:NO];
+                        [self.customCamera setHidden:NO];
+                        [self.pickerView setHidden:NO];
+                        [self.pickerView reloadAllComponents];
+                        [self.pickerView selectRow:0 inComponent:0 animated:NO];
 
-                    RGLScenario *scenario = [RGLDocReader shared].availableScenarios.firstObject;
-                    if (scenario) {
-                        [RGLDocReader shared].processParams.scenario = scenario.identifier;
+                        RGLScenario *scenario = [RGLDocReader shared].availableScenarios.firstObject;
+                        if (scenario) {
+                            [RGLDocReader shared].processParams.scenario = scenario.identifier;
+                        }
+                        [RGLDocReader shared].functionality.singleResult = YES;
+                        
+                        for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
+                            NSLog(@"%@", scenario);
+                            NSLog(@"---------");
+                        }
+                    } else {
+                        [self.activityIndicator stopAnimating];
+                        self.initializationLabel.text = [NSString stringWithFormat:@"Initialization error: %@", error];
+                        NSLog(@"%@", error);
                     }
-                    [RGLDocReader shared].functionality.singleResult = YES;
-                    
-                    for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
-                        NSLog(@"%@", scenario);
-                        NSLog(@"---------");
-                    }
-                } else {
-                    [self.activityIndicator stopAnimating];
-                    self.initializationLabel.text = [NSString stringWithFormat:@"Initialization error: %@", error];
-                    NSLog(@"%@", error);
-                }
-            }];
-        } else {
-            self.initializationLabel.text = [NSString stringWithFormat:@"Downloading database error: %@", error];
-            NSLog(@"%@", error);
-        }
+                }];
+            } else {
+                self.initializationLabel.text = [NSString stringWithFormat:@"Downloading database error: %@", error];
+                NSLog(@"%@", error);
+            }
+        });
     }];
 }
 

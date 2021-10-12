@@ -44,7 +44,9 @@ class ViewController: UIViewController {
                 self.initializationLabel.text = "Downloading database: \(progressValue)%"
             }, completion: { (success, error) in
                 if success {
-                    DocReader.shared.initializeReader(license: licenseData) { (success, error) in
+                    let config = DocReader.Config(license: licenseData, licenseUpdateCheck: true, databasePath: nil)
+                    
+                    DocReader.shared.initializeReader(config: config) { (success, error) in
                         DispatchQueue.main.async {
                             if success {
                                 self.activityIndicator.stopAnimating()
