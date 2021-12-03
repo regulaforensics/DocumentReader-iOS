@@ -12,12 +12,16 @@ import DocumentReader
 class SettingsViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     private let segmentedControl = UISegmentedControl(items: ["Application", "API"])
+
+    lazy var loaderView: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .gray)
+        view.hidesWhenStopped = true
+        return view
+    }()
     
     private var applicationGroups: [SettingsGroup] = []
     private var apiGroups: [SettingsGroup] = []
     private var sectionsData: [SettingsGroup] = []
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,13 @@ class SettingsViewController: UIViewController {
         initAPISettings()
         
         sectionsData = applicationGroups
+
+        view.addSubview(loaderView)
+        loaderView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            loaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
     }
     
     private func setupUI() {
@@ -398,6 +409,51 @@ class SettingsViewController: UIViewController {
         let moireCheck = SettingsOptionalBoolItem(title: "Moire Check", object: params.imageQA, keypath: \.moireCheck)
         let imageQAGroup = SettingsGroup(title: "Image QA", items: [dpiThreshold, angleThreshold, focusCheck, glaresCheck, colornessCheck, moireCheck])
         apiGroups.append(imageQAGroup)
+
+        // Misc
+        let initAPI = SettingsActionItem(
+            title: "Press to init the API",
+            action: { [weak self] in
+                guard let self = self else { return }
+                self.view.isUserInteractionEnabled = false
+                self.loaderView.startAnimating()
+                DocumentReaderService.shared.initializeDatabaseAndAPI(progress: { state in
+                    switch state {
+                    case .downloadingDatabase: break
+                    case .initializingAPI: break
+                    case .completed:
+                        self.view.isUserInteractionEnabled = true
+                        self.loaderView.stopAnimating()
+                        let doneAlert = UIAlertController(title: nil, message: "Initialized",
+                                                            preferredStyle: .alert)
+                        doneAlert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
+                        self.present(doneAlert, animated: true, completion: nil)
+                    case .error(let string):
+                        self.view.isUserInteractionEnabled = true
+                        self.loaderView.stopAnimating()
+                        let errorAlert = UIAlertController(title: nil, message: string,
+                                                            preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
+                        self.present(errorAlert, animated: true, completion: nil)
+                    }
+                })
+            },
+            state: { return "" }
+        )
+        let deinitAPI = SettingsActionItem(
+            title: "Press to deinit the API",
+            action: {
+                DocumentReaderService.shared.deinitializeAPI()
+                let doneAlert = UIAlertController(title: nil, message: "Deinitialized",
+                                                    preferredStyle: .alert)
+                doneAlert.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
+                self.present(doneAlert, animated: true, completion: nil)
+            },
+            state: { return "" }
+        )
+        let miscGroup =  SettingsGroup(title: "Miscellaneous", items: [initAPI, deinitAPI])
+
+        apiGroups.append(miscGroup)
     }
 
     private func getCurrentCustomParams() -> String? {
