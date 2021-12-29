@@ -49,7 +49,7 @@ If you have issues with license verification when running the application, pleas
 * You placed the license into the correct folder.
 
 ## Documentation
-You can find documentation on API [here](https://docs.regulaforensics.com/ios).
+You can find documentation on API [here](https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile?utm_source=github).
 
 ## Additional information
 If you have any technical questions, feel free to [contact](mailto:ios.support@regulaforensics.com) us or create issue [here](https://github.com/regulaforensics/DocumentReader-iOS/issues).
