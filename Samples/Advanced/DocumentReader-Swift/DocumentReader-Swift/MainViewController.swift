@@ -570,9 +570,8 @@ class MainViewController: UIViewController {
                 return
             }
             
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            let decryptedResult = DocumentReaderResults.initWithRawString(jsonString)
-            
+            let decryptedResult = String(data: jsonData, encoding: .utf8)
+                .map { DocumentReaderResults.initWithRawString($0) }
             completion?(decryptedResult)
         })
 
