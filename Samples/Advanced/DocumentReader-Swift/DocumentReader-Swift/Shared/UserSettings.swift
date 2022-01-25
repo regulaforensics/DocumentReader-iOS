@@ -17,5 +17,5 @@ class ApplicationSettings {
     var isRfidEnabled: Bool = false
     var useCustomRfidController: Bool = false
     
-    var functionality: Functionality = Functionality()
+    var functionality: Functionality = DocReader.shared.functionality
 }
