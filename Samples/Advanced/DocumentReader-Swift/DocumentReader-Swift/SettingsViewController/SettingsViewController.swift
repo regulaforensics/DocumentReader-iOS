@@ -144,7 +144,8 @@ class SettingsViewController: UIViewController {
         let multipageProcessing = SettingsOptionalBoolItem(title: "Multipage processing", object: params, keypath: \.multipageProcessing)
         let doublePageSpread = SettingsOptionalBoolItem(title: "Double-page spread processing", object: params, keypath: \.doublePageSpread)
         let manualCrop = SettingsOptionalBoolItem(title: "Manual crop", object: params, keypath: \.manualCrop)
-        let docProcessingGroup = SettingsGroup(title: "Document Processing", items: [multipageProcessing, doublePageSpread, manualCrop])
+        let shouldReturnPackageForReprocess = SettingsOptionalBoolItem(title: "shouldReturnPackageForReprocess", object: params, keypath: \.shouldReturnPackageForReprocess)
+        let docProcessingGroup = SettingsGroup(title: "Document Processing", items: [multipageProcessing, doublePageSpread, manualCrop, shouldReturnPackageForReprocess])
         apiGroups.append(docProcessingGroup)
         
         // 3. Authenticity
