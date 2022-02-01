@@ -37,6 +37,8 @@ extension ResultType {
         case .databaseCheck: return ".databaseCheck"
         case .fingerprintTemplateISO: return ".fingerprintTemplateISO"
         case .inputImageQuality: return ".inputImageQuality"
+        case .status: return ".status"
+        case .images: return ".images"
         case .mrzPosition: return ".mrzPosition"
         case .barcodePosition: return ".barcodePosition"
         case .documentPosition: return ".documentPosition"
@@ -46,7 +48,6 @@ extension ResultType {
         case .rfidImageData: return ".rfidImageData"
         case .rfidBinaryData: return ".rfidBinaryData"
         case .rfidOriginalGraphics: return ".rfidOriginalGraphics"
-        case .images: return ".images"
         @unknown default:
             return ""
         }

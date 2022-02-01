@@ -26,13 +26,26 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        initializeDatabase { [weak self] () -> (Void) in
+
+        DocumentReaderService.shared.initializeDatabaseAndAPI(progress: { [weak self] state in
             guard let self = self else { return }
-            self.initSections()
-            self.tableView.reloadData()
-        }
-        
+            switch state {
+            case .downloadingDatabase(progress: let progress):
+                let progressValue = String(format: "%.1f", progress * 100)
+                self.statusLabel.text = "Downloading database: \(progressValue)%"
+            case .initializingAPI:
+                self.statusLabel.text = "Initializing..."
+                self.activityIndicator.stopAnimating()
+            case .completed:
+                self.enableUserInterfaceOnSuccess()
+                self.initSections()
+                self.tableView.reloadData()
+            case .error(let text):
+                self.statusLabel.text = text
+                print(text)
+            }
+        })
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView(frame: .zero)
@@ -262,39 +275,6 @@ class MainViewController: UIViewController {
         settingsBarButton.isEnabled = true
         if let scenario = DocReader.shared.availableScenarios.first {
             DocReader.shared.processParams.scenario = scenario.identifier
-        }
-    }
-    
-    private func initializeDatabase(_ completion: @escaping (() -> (Void))) {
-        guard let dataPath = Bundle.main.path(forResource: kRegulaLicenseFile, ofType: nil) else { return }
-        guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
-        
-        DispatchQueue.global().async {
-            DocReader.shared.prepareDatabase(databaseID: kRegulaDatabaseId, progressHandler: { (progress) in
-                let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
-                self.statusLabel.text = "Downloading database: \(progressValue)%"
-            }, completion: { (success, error) in
-                if let error = error, !success {
-                    self.statusLabel.text = "Database error: \(error.localizedDescription)"
-                    print(error.localizedDescription)
-                    return
-                }
-                let config = DocReader.Config(license: licenseData)
-                DocReader.shared.initializeReader(config: config, completion: { (success, error) in
-                    DispatchQueue.main.async {
-                        self.statusLabel.text = "Initializing..."
-                        self.activityIndicator.stopAnimating()
-                        if success {
-                            self.enableUserInterfaceOnSuccess()
-                            completion()
-                        } else {
-                            guard let error = error else { return }
-                            self.statusLabel.text = "Initialization error: \(error.localizedDescription)"
-                            print(error.localizedDescription)
-                        }
-                    }
-                })
-            })
         }
     }
     
@@ -571,7 +551,7 @@ class MainViewController: UIViewController {
             }
             
             let decryptedResult = String(data: jsonData, encoding: .utf8)
-                .map { DocumentReaderResults.initWithRawString($0) }
+                .flatMap { DocumentReaderResults.initWithRawString($0) }
             completion?(decryptedResult)
         })
 

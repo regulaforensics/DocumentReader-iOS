@@ -1172,6 +1172,15 @@ extension FieldType {
         case .ft_DLClassCode_D3_To: return ".ft_DLClassCode_D3_To"
         case .ft_DLClassCode_D3_Notes: return ".ft_DLClassCode_D3_Notes"
         case .ft_Alt_Date_Of_Expiry: return ".ft_Alt_Date_Of_Expiry"
+        case .ft_DLClassCode_CD_From: return ".ft_DLClassCode_CD_From"
+        case .ft_DLClassCode_CD_To: return ".ft_DLClassCode_CD_To"
+        case .ft_DLClassCode_CD_Notes: return ".ft_DLClassCode_CD_Notes"
+        case .ft_Payment_Period_To: return ".ft_Payment_Period_To"
+        case .ft_Payment_Period_From: return ".ft_Payment_Period_From"
+        case .ft_Issuer_Identification_Number: return ".ft_Issuer_Identification_Number"
+        case .ft_VaccinationCertificateIdentifier: return ".ft_VaccinationCertificateIdentifier"
+        case .ft_First_Name: return ".ft_First_Name"
+        case .ft_Date_of_Arrival: return ".ft_Date_of_Arrival"
         @unknown default:
             return ""
         }
@@ -1339,6 +1348,8 @@ extension FieldType {
         .ft_DLClassCode_NT_From, .ft_DLClassCode_NT_To, .ft_DLClassCode_NT_Notes,
         .ft_DLClassCode_TN_From, .ft_DLClassCode_TN_To, .ft_DLClassCode_TN_Notes,
         .ft_DLClassCode_D3_From, .ft_DLClassCode_D3_To, .ft_DLClassCode_D3_Notes,
-        .ft_Alt_Date_Of_Expiry,
+        .ft_Alt_Date_Of_Expiry, .ft_DLClassCode_CD_Notes, ft_Payment_Period_To,
+        .ft_Payment_Period_From, .ft_Issuer_Identification_Number, .ft_VaccinationCertificateIdentifier,
+        .ft_First_Name, .ft_Date_of_Arrival,
     ]
 }
