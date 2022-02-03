@@ -44,8 +44,7 @@ class ViewController: UIViewController {
                 self.initializationLabel.text = "Downloading database: \(progressValue)%"
             }, completion: { (success, error) in
                 if success {
-                    let config = DocReader.Config(license: licenseData, licenseUpdateCheck: true, databasePath: nil)
-                    
+                    let config = DocReader.Config(license: licenseData)
                     DocReader.shared.initializeReader(config: config) { (success, error) in
                         DispatchQueue.main.async {
                             if success {

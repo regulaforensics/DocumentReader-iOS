@@ -50,7 +50,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
         dispatch_async(dispatch_get_main_queue(), ^{
             if (successful) {
                 self.initializationLabel.text = @"Initialization...";
-                RGLConfig *config = [RGLConfig configWithLicenseData:licenseData licenseUpdateCheck:YES databasePath:nil];
+                RGLConfig *config = [RGLConfig configWithLicenseData:licenseData];
                 
                 [RGLDocReader.shared initializeReaderWithConfig:config completion:^(BOOL successful, NSError * _Nullable error ) {
                     if (successful) {
