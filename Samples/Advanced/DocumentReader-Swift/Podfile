@@ -1,11 +1,9 @@
-# Uncomment the next line to define a global platform for your project
+# frozen_string_literal: true
+
 platform :ios, '11.0'
+use_frameworks!
 
 target 'DocumentReader-Swift' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for DocumentReader-Swift
-  pod 'DocumentReader', '6.1.2358'
-  pod 'DocumentReaderFullRFID', '6.1.5791'
+  pod 'DocumentReader', '~> 6.1'
+  pod 'DocumentReaderFullRFID', '~> 6.1'
 end
