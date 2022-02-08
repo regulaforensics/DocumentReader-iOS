@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 platform :ios, '11.0'
 
 target 'DocumentReaderFullObjectiveC-sample' do
-  pod 'DocumentReader', '6.1.2358'
-  pod 'DocumentReaderFullRFID', '6.1.5791'
+  pod 'DocumentReader', '~> 6.1'
+  pod 'DocumentReaderFullRFID', '~> 6.1'
 end

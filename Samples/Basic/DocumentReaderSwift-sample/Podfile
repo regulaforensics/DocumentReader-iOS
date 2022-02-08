@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 platform :ios, '11.0'
+use_frameworks!
 
 target 'DocumentReaderFullSwift-sample' do
-  use_frameworks!
-  pod 'DocumentReader', '6.1.2358'
-  pod 'DocumentReaderFullRFID', '6.1.5791'
+  pod 'DocumentReader', '~> 6.1'
+  pod 'DocumentReaderFullRFID', '~> 6.1'
 end
