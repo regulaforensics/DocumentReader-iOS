@@ -12,4 +12,5 @@ class TextCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var lcidLabel: UILabel!
+    @IBOutlet weak var pageIndexLabel: UILabel!
 }
