@@ -122,7 +122,7 @@ class CustomRfidViewController: UIViewController {
     
     func handleRFIDNotify(rfidNotify: RFIDNotify) {
         switch rfidNotify.code {
-        case RGLRFIDNotificationCodesProgress:
+        case RFIDNotificationCodes.progress:
             DispatchQueue.main.async {
                 var progress: Float = 0
                 if self.currentRfidNotify != nil {
@@ -130,7 +130,7 @@ class CustomRfidViewController: UIViewController {
                 }
                 self.progressView.progress = progress
             }
-        case RGLRFIDNotificationCodesPCSCReadingDatagroup:
+        case RFIDNotificationCodes.pcscReadingDatagroup:
             if rfidNotify.value == 1 {
                 self.currentRfidNotify = nil
             } else {
@@ -143,7 +143,7 @@ class CustomRfidViewController: UIViewController {
     
     func currentProgress(rfidNotify: RFIDNotify) -> Float {
         switch rfidNotify.code {
-        case RGLRFIDNotificationCodesProgress:
+        case RFIDNotificationCodes.progress:
             return Float(rfidNotify.value)
         default:
             break
@@ -154,7 +154,8 @@ class CustomRfidViewController: UIViewController {
     
     func currentDataGroupTypeName() -> String {
         if let notify = self.currentRfidNotify {
-            return RFIDNotify.rfidDataFileTypeName(RFIDDataFileType.init(rawValue: Int(notify.number)) ?? RFIDDataFileType.unspecified) ?? ""
+            let type = RFIDDataFileType(rawValue: notify.attachment) ?? .unspecified
+            return RFIDNotify.rfidDataFileTypeName(type) ?? ""
         }
         return ""
     }
