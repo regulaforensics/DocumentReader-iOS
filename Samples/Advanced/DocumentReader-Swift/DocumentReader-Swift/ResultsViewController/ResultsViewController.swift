@@ -221,7 +221,7 @@ class ResultsViewController: UIViewController {
         var dataGroup = GroupedAttributes(type: "Data Groups", items: [])
         applications.forEach {
             $0.files.forEach {
-                guard $0.readingStatus != RGLRFIDErrorCodesNotAvailable else { return }
+                guard $0.readingStatus != RFIDErrorCodes.notAvailable else { return }
                 let attribute = Attribute(name: $0.typeName, rfidStatus: $0.pAStatus)
                 dataGroup.items.append(attribute)
             }
@@ -372,7 +372,7 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             cell.textLabel?.text = item.name.uppercased()
-            let imageName = item.rfidStatus == RGLRFIDErrorCodesFailed ? "status_not_ok" : item.rfidStatus == RGLRFIDErrorCodesNoError ? "status_ok" : "status_undefined"
+            let imageName = item.rfidStatus == RFIDErrorCodes.failed ? "status_not_ok" : item.rfidStatus == RFIDErrorCodes.noError ? "status_ok" : "status_undefined"
             let imageView = UIImageView(image: UIImage(named: imageName))
             cell.accessoryView = imageView
             return cell
