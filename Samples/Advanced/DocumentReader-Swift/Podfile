@@ -5,5 +5,5 @@ use_frameworks!
 
 target 'DocumentReader-Swift' do
   pod 'DocumentReader', '~> 6.2'
-  pod 'DocumentReaderFullRFID', '~> 6.1'
+  pod 'DocumentReaderFullRFID', '~> 6.2'
 end
