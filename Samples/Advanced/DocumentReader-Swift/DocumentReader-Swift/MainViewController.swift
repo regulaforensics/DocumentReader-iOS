@@ -230,8 +230,15 @@ class MainViewController: UIViewController {
             DocReader.shared.customization.multipageAnimationFrontImage = UIImage(named: "1")
             DocReader.shared.customization.multipageAnimationBackImage = UIImage(named: "2")
         }
+
+        let customHologramAnimation = CustomizationItem("Custom hologram animation") { () -> (Void) in
+            // NOTE: for a runtime animation change take a look at `showScanner` completion handler.
+            DocReader.shared.processParams.checkHologram = true
+            DocReader.shared.customization.hologramAnimationImage = UIImage(named: "1")
+            DocReader.shared.customization.hologramAnimationPositionMultiplier = 0.8
+        }
         
-        let customAnimationItems = [customAnimationHelpImage, customAnimationNextPageImage]
+        let customAnimationItems = [customAnimationHelpImage, customAnimationNextPageImage, customHologramAnimation]
         let customAnimationSection = CustomizationSection("Custom animations", customAnimationItems)
         sectionsData.append(customAnimationSection)
         
@@ -449,6 +456,13 @@ class MainViewController: UIViewController {
                 print("Scaning not finished. Result: \(result)")
             case .morePagesAvailable:
                 print("This status couldn't be here, it uses for -recognizeImage function")
+            case .processWhiteFlashLight:
+                print("processWhiteFlashLight")
+                // NOTE: Runtime hologram animation change.
+                if result?.documentPosition?.first?.docFormat == .ID1 {
+                    // Change the hologram image animation for ID document type.
+                    DocReader.shared.customization.hologramAnimationImage = UIImage(named: "2")
+                }
             default:
                 break
             }
