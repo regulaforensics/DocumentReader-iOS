@@ -166,8 +166,7 @@ final class OnlineProcessingViewController: UIViewController {
                 "scenario": "FullProcess",
                 "doublePageSpread": true,
                 "measureSystem": 0, // Metric system of measurement.
-                "dateFormat": "M/d/yyyy",
-                "alreadyCropped": true
+                "dateFormat": "M/d/yyyy"
             ],
             "List": [
                 requestImage
