@@ -67,13 +67,17 @@ class MainViewController: UIViewController {
     
     // MARK: - Private methods
 
-    private func initSectionsWithoutLicence() {
-        let onlineProcessing = CustomizationItem("Online Processing") { [weak self] in
+    lazy var onlineProcessing: CustomizationItem = {
+        let item = CustomizationItem("Online Processing") { [weak self] in
             guard let self = self else { return }
             let container = UINavigationController(rootViewController: OnlineProcessingViewController())
             container.modalPresentationStyle = .fullScreen
             self.present(container, animated: true, completion: nil)
         }
+        return item
+    }()
+
+    private func initSectionsWithoutLicence() {
         let childModeSection = CustomizationSection("Custom", [onlineProcessing])
         sectionsData.append(childModeSection)
     }
@@ -106,12 +110,6 @@ class MainViewController: UIViewController {
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
-        let onlineProcessing = CustomizationItem("Online Processing") { [weak self] in
-            guard let self = self else { return }
-            let container = UINavigationController(rootViewController: OnlineProcessingViewController())
-            container.modalPresentationStyle = .fullScreen
-            self.present(container, animated: true, completion: nil)
-        }
         let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
         sectionsData.append(childModeSection)
         
