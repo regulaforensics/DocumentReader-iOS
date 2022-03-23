@@ -92,7 +92,13 @@ class MainViewController: UIViewController {
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
-        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode])
+        let onlineProcessing = CustomizationItem("Online Processing") { [weak self] in
+            guard let self = self else { return }
+            let container = UINavigationController(rootViewController: OnlineProcessingViewController())
+            container.modalPresentationStyle = .fullScreen
+            self.present(container, animated: true, completion: nil)
+        }
+        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
         sectionsData.append(childModeSection)
         
         // 3. Custom camera frame
