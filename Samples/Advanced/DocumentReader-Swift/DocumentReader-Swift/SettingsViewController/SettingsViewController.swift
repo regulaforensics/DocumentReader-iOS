@@ -408,7 +408,49 @@ class SettingsViewController: UIViewController {
         let glaresCheck = SettingsOptionalBoolItem(title: "Glares Check", object: params.imageQA, keypath: \.glaresCheck)
         let colornessCheck = SettingsOptionalBoolItem(title: "Colorness Check", object: params.imageQA, keypath: \.colornessCheck)
         let moireCheck = SettingsOptionalBoolItem(title: "Moire Check", object: params.imageQA, keypath: \.moireCheck)
-        let imageQAGroup = SettingsGroup(title: "Image QA", items: [dpiThreshold, angleThreshold, focusCheck, glaresCheck, colornessCheck, moireCheck])
+        let imageQualityCheckTypeSettings: [(ImageQualityCheckType, String)] = [
+            (.imageGlares, "imageGlares"),
+            (.imageFocus, "imageFocus"),
+            (.imageResolution, "imageResolution"),
+            (.imageColorness, "imageColorness"),
+            (.imagePerspective, "imagePerspective"),
+            (.imageBounds, "imageBounds"),
+            (.screenCapture, "screenCapture"),
+            (.portrait, "portrait"),
+            (.handwritten, "handwritten")
+        ]
+
+        let expectedPass = SettingsActionItem(title: "Expected Pass") { [weak self] in
+            guard let self = self else { return }
+
+            let selectedOptions: [String] = params.imageQA.expectedPass?.compactMap { selectedType -> String? in
+                let selected = imageQualityCheckTypeSettings.first(where: { $0.0 == selectedType })
+                return selected?.1
+            } ?? []
+            let options: [String] = imageQualityCheckTypeSettings.map { $0.1 }
+            self.showOptionsPicker(title: "Expected Pass Options", current: selectedOptions, options: options) { (result) in
+                guard let selected = imageQualityCheckTypeSettings.first(where: { $0.1 == result }) else { return }
+                var filters = params.imageQA.expectedPass ?? []
+                if let selectedIndex = filters.firstIndex(of: selected.0) {
+                    filters.remove(at: selectedIndex)
+                } else {
+                    filters.append(selected.0)
+                }
+
+                DocReader.shared.processParams.imageQA.expectedPass = filters
+                self.tableView.reloadData()
+            }
+        } state: {
+            let currentList = DocReader.shared.processParams.imageQA.expectedPass ?? []
+            let value = currentList
+                .compactMap { (type: ImageQualityCheckType) -> String? in
+                    imageQualityCheckTypeSettings.first(where: { $0.0 == type })?.1
+                }
+                .joined(separator: ", ")
+            return value.isEmpty ? "nil" : value
+        }
+
+        let imageQAGroup = SettingsGroup(title: "Image QA", items: [dpiThreshold, angleThreshold, focusCheck, glaresCheck, colornessCheck, moireCheck, expectedPass])
         apiGroups.append(imageQAGroup)
 
         // Misc
