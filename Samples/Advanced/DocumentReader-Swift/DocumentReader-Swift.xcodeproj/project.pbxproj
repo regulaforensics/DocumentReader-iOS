@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8640EC3226F9C35700C8FF4F /* MRZFormat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8640EC3126F9C35700C8FF4F /* MRZFormat+Extensions.swift */; };
+		8673192D27EAFE1B00B754DF /* OnlineProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673192C27EAFE1B00B754DF /* OnlineProcessingViewController.swift */; };
 		8680540A275A3DB00036B3AF /* DocumentReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86805409275A3DB00036B3AF /* DocumentReaderService.swift */; };
 		868341E726F0C11B00644618 /* DocFormat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868341E626F0C11B00644618 /* DocFormat+Extensions.swift */; };
 		86878F0626EF96360082F481 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86878F0526EF96360082F481 /* NSObject+ClassName.swift */; };
@@ -59,6 +60,7 @@
 		0DC5DA1B48C6A7B2425AF7F0 /* Pods_DocumentReader_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReader_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391B685CCD628B0DFA19E1A /* Pods-DocumentReader-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-Swift.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		8640EC3126F9C35700C8FF4F /* MRZFormat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MRZFormat+Extensions.swift"; sourceTree = "<group>"; };
+		8673192C27EAFE1B00B754DF /* OnlineProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineProcessingViewController.swift; sourceTree = "<group>"; };
 		86805409275A3DB00036B3AF /* DocumentReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReaderService.swift; sourceTree = "<group>"; };
 		868341E626F0C11B00644618 /* DocFormat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocFormat+Extensions.swift"; sourceTree = "<group>"; };
 		86878F0526EF96360082F481 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8673192B27EAFE0600B754DF /* OnlineProcessing */ = {
+			isa = PBXGroup;
+			children = (
+				8673192C27EAFE1B00B754DF /* OnlineProcessingViewController.swift */,
+			);
+			path = OnlineProcessing;
+			sourceTree = "<group>";
+		};
 		9D00FDD925D3C67C00D6FEF1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 				9D33E29F25CA940700FF9561 /* AppDelegate.swift */,
 				9D33E2A325CA940700FF9561 /* MainViewController.swift */,
 				86805409275A3DB00036B3AF /* DocumentReaderService.swift */,
+				8673192B27EAFE0600B754DF /* OnlineProcessing */,
 				9D33E2AD25CA940700FF9561 /* Info.plist */,
 				9D33E2C925CA9FE400FF9561 /* DocumentReader-Swift.entitlements */,
 				9D00FDDA25D3C68A00D6FEF1 /* Resources */,
@@ -416,6 +427,7 @@
 				9D053B6F25CD6D770014EE23 /* FieldType+Extensions.swift in Sources */,
 				9D33E2A025CA940700FF9561 /* AppDelegate.swift in Sources */,
 				9D658B0225CBD11B00DDB739 /* ResultsViewController.swift in Sources */,
+				8673192D27EAFE1B00B754DF /* OnlineProcessingViewController.swift in Sources */,
 				9D4B75BC25D51EE100EB4EA4 /* CaptureMode+Extensions.swift in Sources */,
 				9D4B75C925D538F200EB4EA4 /* ChildViewController.swift in Sources */,
 				9D00FDD225D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift in Sources */,

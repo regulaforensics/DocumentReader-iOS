@@ -42,6 +42,9 @@ class MainViewController: UIViewController {
                 self.tableView.reloadData()
             case .error(let text):
                 self.statusLabel.text = text
+                self.enableUserInterfaceOnSuccess()
+                self.initSectionsWithoutLicence()
+                self.tableView.reloadData()
                 print(text)
             }
         })
@@ -63,6 +66,21 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Private methods
+
+    lazy var onlineProcessing: CustomizationItem = {
+        let item = CustomizationItem("Online Processing") { [weak self] in
+            guard let self = self else { return }
+            let container = UINavigationController(rootViewController: OnlineProcessingViewController())
+            container.modalPresentationStyle = .fullScreen
+            self.present(container, animated: true, completion: nil)
+        }
+        return item
+    }()
+
+    private func initSectionsWithoutLicence() {
+        let childModeSection = CustomizationSection("Custom", [onlineProcessing])
+        sectionsData.append(childModeSection)
+    }
     
     private func initSections() {
         // 1. Default
@@ -92,7 +110,7 @@ class MainViewController: UIViewController {
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
-        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode])
+        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
         sectionsData.append(childModeSection)
         
         // 3. Custom camera frame
@@ -680,10 +698,12 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        DocReader.shared.availableScenarios[row].caption
+        guard DocReader.shared.availableScenarios.indices.contains(row) else { return nil }
+        return DocReader.shared.availableScenarios[row].caption
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard DocReader.shared.availableScenarios.indices.contains(row) else { return }
         DocReader.shared.processParams.scenario = DocReader.shared.availableScenarios[row].identifier
     }
 }

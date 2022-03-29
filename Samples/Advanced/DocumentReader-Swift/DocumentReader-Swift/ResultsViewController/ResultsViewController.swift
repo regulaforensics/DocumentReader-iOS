@@ -308,6 +308,7 @@ extension ResultsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard sectionsData.count > 0 else { return }
         tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         guard sectionsData[0].items.count > 0 else { return }
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
