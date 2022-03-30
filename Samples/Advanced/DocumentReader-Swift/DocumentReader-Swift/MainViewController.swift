@@ -302,6 +302,7 @@ class MainViewController: UIViewController {
             switch action {
             case .cancel:
                 print("Cancelled by user")
+                DocReader.shared.functionality.manualMultipageMode = false
             case .complete:
                 guard let results = result else {
                     return
@@ -312,6 +313,7 @@ class MainViewController: UIViewController {
                     self.showScannerForManualMultipage()
                 } else if !results.isResultsEmpty() {
                     self.showResultScreen(results)
+                    DocReader.shared.functionality.manualMultipageMode = false
                 }
             case .error:
                 print("Error")
