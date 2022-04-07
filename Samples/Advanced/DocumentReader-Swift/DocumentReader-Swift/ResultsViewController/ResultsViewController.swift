@@ -16,6 +16,11 @@ extension DocumentReaderValue {
     }
 }
 
+struct DataGroup {
+    let title: String
+    let items: [GroupedAttributes]
+}
+
 class ResultsViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
@@ -23,9 +28,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var overallResultView: UIImageView!
     
     var results: DocumentReaderResults!
-    private var resultsGroups: [GroupedAttributes] = []
-    private var comparisonGroups: [GroupedAttributes] = []
-    private var rfidGroups: [GroupedAttributes] = []
+    
+    private var groups: [DataGroup] = []
     private var sectionsData: [GroupedAttributes] = []
     
     private let headerHeight: CGFloat = 44
@@ -37,14 +41,17 @@ class ResultsViewController: UIViewController {
         
         initResultsData()
         initCompareData()
+        initRfidData()
+        initAuthenticityData()
         
-        if ApplicationSettings.shared.isRfidEnabled {
-            initRfidData()
-        } else {
-            segmentedControl.removeSegment(at: 2, animated: false)
+        segmentedControl.removeAllSegments()
+        for group in groups.reversed() {
+            segmentedControl.insertSegment(withTitle: group.title, at: 0, animated: false)
         }
-        
-        sectionsData = resultsGroups
+        if groups.count > 0 {
+            segmentedControl.selectedSegmentIndex = 0
+            sectionsData = groups[0].items
+        }
         
         let directBarButton = UIBarButtonItem(title: "Direct", style: .plain, target: self, action: #selector(directButtonAction(_:)))
         navigationItem.rightBarButtonItem = directBarButton
@@ -65,16 +72,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            sectionsData = resultsGroups
-        case 1:
-            sectionsData = comparisonGroups
-        case 2:
-            sectionsData = rfidGroups
-        default:
-            break
-        }
+        sectionsData = groups[sender.selectedSegmentIndex].items
         pickerView.reloadAllComponents()
         pickerView.selectRow(0, inComponent: 0, animated: false)
         tableView.reloadData()
@@ -93,14 +91,84 @@ class ResultsViewController: UIViewController {
         tableView.register(UINib.init(nibName: kImageCellId, bundle: nil),
                            forCellReuseIdentifier: kImageCellId)
         
-        segmentedControl.selectedSegmentIndex = 0
-        
-        let statusImageName = results.overallResult == .ok ? "status_ok" : results.overallResult == CheckResult.error ? "status_not_ok" : "status_undefined"
+        let statusImageName = results.status.overallStatus == .ok ? "status_ok" : results.status.overallStatus == CheckResult.error ? "status_not_ok" : "status_undefined"
         overallResultView.image = UIImage(named: statusImageName)
+    }
+    
+    private func initAuthenticityData() {
+        var items: [GroupedAttributes] = []
+        
+        if let authenticityResults = results.authenticityResults {
+            for check in authenticityResults.checks ?? [] {
+                switch check.type {
+                case .uvLuminescence, .barcodeFormatCheck:
+                    var group = GroupedAttributes(type: "\(check.typeName)", items: [])
+                    
+                    for element in check.elements ?? [] {
+                        let security = element as! SecurityFeatureCheck
+                        let name = security.elementTypeName + "[\(check.pageIndex)]"
+                        let value = security.elementDiagnoseName
+                        let item = Attribute(name: name, value: value)
+                        
+                        group.items.append(item)
+                    }
+                    
+                    if !group.items.isEmpty {
+                        items.append(group)
+                    }
+                case .imagePattern, .hologramsDetection, .portraitComparison:
+                    var group = GroupedAttributes(type: "\(check.typeName)", items: [])
+                    
+                    for element in check.elements ?? [] {
+                        let ident = element as! IdentResult
+                        
+                        if let etalonImage = ident.etalonImage {
+                            let name = ident.elementTypeName + " (Etalon) [\(check.pageIndex)]"
+                            let item = Attribute(name: name, value: "", image: etalonImage)
+                            group.items.append(item)
+                        }
+                        
+                        if let image = ident.image {
+                            let name = ident.elementTypeName + "[\(check.pageIndex)]"
+                            let item = Attribute(name: name, value: "", image: image)
+                            group.items.append(item)
+                        }
+                        
+                        if !group.items.isEmpty {
+                            items.append(group)
+                        }
+                    }
+                case .ipi:
+                    var group = GroupedAttributes(type: "\(check.typeName)", items: [])
+                    
+                    for element in check.elements ?? [] {
+                        let ident = element as! PhotoIdentResult
+                     
+                        let name = ident.elementTypeName + "[\(check.pageIndex)]"
+                        
+                        if let image = ident.resultImages.first {
+                            let item = Attribute(name: name, value: "", image: image)
+                            group.items.append(item)
+                        }
+                        
+                        if !group.items.isEmpty {
+                            items.append(group)
+                        }
+                    }
+                default:
+                    break
+                }
+            }
+        }
+        
+        if items.count > 0 {
+            groups.append(DataGroup(title: "Authenticity", items: items))
+        }
     }
     
     private func initResultsData() {
         var attributes: [Attribute] = []
+        var items: [GroupedAttributes] = []
         
         // Process all existing text values
         for field in results.textResult.fields {
@@ -127,12 +195,16 @@ class ResultsViewController: UIViewController {
         for type in types {
             let typed = attributes.filter { $0.source == type }
             let group = GroupedAttributes(type: type.stringValue, items: typed)
-            resultsGroups.append(group)
+            items.append(group)
         }
-        resultsGroups.sort { $0.type < $1.type }
+        items.sort { $0.type < $1.type }
+        
+        groups.append(DataGroup(title: "Results", items: items))
     }
     
     private func initCompareData() {
+        var items: [GroupedAttributes] = []
+        
         // Extract types for comparison
         let values = results.textResult.fields.compactMap { $0.values }.flatMap { $0 }
         let comparisonTypes = Array(Set(values.compactMap { $0.sourceType }))
@@ -144,7 +216,7 @@ class ResultsViewController: UIViewController {
             let groupType = "\(pair[0].stringValue) - \(pair[1].stringValue)"
             let comparisonGroup = GroupedAttributes(type: groupType, items: [],
                                                     comparisonLHS: pair[0], comparisonRHS: pair[1])
-            comparisonGroups.append(comparisonGroup)
+            items.append(comparisonGroup)
         }
         
         // Add comparison attributes to appropriate group
@@ -155,22 +227,21 @@ class ResultsViewController: UIViewController {
                     guard let keyType = ResultType.init(rawValue: k.intValue) else { continue }
                     guard let result = FieldVerificationResult(rawValue: v.intValue) else { continue }
                     if result == .compareTrue || result == .compareFalse {
-                        tryAddValueToGroup(name, value, keyType, result, &comparisonGroups)
+                        tryAddValueToGroup(name, value, keyType, result, &items)
                     }
                 }
             }
         }
         
         // Remove duplicates in comparison attributes
-        for index in comparisonGroups.indices {
-            let group = comparisonGroups[index]
-            comparisonGroups[index].items = Array(Set(group.items))
+        for index in items.indices {
+            let group = items[index]
+            items[index].items = Array(Set(group.items))
         }
-        comparisonGroups = comparisonGroups.filter { $0.items.count > 0 }
+        items = items.filter { $0.items.count > 0 }
         
-        // Disable "Compare" segment if nothing to compare
-        if comparisonGroups.count == 0 {
-            segmentedControl.setEnabled(false, forSegmentAt: 1)
+        if items.count > 0 {
+            groups.append(DataGroup(title: "Compare", items: items))
         }
     }
     
@@ -211,11 +282,7 @@ class ResultsViewController: UIViewController {
     }
     
     private func initRfidData() {
-        defer {
-            if rfidGroups.count == 0 {
-                segmentedControl.setEnabled(false, forSegmentAt: 2)
-            }
-        }
+        var items: [GroupedAttributes] = []
         
         guard let applications = results.rfidSessionData?.applications else { return }
         var dataGroup = GroupedAttributes(type: "Data Groups", items: [])
@@ -227,27 +294,29 @@ class ResultsViewController: UIViewController {
             }
         }
         if dataGroup.items.count > 0 {
-            rfidGroups.append(dataGroup)
+            items.append(dataGroup)
         }
         
-        guard (results.rfidSessionData?.sessionDataStatus) != nil else { return }
-        
         var statusGroup = GroupedAttributes(type: "Data Status", items: [])
-        var attribute = Attribute(name: "AA", checkResult: results?.rfidSessionData?.sessionDataStatus.aa)
+        var attribute = Attribute(name: "AA", checkResult: results?.status.detailsRFID.aa)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "BAC", checkResult: results?.rfidSessionData?.sessionDataStatus.bac)
+        attribute = Attribute(name: "BAC", checkResult: results?.status.detailsRFID.bac)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "CA", checkResult: results?.rfidSessionData?.sessionDataStatus.ca)
+        attribute = Attribute(name: "CA", checkResult: results?.status.detailsRFID.ca)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "PA", checkResult: results?.rfidSessionData?.sessionDataStatus.pa)
+        attribute = Attribute(name: "PA", checkResult: results?.status.detailsRFID.pa)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "PACE", checkResult: results?.rfidSessionData?.sessionDataStatus.pace)
+        attribute = Attribute(name: "PACE", checkResult: results?.status.detailsRFID.pace)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "TA", checkResult: results?.rfidSessionData?.sessionDataStatus.ta)
+        attribute = Attribute(name: "TA", checkResult: results?.status.detailsRFID.ta)
         statusGroup.items.append(attribute)
         
         if statusGroup.items.count > 0 {
-            rfidGroups.append(statusGroup)
+            items.append(statusGroup)
+        }
+        
+        if items.count > 0 {
+            groups.append(DataGroup(title: "RFID", items: items))
         }
     }
     
