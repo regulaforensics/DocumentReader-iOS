@@ -18,7 +18,7 @@ We have provided sample projects that demonstrate the ***API*** calls you can us
 * [Additional information](#additional-information)
 
 ## How to build demo application
-1. Visit [licensing.regulaforensics.com](https://licensing.regulaforensics.com) to get a trial license (`regula.license` file). The license creation wizard will guide you through the necessary steps.
+1. Visit [client.regulaforensics.com](https://client.regulaforensics.com) to get a trial license (`regula.license` file). The license creation wizard will guide you through the necessary steps.
 1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
 1. Repository structure and steps to build the projects:
     1. `Advanced` folder contains the advanced sample project with almost all available features. To build it, do the following steps:
@@ -27,7 +27,7 @@ We have provided sample projects that demonstrate the ***API*** calls you can us
         1. Install Pods: open Terminal within the root project folder and run `pod install` command.
         1. Copy the license file to the project: `Advanced/DocumentReader-Swift/DocumentReader-Swift`.
         1. Open the project in Xcode (`DocumentReader-Swift.xcworkspace` file).
-        1. Change the Bundle Identifier to the one you have specified during the registration at [licensing.regulaforensics.com](https://licensing.regulaforensics.com).
+        1. Change the Bundle Identifier to the one you have specified during the registration at [client.regulaforensics.com](https://client.regulaforensics.com).
         1. Run the project.
     
     1. `Basic` folder contains the basic sample project with only main features. To build it, do the following steps:
@@ -36,7 +36,7 @@ We have provided sample projects that demonstrate the ***API*** calls you can us
         1. Install Pods: open Terminal within the root project folder and run `pod install` command.
         1. Copy the license file to the project: `Basic/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample` or `Basic/DocumentReaderSwift-sample/DocumentReaderSwift-sample`.
         1. Open the project in Xcode (`DocumentReaderObjectiveC-sample.xcworkspace` or `DocumentReaderSwift-sample.xcworkspace` file).
-        1. Change the Bundle Identifier to the one you have specified during the registration at [licensing.regulaforensics.com](https://licensing.regulaforensics.com).
+        1. Change the Bundle Identifier to the one you have specified during the registration at [client.regulaforensics.com](https://client.regulaforensics.com).
         1. Run the project.
 
 ## Troubleshooting license issues
