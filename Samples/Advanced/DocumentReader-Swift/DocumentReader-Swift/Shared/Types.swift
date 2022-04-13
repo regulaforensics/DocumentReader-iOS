@@ -184,6 +184,7 @@ struct Attribute: Hashable {
     var name: String
     var value: String? = nil
     var lcid: LCID? = nil
+    var pageIndex: Int? = nil
     var valid: FieldVerificationResult? = nil
     var source: ResultType? = nil
     var image: UIImage? = nil

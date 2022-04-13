@@ -95,7 +95,7 @@ class ResultsViewController: UIViewController {
         
         segmentedControl.selectedSegmentIndex = 0
         
-        let statusImageName = results.overallResult == .ok ? "status_ok" : results.overallResult == CheckResult.error ? "status_not_ok" : "status_undefined"
+        let statusImageName = results.status.overallStatus == .ok ? "status_ok" : results.status.overallStatus == CheckResult.error ? "status_not_ok" : "status_undefined"
         overallResultView.image = UIImage(named: statusImageName)
     }
     
@@ -107,18 +107,16 @@ class ResultsViewController: UIViewController {
             let name = field.fieldName
             for value in field.values {
                 let valid = value.validity
-                let item = Attribute(name: name, value: value.value, lcid: field.lcid,
-                                     valid: valid, source: value.sourceType)
+                let item = Attribute(name: name, value: value.value, lcid: field.lcid, pageIndex: value.pageIndex, valid: valid, source: value.sourceType)
                 attributes.append(item)
             }
         }
         
         // Process all existing graphics values
         for field in results.graphicResult.fields {
-            let name = field.fieldName + " [\(field.pageIndex)]"
+            let name = field.fieldName
             let image = field.value
-            let item = Attribute(name: name, value: "",
-                                 source: field.sourceType, image: image)
+            let item = Attribute(name: name, value: "", pageIndex: field.pageIndex, source: field.sourceType, image: image)
             attributes.append(item)
         }
         
@@ -230,20 +228,18 @@ class ResultsViewController: UIViewController {
             rfidGroups.append(dataGroup)
         }
         
-        guard (results.rfidSessionData?.sessionDataStatus) != nil else { return }
-        
         var statusGroup = GroupedAttributes(type: "Data Status", items: [])
-        var attribute = Attribute(name: "AA", checkResult: results?.rfidSessionData?.sessionDataStatus.aa)
+        var attribute = Attribute(name: "AA", checkResult: results.status.detailsRFID.aa)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "BAC", checkResult: results?.rfidSessionData?.sessionDataStatus.bac)
+        attribute = Attribute(name: "BAC", checkResult: results.status.detailsRFID.bac)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "CA", checkResult: results?.rfidSessionData?.sessionDataStatus.ca)
+        attribute = Attribute(name: "CA", checkResult: results.status.detailsRFID.ca)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "PA", checkResult: results?.rfidSessionData?.sessionDataStatus.pa)
+        attribute = Attribute(name: "PA", checkResult: results.status.detailsRFID.pa)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "PACE", checkResult: results?.rfidSessionData?.sessionDataStatus.pace)
+        attribute = Attribute(name: "PACE", checkResult: results.status.detailsRFID.pace)
         statusGroup.items.append(attribute)
-        attribute = Attribute(name: "TA", checkResult: results?.rfidSessionData?.sessionDataStatus.ta)
+        attribute = Attribute(name: "TA", checkResult: results.status.detailsRFID.ta)
         statusGroup.items.append(attribute)
         
         if statusGroup.items.count > 0 {
@@ -340,7 +336,11 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
             // Attribute with graphics
             let cell = tableView.dequeueReusableCell(withIdentifier: kImageCellId,
                                                      for: indexPath) as! ImageCell
-            cell.titleLabel.text = item.name.uppercased()
+            var name = item.name.uppercased()
+            if let pageIndex = item.pageIndex {
+                name += " [\(pageIndex)]"
+            }
+            cell.titleLabel.text = name
             cell.rawImageView.image = item.image
             return cell
         } else if item.value != nil {
@@ -349,7 +349,10 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
                                                      for: indexPath) as! TextCell
             cell.titleLabel.text = item.name.uppercased()
             cell.valueLabel.text = item.value
-
+            if let pageIndex = item.pageIndex {
+                cell.pageIndexLabel.text = "Page \(pageIndex)"
+            }
+            
             if let lcid = item.lcid {
                 cell.lcidLabel.text = lcid.stringValue
             } else {
