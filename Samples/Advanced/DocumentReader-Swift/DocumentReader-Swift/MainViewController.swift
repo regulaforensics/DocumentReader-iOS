@@ -145,16 +145,7 @@ class MainViewController: UIViewController {
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
-        let customUILayerModeStatic = CustomizationItem("Custom UI Layer JSON") { [weak self] in
-            guard let self = self else { return }
-            self.setupCustomUIFromFile()
-        }
-        let customUILayerModeAnimated = CustomizationItem("Custom UI Layer JSON Animated") { [weak self] in
-            guard let self = self else { return }
-            self.isCustomUILayerEnabled = true
-            self.animationTimer.fire()
-        }
-        let customModedSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing, customUILayerModeStatic, customUILayerModeAnimated])
+        let customModedSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
         sectionsData.append(customModedSection)
         
         // 3. Custom camera frame
@@ -278,7 +269,17 @@ class MainViewController: UIViewController {
             DocReader.shared.customization.customStatusPositionMultiplier = 0.5
         }
         
-        let freeCustomStatusItems = [freeCustomTextAndPostion]
+        let customUILayerModeStatic = CustomizationItem("Custom Status & Image") { [weak self] in
+            guard let self = self else { return }
+            self.setupCustomUIFromFile()
+        }
+        let customUILayerModeAnimated = CustomizationItem("Custom Status Animated") { [weak self] in
+            guard let self = self else { return }
+            self.isCustomUILayerEnabled = true
+            self.animationTimer.fire()
+        }
+        
+        let freeCustomStatusItems = [freeCustomTextAndPostion, customUILayerModeStatic, customUILayerModeAnimated]
         let freeCustomStatusSection = CustomizationSection("Free custom status", freeCustomStatusItems)
         sectionsData.append(freeCustomStatusSection)
         
