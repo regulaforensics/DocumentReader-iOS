@@ -46,6 +46,8 @@
 		9D9560B825D286D100C0673F /* SettingsSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D9560B625D286D100C0673F /* SettingsSwitchCell.xib */; };
 		9D9F7DB325D56E9B0091C675 /* LCID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F7DB225D56E9B0091C675 /* LCID+Extensions.swift */; };
 		9D9F7DB725D573620091C675 /* GetValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F7DB625D573620091C675 /* GetValuesViewController.swift */; };
+		9DA9A410283693DC0063B00E /* layer.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9A40F283693DC0063B00E /* layer.json */; };
+		9DA9A413283780450063B00E /* CustomUIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9A412283780450063B00E /* CustomUIModels.swift */; };
 		9DC45D3025D692AC0077AE4A /* DocReaderFrame+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC45D2F25D692AC0077AE4A /* DocReaderFrame+Extensions.swift */; };
 		9DF08E5225D3C9C700880F7E /* SettingsActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF08E5025D3C9C700880F7E /* SettingsActionCell.swift */; };
 		9DF08E5325D3C9C700880F7E /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF08E5125D3C9C700880F7E /* SettingsActionCell.xib */; };
@@ -54,6 +56,19 @@
 		9DFBD7DF25E687C000428089 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFBD7DE25E687C000428089 /* HelpViewController.swift */; };
 		D1409041612445C6ECC23CA8 /* Pods_DocumentReader_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC5DA1B48C6A7B2425AF7F0 /* Pods_DocumentReader_Swift.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DA9A40C283692830063B00E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0BBE1365BE97A7AE1B68DF58 /* Pods-DocumentReader-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-Swift.release.xcconfig"; path = "Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +116,8 @@
 		9D9560B625D286D100C0673F /* SettingsSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSwitchCell.xib; sourceTree = "<group>"; };
 		9D9F7DB225D56E9B0091C675 /* LCID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LCID+Extensions.swift"; sourceTree = "<group>"; };
 		9D9F7DB625D573620091C675 /* GetValuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetValuesViewController.swift; sourceTree = "<group>"; };
+		9DA9A40F283693DC0063B00E /* layer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = layer.json; sourceTree = "<group>"; };
+		9DA9A412283780450063B00E /* CustomUIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIModels.swift; sourceTree = "<group>"; };
 		9DC45D2F25D692AC0077AE4A /* DocReaderFrame+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocReaderFrame+Extensions.swift"; sourceTree = "<group>"; };
 		9DF08E5025D3C9C700880F7E /* SettingsActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActionCell.swift; sourceTree = "<group>"; };
 		9DF08E5125D3C9C700880F7E /* SettingsActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
@@ -196,6 +213,7 @@
 				9D33E29F25CA940700FF9561 /* AppDelegate.swift */,
 				9D33E2A325CA940700FF9561 /* MainViewController.swift */,
 				86805409275A3DB00036B3AF /* DocumentReaderService.swift */,
+				9DA9A40F283693DC0063B00E /* layer.json */,
 				8673192B27EAFE0600B754DF /* OnlineProcessing */,
 				9D33E2AD25CA940700FF9561 /* Info.plist */,
 				9D33E2C925CA9FE400FF9561 /* DocumentReader-Swift.entitlements */,
@@ -258,6 +276,7 @@
 		9D83E71425D41A3E009DE46F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9DA9A412283780450063B00E /* CustomUIModels.swift */,
 				9D6D108225D29738001E9158 /* UserSettings.swift */,
 				9D6D108625D29A4E001E9158 /* Types.swift */,
 				9D83E71025D4191F009DE46F /* Constants.swift */,
@@ -294,6 +313,7 @@
 				9D33E29925CA940700FF9561 /* Frameworks */,
 				9D33E29A25CA940700FF9561 /* Resources */,
 				F4656F587113E0C8790E21B6 /* [CP] Embed Pods Frameworks */,
+				9DA9A40C283692830063B00E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,6 +364,7 @@
 			files = (
 				9D658B1525CC02F700DDB739 /* ImageCell.xib in Resources */,
 				9D33E2CF25CAA12200FF9561 /* CertificatesPA.bundle in Resources */,
+				9DA9A410283693DC0063B00E /* layer.json in Resources */,
 				9D33E2AC25CA940700FF9561 /* LaunchScreen.storyboard in Resources */,
 				9D33E2A925CA940700FF9561 /* Assets.xcassets in Resources */,
 				9D33E2A725CA940700FF9561 /* Main.storyboard in Resources */,
@@ -422,6 +443,7 @@
 				9D658B0725CBF3EE00DDB739 /* ResultType+Extensions.swift in Sources */,
 				9DFBD7DA25E6689900428089 /* RFIDAccessControlProcedureType+Extensions.swift in Sources */,
 				9D9F7DB725D573620091C675 /* GetValuesViewController.swift in Sources */,
+				9DA9A413283780450063B00E /* CustomUIModels.swift in Sources */,
 				8640EC3226F9C35700C8FF4F /* MRZFormat+Extensions.swift in Sources */,
 				9D33E2A425CA940700FF9561 /* MainViewController.swift in Sources */,
 				9D053B6F25CD6D770014EE23 /* FieldType+Extensions.swift in Sources */,
@@ -589,6 +611,10 @@
 				CODE_SIGN_ENTITLEMENTS = "DocumentReader-Swift/DocumentReader-Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6WR54S268;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DocumentReader-Swift",
+				);
 				INFOPLIST_FILE = "DocumentReader-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -610,6 +636,10 @@
 				CODE_SIGN_ENTITLEMENTS = "DocumentReader-Swift/DocumentReader-Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6WR54S268;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DocumentReader-Swift",
+				);
 				INFOPLIST_FILE = "DocumentReader-Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

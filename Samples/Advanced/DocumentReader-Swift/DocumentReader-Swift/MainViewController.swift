@@ -24,6 +24,41 @@ class MainViewController: UIViewController {
     private var sectionsData: [CustomizationSection] = []
     private var pickerImages: [UIImage] = []
     
+    var isCustomUILayerEnabled: Bool = false
+    lazy var animationTimer = Timer.scheduledTimer(timeInterval: 1.0/60, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+    
+    // JSON string for custom UI layer
+    let customLayerJsonString =
+    """
+    {
+    "objects": [
+    {
+    "label": {
+      "text": "Searching document...",
+      "fontStyle": "normal",
+      "fontColor": "#FF444444",
+      "fontSize": 24,
+      "alignment": "center",
+      "background": "#BBDDDDDD",
+      "borderRadius": 10,
+      "padding": {
+        "start": 20,
+        "end": 20,
+        "top": 20,
+        "bottom": 20
+      },
+      "position": {
+        "v": 1.0
+      },
+      "margin": {
+        "start": 24,
+        "end": 24
+      }
+    }
+    }]
+    }
+    """
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -110,8 +145,17 @@ class MainViewController: UIViewController {
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
-        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
-        sectionsData.append(childModeSection)
+        let customUILayerModeStatic = CustomizationItem("Custom UI Layer JSON") { [weak self] in
+            guard let self = self else { return }
+            self.setupCustomUIFromFile()
+        }
+        let customUILayerModeAnimated = CustomizationItem("Custom UI Layer JSON Animated") { [weak self] in
+            guard let self = self else { return }
+            self.isCustomUILayerEnabled = true
+            self.animationTimer.fire()
+        }
+        let customModedSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing, customUILayerModeStatic, customUILayerModeAnimated])
+        sectionsData.append(customModedSection)
         
         // 3. Custom camera frame
         let customBorderWidth = CustomizationItem("Custom border width") { () -> (Void) in
@@ -448,10 +492,13 @@ class MainViewController: UIViewController {
     private func showCameraViewController() {
         DocReader.shared.showScanner(self) { [weak self] (action, result, error) in
             guard let self = self else { return }
+            
             switch action {
             case .cancel:
+                self.stopCustomUIChanges()
                 print("Cancelled by user")
             case .complete:
+                self.stopCustomUIChanges()
                 guard let opticalResults = result else {
                     return
                 }
@@ -461,6 +508,7 @@ class MainViewController: UIViewController {
                     self.showResultScreen(opticalResults)
                 }
             case .error:
+                self.stopCustomUIChanges()
                 print("Error")
                 guard let error = error else { return }
                 print("Error string: \(error)")
@@ -635,6 +683,69 @@ class MainViewController: UIViewController {
         }
         
         return paCertificates
+    }
+    
+    private func setupCustomUIFromFile() {
+        if let path = Bundle.main.path(forResource: "layer", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+                DocReader.shared.customization.customUILayerJSON = jsonDict
+            } catch {
+                
+            }
+        }
+    }
+    
+    @objc func fireTimer() {
+        /*
+        This example with Timer shows how you can change different properties of elements at runtime,
+        such as text, position, color etc. Little bit overhead, but it show how it can changed over time.
+        Also you can extend model with you properties such like ID, and access by it in runtime.
+        If you don't need that kind of flexibility, you can just use a static JSON file.
+        */
+        guard isCustomUILayerEnabled else {
+            return
+        }
+        
+        guard let jsonData = customLayerJsonString.data(using: .utf8) else {
+            return
+        }
+        
+        guard var model = try? JSONDecoder().decode(CustomUILayerModel.self, from: jsonData) else {
+            return
+        }
+        
+        guard var object = model.objects.first else {
+            return
+        }
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        object.label.text = "Custom label that showing current time: \(dateFormatter.string(from: date))"
+        
+        let ct = CACurrentMediaTime()
+        object.label.position.v = 1.0 + sin(ct) * 0.5 // Move vertically from 0.5 to 1.5
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        model.objects = [object]
+
+        do {
+            let data = try encoder.encode(model)
+            if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                DocReader.shared.customization.customUILayerJSON = jsonDict
+            }
+        } catch {
+            
+        }
+    }
+    
+    private func stopCustomUIChanges() {
+        isCustomUILayerEnabled = false
+        DocReader.shared.customization.customUILayerJSON = nil
     }
 }
 
