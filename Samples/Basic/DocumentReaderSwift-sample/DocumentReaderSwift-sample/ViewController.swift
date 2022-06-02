@@ -142,18 +142,20 @@ class ViewController: UIViewController {
                   }
                 }
             case .denied:
-                let message = NSLocalizedString("Application doesn't have permission to use the camera, please change privacy settings", comment: "Alert message when the user has denied access to the gallery")
-                let alertController = UIAlertController(title: NSLocalizedString("Gallery Unavailable", comment: "Alert eror title"), message: message, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert manager, OK button tittle"), style: .cancel, handler: nil))
-                alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .default, handler: { action in
-                    if #available(iOS 10.0, *) {
-                        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-                        UIApplication.shared.open(settingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                    } else {
-                        UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
-                    }
-                }))
-                self.present(alertController, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    let message = NSLocalizedString("Application doesn't have permission to use the camera, please change privacy settings", comment: "Alert message when the user has denied access to the gallery")
+                    let alertController = UIAlertController(title: NSLocalizedString("Gallery Unavailable", comment: "Alert eror title"), message: message, preferredStyle: .alert)
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert manager, OK button tittle"), style: .cancel, handler: nil))
+                    alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .default, handler: { action in
+                        if #available(iOS 10.0, *) {
+                            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+                            UIApplication.shared.open(settingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+                        } else {
+                            UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
+                        }
+                    }))
+                    self.present(alertController, animated: true, completion: nil)
+                }
                 print("PHPhotoLibrary status: denied")
                 break
             case .notDetermined:
