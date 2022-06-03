@@ -44,6 +44,9 @@
 		9D9560B225D1805E00C0673F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9560B125D1805E00C0673F /* SettingsViewController.swift */; };
 		9D9560B725D286D100C0673F /* SettingsSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9560B525D286D100C0673F /* SettingsSwitchCell.swift */; };
 		9D9560B825D286D100C0673F /* SettingsSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D9560B625D286D100C0673F /* SettingsSwitchCell.xib */; };
+		9D969824284A0BB20005C1BD /* ir.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 9D969821284A0BB20005C1BD /* ir.bmp */; };
+		9D969825284A0BB20005C1BD /* uv.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 9D969822284A0BB20005C1BD /* uv.bmp */; };
+		9D969826284A0BB20005C1BD /* white.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 9D969823284A0BB20005C1BD /* white.bmp */; };
 		9D9F7DB325D56E9B0091C675 /* LCID+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F7DB225D56E9B0091C675 /* LCID+Extensions.swift */; };
 		9D9F7DB725D573620091C675 /* GetValuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9F7DB625D573620091C675 /* GetValuesViewController.swift */; };
 		9DA9A410283693DC0063B00E /* layer.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9A40F283693DC0063B00E /* layer.json */; };
@@ -114,6 +117,9 @@
 		9D9560B125D1805E00C0673F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9D9560B525D286D100C0673F /* SettingsSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSwitchCell.swift; sourceTree = "<group>"; };
 		9D9560B625D286D100C0673F /* SettingsSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsSwitchCell.xib; sourceTree = "<group>"; };
+		9D969821284A0BB20005C1BD /* ir.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = ir.bmp; sourceTree = "<group>"; };
+		9D969822284A0BB20005C1BD /* uv.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = uv.bmp; sourceTree = "<group>"; };
+		9D969823284A0BB20005C1BD /* white.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = white.bmp; sourceTree = "<group>"; };
 		9D9F7DB225D56E9B0091C675 /* LCID+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LCID+Extensions.swift"; sourceTree = "<group>"; };
 		9D9F7DB625D573620091C675 /* GetValuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetValuesViewController.swift; sourceTree = "<group>"; };
 		9DA9A40F283693DC0063B00E /* layer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = layer.json; sourceTree = "<group>"; };
@@ -177,6 +183,9 @@
 		9D00FDDA25D3C68A00D6FEF1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9D969821284A0BB20005C1BD /* ir.bmp */,
+				9D969822284A0BB20005C1BD /* uv.bmp */,
+				9D969823284A0BB20005C1BD /* white.bmp */,
 				9D33E2A525CA940700FF9561 /* Main.storyboard */,
 				9D33E2A825CA940700FF9561 /* Assets.xcassets */,
 				9D33E2AA25CA940700FF9561 /* LaunchScreen.storyboard */,
@@ -362,15 +371,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D969824284A0BB20005C1BD /* ir.bmp in Resources */,
 				9D658B1525CC02F700DDB739 /* ImageCell.xib in Resources */,
 				9D33E2CF25CAA12200FF9561 /* CertificatesPA.bundle in Resources */,
 				9DA9A410283693DC0063B00E /* layer.json in Resources */,
 				9D33E2AC25CA940700FF9561 /* LaunchScreen.storyboard in Resources */,
 				9D33E2A925CA940700FF9561 /* Assets.xcassets in Resources */,
 				9D33E2A725CA940700FF9561 /* Main.storyboard in Resources */,
+				9D969826284A0BB20005C1BD /* white.bmp in Resources */,
 				9D33E2CE25CAA12200FF9561 /* Certificates.bundle in Resources */,
 				9DF08E5325D3C9C700880F7E /* SettingsActionCell.xib in Resources */,
 				9D33E2C525CA9EF500FF9561 /* regula.license in Resources */,
+				9D969825284A0BB20005C1BD /* uv.bmp in Resources */,
 				9D658B0F25CC000E00DDB739 /* TextCell.xib in Resources */,
 				9D9560B825D286D100C0673F /* SettingsSwitchCell.xib in Resources */,
 				9D33E2D025CAA12200FF9561 /* CertificatesTA.bundle in Resources */,

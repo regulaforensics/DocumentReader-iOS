@@ -88,7 +88,7 @@ class ViewController: UIViewController {
             switch action {
             case .cancel:
                 print("Cancelled by user")
-            case .complete:
+            case .complete, .processTimeout:
                 print("Completed")
                 if self.readRFID.isOn && result?.chipPage != 0 {
                     self.startRFIDReading()

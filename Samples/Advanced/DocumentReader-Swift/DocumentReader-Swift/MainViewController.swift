@@ -125,7 +125,12 @@ class MainViewController: UIViewController {
         defaultScanner.resetFunctionality = false
         let stillImage = CustomizationItem("Gallery (recognizeImages)")
         stillImage.actionType = .gallery
-        let defaultSection = CustomizationSection("Default", [defaultScanner, stillImage])
+        let recognizeImageInput = CustomizationItem("Recognize images with light type") { [weak self] in
+            guard let self = self else { return }
+            self.recognizeImagesWithImageInput()
+        }
+        recognizeImageInput.actionType = .custom
+        let defaultSection = CustomizationSection("Default", [defaultScanner, stillImage, recognizeImageInput])
         sectionsData.append(defaultSection)
         
         // 2. Custom modes
@@ -348,7 +353,7 @@ class MainViewController: UIViewController {
             case .cancel:
                 print("Cancelled by user")
                 DocReader.shared.functionality.manualMultipageMode = false
-            case .complete:
+            case .complete, .processTimeout:
                 guard let results = result else {
                     return
                 }
@@ -367,6 +372,42 @@ class MainViewController: UIViewController {
             case .process:
                 guard let result = result else { return }
                 print("Scaning not finished. Result: \(result)")
+            default:
+                break
+            }
+        }
+    }
+    
+    private func recognizeImagesWithImageInput() {
+        let whiteImage = UIImage(named: "white.bmp")
+        let uvImage = UIImage(named: "uv.bmp")
+        let irImage = UIImage(named: "ir.bmp")
+        
+        let whiteInput = DocReader.ImageInput(image: whiteImage!, light: .white, pageIndex: 0)
+        let uvInput = DocReader.ImageInput(image: uvImage!, light: .UV, pageIndex: 0)
+        let irInput = DocReader.ImageInput(image: irImage!, light: .infrared, pageIndex: 0)
+        
+        DocReader.shared.recognizeImages(with: [whiteInput, irInput, uvInput]) { action, results, error in
+            switch action {
+            case .cancel:
+                self.stopCustomUIChanges()
+                print("Cancelled by user")
+            case .complete, .processTimeout:
+                self.stopCustomUIChanges()
+                guard let opticalResults = results else {
+                    return
+                }
+                self.showResultScreen(opticalResults)
+            case .error:
+                self.stopCustomUIChanges()
+                print("Error")
+                guard let error = error else { return }
+                print("Error string: \(error)")
+            case .process:
+                guard let result = results else { return }
+                print("Scaning not finished. Result: \(result)")
+            case .morePagesAvailable:
+                print("This status couldn't be here, it uses for -recognizeImage function")
             default:
                 break
             }
@@ -498,7 +539,7 @@ class MainViewController: UIViewController {
             case .cancel:
                 self.stopCustomUIChanges()
                 print("Cancelled by user")
-            case .complete:
+            case .complete, .processTimeout:
                 self.stopCustomUIChanges()
                 guard let opticalResults = result else {
                     return

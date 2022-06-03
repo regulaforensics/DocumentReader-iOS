@@ -95,6 +95,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
             }
             break;
 
+            case RGLDocReaderActionProcessTimeout:
             case RGLDocReaderActionComplete: {
                 NSLog(@"Completed");
                 [self handleScanResults:result];
