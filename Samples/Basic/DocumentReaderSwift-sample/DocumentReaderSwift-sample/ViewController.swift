@@ -88,6 +88,19 @@ class ViewController: UIViewController {
             switch action {
             case .cancel:
                 print("Cancelled by user")
+            case .processTimeout:
+                print("Timeout")
+                let timeoutLabel = UILabel(frame: self.view.bounds)
+                timeoutLabel.text = "Timeout!"
+                timeoutLabel.font = UIFont.systemFont(ofSize: 22, weight: .medium)
+                timeoutLabel.textAlignment = .center
+                self.view.addSubview(timeoutLabel)
+                UIView.animate(withDuration: 2) {
+                    timeoutLabel.alpha = 0
+                } completion: { completion in
+                    timeoutLabel.removeFromSuperview()
+                    self.handleResult(result: result)
+                }
             case .complete:
                 print("Completed")
                 if self.readRFID.isOn && result?.chipPage != 0 {

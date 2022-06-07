@@ -95,6 +95,22 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
             }
             break;
 
+            case RGLDocReaderActionProcessTimeout: {
+                NSLog(@"Timeout");
+                UILabel *timeoutLabel = [[UILabel alloc] initWithFrame:self.view.bounds];
+                timeoutLabel.text = @"Timeout!";
+                timeoutLabel.font = [UIFont systemFontOfSize:24 weight:UIFontWeightMedium];
+                timeoutLabel.textAlignment = NSTextAlignmentCenter;
+                [self.view addSubview:timeoutLabel];
+                [UIView animateWithDuration:2 animations:^{
+                    timeoutLabel.alpha = 0;
+                } completion:^(BOOL finished) {
+                    [timeoutLabel removeFromSuperview];
+                    [self handleScanResults:result];
+                }];                
+            }
+            break;
+                
             case RGLDocReaderActionComplete: {
                 NSLog(@"Completed");
                 [self handleScanResults:result];

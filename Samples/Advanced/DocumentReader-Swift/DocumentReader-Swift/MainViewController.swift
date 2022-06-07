@@ -24,6 +24,41 @@ class MainViewController: UIViewController {
     private var sectionsData: [CustomizationSection] = []
     private var pickerImages: [UIImage] = []
     
+    var isCustomUILayerEnabled: Bool = false
+    lazy var animationTimer = Timer.scheduledTimer(timeInterval: 1.0/60, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
+    
+    // JSON string for custom UI layer
+    let customLayerJsonString =
+    """
+    {
+    "objects": [
+    {
+    "label": {
+      "text": "Searching document...",
+      "fontStyle": "normal",
+      "fontColor": "#FF444444",
+      "fontSize": 24,
+      "alignment": "center",
+      "background": "#BBDDDDDD",
+      "borderRadius": 10,
+      "padding": {
+        "start": 20,
+        "end": 20,
+        "top": 20,
+        "bottom": 20
+      },
+      "position": {
+        "v": 1.0
+      },
+      "margin": {
+        "start": 24,
+        "end": 24
+      }
+    }
+    }]
+    }
+    """
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,7 +125,12 @@ class MainViewController: UIViewController {
         defaultScanner.resetFunctionality = false
         let stillImage = CustomizationItem("Gallery (recognizeImages)")
         stillImage.actionType = .gallery
-        let defaultSection = CustomizationSection("Default", [defaultScanner, stillImage])
+        let recognizeImageInput = CustomizationItem("Recognize images with light type") { [weak self] in
+            guard let self = self else { return }
+            self.recognizeImagesWithImageInput()
+        }
+        recognizeImageInput.actionType = .custom
+        let defaultSection = CustomizationSection("Default", [defaultScanner, stillImage, recognizeImageInput])
         sectionsData.append(defaultSection)
         
         // 2. Custom modes
@@ -110,8 +150,8 @@ class MainViewController: UIViewController {
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
-        let childModeSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
-        sectionsData.append(childModeSection)
+        let customModedSection = CustomizationSection("Custom", [childModeScanner, manualMultipageMode, onlineProcessing])
+        sectionsData.append(customModedSection)
         
         // 3. Custom camera frame
         let customBorderWidth = CustomizationItem("Custom border width") { () -> (Void) in
@@ -234,7 +274,17 @@ class MainViewController: UIViewController {
             DocReader.shared.customization.customStatusPositionMultiplier = 0.5
         }
         
-        let freeCustomStatusItems = [freeCustomTextAndPostion]
+        let customUILayerModeStatic = CustomizationItem("Custom Status & Image") { [weak self] in
+            guard let self = self else { return }
+            self.setupCustomUIFromFile()
+        }
+        let customUILayerModeAnimated = CustomizationItem("Custom Status Animated") { [weak self] in
+            guard let self = self else { return }
+            self.isCustomUILayerEnabled = true
+            self.animationTimer.fire()
+        }
+        
+        let freeCustomStatusItems = [freeCustomTextAndPostion, customUILayerModeStatic, customUILayerModeAnimated]
         let freeCustomStatusSection = CustomizationSection("Free custom status", freeCustomStatusItems)
         sectionsData.append(freeCustomStatusSection)
         
@@ -303,7 +353,7 @@ class MainViewController: UIViewController {
             case .cancel:
                 print("Cancelled by user")
                 DocReader.shared.functionality.manualMultipageMode = false
-            case .complete:
+            case .complete, .processTimeout:
                 guard let results = result else {
                     return
                 }
@@ -322,6 +372,42 @@ class MainViewController: UIViewController {
             case .process:
                 guard let result = result else { return }
                 print("Scaning not finished. Result: \(result)")
+            default:
+                break
+            }
+        }
+    }
+    
+    private func recognizeImagesWithImageInput() {
+        let whiteImage = UIImage(named: "white.bmp")
+        let uvImage = UIImage(named: "uv.bmp")
+        let irImage = UIImage(named: "ir.bmp")
+        
+        let whiteInput = DocReader.ImageInput(image: whiteImage!, light: .white, pageIndex: 0)
+        let uvInput = DocReader.ImageInput(image: uvImage!, light: .UV, pageIndex: 0)
+        let irInput = DocReader.ImageInput(image: irImage!, light: .infrared, pageIndex: 0)
+        
+        DocReader.shared.recognizeImages(with: [whiteInput, irInput, uvInput]) { action, results, error in
+            switch action {
+            case .cancel:
+                self.stopCustomUIChanges()
+                print("Cancelled by user")
+            case .complete, .processTimeout:
+                self.stopCustomUIChanges()
+                guard let opticalResults = results else {
+                    return
+                }
+                self.showResultScreen(opticalResults)
+            case .error:
+                self.stopCustomUIChanges()
+                print("Error")
+                guard let error = error else { return }
+                print("Error string: \(error)")
+            case .process:
+                guard let result = results else { return }
+                print("Scaning not finished. Result: \(result)")
+            case .morePagesAvailable:
+                print("This status couldn't be here, it uses for -recognizeImage function")
             default:
                 break
             }
@@ -448,10 +534,13 @@ class MainViewController: UIViewController {
     private func showCameraViewController() {
         DocReader.shared.showScanner(self) { [weak self] (action, result, error) in
             guard let self = self else { return }
+            
             switch action {
             case .cancel:
+                self.stopCustomUIChanges()
                 print("Cancelled by user")
-            case .complete:
+            case .complete, .processTimeout:
+                self.stopCustomUIChanges()
                 guard let opticalResults = result else {
                     return
                 }
@@ -461,6 +550,7 @@ class MainViewController: UIViewController {
                     self.showResultScreen(opticalResults)
                 }
             case .error:
+                self.stopCustomUIChanges()
                 print("Error")
                 guard let error = error else { return }
                 print("Error string: \(error)")
@@ -635,6 +725,69 @@ class MainViewController: UIViewController {
         }
         
         return paCertificates
+    }
+    
+    private func setupCustomUIFromFile() {
+        if let path = Bundle.main.path(forResource: "layer", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+                DocReader.shared.customization.customUILayerJSON = jsonDict
+            } catch {
+                
+            }
+        }
+    }
+    
+    @objc func fireTimer() {
+        /*
+        This example with Timer shows how you can change different properties of elements at runtime,
+        such as text, position, color etc. Little bit overhead, but it show how it can changed over time.
+        Also you can extend model with you properties such like ID, and access by it in runtime.
+        If you don't need that kind of flexibility, you can just use a static JSON file.
+        */
+        guard isCustomUILayerEnabled else {
+            return
+        }
+        
+        guard let jsonData = customLayerJsonString.data(using: .utf8) else {
+            return
+        }
+        
+        guard var model = try? JSONDecoder().decode(CustomUILayerModel.self, from: jsonData) else {
+            return
+        }
+        
+        guard var object = model.objects.first else {
+            return
+        }
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        object.label.text = "Custom label that showing current time: \(dateFormatter.string(from: date))"
+        
+        let ct = CACurrentMediaTime()
+        object.label.position.v = 1.0 + sin(ct) * 0.5 // Move vertically from 0.5 to 1.5
+        
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        
+        model.objects = [object]
+
+        do {
+            let data = try encoder.encode(model)
+            if let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                DocReader.shared.customization.customUILayerJSON = jsonDict
+            }
+        } catch {
+            
+        }
+    }
+    
+    private func stopCustomUIChanges() {
+        isCustomUILayerEnabled = false
+        DocReader.shared.customization.customUILayerJSON = nil
     }
 }
 
