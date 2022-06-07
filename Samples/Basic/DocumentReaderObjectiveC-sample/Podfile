@@ -3,6 +3,6 @@
 platform :ios, '11.0'
 
 target 'DocumentReaderFullObjectiveC-sample' do
-  pod 'DocumentReader', '~> 6.3'
-  pod 'DocumentReaderFullRFID', '~> 6.3'
+  pod 'DocumentReader', '~> 6.4'
+  pod 'DocumentReaderFullRFID', '~> 6.4'
 end
