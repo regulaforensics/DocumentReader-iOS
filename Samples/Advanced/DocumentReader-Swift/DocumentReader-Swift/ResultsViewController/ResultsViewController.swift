@@ -16,6 +16,11 @@ extension DocumentReaderValue {
     }
 }
 
+struct DataGroup {
+    let title: String
+    let items: [GroupedAttributes]
+}
+
 class ResultsViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
@@ -23,9 +28,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var overallResultView: UIImageView!
     
     var results: DocumentReaderResults!
-    private var resultsGroups: [GroupedAttributes] = []
-    private var comparisonGroups: [GroupedAttributes] = []
-    private var rfidGroups: [GroupedAttributes] = []
+  
+    private var groups: [DataGroup] = []
     private var sectionsData: [GroupedAttributes] = []
     
     private let headerHeight: CGFloat = 44
@@ -37,14 +41,18 @@ class ResultsViewController: UIViewController {
         
         initResultsData()
         initCompareData()
-        
         if ApplicationSettings.shared.isRfidEnabled {
             initRfidData()
-        } else {
-            segmentedControl.removeSegment(at: 2, animated: false)
         }
         
-        sectionsData = resultsGroups
+        segmentedControl.removeAllSegments()
+        for group in groups.reversed() {
+            segmentedControl.insertSegment(withTitle: group.title, at: 0, animated: false)
+        }
+        if groups.count > 0 {
+            segmentedControl.selectedSegmentIndex = 0
+            sectionsData = groups[0].items
+        }
         
         let directBarButton = UIBarButtonItem(title: "Direct", style: .plain, target: self, action: #selector(directButtonAction(_:)))
         navigationItem.rightBarButtonItem = directBarButton
@@ -65,16 +73,7 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func segmentedControlAction(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            sectionsData = resultsGroups
-        case 1:
-            sectionsData = comparisonGroups
-        case 2:
-            sectionsData = rfidGroups
-        default:
-            break
-        }
+        sectionsData = groups[sender.selectedSegmentIndex].items
         pickerView.reloadAllComponents()
         pickerView.selectRow(0, inComponent: 0, animated: false)
         tableView.reloadData()
@@ -93,14 +92,13 @@ class ResultsViewController: UIViewController {
         tableView.register(UINib.init(nibName: kImageCellId, bundle: nil),
                            forCellReuseIdentifier: kImageCellId)
         
-        segmentedControl.selectedSegmentIndex = 0
-        
         let statusImageName = results.status.overallStatus == .ok ? "status_ok" : results.status.overallStatus == CheckResult.error ? "status_not_ok" : "status_undefined"
         overallResultView.image = UIImage(named: statusImageName)
     }
     
     private func initResultsData() {
         var attributes: [Attribute] = []
+        var items: [GroupedAttributes] = []
         
         // Process all existing text values
         for field in results.textResult.fields {
@@ -125,12 +123,15 @@ class ResultsViewController: UIViewController {
         for type in types {
             let typed = attributes.filter { $0.source == type }
             let group = GroupedAttributes(type: type.stringValue, items: typed)
-            resultsGroups.append(group)
+            items.append(group)
         }
-        resultsGroups.sort { $0.type < $1.type }
+        items.sort { $0.type < $1.type }
+        groups.append(DataGroup(title: "Results", items: items))
     }
     
     private func initCompareData() {
+        var items: [GroupedAttributes] = []
+        
         // Extract types for comparison
         let values = results.textResult.fields.compactMap { $0.values }.flatMap { $0 }
         let comparisonTypes = Array(Set(values.compactMap { $0.sourceType }))
@@ -142,7 +143,7 @@ class ResultsViewController: UIViewController {
             let groupType = "\(pair[0].stringValue) - \(pair[1].stringValue)"
             let comparisonGroup = GroupedAttributes(type: groupType, items: [],
                                                     comparisonLHS: pair[0], comparisonRHS: pair[1])
-            comparisonGroups.append(comparisonGroup)
+            items.append(comparisonGroup)
         }
         
         // Add comparison attributes to appropriate group
@@ -153,22 +154,21 @@ class ResultsViewController: UIViewController {
                     guard let keyType = ResultType.init(rawValue: k.intValue) else { continue }
                     guard let result = FieldVerificationResult(rawValue: v.intValue) else { continue }
                     if result == .compareTrue || result == .compareFalse {
-                        tryAddValueToGroup(name, value, keyType, result, &comparisonGroups)
+                        tryAddValueToGroup(name, value, keyType, result, &items)
                     }
                 }
             }
         }
         
         // Remove duplicates in comparison attributes
-        for index in comparisonGroups.indices {
-            let group = comparisonGroups[index]
-            comparisonGroups[index].items = Array(Set(group.items))
+        for index in items.indices {
+            let group = items[index]
+            items[index].items = Array(Set(group.items))
         }
-        comparisonGroups = comparisonGroups.filter { $0.items.count > 0 }
+        items = items.filter { $0.items.count > 0 }
         
-        // Disable "Compare" segment if nothing to compare
-        if comparisonGroups.count == 0 {
-            segmentedControl.setEnabled(false, forSegmentAt: 1)
+        if items.count > 0 {
+            groups.append(DataGroup(title: "Compare", items: items))
         }
     }
     
@@ -209,11 +209,7 @@ class ResultsViewController: UIViewController {
     }
     
     private func initRfidData() {
-        defer {
-            if rfidGroups.count == 0 {
-                segmentedControl.setEnabled(false, forSegmentAt: 2)
-            }
-        }
+        var items: [GroupedAttributes] = []
         
         guard let applications = results.rfidSessionData?.applications else { return }
         var dataGroup = GroupedAttributes(type: "Data Groups", items: [])
@@ -225,7 +221,7 @@ class ResultsViewController: UIViewController {
             }
         }
         if dataGroup.items.count > 0 {
-            rfidGroups.append(dataGroup)
+            items.append(dataGroup)
         }
         
         var statusGroup = GroupedAttributes(type: "Data Status", items: [])
@@ -243,7 +239,11 @@ class ResultsViewController: UIViewController {
         statusGroup.items.append(attribute)
         
         if statusGroup.items.count > 0 {
-            rfidGroups.append(statusGroup)
+            items.append(statusGroup)
+        }
+        
+        if items.count > 0 {
+            groups.append(DataGroup(title: "RFID", items: items))
         }
     }
     
@@ -330,6 +330,9 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let selected = pickerView.selectedRow(inComponent: 0)
+        guard indexPath.row < sectionsData[selected].items.count else {
+            return UITableViewCell()
+        }
         let item = sectionsData[selected].items[indexPath.row]
         
         if (item.image != nil) {
