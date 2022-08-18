@@ -85,10 +85,14 @@ class ViewController: UIViewController {
     
     @IBAction func useCameraViewController(_ sender: UIButton) {
         DocReader.shared.showScanner(self) { (action, result, error) in
-            switch action {
-            case .cancel:
-                print("Cancelled by user")
-            case .processTimeout:
+            if action == .complete {
+                print("Completed")
+                if self.readRFID.isOn && result?.chipPage != 0 {
+                    self.startRFIDReading()
+                } else {
+                    self.handleResult(result: result)
+                }
+            } else if action == .processTimeout {
                 print("Timeout")
                 let timeoutLabel = UILabel(frame: self.view.bounds)
                 timeoutLabel.text = "Timeout!"
@@ -101,24 +105,16 @@ class ViewController: UIViewController {
                     timeoutLabel.removeFromSuperview()
                     self.handleResult(result: result)
                 }
-            case .complete:
-                print("Completed")
-                if self.readRFID.isOn && result?.chipPage != 0 {
-                    self.startRFIDReading()
-                } else {
-                    self.handleResult(result: result)
-                }
-            case .error:
+            } else if action == .error {
                 print("Error")
                 guard let error = error else { return }
                 print("Error string: \(error)")
-            case .process:
+            } else if action == .process {
                 guard let result = result else { return }
                 print("Scaning not finished. Result: \(result)")
-            case .morePagesAvailable:
-                print("This status couldn't be here, it uses for -recognizeImage function")
-            case .processWhiteFlashLight:
-                print("Flash light")
+            } else {
+                guard let result = result else { return }
+                print("Results: \(result), action: \(action)")
             }
         }
     }
