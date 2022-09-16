@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import DocumentReader
 import Combine
 
 struct MainView: View {
@@ -19,22 +18,19 @@ struct MainView: View {
     @State
     private var isGalleryPresented = false
     @State
-    private var selectedScenario = ""
-    @State
     private var isActive = false
 
     var body: some View {
         NavigationView {
             if reader.isInitialized {
                 VStack {
-                    Picker("Scenarious", selection: $selectedScenario) {
-                        ForEach(DocReader.shared.availableScenarios, id: \.identifier) {
-                            Text($0.identifier)
+                    Picker("Scenarios", selection: $reader.selectedScenario) {
+                        ForEach(reader.availableScenarios, id: \.self) {
+                            Text($0)
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
-                    .onChange(of: selectedScenario) { newValue in
-                        DocReader.shared.processParams.scenario = newValue
+                    .onChange(of: reader.selectedScenario) { newValue in
                         isActive = true
                     }
                     HStack(spacing: 120) {
@@ -61,8 +57,10 @@ struct MainView: View {
                     }
                 }
                 
+            } else if !reader.dataBasePrepared {
+                Text("Preparing database \(reader.downloadProgress)%...")
             } else {
-                Text("Preparing database \(Int(reader.downloadProgress * 100))%...")
+                Text("Initializing ...")
             }
             //TODO: Navigate to ResultView
         }.navigationViewStyle(.stack)

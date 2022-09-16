@@ -17,7 +17,10 @@ class ReaderFacade: ObservableObject {
     var isInitialized: Bool = false
     
     @Published
-    var downloadProgress: Double = 0.0
+    var dataBasePrepared: Bool = false
+    
+    @Published
+    var downloadProgress: Int = 0
     
     @Published
     var lastResults: DocumentReaderResults?
@@ -27,6 +30,12 @@ class ReaderFacade: ObservableObject {
     
     @Published
     var lastGraphicResultFields: [DocumentReaderGraphicField] = []
+    
+    @Published
+    var selectedScenario: String = ""
+    
+    @Published
+    var availableScenarios: [String] = []
     
     private var cancellables: Set<AnyCancellable> = .init()
     
@@ -44,21 +53,23 @@ class ReaderFacade: ObservableObject {
         
         let config = DocReader.Config(license: data)
         
-        DocReader.shared.prepareDatabase()
-            .replaceError(with: .completed(false))
-            .sink { [unowned self] event in
-                switch event {
-                case .updated(let progress):
-                    self.downloadProgress = progress
-                case .completed(let value):
-                    print("\(value)")
+        DocReader.shared
+            .prepareDatabase()
+            .sink { [unowned self] completion in
+                switch completion {
+                case .finished:
+                    self.dataBasePrepared = true
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-            }
-            .store(in: &cancellables)
+            } receiveValue: { [unowned self] progress in
+                self.downloadProgress = Int(progress * 100)
+            }.store(in: &cancellables)
         
-        DocReader.shared.initializeReader(config: config)
+        $dataBasePrepared
+            .filter { $0 == true }
+            .flatMap { _ in DocReader.shared.initializeReader(config: config) }
             .replaceError(with: false)
-            .eraseToAnyPublisher()
             .assign(to: &$isInitialized)
         
         DocReader.shared.functionality.captureMode = .auto
@@ -73,8 +84,20 @@ class ReaderFacade: ObservableObject {
             .map({ $0?.graphicResult })
             .compactMap { $0?.fields }
             .assign(to: &$lastGraphicResultFields)
+ 
+        $isInitialized
+            .filter({ $0 == true && self.selectedScenario.isEmpty})
+            .sink { [unowned self] _ in
+                self.availableScenarios = DocReader.shared.availableScenarios.map { $0.identifier }
+                self.selectedScenario = DocReader.shared.availableScenarios.first?.identifier ?? ""
+            }.store(in: &cancellables)
+        
+        $selectedScenario
+            .filter({ $0.isEmpty == false })
+            .sink { scenario in
+            DocReader.shared.processParams.scenario = scenario
+        }.store(in: &cancellables)
     }
-    
     func getCameraController() -> UIViewController {
         let prepared = prepareCameraController()
         prepared.results
@@ -178,11 +201,6 @@ extension ReaderFacade: PHPickerViewControllerDelegate {
 
 extension DocReader {
     
-    enum PrepareEvent {
-        case updated(progress: Double)
-        case completed(Bool)
-    }
-    
     func initializeReader(config: DocReader.Config) -> AnyPublisher<Bool, Error> {
         Deferred {
             Future<Bool, Error> { promise in
@@ -200,20 +218,18 @@ extension DocReader {
         }.eraseToAnyPublisher()
     }
     
-    func prepareDatabase() -> AnyPublisher<PrepareEvent, Error> {
-        let subject = PassthroughSubject<PrepareEvent, Error>()
+    func prepareDatabase() -> AnyPublisher<Double, Error> {
+        let subject = PassthroughSubject<Double, Error>()
         
         DocReader.shared.prepareDatabase(databaseID: "Full") { progress in
-            subject.send(.updated(progress: progress.fractionCompleted))
+            subject.send(progress.fractionCompleted)
         } completion: { success, error in
             if let error = error {
                 subject.send(completion: .failure(error))
             } else {
-                subject.send(.completed(true))
                 subject.send(completion: .finished)
             }
         }
-        
         return subject.eraseToAnyPublisher()
     }
 }
