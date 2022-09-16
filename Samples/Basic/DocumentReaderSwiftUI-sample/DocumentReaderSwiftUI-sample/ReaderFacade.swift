@@ -17,6 +17,9 @@ class ReaderFacade: ObservableObject {
     var isInitialized: Bool = false
     
     @Published
+    var downloadProgress: Double = 0.0
+    
+    @Published
     var lastResults: DocumentReaderResults?
     
     @Published
@@ -39,16 +42,27 @@ class ReaderFacade: ObservableObject {
             return
         }
         
-        DocReader.shared.processParams.scenario = RGL_SCENARIO_FULL_PROCESS
-        DocReader.shared.functionality.captureMode = .auto
-        DocReader.shared.functionality.showCaptureButton = true
-        
         let config = DocReader.Config(license: data)
+        
+        DocReader.shared.prepareDatabase()
+            .replaceError(with: .completed(false))
+            .sink { [unowned self] event in
+                switch event {
+                case .updated(let progress):
+                    self.downloadProgress = progress
+                case .completed(let value):
+                    print("\(value)")
+                }
+            }
+            .store(in: &cancellables)
         
         DocReader.shared.initializeReader(config: config)
             .replaceError(with: false)
             .eraseToAnyPublisher()
             .assign(to: &$isInitialized)
+        
+        DocReader.shared.functionality.captureMode = .auto
+        DocReader.shared.functionality.showCaptureButton = true
         
         $lastResults
             .map { $0?.textResult }
@@ -122,6 +136,12 @@ class ReaderFacade: ObservableObject {
             self.lastResults = results
         }.store(in: &cancellables)
     }
+    
+    func process(_ image: UIImage) -> Future<UIImage, Error> {
+        Future { promise in
+            //process(image, then: promise)
+        }
+    }
 }
 
 extension ReaderFacade: PHPickerViewControllerDelegate {
@@ -158,6 +178,11 @@ extension ReaderFacade: PHPickerViewControllerDelegate {
 
 extension DocReader {
     
+    enum PrepareEvent {
+        case updated(progress: Double)
+        case completed(Bool)
+    }
+    
     func initializeReader(config: DocReader.Config) -> AnyPublisher<Bool, Error> {
         Deferred {
             Future<Bool, Error> { promise in
@@ -165,10 +190,30 @@ extension DocReader {
                     if let error = error {
                         promise(.failure(error))
                     } else {
+                        if let firstScenario = DocReader.shared.availableScenarios.first {
+                            DocReader.shared.processParams.scenario = firstScenario.identifier
+                        }
                         promise(.success(success))
                     }
                 }
             }
         }.eraseToAnyPublisher()
+    }
+    
+    func prepareDatabase() -> AnyPublisher<PrepareEvent, Error> {
+        let subject = PassthroughSubject<PrepareEvent, Error>()
+        
+        DocReader.shared.prepareDatabase(databaseID: "Full") { progress in
+            subject.send(.updated(progress: progress.fractionCompleted))
+        } completion: { success, error in
+            if let error = error {
+                subject.send(completion: .failure(error))
+            } else {
+                subject.send(.completed(true))
+                subject.send(completion: .finished)
+            }
+        }
+        
+        return subject.eraseToAnyPublisher()
     }
 }

@@ -16,10 +16,11 @@
 		9DBF7EE228D474F20025FD4B /* ReaderFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF7EDD28D474F20025FD4B /* ReaderFacade.swift */; };
 		9DBF7EE328D474F20025FD4B /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF7EDE28D474F20025FD4B /* GalleryView.swift */; };
 		9DBF7EE628D475910025FD4B /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF7EE428D475910025FD4B /* regula.license */; };
-		9DBF7EE728D475910025FD4B /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 9DBF7EE528D475910025FD4B /* db.dat */; };
+		A84175FA89A10F35B05E5D69 /* Pods_DocumentReaderSwiftUI_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E04E278C8E3EF7E9CB093D /* Pods_DocumentReaderSwiftUI_sample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06F5F38C8392772C12DADC77 /* Pods-DocumentReaderSwiftUI-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderSwiftUI-sample.release.xcconfig"; path = "Target Support Files/Pods-DocumentReaderSwiftUI-sample/Pods-DocumentReaderSwiftUI-sample.release.xcconfig"; sourceTree = "<group>"; };
 		9DBF7EC928D473FF0025FD4B /* DocumentReaderSwiftUI-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderSwiftUI-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DBF7ECC28D473FF0025FD4B /* DocumentReaderSwiftUI_sampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReaderSwiftUI_sampleApp.swift; sourceTree = "<group>"; };
 		9DBF7ED028D474000025FD4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,7 +31,8 @@
 		9DBF7EDD28D474F20025FD4B /* ReaderFacade.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReaderFacade.swift; sourceTree = "<group>"; };
 		9DBF7EDE28D474F20025FD4B /* GalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		9DBF7EE428D475910025FD4B /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
-		9DBF7EE528D475910025FD4B /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
+		F49956B13AD93506153250C7 /* Pods-DocumentReaderSwiftUI-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderSwiftUI-sample.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReaderSwiftUI-sample/Pods-DocumentReaderSwiftUI-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		F4E04E278C8E3EF7E9CB093D /* Pods_DocumentReaderSwiftUI_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderSwiftUI_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A84175FA89A10F35B05E5D69 /* Pods_DocumentReaderSwiftUI_sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +53,7 @@
 				9DBF7ECB28D473FF0025FD4B /* DocumentReaderSwiftUI-sample */,
 				9DBF7ECA28D473FF0025FD4B /* Products */,
 				B33B8F35073876866549A3B8 /* Pods */,
+				F7CF6F2BA6294FB2F0002178 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +68,6 @@
 		9DBF7ECB28D473FF0025FD4B /* DocumentReaderSwiftUI-sample */ = {
 			isa = PBXGroup;
 			children = (
-				9DBF7EE528D475910025FD4B /* db.dat */,
 				9DBF7EE428D475910025FD4B /* regula.license */,
 				9DBF7EDD28D474F20025FD4B /* ReaderFacade.swift */,
 				9DBF7ECC28D473FF0025FD4B /* DocumentReaderSwiftUI_sampleApp.swift */,
@@ -89,8 +92,18 @@
 		B33B8F35073876866549A3B8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				F49956B13AD93506153250C7 /* Pods-DocumentReaderSwiftUI-sample.debug.xcconfig */,
+				06F5F38C8392772C12DADC77 /* Pods-DocumentReaderSwiftUI-sample.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7CF6F2BA6294FB2F0002178 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E04E278C8E3EF7E9CB093D /* Pods_DocumentReaderSwiftUI_sample.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -100,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DBF7ED728D474000025FD4B /* Build configuration list for PBXNativeTarget "DocumentReaderSwiftUI-sample" */;
 			buildPhases = (
+				3AE88F9837B14171212B4F7D /* [CP] Check Pods Manifest.lock */,
 				9DBF7EC528D473FF0025FD4B /* Sources */,
 				9DBF7EC628D473FF0025FD4B /* Frameworks */,
 				9DBF7EC728D473FF0025FD4B /* Resources */,
+				722A368B3835DE7A6693CC84 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,11 +169,52 @@
 				9DBF7ED428D474000025FD4B /* Preview Assets.xcassets in Resources */,
 				9DBF7ED128D474000025FD4B /* Assets.xcassets in Resources */,
 				9DBF7EE628D475910025FD4B /* regula.license in Resources */,
-				9DBF7EE728D475910025FD4B /* db.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3AE88F9837B14171212B4F7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DocumentReaderSwiftUI-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		722A368B3835DE7A6693CC84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderSwiftUI-sample/Pods-DocumentReaderSwiftUI-sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderSwiftUI-sample/Pods-DocumentReaderSwiftUI-sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderSwiftUI-sample/Pods-DocumentReaderSwiftUI-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9DBF7EC528D473FF0025FD4B /* Sources */ = {
@@ -293,6 +349,7 @@
 		};
 		9DBF7ED828D474000025FD4B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F49956B13AD93506153250C7 /* Pods-DocumentReaderSwiftUI-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -325,6 +382,7 @@
 		};
 		9DBF7ED928D474000025FD4B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06F5F38C8392772C12DADC77 /* Pods-DocumentReaderSwiftUI-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

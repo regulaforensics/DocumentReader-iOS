@@ -18,38 +18,53 @@ struct MainView: View {
     private var isScannerPresented = false
     @State
     private var isGalleryPresented = false
+    @State
+    private var selectedScenario = ""
+    @State
+    private var isActive = false
 
     var body: some View {
-        VStack {
+        NavigationView {
             if reader.isInitialized {
-                HStack(spacing: 120) {
-                    Button("Camera") {
-                        isScannerPresented.toggle()
+                VStack {
+                    Picker("Scenarious", selection: $selectedScenario) {
+                        ForEach(DocReader.shared.availableScenarios, id: \.identifier) {
+                            Text($0.identifier)
+                        }
                     }
-                    .padding(10)
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .fullScreenCover(isPresented: $isScannerPresented, content: {
-                        CameraView(reader: reader)
-                    })
-                    Button("Gallery") {
-                        isGalleryPresented.toggle()
+                    .pickerStyle(WheelPickerStyle())
+                    .onChange(of: selectedScenario) { newValue in
+                        DocReader.shared.processParams.scenario = newValue
+                        isActive = true
                     }
-                    .padding(10)
-                    .background(Color.accentColor)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-                    .sheet(isPresented: $isGalleryPresented, content: {
-                        GalleryView(reader: reader)
-                    })
+                    HStack(spacing: 120) {
+                        Button("Camera") {
+                            isScannerPresented.toggle()
+                        }
+                        .padding(10)
+                        .background(Color.accentColor)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .fullScreenCover(isPresented: $isScannerPresented, content: {
+                            CameraView(reader: reader)
+                        })
+                        Button("Gallery") {
+                            isGalleryPresented.toggle()
+                        }
+                        .padding(10)
+                        .background(Color.accentColor)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                        .sheet(isPresented: $isGalleryPresented, content: {
+                            GalleryView(reader: reader)
+                        })
+                    }
                 }
+                
             } else {
-                Text("Initializing Core...")
+                Text("Preparing database \(Int(reader.downloadProgress * 100))%...")
             }
-            if !isScannerPresented && reader.lastResults != nil {
-                ResultsView(reader: reader)
-            }
-        }
+            //TODO: Navigate to ResultView
+        }.navigationViewStyle(.stack)
     }
 }

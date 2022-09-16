@@ -15,7 +15,7 @@ struct CameraView: View {
 
     var body: some View {
         ZStack {
-            Color.primary.edgesIgnoringSafeArea(.all)
+            Color.black.edgesIgnoringSafeArea(.all)
             CameraViewController(reader: reader)
             VStack {
                 Text("Custom Text Over Scanner")
