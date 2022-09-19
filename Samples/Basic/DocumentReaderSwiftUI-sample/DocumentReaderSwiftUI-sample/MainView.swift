@@ -17,8 +17,6 @@ struct MainView: View {
     private var isScannerPresented = false
     @State
     private var isGalleryPresented = false
-    @State
-    private var isActive = false
 
     var body: some View {
         NavigationView {
@@ -30,9 +28,6 @@ struct MainView: View {
                         }
                     }
                     .pickerStyle(WheelPickerStyle())
-                    .onChange(of: reader.selectedScenario) { newValue in
-                        isActive = true
-                    }
                     HStack(spacing: 120) {
                         Button("Camera") {
                             isScannerPresented.toggle()
@@ -55,14 +50,15 @@ struct MainView: View {
                             GalleryView(reader: reader)
                         })
                     }
+                    NavigationLink("", isActive: $reader.isResultsReady) {
+                        ResultsView(reader: reader)
+                    }.hidden()
                 }
-                
-            } else if !reader.dataBasePrepared {
+            } else if !reader.isDatabasePrepared {
                 Text("Preparing database \(reader.downloadProgress)%...")
             } else {
                 Text("Initializing ...")
             }
-            //TODO: Navigate to ResultView
         }.navigationViewStyle(.stack)
     }
 }
