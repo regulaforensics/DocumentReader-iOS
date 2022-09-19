@@ -51,10 +51,11 @@ class PickerDelegate: PHPickerViewControllerDelegate {
             .sink { finish in
                 switch finish {
                 case .failure(let error):
+                    print(error)
                     print(error.localizedDescription)
-                case .finished:
-                    dismiss()
+                case .finished: break
                 }
+                dismiss()
             } receiveValue: { [unowned self] item in
                 if let image = item as? UIImage {
                     self.imagePublisher.send(image)

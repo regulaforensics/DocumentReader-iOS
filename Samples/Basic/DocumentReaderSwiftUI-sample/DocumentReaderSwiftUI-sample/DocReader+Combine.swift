@@ -11,10 +11,10 @@ import DocumentReader
 
 extension DocReader {
     
-    func prepareDatabase() -> AnyPublisher<Double, Error> {
+    func prepareDatabase(databaseID: String) -> AnyPublisher<Double, Error> {
         let subject = PassthroughSubject<Double, Error>()
         
-        DocReader.shared.prepareDatabase(databaseID: "Full") { progress in
+        DocReader.shared.prepareDatabase(databaseID: databaseID) { progress in
             subject.send(progress.fractionCompleted)
         } completion: { success, error in
             if let error = error {

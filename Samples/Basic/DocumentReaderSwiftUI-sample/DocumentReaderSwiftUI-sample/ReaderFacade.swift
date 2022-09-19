@@ -23,14 +23,10 @@ class ReaderFacade: ObservableObject {
     var downloadProgress: Int = 0
     
     @Published
-    var isResultsReady: Bool = false
+    var areResultsReady: Bool = false
     
     @Published
-    var lastResults: DocumentReaderResults? {
-        didSet {
-            isResultsReady = (lastResults != nil)
-        }
-    }
+    var lastResults: DocumentReaderResults?
     
     @Published
     var lastTextResultFields: [DocumentReaderTextField] = []
@@ -65,7 +61,7 @@ class ReaderFacade: ObservableObject {
         let config = DocReader.Config(license: data)
         
         DocReader.shared
-            .prepareDatabase()
+            .prepareDatabase(databaseID: "Full")
             .sink { [unowned self] completion in
                 switch completion {
                 case .finished:
@@ -93,6 +89,10 @@ class ReaderFacade: ObservableObject {
         $lastResults
             .compactMap { $0?.graphicResult.fields }
             .assign(to: &$lastGraphicResultFields)
+        
+        $lastResults
+            .compactMap { $0 != nil }
+            .assign(to: &$areResultsReady)
         
         $isInitialized
             .filter({ $0 == true && self.selectedScenario.isEmpty})
@@ -131,15 +131,18 @@ class ReaderFacade: ObservableObject {
     private func prepareCameraController() -> (controller: UIViewController,
                                                results: AnyPublisher<DocumentReaderResults, Error>) {
         var controller: UIViewController?
+        let dismiss = { controller?.dismiss(animated: true) }
+        
         let future = Future<(DocumentReaderResults), Error> { promise in
             
             controller = DocReader.shared.prepareCameraViewController { action, result, error in
                 switch action {
                 case .complete:
                     promise(.success(result!))
-                    controller?.dismiss(animated: true)
+                    dismiss()
                 case .error:
                     promise(.failure(error!))
+                    dismiss()
                 default:
                     break
                 }
@@ -147,18 +150,20 @@ class ReaderFacade: ObservableObject {
             
         }.eraseToAnyPublisher()
         
-        return (controller!, future)
+        return (controller ?? UIViewController(), future)
     }
-    
+
     private func preparePickerController() -> (controller: UIViewController,
                                                results: AnyPublisher<DocumentReaderResults, Error>) {
         let results = pickerImage
             .flatMap { DocReader.shared.recognizeImage(image: $0) }
             .eraseToAnyPublisher()
         
-        pickerDelegate = PickerDelegate(imagePublisher: pickerImage)
-        picker = ImagePicker(delegate: pickerDelegate!)
+        let pickerDelegate = PickerDelegate(imagePublisher: pickerImage)
+        let picker = ImagePicker(delegate: pickerDelegate)
+        self.picker = picker
+        self.pickerDelegate = pickerDelegate
         
-        return ((picker?.controller)!, results)
+        return (picker.controller, results)
     }
 }

@@ -50,7 +50,7 @@ struct MainView: View {
                             GalleryView(reader: reader)
                         })
                     }
-                    NavigationLink("", isActive: $reader.isResultsReady) {
+                    NavigationLink("", isActive: $reader.areResultsReady) {
                         ResultsView(reader: reader)
                     }.hidden()
                 }
