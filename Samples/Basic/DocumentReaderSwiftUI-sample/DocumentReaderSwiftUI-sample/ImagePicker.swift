@@ -51,7 +51,6 @@ class PickerDelegate: PHPickerViewControllerDelegate {
             .sink { finish in
                 switch finish {
                 case .failure(let error):
-                    print(error)
                     print(error.localizedDescription)
                 case .finished: break
                 }
