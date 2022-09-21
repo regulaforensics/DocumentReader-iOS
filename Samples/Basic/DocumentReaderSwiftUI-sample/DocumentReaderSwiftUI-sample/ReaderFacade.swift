@@ -129,11 +129,11 @@ class ReaderFacade: ObservableObject {
     }
     
     private func prepareCameraController() -> (controller: UIViewController,
-                                               results: AnyPublisher<DocumentReaderResults, Error>) {
+                                               results: AnyPublisher<DocumentReaderResults?, Error>) {
         var controller: UIViewController?
         let dismiss = { controller?.dismiss(animated: true) }
         
-        let future = Future<(DocumentReaderResults), Error> { promise in
+        let future = Future<(DocumentReaderResults)?, Error> { promise in
             
             controller = DocReader.shared.prepareCameraViewController { action, result, error in
                 switch action {
@@ -142,6 +142,10 @@ class ReaderFacade: ObservableObject {
                     dismiss()
                 case .error:
                     promise(.failure(error!))
+                    dismiss()
+                case .processTimeout:
+                    print("Timeout reached")
+                    promise(.success(nil))
                     dismiss()
                 default:
                     break
