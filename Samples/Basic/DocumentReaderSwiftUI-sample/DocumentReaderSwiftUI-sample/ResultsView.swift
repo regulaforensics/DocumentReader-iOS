@@ -29,10 +29,17 @@ struct ResultsView: View {
                 }
             }
         } else {
-            List(reader.lastGraphicResultFields, id: \.fieldName) { field in
-                VStack {
-                    Text(field.fieldName).fontWeight(.light).foregroundColor(Color.secondary)
-                    Image(uiImage: field.value).resizable().scaledToFit()
+            GeometryReader { geo in
+                List(reader.lastGraphicResultFields, id: \.fieldName) { field in
+                    VStack {
+                        Text(field.fieldName)
+                            .fontWeight(.light)
+                            .foregroundColor(Color.secondary)
+                        Image(uiImage: field.value)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: geo.size.width)
+                    }
                 }
             }
         }

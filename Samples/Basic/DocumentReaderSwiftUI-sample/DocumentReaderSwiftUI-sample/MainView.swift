@@ -20,7 +20,7 @@ struct MainView: View {
 
     var body: some View {
         NavigationView {
-            if reader.isInitialized {
+            if reader.isInitialized && !reader.isProcessing {
                 VStack {
                     Picker("Scenarios", selection: $reader.selectedScenario) {
                         ForEach(reader.availableScenarios, id: \.self) {
@@ -56,6 +56,8 @@ struct MainView: View {
                 }
             } else if !reader.isDatabasePrepared {
                 Text("Preparing database \(reader.downloadProgress)%...")
+            } else if reader.isProcessing {
+                ProgressView().progressViewStyle(.circular)
             } else {
                 Text("Initializing ...")
             }
