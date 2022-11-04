@@ -20,6 +20,9 @@ class ReaderFacade: ObservableObject {
     var isDatabasePrepared: Bool = false
     
     @Published
+    var isProcessing: Bool = false
+    
+    @Published
     var downloadProgress: Int = 0
     
     @Published
@@ -42,8 +45,7 @@ class ReaderFacade: ObservableObject {
     
     private var picker: ImagePicker?
     private var pickerDelegate: PickerDelegate?
-    private lazy var pickerImage = PassthroughSubject<UIImage, Never>()
-    
+   
     private var cancellables: Set<AnyCancellable> = .init()
     
     init() {
@@ -95,7 +97,7 @@ class ReaderFacade: ObservableObject {
             .assign(to: &$areResultsReady)
         
         $isInitialized
-            .filter({ $0 == true && self.selectedScenario.isEmpty})
+            .filter({ $0 == true && self.selectedScenario.isEmpty })
             .sink { [unowned self] _ in
                 self.availableScenarios = DocReader.shared.availableScenarios.map { $0.identifier }
                 self.selectedScenario = DocReader.shared.availableScenarios.first?.identifier ?? ""
@@ -159,8 +161,9 @@ class ReaderFacade: ObservableObject {
 
     private func preparePickerController() -> (controller: UIViewController,
                                                results: AnyPublisher<DocumentReaderResults, Error>) {
+        let pickerImage = PassthroughSubject<UIImage, Never>()
         let results = pickerImage
-            .flatMap { DocReader.shared.recognizeImage(image: $0) }
+            .flatMap { self.recognize(image: $0) }
             .eraseToAnyPublisher()
         
         let pickerDelegate = PickerDelegate(imagePublisher: pickerImage)
@@ -169,5 +172,22 @@ class ReaderFacade: ObservableObject {
         self.pickerDelegate = pickerDelegate
         
         return (picker.controller, results)
+    }
+    
+    private func recognize(image: UIImage) -> AnyPublisher<DocumentReaderResults, Error> {
+        isProcessing = true
+        let recognize = DocReader.shared
+            .recognizeImage(image: image)
+            .mapError { error in
+                self.isProcessing = false
+                return error
+            }
+            .map {
+                self.isProcessing = false
+                return $0
+            }
+            .eraseToAnyPublisher()
+
+        return recognize
     }
 }
