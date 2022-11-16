@@ -103,8 +103,8 @@ class ResultsViewController: UIViewController {
         // Process all existing text values
         for field in results.textResult.fields {
             let name = field.fieldName
+            let valid = field.validityStatus
             for value in field.values {
-                let valid = value.validity
                 let item = Attribute(name: name, value: value.value, lcid: field.lcid, pageIndex: value.pageIndex, valid: valid, source: value.sourceType)
                 attributes.append(item)
             }
@@ -130,45 +130,30 @@ class ResultsViewController: UIViewController {
     }
     
     private func initCompareData() {
-        var items: [GroupedAttributes] = []
-        
-        // Extract types for comparison
-        let values = results.textResult.fields.compactMap { $0.values }.flatMap { $0 }
-        let comparisonTypes = Array(Set(values.compactMap { $0.sourceType }))
-        
+        let textFields = results.textResult.fields
+        let comparisonTypes = results.textResult.availableSourceList.map { $0.sourceType }
         let typePairs = combinationsFrom(comparisonTypes, taking: 2)
         
-        // Extract types for comparison
-        typePairs.forEach { pair in
+        var groupedItems: [GroupedAttributes] = typePairs.map { pair in
             let groupType = "\(pair[0].stringValue) - \(pair[1].stringValue)"
-            let comparisonGroup = GroupedAttributes(type: groupType, items: [],
-                                                    comparisonLHS: pair[0], comparisonRHS: pair[1])
-            items.append(comparisonGroup)
+            let comparisonGroup = GroupedAttributes(type: groupType,
+                                                    comparisonLHS: pair[0],
+                                                    comparisonRHS: pair[1])
+            return comparisonGroup
         }
         
-        // Add comparison attributes to appropriate group
-        for field in results.textResult.fields {
-            let name = field.fieldName
-            for value in field.values {
-                for (k, v) in value.comparison {
-                    guard let keyType = ResultType.init(rawValue: k.intValue) else { continue }
-                    guard let result = FieldVerificationResult(rawValue: v.intValue) else { continue }
-                    if result == .compareTrue || result == .compareFalse {
-                        tryAddValueToGroup(name, value, keyType, result, &items)
-                    }
+        for (index, item) in groupedItems.enumerated() {
+            let attributes = textFields.filter { field in
+                field.comparisonList.contains { comparison in
+                    comparison.sourceTypeRight == item.comparisonRHS && comparison.sourceTypeLeft == item.comparisonLHS ||
+                    comparison.sourceTypeLeft == item.comparisonRHS && comparison.sourceTypeRight == item.comparisonLHS
                 }
-            }
+            }.map {  Attribute(name: $0.fieldName, equality: $0.comparisonStatus == .ok) }
+            groupedItems[index].items = attributes
         }
-        
-        // Remove duplicates in comparison attributes
-        for index in items.indices {
-            let group = items[index]
-            items[index].items = Array(Set(group.items))
-        }
-        items = items.filter { $0.items.count > 0 }
-        
-        if items.count > 0 {
-            groups.append(DataGroup(title: "Compare", items: items))
+ 
+        if !groupedItems.isEmpty {
+            groups.append(DataGroup(title: "Compare", items: groupedItems))
         }
     }
     
@@ -188,24 +173,6 @@ class ResultsViewController: UIViewController {
             combinations += combinationsFrom(reducedElements, taking: taking - 1).map { [element] + $0 }
         }
         return combinations
-    }
-    
-    // Helper func for find appropriate comparison group for attribute & append item to it
-    private func tryAddValueToGroup(_ name: String, _ value: DocumentReaderValue,
-                                    _ key: ResultType, _ result: FieldVerificationResult,
-                                    _ groups: inout [GroupedAttributes]) {
-        for index in groups.indices {
-            let group = groups[index]
-            guard let typeLHS = group.comparisonLHS else { return }
-            guard let typeRHS = group.comparisonRHS else { return }
-            let sourceEquality = (value.sourceType == typeLHS || value.sourceType == typeRHS)
-            let targetEquality = (key == typeLHS || key == typeRHS)
-            if sourceEquality && targetEquality {
-                let item = Attribute(name: name, value: nil, valid: FieldVerificationResult.compareTrue, source: value.sourceType)
-                groups[index].items.append(item)
-                break
-            }
-        }
     }
     
     private func initRfidData() {
@@ -365,9 +332,9 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.valueLabel.textColor = .black
                 return cell
             }
-            if (value == .verified) {
+            if value == .ok {
                 cell.valueLabel.textColor = .green
-            } else if (value == .notVerified) {
+            } else if value == .error {
                 cell.valueLabel.textColor = .red
             } else {
                 cell.valueLabel.textColor = .black
