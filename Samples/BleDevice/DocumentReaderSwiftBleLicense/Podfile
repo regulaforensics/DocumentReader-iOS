@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+## temporary sources
+source 'https://cdn.cocoapods.org/'
+source 'git@gitlab.regula.local:mobile-sdk/podspecs.git'
+
+platform :ios, '11.0'
+use_frameworks!
+
+## temporary pods
+target 'DocumentReaderSwiftBleLicense' do
+  pod 'DocumentReaderTemp', '6.5.2770'
+  pod 'DocumentReaderFullAuthRFID', '~> 6.6'
+  pod 'BTDeviceTemp', '6.1.277'
+end
