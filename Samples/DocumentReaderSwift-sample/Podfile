@@ -1,8 +1,8 @@
-platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'DocumentReaderFullSwift-sample' do
   use_frameworks!
-  pod 'DocumentReader', '5.7.2075'
-  pod 'DocumentReaderFullAuthRFIDBeta', '5.7.4951'
-  pod 'BTDeviceBeta', '5.4.207'
+  pod 'DocumentReader', '~> 6.6'
+  pod 'DocumentReaderFullAuthRFID', '~> 6.6'
+  pod 'BTDeviceBeta', '~> 6.1.271'
 end

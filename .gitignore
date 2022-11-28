@@ -79,3 +79,6 @@ Samples/DocumentReaderObjectiveC-sample/Pods/DocumentReader
 Samples/DocumentReaderObjectiveC-sample/Pods/DocumentReaderFull
 Samples/DocumentReaderObjectiveC-sample/Pods/Headers
 Samples/DocumentReaderObjectiveC-sample/Pods/Target Support Files
+
+Pods/
+Podfile.lock

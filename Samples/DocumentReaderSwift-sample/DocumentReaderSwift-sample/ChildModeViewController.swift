@@ -71,7 +71,7 @@ class ChildModeViewController: UIViewController {
         
         let vc = DocReader.shared.prepareCameraViewController(cameraHandler: { (action, result, error) in
             switch action {
-            case .complete:
+            case .complete, .processTimeout:
                 // pause current scanning session
                 DocReader.shared.isCameraSessionIsPaused = true
                 
@@ -104,6 +104,8 @@ class ChildModeViewController: UIViewController {
                 print("PROCESS") // you can handle intermediate result here
             case .processWhiteFlashLight:
                 print("processWhiteFlashLight")
+            case .processOnServer:
+                print("processOnServer")
             }
         })
         cameraViewController = vc

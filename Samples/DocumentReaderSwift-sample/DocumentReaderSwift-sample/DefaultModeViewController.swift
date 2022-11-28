@@ -83,29 +83,37 @@ class DefaultModeViewController: UIViewController {
     
     // Use this code for recognize on photo from camera
     @IBAction func useCameraViewController(_ sender: UIButton) {
-        //start recognize
         DocReader.shared.showScanner(self) { (action, result, error) in
-            switch action {
-            case .cancel:
-                print("Cancelled by user")
-            case .complete:
+            if action == .complete {
                 print("Completed")
-                if self.readRFID.isOn {
-                    self.startRFIDReading(result: result)
+                if self.readRFID.isOn && result?.chipPage != 0 {
+                    self.startRFIDReading()
                 } else {
                     self.handleResult(result: result)
                 }
-            case .error:
+            } else if action == .processTimeout {
+                print("Timeout")
+                let timeoutLabel = UILabel(frame: self.view.bounds)
+                timeoutLabel.text = "Timeout!"
+                timeoutLabel.font = UIFont.systemFont(ofSize: 22, weight: .medium)
+                timeoutLabel.textAlignment = .center
+                self.view.addSubview(timeoutLabel)
+                UIView.animate(withDuration: 2) {
+                    timeoutLabel.alpha = 0
+                } completion: { completion in
+                    timeoutLabel.removeFromSuperview()
+                    self.handleResult(result: result)
+                }
+            } else if action == .error {
                 print("Error")
                 guard let error = error else { return }
                 print("Error string: \(error)")
-            case .process:
+            } else if action == .process {
                 guard let result = result else { return }
                 print("Scaning not finished. Result: \(result)")
-            case .morePagesAvailable:
-                print("This status couldn't be here, it uses for -recognizeImage function")
-            case .processWhiteFlashLight:
-                print("processWhiteFlashLight")
+            } else {
+                guard let result = result else { return }
+                print("Results: \(result), action: \(action)")
             }
         }
     }
@@ -175,17 +183,14 @@ class DefaultModeViewController: UIViewController {
         }
     }
     
-    func startRFIDReading(result: DocumentReaderResults?) {
-        guard let result = result else { return }
-                
+    func startRFIDReading() {
         DocReader.shared.startRFIDReader(fromPresenter: self, completion: { (action, results, error) in
             switch action {
             case .complete:
                 print("complete")
                 self.handleResult(result: results)
             case .cancel:
-                print("Cancelled")
-                self.handleResult(result: result)
+                print("Canceled")
             case .error:
                 print("Error")
                 self.nameLabel.text = error?.localizedDescription
