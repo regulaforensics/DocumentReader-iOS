@@ -75,9 +75,11 @@ class ViewController: UIViewController {
                         }
                     }
                 } else {
-                    self.activityIndicator.stopAnimating()
-                    self.initializationLabel.text = "Database error: \(error?.localizedDescription ?? "unknown")"
-                    print(error?.localizedDescription ?? "unknown")
+                    DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
+                        self.initializationLabel.text = "Database error: \(error?.localizedDescription ?? "unknown")"
+                        print(error?.localizedDescription ?? "unknown")
+                    }
                 }
             })
         }
