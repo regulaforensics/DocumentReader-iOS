@@ -88,23 +88,25 @@ class ViewController: UIViewController {
     
     private func handleReaderState(oldValue: ReaderState) {
         guard state != oldValue else { return }
-        switch state {
-        case .none: break
-        case .dbLoading(let progress):
-            display(progress: progress)
-            displayLoading(isLoading: true)
-        case .dbLoaded:
-            displayDBReady()
-            displayLoading(isLoading: false)
-        case .initializing:
-            displayInitalizing()
-            displayLoading(isLoading: true)
-        case .initialized:
-            displayInitalized()
-            displayLoading(isLoading: false)
-        case .error(let error):
-            display(error: error)
-            displayLoading(isLoading: false)
+        DispatchQueue.main.async {
+            switch self.state {
+            case .none: break
+            case .dbLoading(let progress):
+                self.display(progress: progress)
+                self.displayLoading(isLoading: true)
+            case .dbLoaded:
+                self.displayDBReady()
+                self.displayLoading(isLoading: false)
+            case .initializing:
+                self.displayInitalizing()
+                self.displayLoading(isLoading: true)
+            case .initialized:
+                self.displayInitalized()
+                self.displayLoading(isLoading: false)
+            case .error(let error):
+                self.display(error: error)
+                self.displayLoading(isLoading: false)
+            }
         }
     }
     
