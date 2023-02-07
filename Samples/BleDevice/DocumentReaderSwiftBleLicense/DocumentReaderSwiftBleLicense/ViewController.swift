@@ -112,7 +112,7 @@ class ViewController: UIViewController {
     
     //MARK: Statuses
     private func display(progress: Double) {
-      let roundedProgress = round(progress * 100)/100
+      let roundedProgress = round(progress * 1000)/10
       statusLabel.text = "loading: \(roundedProgress) %"
     }
     
