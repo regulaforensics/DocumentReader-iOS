@@ -512,11 +512,11 @@ class MainViewController: UIViewController {
         }
         actionSheet.addAction(actionDocs)
         let actionCore = UIAlertAction(title: "Core", style: .default) { _ in
-            self.openSafariWith("https://docs.regulaforensics.com/ios/core")
+            self.openSafariWith("https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/ios/optimization/core")
         }
         actionSheet.addAction(actionCore)
         let actionScenarios = UIAlertAction(title: "Scenarios", style: .default) { _ in
-            self.openSafariWith("https://docs.regulaforensics.com/ios/scenarios")
+            self.openSafariWith("https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/ios/document-processing/scenario")
         }
         actionSheet.addAction(actionScenarios)
         actionSheet.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))

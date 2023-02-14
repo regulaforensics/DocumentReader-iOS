@@ -47,7 +47,8 @@ class GetValuesViewController: UIViewController {
     }
     
     @objc func helpButtonAction(_ sender: UIBarButtonItem) {
-        let link = "https://docs.regulaforensics.com/ios/results/getting-results"
+        let link = "https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/ios/results"
+    
         guard let url = URL(string: link) else { return }
         let controller = SFSafariViewController(url: url)
         present(controller, animated: true, completion: nil)
