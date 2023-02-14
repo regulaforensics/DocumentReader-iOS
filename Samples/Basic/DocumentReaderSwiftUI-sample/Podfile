@@ -6,6 +6,6 @@ target 'DocumentReaderSwiftUI-sample' do
   use_frameworks!
 
   # Pods for DocumentReaderSwiftUI-sample
-  pod 'DocumentReader', '~> 6.6'
-  pod 'DocumentReaderFullRFID', '~> 6.6'
+  pod 'DocumentReader', '~> 6.7'
+  pod 'DocumentReaderFullRFID', '~> 6.7'
 end
