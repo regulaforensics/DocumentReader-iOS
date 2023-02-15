@@ -316,7 +316,7 @@ class MainViewController: UIViewController {
         }
         
         let customTintColorItems = [customTintColor, custonNextPageButton, customAllVisualElements]
-        let customTintColorSection = CustomizationSection("Custon tint color", customTintColorItems)
+        let customTintColorSection = CustomizationSection("Custom tint color", customTintColorItems)
         sectionsData.append(customTintColorSection)
         
         // 10. Custom background
