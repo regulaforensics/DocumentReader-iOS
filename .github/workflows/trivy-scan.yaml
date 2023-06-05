@@ -1,9 +1,11 @@
 name: Trivy Scan
 
 on:
-  pull_request:
+  #pull_request:
+  #  branches:
+  #    - master
+  push:
     branches:
-      - master
       - SP-9923-repo-scan
 
 jobs:
