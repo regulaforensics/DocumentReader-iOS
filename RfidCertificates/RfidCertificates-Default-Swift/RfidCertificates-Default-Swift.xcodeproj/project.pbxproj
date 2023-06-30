@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BBDB16549C4DB49F4DF3BFF /* Pods_RfidCertificates_Default_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E62D5C6241F8BFD8A95CC9 /* Pods_RfidCertificates_Default_Swift.framework */; };
 		9D6B898129CAEDF2005F2903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B898029CAEDF2005F2903 /* AppDelegate.swift */; };
 		9D6B898529CAEDF2005F2903 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B898429CAEDF2005F2903 /* ViewController.swift */; };
 		9D6B898829CAEDF2005F2903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B898629CAEDF2005F2903 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12E62D5C6241F8BFD8A95CC9 /* Pods_RfidCertificates_Default_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RfidCertificates_Default_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78505990FE75A782E9399ED6 /* Pods-RfidCertificates-Default-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RfidCertificates-Default-Swift.debug.xcconfig"; path = "Target Support Files/Pods-RfidCertificates-Default-Swift/Pods-RfidCertificates-Default-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 		9D6B897D29CAEDF2005F2903 /* RfidCertificates-Default-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RfidCertificates-Default-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D6B898029CAEDF2005F2903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D6B898429CAEDF2005F2903 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 		9D6B899829CAF82A005F2903 /* Certificates.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Certificates.bundle; sourceTree = "<group>"; };
 		9D6B899E29CAF97E005F2903 /* PKDCertificate+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PKDCertificate+Extensions.swift"; sourceTree = "<group>"; };
 		9D6B89A029CAFBF2005F2903 /* RfidCertificates-Default-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "RfidCertificates-Default-Swift.entitlements"; sourceTree = "<group>"; };
+		C120E75B633115DAF1D734A3 /* Pods-RfidCertificates-Default-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RfidCertificates-Default-Swift.release.xcconfig"; path = "Target Support Files/Pods-RfidCertificates-Default-Swift/Pods-RfidCertificates-Default-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BBDB16549C4DB49F4DF3BFF /* Pods_RfidCertificates_Default_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 		6F285AE8C360CB8E6D37279D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				78505990FE75A782E9399ED6 /* Pods-RfidCertificates-Default-Swift.debug.xcconfig */,
+				C120E75B633115DAF1D734A3 /* Pods-RfidCertificates-Default-Swift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -57,6 +64,7 @@
 				9D6B897F29CAEDF2005F2903 /* RfidCertificates-Default-Swift */,
 				9D6B897E29CAEDF2005F2903 /* Products */,
 				6F285AE8C360CB8E6D37279D /* Pods */,
+				FCDF7C1C747D4A30CF11E6DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +94,14 @@
 			path = "RfidCertificates-Default-Swift";
 			sourceTree = "<group>";
 		};
+		FCDF7C1C747D4A30CF11E6DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12E62D5C6241F8BFD8A95CC9 /* Pods_RfidCertificates_Default_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,9 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D6B899129CAEDF3005F2903 /* Build configuration list for PBXNativeTarget "RfidCertificates-Default-Swift" */;
 			buildPhases = (
+				E0C09A0536D45C17259FE8D8 /* [CP] Check Pods Manifest.lock */,
 				9D6B897929CAEDF2005F2903 /* Sources */,
 				9D6B897A29CAEDF2005F2903 /* Frameworks */,
 				9D6B897B29CAEDF2005F2903 /* Resources */,
+				1E924D002C66B7FA959ED069 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +172,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E924D002C66B7FA959ED069 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RfidCertificates-Default-Swift/Pods-RfidCertificates-Default-Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RfidCertificates-Default-Swift/Pods-RfidCertificates-Default-Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RfidCertificates-Default-Swift/Pods-RfidCertificates-Default-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0C09A0536D45C17259FE8D8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RfidCertificates-Default-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D6B897929CAEDF2005F2903 /* Sources */ = {
@@ -239,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -293,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -305,6 +365,7 @@
 		};
 		9D6B899229CAEDF3005F2903 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78505990FE75A782E9399ED6 /* Pods-RfidCertificates-Default-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -336,6 +397,7 @@
 		};
 		9D6B899329CAEDF3005F2903 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C120E75B633115DAF1D734A3 /* Pods-RfidCertificates-Default-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
