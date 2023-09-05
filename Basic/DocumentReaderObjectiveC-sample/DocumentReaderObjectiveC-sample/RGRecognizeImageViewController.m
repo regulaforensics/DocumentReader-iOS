@@ -270,7 +270,7 @@
             if (dispatch_semaphore_wait(self.scanningSemaphore, DISPATCH_TIME_NOW) == 0) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                     dispatch_async(self.scaningQueue, ^{
-                        [RGLDocReader.shared recognizeImage:image cameraMode:YES completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
+                        [RGLDocReader.shared recognizeVideoFrame:image completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 if (action == RGLDocReaderActionComplete || action == RGLDocReaderActionMorePagesAvailable) {
                                     [self.delegate recognizeDidFinishedWith:results viewController:self];

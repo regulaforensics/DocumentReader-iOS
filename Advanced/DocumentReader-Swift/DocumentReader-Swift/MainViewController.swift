@@ -23,6 +23,7 @@ class MainViewController: UIViewController {
     var imagePicker = UIImagePickerController()
     private var sectionsData: [CustomizationSection] = []
     private var pickerImages: [UIImage] = []
+    private var selectedScenario: String?
     
     var isCustomUILayerEnabled: Bool = false
     lazy var animationTimer = Timer.scheduledTimer(timeInterval: 1.0/60, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
@@ -342,12 +343,15 @@ class MainViewController: UIViewController {
         tableView.isHidden = false
         settingsBarButton.isEnabled = true
         if let scenario = DocReader.shared.availableScenarios.first {
-            DocReader.shared.processParams.scenario = scenario.identifier
+            selectedScenario = scenario.identifier
         }
     }
     
     private func showScannerForManualMultipage() {
-        DocReader.shared.showScanner(self) { [weak self] (action, result, error) in
+        let config = DocReader.ScannerConfig()
+        config.scenario = selectedScenario
+        
+        DocReader.shared.showScanner(presenter: self, config:config) { [weak self] (action, result, error) in
             guard let self = self else { return }
             switch action {
             case .cancel:
@@ -386,8 +390,11 @@ class MainViewController: UIViewController {
         let whiteInput = DocReader.ImageInput(image: whiteImage!, light: .white, pageIndex: 0)
         let uvInput = DocReader.ImageInput(image: uvImage!, light: .UV, pageIndex: 0)
         let irInput = DocReader.ImageInput(image: irImage!, light: .infrared, pageIndex: 0)
+        let imageInputs = [whiteInput, irInput, uvInput]
         
-        DocReader.shared.recognizeImages(with: [whiteInput, irInput, uvInput]) { action, results, error in
+        let config = DocReader.RecognizeConfig(imageInputs: imageInputs)
+        config.scenario = selectedScenario
+        DocReader.shared.recognize(config:config) { action, results, error in
             switch action {
             case .cancel:
                 self.stopCustomUIChanges()
@@ -532,7 +539,10 @@ class MainViewController: UIViewController {
     }
     
     private func showCameraViewController() {
-        DocReader.shared.showScanner(self) { [weak self] (action, result, error) in
+        let config = DocReader.ScannerConfig()
+        config.scenario = selectedScenario
+        
+        DocReader.shared.showScanner(presenter: self, config:config) { [weak self] (action, result, error) in
             guard let self = self else { return }
             
             switch action {
@@ -859,7 +869,7 @@ extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard DocReader.shared.availableScenarios.indices.contains(row) else { return }
-        DocReader.shared.processParams.scenario = DocReader.shared.availableScenarios[row].identifier
+        selectedScenario = DocReader.shared.availableScenarios[row].identifier
     }
 }
 
@@ -880,7 +890,9 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
             self.present(self.imagePicker, animated: true, completion: nil)
         }
         let recognizeAction = UIAlertAction(title: "No", style: .default) { _ in
-            DocReader.shared.recognizeImages(self.pickerImages, completion: { [weak self] (action, results, error) in
+            let config = DocReader.RecognizeConfig(images:self.pickerImages)
+            config.scenario = self.selectedScenario
+            DocReader.shared.recognize(config: config, completion: { [weak self] (action, results, error) in
                 guard let self = self else { return }
                 if action == .complete {
                     guard let results = results else {

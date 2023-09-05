@@ -40,10 +40,10 @@ extension DocReader {
         }.eraseToAnyPublisher()
     }
     
-    func recognizeImage(image: UIImage) -> AnyPublisher<DocumentReaderResults, Error> {
+    func recognize(config: DocReader.RecognizeConfig) -> AnyPublisher<DocumentReaderResults, Error> {
         Deferred {
             Future<DocumentReaderResults, Error> { promise in
-                DocReader.shared.recognizeImage(image) { _, results, error in
+                DocReader.shared.recognize(config: config) { _, results, error in
                     if let error = error {
                         promise(.failure(error))
                     } else if let results = results {

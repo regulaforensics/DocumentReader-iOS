@@ -28,6 +28,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
 
+@property (strong, nonatomic) NSString *selectedScenario;
+
 @end
 
 @implementation ViewController
@@ -65,7 +67,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 
                         RGLScenario *scenario = [RGLDocReader shared].availableScenarios.firstObject;
                         if (scenario) {
-                            [RGLDocReader shared].processParams.scenario = scenario.identifier;
+                            self.selectedScenario = scenario.identifier;
                         }
                         [RGLDocReader shared].functionality.singleResult = YES;
                         
@@ -88,7 +90,10 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 }
 
 - (IBAction)useCameraViewController:(UIButton *)sender {
-    [RGLDocReader.shared showScanner:self completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSError * _Nullable error) {
+    RGLScannerConfig *config = [[RGLScannerConfig alloc] init];
+    config.scenario = self.selectedScenario;
+    
+    [RGLDocReader.shared showScannerFromPresenter:self config:config completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSError * _Nullable error) {
         switch (action) {
             case RGLDocReaderActionCancel: {
                 NSLog(@"Cancelled by user");
@@ -165,7 +170,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Gallery Unavailable" message:message preferredStyle:UIAlertControllerStyleAlert];
                 [alertController addAction: [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]];
                 [alertController addAction:[UIAlertAction actionWithTitle:@"Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    [UIApplication.sharedApplication openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                    [UIApplication.sharedApplication openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]
+                                                     options:@{}
+                                           completionHandler:nil];
                 }]];
                 [self presentViewController:alertController animated:YES completion:nil];
             }
@@ -203,7 +210,8 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self dismissViewControllerAnimated:YES completion:^{
 
-        [RGLDocReader.shared recognizeImage:image cameraMode:NO completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
+        RGLRecognizeConfig *config = [[RGLRecognizeConfig alloc] initWithImage:image];
+        [RGLDocReader.shared recognizeWithConfig:config completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
             if (action == RGLDocReaderActionComplete) {
                 if (results != nil) {
                     NSLog(@"Completed");
@@ -231,7 +239,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    RGLDocReader.shared.processParams.scenario = RGLDocReader.shared.availableScenarios[row].identifier;
+    self.selectedScenario = RGLDocReader.shared.availableScenarios[row].identifier;
 }
 
 - (void)recognizeDidFinishedWith:(RGLDocumentReaderResults *)results viewController:(RGRecognizeImageViewController *)viewController {

@@ -176,8 +176,11 @@ class ReaderFacade: ObservableObject {
     
     private func recognize(image: UIImage) -> AnyPublisher<DocumentReaderResults, Error> {
         isProcessing = true
+        let config = DocReader.RecognizeConfig(image: image)
+        config.scenario = selectedScenario
+        
         let recognize = DocReader.shared
-            .recognizeImage(image: image)
+            .recognize(config: config)
             .mapError { error in
                 self.isProcessing = false
                 return error

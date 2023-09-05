@@ -5,7 +5,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'DocumentReaderSwiftBleLicense' do
-  pod 'DocumentReader', '~> 6.8'
-  pod 'DocumentReaderFullAuthRFID', '~> 6.8'
+  pod 'DocumentReader', '~> 6.9'
+  pod 'DocumentReaderFullAuthRFID', '~> 6.9'
   pod 'BTDevice', '~> 6.8'
 end

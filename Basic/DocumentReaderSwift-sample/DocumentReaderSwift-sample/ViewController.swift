@@ -27,6 +27,8 @@ class ViewController: UIViewController {
       
     var imagePicker = UIImagePickerController()
     
+    private var selectedScenario: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializationReader()
@@ -64,7 +66,7 @@ class ViewController: UIViewController {
                               
                                 //set scenario
                                 if let firstScenario = DocReader.shared.availableScenarios.first {
-                                  DocReader.shared.processParams.scenario = firstScenario.identifier
+                                    self.selectedScenario = firstScenario.identifier
                                 }
                                 
                             } else {
@@ -86,7 +88,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func useCameraViewController(_ sender: UIButton) {
-        DocReader.shared.showScanner(self) { (action, result, error) in
+        let config = DocReader.ScannerConfig()
+        config.scenario = selectedScenario
+        
+        DocReader.shared.showScanner(presenter: self, config: config) { (action, result, error) in
             if action == .complete {
                 print("Completed")
                 if self.readRFID.isOn && result?.chipPage != 0 {
@@ -204,8 +209,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
         if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
             self.dismiss(animated: true, completion: {
-
-                DocReader.shared.recognizeImage(image, completion: { (action, result, error) in
+                let config = DocReader.RecognizeConfig(image: image)
+                config.scenario = self.selectedScenario
+                DocReader.shared.recognize(config: config) { (action, result, error) in
                     if action == .complete {
                         if result != nil {
                             print("Completed")
@@ -219,7 +225,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                         guard let error = error else { return }
                         print("Eror: \(error)")
                     }
-                })
+                }
 
             })
         } else {
@@ -245,7 +251,7 @@ extension ViewController: UIPickerViewDelegate {
     }
     
     public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        DocReader.shared.processParams.scenario = DocReader.shared.availableScenarios[row].identifier
+        selectedScenario = DocReader.shared.availableScenarios[row].identifier
     }
 }
 
