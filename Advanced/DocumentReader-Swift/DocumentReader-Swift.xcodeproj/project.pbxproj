@@ -15,6 +15,7 @@
 		9D00FDD225D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00FDD125D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift */; };
 		9D00FDD525D3C34300D6FEF1 /* BarcodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00FDD425D3C34300D6FEF1 /* BarcodeListViewController.swift */; };
 		9D053B6F25CD6D770014EE23 /* FieldType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D053B6E25CD6D770014EE23 /* FieldType+Extensions.swift */; };
+		9D228CA12A3C94C90023387E /* buttons.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D228CA02A3C94C80023387E /* buttons.json */; };
 		9D33E2A025CA940700FF9561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33E29F25CA940700FF9561 /* AppDelegate.swift */; };
 		9D33E2A425CA940700FF9561 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33E2A325CA940700FF9561 /* MainViewController.swift */; };
 		9D33E2A725CA940700FF9561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2A525CA940700FF9561 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		9D00FDD125D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarcodeTypes+Extensions.swift"; sourceTree = "<group>"; };
 		9D00FDD425D3C34300D6FEF1 /* BarcodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeListViewController.swift; sourceTree = "<group>"; };
 		9D053B6E25CD6D770014EE23 /* FieldType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldType+Extensions.swift"; sourceTree = "<group>"; };
+		9D228CA02A3C94C80023387E /* buttons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buttons.json; sourceTree = "<group>"; };
 		9D33E29C25CA940700FF9561 /* DocumentReader-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReader-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D33E29F25CA940700FF9561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D33E2A325CA940700FF9561 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				9D33E29F25CA940700FF9561 /* AppDelegate.swift */,
 				9D33E2A325CA940700FF9561 /* MainViewController.swift */,
 				86805409275A3DB00036B3AF /* DocumentReaderService.swift */,
+				9D228CA02A3C94C80023387E /* buttons.json */,
 				9DA9A40F283693DC0063B00E /* layer.json */,
 				8673192B27EAFE0600B754DF /* OnlineProcessing */,
 				9D33E2AD25CA940700FF9561 /* Info.plist */,
@@ -385,6 +388,7 @@
 				9D969825284A0BB20005C1BD /* uv.bmp in Resources */,
 				9D658B0F25CC000E00DDB739 /* TextCell.xib in Resources */,
 				9D9560B825D286D100C0673F /* SettingsSwitchCell.xib in Resources */,
+				9D228CA12A3C94C90023387E /* buttons.json in Resources */,
 				9D33E2D025CAA12200FF9561 /* CertificatesTA.bundle in Resources */,
 				9D6D108D25D29CC2001E9158 /* SettingsStepperCell.xib in Resources */,
 			);

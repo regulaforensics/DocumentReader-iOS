@@ -275,9 +275,13 @@ class MainViewController: UIViewController {
             DocReader.shared.customization.customStatusPositionMultiplier = 0.5
         }
         
-        let customUILayerModeStatic = CustomizationItem("Custom Status & Image") { [weak self] in
+        let customUILayerModeStatic = CustomizationItem("Custom Status & Images & Buttons") { [weak self] in
             guard let self = self else { return }
             self.setupCustomUIFromFile()
+        }
+        let customUILayerButtons = CustomizationItem("Custom Buttons") { [weak self] in
+            guard let self = self else { return }
+            self.setupCustomUIButtonsFromFile()
         }
         let customUILayerModeAnimated = CustomizationItem("Custom Status Animated") { [weak self] in
             guard let self = self else { return }
@@ -285,7 +289,7 @@ class MainViewController: UIViewController {
             self.animationTimer.fire()
         }
         
-        let freeCustomStatusItems = [freeCustomTextAndPostion, customUILayerModeStatic, customUILayerModeAnimated]
+        let freeCustomStatusItems = [freeCustomTextAndPostion, customUILayerModeStatic, customUILayerButtons, customUILayerModeAnimated]
         let freeCustomStatusSection = CustomizationSection("Free custom status", freeCustomStatusItems)
         sectionsData.append(freeCustomStatusSection)
         
@@ -742,6 +746,7 @@ class MainViewController: UIViewController {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+                DocReader.shared.customization.actionDelegate = self
                 DocReader.shared.customization.customUILayerJSON = jsonDict
             } catch {
                 
@@ -749,6 +754,23 @@ class MainViewController: UIViewController {
         }
     }
     
+    private func setupCustomUIButtonsFromFile() {
+        if let path = Bundle.main.path(forResource: "buttons", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                let jsonDict = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject]
+                
+                DocReader.shared.functionality.showTorchButton = false
+                DocReader.shared.functionality.showCloseButton = false
+                
+                DocReader.shared.customization.actionDelegate = self
+                DocReader.shared.customization.customUILayerJSON = jsonDict
+            } catch {
+                
+            }
+        }
+    }
+        
     @objc func fireTimer() {
         /*
         This example with Timer shows how you can change different properties of elements at runtime,
@@ -848,6 +870,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case .custom:
             break
         }
+    }
+}
+
+// MARK: - DocReader.CustomizationActionDelegate
+extension MainViewController: DocReader.CustomizationActionDelegate {
+    func onCustomButtonTapped(withTag tag: Int) {
+        print("Button with \(tag) tag pressed")
     }
 }
 

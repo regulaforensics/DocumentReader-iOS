@@ -133,7 +133,10 @@ class ReaderFacade: ObservableObject {
     private func prepareCameraController() -> (controller: UIViewController,
                                                results: AnyPublisher<DocumentReaderResults, Error>) {
         var controller: UIViewController?
-        let dismiss = { controller?.dismiss(animated: true) }
+        let dismiss = {
+            DocReader.shared.stopScanner()
+            controller?.dismiss(animated: true)
+        }
         
         let future = Future<(DocumentReaderResults), Error> { promise in
             
