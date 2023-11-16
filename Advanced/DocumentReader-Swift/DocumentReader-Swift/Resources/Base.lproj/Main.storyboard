@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EBP-cO-1xs">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EBP-cO-1xs">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,21 +14,21 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1VD-ed-3hT">
-                                <rect key="frame" x="0.0" y="297" width="414" height="599"/>
+                                <rect key="frame" x="0.0" y="300" width="375" height="512"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ActionTableViewCell" textLabel="Yw3-pv-W2p" style="IBUITableViewCellStyleDefault" id="reE-Gb-H61">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="reE-Gb-H61" id="1fC-vF-j2q">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yw3-pv-W2p">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="335" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -40,16 +40,16 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SrW-Gk-QZ5">
-                                <rect key="frame" x="0.0" y="445" width="414" height="60.5"/>
+                                <rect key="frame" x="0.0" y="404.33333333333331" width="375" height="60.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initialization..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZD-IO-3lu">
-                                        <rect key="frame" x="32" y="40" width="350" height="20.5"/>
+                                        <rect key="frame" x="32" y="40" width="311" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Gd0-qP-jvZ">
-                                        <rect key="frame" x="197" y="12" width="20" height="20"/>
+                                        <rect key="frame" x="177.66666666666666" y="12" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="gwQ-aA-NkW"/>
                                             <constraint firstAttribute="height" constant="20" id="xim-sz-BTD"/>
@@ -67,13 +67,13 @@
                                 </constraints>
                             </view>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zD9-8Z-w88">
-                                <rect key="frame" x="0.0" y="129" width="414" height="160"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="HrA-bu-Ilk"/>
                                 </constraints>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Scenario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6s6-2I-Rhp">
-                                <rect key="frame" x="0.0" y="100" width="414" height="21"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="YtS-FA-mwa"/>
                                 </constraints>
@@ -133,11 +133,11 @@
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="Bi6-qp-OWs" customClass="SettingsViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uuL-lp-SvI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fma-OK-kPR">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="47" width="375" height="765"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XOU-E6-v2V"/>
@@ -162,11 +162,11 @@
             <objects>
                 <viewController storyboardIdentifier="HelpViewController" id="30H-ql-LJW" customClass="HelpViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pgm-ll-Yf2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="GXs-bh-dlj">
-                                <rect key="frame" x="20" y="317" width="374" height="493"/>
+                                <rect key="frame" x="20" y="320" width="335" height="406"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">MRZ
 
@@ -177,13 +177,13 @@ ICAO 9303 (2015).</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info_mrz" translatesAutoresizingMaskIntoConstraints="NO" id="jrj-Lt-l2R">
-                                <rect key="frame" x="20" y="68" width="374" height="241"/>
+                                <rect key="frame" x="20" y="71" width="335" height="241"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="241" id="JD3-RD-f0N"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQb-sF-P23">
-                                <rect key="frame" x="20" y="818" width="374" height="44"/>
+                                <rect key="frame" x="20" y="734" width="335" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="FTy-ZT-gf8"/>
                                 </constraints>
@@ -222,18 +222,18 @@ ICAO 9303 (2015).</string>
             <objects>
                 <viewController storyboardIdentifier="BarcodeListViewController" id="1a0-S6-cGz" customClass="BarcodeListViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ns9-9w-eAo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-JW-Dqp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="47" width="375" height="765"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BarcodeListCell" id="JI1-Nb-VCF">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JI1-Nb-VCF" id="6ap-PL-otb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -262,11 +262,11 @@ ICAO 9303 (2015).</string>
             <objects>
                 <viewController storyboardIdentifier="TextFieldViewController" id="QWF-ib-snn" customClass="TextFieldViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fgG-ZF-LFM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="khB-dc-A6F">
-                                <rect key="frame" x="20" y="74" width="374" height="34"/>
+                                <rect key="frame" x="20" y="77" width="335" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="XvC-Ze-SYQ"/>
                                 </constraints>
@@ -295,11 +295,11 @@ ICAO 9303 (2015).</string>
             <objects>
                 <viewController storyboardIdentifier="TextViewController" id="hve-dj-hKb" customClass="TextViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4KN-CS-8We">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vp1-rF-5eK">
-                                <rect key="frame" x="20" y="74" width="374" height="372"/>
+                                <rect key="frame" x="20" y="77" width="335" height="372"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="372" id="bMb-Uw-saw"/>
                                 </constraints>
@@ -329,21 +329,21 @@ ICAO 9303 (2015).</string>
             <objects>
                 <viewController storyboardIdentifier="ResultsViewController" title="Results" id="l6S-Dj-sGh" customClass="ResultsViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dh0-0d-uaX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jnr-ag-wSn">
-                                <rect key="frame" x="0.0" y="255" width="414" height="641"/>
+                                <rect key="frame" x="0.0" y="258" width="375" height="554"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ComparisonCell" textLabel="5kZ-Jh-vdg" style="IBUITableViewCellStyleDefault" id="WTG-pg-Lnp">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WTG-pg-Lnp" id="a67-6x-55T">
-                                            <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="331" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5kZ-Jh-vdg">
-                                                    <rect key="frame" x="20" y="0.0" width="342" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="303" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -354,29 +354,29 @@ ICAO 9303 (2015).</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RfidStatusCell" id="Ehy-kQ-J7y">
-                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="93.666667938232422" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ehy-kQ-J7y" id="BeB-0U-4cE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IvW-HX-US1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                             </navigationBar>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ss8-Re-SkO">
-                                <rect key="frame" x="0.0" y="127" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="24A-gp-ELh"/>
                                 </constraints>
                             </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pko-3M-6UG">
-                                <rect key="frame" x="114.5" y="44" width="185.5" height="45"/>
+                                <rect key="frame" x="95" y="47" width="185.33333333333337" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OVERALL RESULT:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdS-Ix-J0k">
-                                        <rect key="frame" x="0.0" y="12" width="142.5" height="21"/>
+                                        <rect key="frame" x="0.0" y="12" width="142.33333333333334" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="yGr-uW-pBf"/>
                                         </constraints>
@@ -385,7 +385,7 @@ ICAO 9303 (2015).</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kmt-VQ-QHr">
-                                        <rect key="frame" x="150.5" y="6.5" width="32" height="32"/>
+                                        <rect key="frame" x="150.33333333333334" y="6.6666666666666643" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="Jf0-3y-opS"/>
                                             <constraint firstAttribute="height" constant="32" id="QLL-xP-jCw"/>
@@ -403,7 +403,7 @@ ICAO 9303 (2015).</string>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qAi-U6-smn">
-                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
+                                <rect key="frame" x="0.0" y="91" width="375" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="5ZG-0e-4Si"/>
                                 </constraints>
@@ -457,7 +457,7 @@ ICAO 9303 (2015).</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EBP-cO-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="N83-9v-GAi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -478,11 +478,11 @@ ICAO 9303 (2015).</string>
                         <viewControllerLayoutGuide type="bottom" id="OVH-DD-CRW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="opM-tc-Q2F">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rfid_icon" translatesAutoresizingMaskIntoConstraints="NO" id="uhl-md-hHk">
-                                <rect key="frame" x="167" y="54" width="80" height="80"/>
+                                <rect key="frame" x="147.66666666666666" y="57" width="80" height="80"/>
                                 <color key="tintColor" systemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="l3Y-rJ-QxO"/>
@@ -490,17 +490,17 @@ ICAO 9303 (2015).</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place the phone on the document please" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMW-iY-LTx">
-                                <rect key="frame" x="35" y="144" width="344" height="21"/>
+                                <rect key="frame" x="31" y="147" width="313" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hB8-Jw-lor">
-                                <rect key="frame" x="30" y="818" width="354" height="4"/>
+                                <rect key="frame" x="26" y="734" width="323" height="4"/>
                                 <color key="tintColor" red="0.5450980392" green="0.39607843139999999" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRk-qn-Z2d">
-                                <rect key="frame" x="379" y="832" width="25" height="25"/>
+                                <rect key="frame" x="340" y="748" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Rq0-BY-rPd"/>
                                     <constraint firstAttribute="width" constant="25" id="arb-FB-q61"/>
@@ -511,7 +511,7 @@ ICAO 9303 (2015).</string>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G56-Ob-Luq">
-                                <rect key="frame" x="30" y="808" width="354" height="0.0"/>
+                                <rect key="frame" x="26" y="724" width="323" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -553,48 +553,49 @@ ICAO 9303 (2015).</string>
             <objects>
                 <viewController storyboardIdentifier="ChildViewController" id="UXP-83-tu0" customClass="ChildViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ED1-pb-9q6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DnE-GB-A7Y">
+                                <rect key="frame" x="66.000000000000014" y="57" width="243.33333333333337" height="59"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show camera view in other view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFP-2b-Z59">
+                                        <rect key="frame" x="0.0" y="0.0" width="243.33333333333334" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="hna-9F-UKt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-7X-IBv">
+                                        <rect key="frame" x="81.666666666666657" y="29" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="JLC-99-IHu"/>
+                                        </constraints>
+                                        <state key="normal" title="Start"/>
+                                        <connections>
+                                            <action selector="startAction:" destination="UXP-83-tu0" eventType="touchUpInside" id="z4F-c3-2nU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amc-94-LeP">
-                                <rect key="frame" x="94.5" y="199" width="225" height="400"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="9Ts-cl-QYY"/>
-                                    <constraint firstAttribute="width" constant="225" id="yGD-oD-tKF"/>
-                                </constraints>
+                                <rect key="frame" x="45.333333333333343" y="126" width="284.33333333333326" height="568.33333333333337"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show camera view in other view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFP-2b-Z59">
-                                <rect key="frame" x="20" y="66" width="374" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="hna-9F-UKt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g9j-7X-IBv">
-                                <rect key="frame" x="167" y="95" width="80" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="JLC-99-IHu"/>
-                                    <constraint firstAttribute="height" constant="44" id="pKH-qe-y1V"/>
-                                </constraints>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startAction:" destination="UXP-83-tu0" eventType="touchUpInside" id="z4F-c3-2nU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="COP-ZH-EAe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g9j-7X-IBv" firstAttribute="centerX" secondItem="COP-ZH-EAe" secondAttribute="centerX" id="858-mQ-wl6"/>
-                            <constraint firstItem="sFP-2b-Z59" firstAttribute="top" secondItem="COP-ZH-EAe" secondAttribute="top" constant="22" id="ApK-Up-KeS"/>
-                            <constraint firstItem="sFP-2b-Z59" firstAttribute="leading" secondItem="COP-ZH-EAe" secondAttribute="leading" constant="20" id="D4y-0s-UVp"/>
-                            <constraint firstItem="g9j-7X-IBv" firstAttribute="top" secondItem="sFP-2b-Z59" secondAttribute="bottom" constant="8" symbolic="YES" id="FY0-hr-HaM"/>
-                            <constraint firstItem="COP-ZH-EAe" firstAttribute="trailing" secondItem="sFP-2b-Z59" secondAttribute="trailing" constant="20" id="fnE-eE-FVw"/>
-                            <constraint firstItem="Amc-94-LeP" firstAttribute="centerX" secondItem="COP-ZH-EAe" secondAttribute="centerX" id="j4S-GX-4MW"/>
-                            <constraint firstItem="Amc-94-LeP" firstAttribute="top" secondItem="g9j-7X-IBv" secondAttribute="bottom" constant="60" id="sm9-SR-rY4"/>
+                            <constraint firstItem="Amc-94-LeP" firstAttribute="centerX" secondItem="ED1-pb-9q6" secondAttribute="centerX" id="GEN-em-F0v"/>
+                            <constraint firstItem="DnE-GB-A7Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="COP-ZH-EAe" secondAttribute="leading" id="KQT-x7-kBo"/>
+                            <constraint firstItem="Amc-94-LeP" firstAttribute="top" secondItem="DnE-GB-A7Y" secondAttribute="bottom" constant="10" id="UNa-Jc-55j"/>
+                            <constraint firstItem="DnE-GB-A7Y" firstAttribute="top" secondItem="COP-ZH-EAe" secondAttribute="top" constant="10" id="YvD-YI-ugE"/>
+                            <constraint firstItem="Amc-94-LeP" firstAttribute="height" secondItem="ED1-pb-9q6" secondAttribute="height" multiplier="0.7" id="chb-Il-rY2"/>
+                            <constraint firstItem="DnE-GB-A7Y" firstAttribute="centerX" secondItem="COP-ZH-EAe" secondAttribute="centerX" id="hA8-IM-Ttr"/>
+                            <constraint firstItem="Amc-94-LeP" firstAttribute="width" secondItem="ED1-pb-9q6" secondAttribute="width" multiplier="0.758454" id="x7f-1p-0Tp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -604,40 +605,40 @@ ICAO 9303 (2015).</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5P-uy-baN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3800" y="-48"/>
+            <point key="canvasLocation" x="3800.0000000000005" y="-48.214285714285715"/>
         </scene>
         <!--Get Values View Controller-->
         <scene sceneID="0X7-gw-urZ">
             <objects>
                 <viewController storyboardIdentifier="GetValuesViewController" id="IZK-1q-BUP" customClass="GetValuesViewController" customModule="DocumentReader_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jaZ-Sx-Xg5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xSp-4m-phD">
-                                <rect key="frame" x="0.0" y="44" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="47" width="375" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="eBU-NP-vFb"/>
                                 </constraints>
                             </pickerView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQa-1R-WGS">
-                                <rect key="frame" x="0.0" y="240" width="414" height="324"/>
+                                <rect key="frame" x="0.0" y="243" width="375" height="324"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="324" id="g9G-Wd-p09"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FieldCell" id="417-dy-jRj">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="50" width="375" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="417-dy-jRj" id="otU-YN-PAD">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add parameter" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koJ-Fk-4tQ">
-                                <rect key="frame" x="20" y="206" width="323" height="21"/>
+                                <rect key="frame" x="20" y="209" width="284" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rBc-cl-sGh"/>
                                 </constraints>
@@ -646,7 +647,7 @@ ICAO 9303 (2015).</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6P-ce-mne">
-                                <rect key="frame" x="20" y="586.5" width="52" height="21"/>
+                                <rect key="frame" x="20" y="589.66666666666663" width="52" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="MCS-zy-b22"/>
                                 </constraints>
@@ -655,14 +656,14 @@ ICAO 9303 (2015).</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zi0-X7-R5q">
-                                <rect key="frame" x="16" y="654" width="382" height="208"/>
+                                <rect key="frame" x="16" y="657" width="343" height="121"/>
                                 <color key="backgroundColor" white="0.95640286532315344" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UMe-6L-VOu">
-                                <rect key="frame" x="85" y="580" width="313" height="34"/>
+                                <rect key="frame" x="85" y="583" width="274" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="qA0-CC-Oc9"/>
                                 </constraints>
@@ -670,7 +671,7 @@ ICAO 9303 (2015).</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code definition:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wu-Ce-coM">
-                                <rect key="frame" x="20" y="625" width="374" height="21"/>
+                                <rect key="frame" x="20" y="628" width="335" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="a4m-AS-mIA"/>
                                 </constraints>
@@ -679,7 +680,7 @@ ICAO 9303 (2015).</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZEW-WR-rj6">
-                                <rect key="frame" x="351" y="201" width="49" height="31"/>
+                                <rect key="frame" x="312" y="204" width="49" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="pBY-ov-PJT"/>
                                     <constraint firstAttribute="height" constant="31" id="qkR-fF-Tgx"/>
@@ -738,7 +739,7 @@ ICAO 9303 (2015).</string>
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

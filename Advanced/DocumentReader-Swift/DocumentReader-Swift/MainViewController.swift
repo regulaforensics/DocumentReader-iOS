@@ -430,6 +430,7 @@ class MainViewController: UIViewController {
         guard let childViewController = mainStoryboard.instantiateViewController(withIdentifier: kChildViewController) as? ChildViewController else {
             return
         }
+        childViewController.scenario = selectedScenario
         childViewController.completionHandler = { [weak self] (results) in
             guard let self = self else { return }
             if results.chipPage != 0 && ApplicationSettings.shared.isRfidEnabled {

@@ -12,6 +12,7 @@ import DocumentReader
 class ChildViewController: UIViewController {
     
     var completionHandler: DocumentReaderResultsClosure? = nil
+    var scenario: String?
     private var cameraViewController: UIViewController? = nil
     
     @IBOutlet weak var presenterView: UIView!
@@ -26,8 +27,15 @@ class ChildViewController: UIViewController {
         startScanner()
         startButton.isEnabled = false
     }
+  
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        cameraViewController?.view.frame = presenterView.frame
+    }
     
     private func startScanner() {
+        DocReader.shared.processParams.scenario = scenario
+        DocReader.shared.functionality.orientation = .all
         let vc = DocReader.shared.prepareCameraViewController(cameraHandler: { [weak self] (action, results, error) in
             guard let self = self else { return }
             switch action {
