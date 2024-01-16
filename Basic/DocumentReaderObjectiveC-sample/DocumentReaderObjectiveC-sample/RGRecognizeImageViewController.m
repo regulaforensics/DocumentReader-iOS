@@ -270,11 +270,18 @@
             if (dispatch_semaphore_wait(self.scanningSemaphore, DISPATCH_TIME_NOW) == 0) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
                     dispatch_async(self.scaningQueue, ^{
+                        RGLDocReader.shared.processParams.scenario = self.selectedScenario;
+                        RGLDocReader.shared.processParams.multipageProcessing = @YES;
                         [RGLDocReader.shared recognizeVideoFrame:image completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
                             dispatch_async(dispatch_get_main_queue(), ^{
-                                if (action == RGLDocReaderActionComplete || action == RGLDocReaderActionMorePagesAvailable) {
+                                if (action == RGLDocReaderActionComplete) {
                                     [self.delegate recognizeDidFinishedWith:results viewController:self];
                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                } else if (action == RGLDocReaderActionMorePagesAvailable) {
+                                    [RGLDocReader.shared startNewPage];
+                                    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.view.center.x - 100, self.view.center.y - 25, 200, 50)];
+                                    label.text = @"Provide next page";
+                                    [self.view addSubview:label];
                                 }
                                 dispatch_semaphore_signal(self.scanningSemaphore);
                             });

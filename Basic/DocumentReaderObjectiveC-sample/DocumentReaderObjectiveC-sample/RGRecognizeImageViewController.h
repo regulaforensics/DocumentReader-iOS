@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, RGSessionSetupResult) {
 @interface RGRecognizeImageViewController : UIViewController
 
 @property(nonatomic, weak, nullable) id<RGRecognizeImageViewController> delegate;
+@property(nonatomic, strong) NSString *selectedScenario;
 
 @end
 

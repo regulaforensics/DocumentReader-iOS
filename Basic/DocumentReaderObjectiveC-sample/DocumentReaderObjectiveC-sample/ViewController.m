@@ -144,6 +144,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 
 - (IBAction)actionCustomCamera:(UIButton *)sender {
     RGRecognizeImageViewController *vc = [[RGRecognizeImageViewController alloc] init];
+    vc.selectedScenario = self.selectedScenario;
     vc.delegate = self;
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
     [self presentViewController:vc animated:YES completion:nil];
