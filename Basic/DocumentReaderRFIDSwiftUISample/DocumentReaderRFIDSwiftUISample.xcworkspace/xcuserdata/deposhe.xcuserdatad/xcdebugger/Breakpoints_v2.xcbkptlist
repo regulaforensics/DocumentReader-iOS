@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FE759D04-30AC-4720-B29C-DF3B84918E97"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "38AF1FC6-825A-44A3-AF64-32FF859BF218"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DocumentReaderRFIDSwiftUISample/DocReader+Combine.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "initializeReader(config:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62613CFF-DED4-4283-9CB9-60DF8EA54790"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "readRFID()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62613CFF-DED4-4283-9CB9-60DF8EA54790 - 37308db066c4bbfb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.RGLRFIDNotificationAction, Swift.Optional&lt;__C.RGLRFIDNotify&gt;) -&gt; () in DocumentReaderRFIDSwiftUISample.ReaderFacade.readRFID() -&gt; ()"
+                  moduleName = "DocumentReaderRFIDSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deposhe/Documents/Regula/Reader/ios_githubdemo/Samples/Basic/DocumentReaderRFIDSwiftUISample/DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "204"
+                  endingLineNumber = "204"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  uuid = "62613CFF-DED4-4283-9CB9-60DF8EA54790 - 37308db066c4bbda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.RGLRFIDNotificationAction, Swift.Optional&lt;__C.RGLRFIDNotify&gt;) -&gt; () in DocumentReaderRFIDSwiftUISample.ReaderFacade.readRFID() -&gt; ()"
+                  moduleName = "DocumentReaderRFIDSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deposhe/Documents/Regula/Reader/ios_githubdemo/Samples/Basic/DocumentReaderRFIDSwiftUISample/DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "203"
+                  endingLineNumber = "203"
+                  offsetFromSymbolStart = "248">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3B35939-6DA6-424C-8342-59FE7827F5AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "209"
+            endingLineNumber = "209"
+            landmarkName = "readRFID()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D3B35939-6DA6-424C-8342-59FE7827F5AE - db2f515d883003e8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DocumentReaderRFIDSwiftUISample.ReaderFacade.readRFID() -&gt; ()"
+                  moduleName = "DocumentReaderRFIDSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deposhe/Documents/Regula/Reader/ios_githubdemo/Samples/Basic/DocumentReaderRFIDSwiftUISample/DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "210"
+                  endingLineNumber = "210"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  uuid = "D3B35939-6DA6-424C-8342-59FE7827F5AE - 946bdf933c7d437a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.RGLRFIDCompleteAction, Swift.Optional&lt;__C.RGLDocumentReaderResults&gt;, Swift.Optional&lt;Swift.Error&gt;, __C.RGLRFIDErrorCodes) -&gt; () in DocumentReaderRFIDSwiftUISample.ReaderFacade.readRFID() -&gt; ()"
+                  moduleName = "DocumentReaderRFIDSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deposhe/Documents/Regula/Reader/ios_githubdemo/Samples/Basic/DocumentReaderRFIDSwiftUISample/DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "209"
+                  endingLineNumber = "209"
+                  offsetFromSymbolStart = "172">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "517741BB-2329-43AF-B0D1-B3185B599CB9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "readRFID()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "517741BB-2329-43AF-B0D1-B3185B599CB9 - 37308db066c4c56f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.RGLRFIDNotificationAction, Swift.Optional&lt;__C.RGLRFIDNotify&gt;) -&gt; () in DocumentReaderRFIDSwiftUISample.ReaderFacade.readRFID() -&gt; ()"
+                  moduleName = "DocumentReaderRFIDSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deposhe/Documents/Regula/Reader/ios_githubdemo/Samples/Basic/DocumentReaderRFIDSwiftUISample/DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "517741BB-2329-43AF-B0D1-B3185B599CB9 - 37308db066c4c500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.RGLRFIDNotificationAction, Swift.Optional&lt;__C.RGLRFIDNotify&gt;) -&gt; () in DocumentReaderRFIDSwiftUISample.ReaderFacade.readRFID() -&gt; ()"
+                  moduleName = "DocumentReaderRFIDSwiftUISample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/deposhe/Documents/Regula/Reader/ios_githubdemo/Samples/Basic/DocumentReaderRFIDSwiftUISample/DocumentReaderRFIDSwiftUISample/ReaderFacade.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
