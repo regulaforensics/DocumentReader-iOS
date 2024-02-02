@@ -30,7 +30,7 @@ struct ResultsView: View {
             }
         } else {
             GeometryReader { geo in
-                List(reader.lastGraphicResultFields, id: \.fieldName) { field in
+                List(reader.lastGraphicResultFields, id: \.hash) { field in
                     VStack {
                         Text(field.fieldName)
                             .fontWeight(.light)
