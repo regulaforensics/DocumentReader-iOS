@@ -66,9 +66,6 @@ class MainViewController: UIViewController {
         DocumentReaderService.shared.initializeDatabaseAndAPI(progress: { [weak self] state in
             guard let self = self else { return }
             switch state {
-            case .downloadingDatabase(progress: let progress):
-                let progressValue = String(format: "%.1f", progress * 100)
-                self.statusLabel.text = "Downloading database: \(progressValue)%"
             case .initializingAPI:
                 self.statusLabel.text = "Initializing..."
                 self.activityIndicator.stopAnimating()

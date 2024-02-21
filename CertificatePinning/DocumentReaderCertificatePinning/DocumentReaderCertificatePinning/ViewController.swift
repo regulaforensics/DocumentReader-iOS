@@ -20,16 +20,12 @@ class ViewController: UIViewController {
       print("License file missed")
       return
     }
-    DocReader.shared.prepareDatabase(databaseID: "MRZ") { success, error in
+    let config = DocReader.Config(license: licenseData)
+    DocReader.shared.initializeReader(config: config) { success, error in
       if success {
-        let config = DocReader.Config(license: licenseData)
-        DocReader.shared.initializeReader(config: config) { success, error in
-          if success {
-            print("DocumentReader initialized")
-          } else {
-            print("Initialization failed \(error!.localizedDescription)")
-          }
-        }
+        print("DocumentReader initialized")
+      } else {
+        print("Initialization failed \(error!.localizedDescription)")
       }
     }
   }

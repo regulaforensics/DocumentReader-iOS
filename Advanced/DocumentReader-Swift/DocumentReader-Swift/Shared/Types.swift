@@ -191,6 +191,7 @@ struct Attribute: Hashable {
     var equality: Bool = true
     var rfidStatus: RFIDErrorCodes? = nil
     var checkResult: CheckResult? = nil
+    var drawSeparator: Bool = true
     
     // Equatable only by name (used in comparison)
     static func == (lhs: Attribute, rhs: Attribute) -> Bool {

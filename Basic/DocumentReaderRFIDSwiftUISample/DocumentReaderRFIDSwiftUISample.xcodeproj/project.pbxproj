@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D73E82D2B6A2E4700DC31A0 /* UIApplication+Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D73E82C2B6A2E4700DC31A0 /* UIApplication+Window.swift */; };
+		5DE8CFD52B8629170081BEEB /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 5DE8CFD42B8629170081BEEB /* db.dat */; };
 		9664D4D92B62801D00DBA2D4 /* DocumentReaderRFIDSwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664D4D82B62801D00DBA2D4 /* DocumentReaderRFIDSwiftUISampleApp.swift */; };
 		9664D4DB2B62801D00DBA2D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664D4DA2B62801D00DBA2D4 /* ContentView.swift */; };
 		9664D4DD2B62802000DBA2D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9664D4DC2B62802000DBA2D4 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		5D73E82C2B6A2E4700DC31A0 /* UIApplication+Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Window.swift"; sourceTree = "<group>"; };
 		5DAAAA322B678CD400A41C78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5DE8CFD42B8629170081BEEB /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		7D5B76D5EFDCE783AC82E334 /* Pods-DocumentReaderRFIDSwiftUISample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderRFIDSwiftUISample.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReaderRFIDSwiftUISample/Pods-DocumentReaderRFIDSwiftUISample.debug.xcconfig"; sourceTree = "<group>"; };
 		9664D4D52B62801D00DBA2D4 /* DocumentReaderRFIDSwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentReaderRFIDSwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9664D4D82B62801D00DBA2D4 /* DocumentReaderRFIDSwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReaderRFIDSwiftUISampleApp.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				9664D4EA2B62888400DBA2D4 /* CameraView.swift */,
 				9664D4EC2B62890E00DBA2D4 /* ResultsView.swift */,
 				5D73E82C2B6A2E4700DC31A0 /* UIApplication+Window.swift */,
+				5DE8CFD42B8629170081BEEB /* db.dat */,
 				9664D4EE2B628A0000DBA2D4 /* regula.license */,
 				9664D4DC2B62802000DBA2D4 /* Assets.xcassets */,
 				9664D4DE2B62802000DBA2D4 /* Preview Content */,
@@ -176,6 +179,7 @@
 				9664D4E02B62802000DBA2D4 /* Preview Assets.xcassets in Resources */,
 				9664D4DD2B62802000DBA2D4 /* Assets.xcassets in Resources */,
 				9664D4EF2B628A0000DBA2D4 /* regula.license in Resources */,
+				5DE8CFD52B8629170081BEEB /* db.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +383,7 @@
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = DocumentReaderRFIDSwiftUISample/Info.plist;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Permission to scan document chip";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Required to scan documents";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -414,6 +419,7 @@
 				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
 				INFOPLIST_FILE = DocumentReaderRFIDSwiftUISample/Info.plist;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "Permission to scan document chip";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Required to scan documents";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

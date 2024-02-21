@@ -1,2 +1,5 @@
 Pods/
 Podfile.lock
+xcuserdata/
+db.dat
+regula.license

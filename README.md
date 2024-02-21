@@ -18,7 +18,8 @@ We have provided sample projects that demonstrate the ***API*** calls you can us
 * [Additional information](#additional-information)
 
 ## How to build demo application
-1. Get the trial license at [licensing.regulaforensics.com](https://licensing.regulaforensics.com/) (`regula.license` file).
+1. Get the trial license at [client.regulaforensics.com](https://client.regulaforensics.com/) (`regula.license` file).
+1. Get the trial database at [client.regulaforensics.com/customer/databases](https://client.regulaforensics.com/customer/databases) (`db.dat`)
 1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
 1. Repository structure and steps to build the projects:
     1. `Advanced` folder contains the advanced sample project with almost all available features. To build it, do the following steps:
@@ -26,6 +27,7 @@ We have provided sample projects that demonstrate the ***API*** calls you can us
         1. Go to the project folder.
         1. Install Pods: open Terminal within the root project folder and run `pod install` command.
         1. Copy the license file to the project: `Advanced/DocumentReader-Swift/DocumentReader-Swift`.
+        1. Copy the database file to the project: `Advanced/DocumentReader-Swift/DocumentReader-Swift`.
         1. Open the project in Xcode (`DocumentReader-Swift.xcworkspace` file).
         1. Change the Bundle Identifier to that you specified in your license file.
         1. Run the project.
@@ -35,6 +37,7 @@ We have provided sample projects that demonstrate the ***API*** calls you can us
         1. Go to the project folder: `DocumentReaderObjectiveC-sample` or `DocumentReaderSwift-sample`.
         1. Install Pods: open Terminal within the root project folder and run `pod install` command.
         1. Copy the license file to the project: `Basic/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample` or `Basic/DocumentReaderSwift-sample/DocumentReaderSwift-sample`.
+        1. Copy the database file to the project: `Basic/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample` or `Basic/DocumentReaderSwift-sample/DocumentReaderSwift-sample`.
         1. Open the project in Xcode (`DocumentReaderObjectiveC-sample.xcworkspace` or `DocumentReaderSwift-sample.xcworkspace` file).
         1. Change the Bundle Identifier to that you specified in your license file.
         1. Run the project.

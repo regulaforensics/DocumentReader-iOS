@@ -16,30 +16,13 @@ enum RFIDError: Error {
 
 extension DocReader {
 
-    func prepareDatabase(databaseID: String) -> AnyPublisher<Double, Error> {
-        let subject = PassthroughSubject<Double, Error>()
-
-        DocReader.shared.prepareDatabase(databaseID: databaseID) { progress in
-            subject.send(progress.fractionCompleted)
-        } completion: { success, error in
-            if let error = error {
-                subject.send(completion: .failure(error))
-            } else {
-                subject.send(completion: .finished)
-            }
-        }
-        return subject.eraseToAnyPublisher()
-    }
-
     func initializeReader(config: DocReader.Config) -> AnyPublisher<Bool, Error> {
-        Deferred {
-            Future<Bool, Error> { promise in
-                DocReader.shared.initializeReader(config: config) { success, error in
-                    if let error = error {
-                        promise(.failure(error))
-                    } else {
-                        promise(.success(success))
-                    }
+        Future<Bool, Error> { promise in
+            DocReader.shared.initializeReader(config: config) { success, error in
+                if let error = error {
+                    promise(.failure(error))
+                } else {
+                    promise(.success(success))
                 }
             }
         }.eraseToAnyPublisher()

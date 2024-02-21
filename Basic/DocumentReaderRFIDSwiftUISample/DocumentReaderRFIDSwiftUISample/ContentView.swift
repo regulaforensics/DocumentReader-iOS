@@ -43,10 +43,6 @@ struct ContentView: View {
                         ResultsView(reader: reader)
                     }.hidden()
                 }
-            } else if !reader.isDatabasePrepared {
-                Text("Preparing database \(reader.downloadProgress)%...")
-            } else if reader.isProcessing {
-                ProgressView().progressViewStyle(.circular)
             } else {
                 Text("Initializing ...")
             }

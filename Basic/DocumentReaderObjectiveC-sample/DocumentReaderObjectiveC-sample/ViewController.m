@@ -45,47 +45,35 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     //initialize license
     NSString *dataPath = [[NSBundle mainBundle] pathForResource:@"regula.license" ofType:nil];
     NSData *licenseData = [NSData dataWithContentsOfFile:dataPath];
-    
-    [RGLDocReader.shared prepareDatabase:@"Full" progressHandler:^(NSProgress * _Nonnull progress) {
-        self.initializationLabel.text = [NSString stringWithFormat:@"%.1f", progress.fractionCompleted * 100];
-    } completion:^(BOOL successful, NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (successful) {
-                self.initializationLabel.text = @"Initialization...";
-                RGLConfig *config = [RGLConfig configWithLicenseData:licenseData];
-                
-                [RGLDocReader.shared initializeReaderWithConfig:config completion:^(BOOL successful, NSError * _Nullable error ) {
-                    if (successful) {
-                        [self.activityIndicator stopAnimating];
-                        [self.initializationLabel setHidden:YES];
-                        [self.userRecognizeImage setHidden:NO];
-                        [self.useCameraViewControllerButton setHidden:NO];
-                        [self.customCamera setHidden:NO];
-                        [self.pickerView setHidden:NO];
-                        [self.pickerView reloadAllComponents];
-                        [self.pickerView selectRow:0 inComponent:0 animated:NO];
 
-                        RGLScenario *scenario = [RGLDocReader shared].availableScenarios.firstObject;
-                        if (scenario) {
-                            self.selectedScenario = scenario.identifier;
-                        }
-                        [RGLDocReader shared].functionality.singleResult = YES;
-                        
-                        for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
-                            NSLog(@"%@", scenario);
-                            NSLog(@"---------");
-                        }
-                    } else {
-                        [self.activityIndicator stopAnimating];
-                        self.initializationLabel.text = [NSString stringWithFormat:@"Initialization error: %@", error];
-                        NSLog(@"%@", error);
-                    }
-                }];
-            } else {
-                self.initializationLabel.text = [NSString stringWithFormat:@"Downloading database error: %@", error];
-                NSLog(@"%@", error);
+    self.initializationLabel.text = @"Initialization...";
+    RGLConfig *config = [RGLConfig configWithLicenseData:licenseData];
+    [RGLDocReader.shared initializeReaderWithConfig:config completion:^(BOOL successful, NSError * _Nullable error ) {
+        if (successful) {
+            [self.activityIndicator stopAnimating];
+            [self.initializationLabel setHidden:YES];
+            [self.userRecognizeImage setHidden:NO];
+            [self.useCameraViewControllerButton setHidden:NO];
+            [self.customCamera setHidden:NO];
+            [self.pickerView setHidden:NO];
+            [self.pickerView reloadAllComponents];
+            [self.pickerView selectRow:0 inComponent:0 animated:NO];
+
+            RGLScenario *scenario = [RGLDocReader shared].availableScenarios.firstObject;
+            if (scenario) {
+                self.selectedScenario = scenario.identifier;
             }
-        });
+            [RGLDocReader shared].functionality.singleResult = YES;
+
+            for (RGLScenario *scenario in RGLDocReader.shared.availableScenarios) {
+                NSLog(@"%@", scenario);
+                NSLog(@"---------");
+            }
+        } else {
+            [self.activityIndicator stopAnimating];
+            self.initializationLabel.text = [NSString stringWithFormat:@"Initialization error: %@", error];
+            NSLog(@"%@", error);
+        }
     }];
 }
 
@@ -212,6 +200,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     [self dismissViewControllerAnimated:YES completion:^{
 
         RGLRecognizeConfig *config = [[RGLRecognizeConfig alloc] initWithImage:image];
+        config.scenario = self.selectedScenario;
         [RGLDocReader.shared recognizeWithConfig:config completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
             if (action == RGLDocReaderActionComplete) {
                 if (results != nil) {

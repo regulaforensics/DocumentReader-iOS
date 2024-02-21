@@ -29,6 +29,7 @@ let kImageCellId = "ImageCell"
 let kComparisonCellId = "ComparisonCell"
 let kFieldCellId = "FieldCell"
 let kRfidStatusCellId = "RfidStatusCell"
+let kCheckResultCellId = "CheckResultCell"
 
 let kInfoTextMrz = """
 MRZ

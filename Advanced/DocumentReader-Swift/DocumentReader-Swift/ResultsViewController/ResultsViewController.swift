@@ -44,6 +44,7 @@ class ResultsViewController: UIViewController {
         if ApplicationSettings.shared.isRfidEnabled {
             initRfidData()
         }
+        initAuthenticityData()
         
         segmentedControl.removeAllSegments()
         for group in groups.reversed() {
@@ -91,7 +92,9 @@ class ResultsViewController: UIViewController {
                            forCellReuseIdentifier: kTextCellId)
         tableView.register(UINib.init(nibName: kImageCellId, bundle: nil),
                            forCellReuseIdentifier: kImageCellId)
-        
+        tableView.register(UINib.init(nibName: kCheckResultCellId, bundle: nil),
+                           forCellReuseIdentifier: kCheckResultCellId)
+
         let statusImageName = results.status.overallStatus == .ok ? "status_ok" : results.status.overallStatus == CheckResult.error ? "status_not_ok" : "status_undefined"
         overallResultView.image = UIImage(named: statusImageName)
     }
@@ -214,6 +217,90 @@ class ResultsViewController: UIViewController {
         }
     }
     
+    private func initAuthenticityData() {
+        var items: [GroupedAttributes] = []
+
+        if let authenticityResults = results.authenticityResults {
+            for check in authenticityResults.checks ?? [] {
+                switch check.type {
+                case .uvLuminescence, .barcodeFormatCheck:
+                    var group = GroupedAttributes(type: "\(check.typeName)", items: [])
+                    var index = 0
+                    for element in check.elements ?? [] {
+                        let security = element as! SecurityFeatureCheck
+                        
+                        index += 1
+                        let result = "#\(index) \(security.elementTypeName)[\(check.pageIndex)]"
+                        let item = Attribute(name: result, checkResult: security.status, drawSeparator: false)
+                        group.items.append(item)
+                        
+                        let value = security.elementDiagnoseName
+                        let subItem = Attribute(name: "", value: value)
+                        
+                        group.items.append(subItem)
+                    }
+                    
+                    if !group.items.isEmpty {
+                        items.append(group)
+                    }
+                case .imagePattern, .hologramsDetection, .portraitComparison, .liveness:
+                    var group = GroupedAttributes(type: "\(check.typeName)", items: [])
+                    var index = 0
+                    for element in check.elements ?? [] {
+                        let ident = element as! IdentResult
+                        
+                        index += 1
+                        let result = "#\(index) \(ident.elementTypeName)[\(check.pageIndex)]"
+                        let item = Attribute(name: result, checkResult: ident.status, drawSeparator: false)
+                        group.items.append(item)
+                        
+                        if let etalonImage = ident.etalonImage {
+                            let name = "(etalonImage)"
+                            let item = Attribute(name: name, value: "", image: etalonImage)
+                            group.items.append(item)
+                        }
+                        
+                        if let image = ident.image {
+                            let name = "(image)"
+                            let item = Attribute(name: name, value: "", image: image)
+                            group.items.append(item)
+                        }
+                    }
+                    
+                    if !group.items.isEmpty {
+                        items.append(group)
+                    }
+                case .ipi:
+                    var group = GroupedAttributes(type: "\(check.typeName)", items: [])
+                    var index = 0
+                    for element in check.elements ?? [] {
+                        let ident = element as! PhotoIdentResult
+                        
+                        index += 1
+                        let result = "#\(index)\(ident.elementTypeName)[\(check.pageIndex)]"
+                        let item = Attribute(name: result, checkResult: ident.status, drawSeparator: false)
+                        group.items.append(item)
+                        
+                        if let image = ident.resultImages.first {
+                            let item = Attribute(name: "", value: "", image: image)
+                            group.items.append(item)
+                        }
+                    }
+                    
+                    if !group.items.isEmpty {
+                        items.append(group)
+                    }
+                default:
+                    break
+                }
+            }
+        }
+        
+        if items.count > 0 {
+            groups.append(DataGroup(title: "Authenticity", items: items))
+        }
+    }
+    
     private func showHelpPopup(_ tag: Int) {
         guard tag != 0 else {
             return
@@ -279,6 +366,11 @@ extension ResultsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 }
 
 extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let selected = pickerView.selectedRow(inComponent: 0)
         guard sectionsData.count > 0 else { return nil }
@@ -339,6 +431,7 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
             } else {
                 cell.valueLabel.textColor = .black
             }
+            cell.separatorInset.left = item.drawSeparator ? 0 : .greatestFiniteMagnitude
             return cell
         } else if item.rfidStatus != nil {
             // Attribute for rfid status
@@ -351,14 +444,14 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
             cell.accessoryView = imageView
             return cell
         } else if item.checkResult != nil {
-            // Attribute for rfid check
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: kRfidStatusCellId) else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: kCheckResultCellId) as? CheckResultCell else {
                 return UITableViewCell()
             }
-            cell.textLabel?.text = item.name.uppercased()
             let imageName = item.checkResult == CheckResult.error ? "status_not_ok" : item.checkResult == CheckResult.ok ? "status_ok" : "status_undefined"
             let imageView = UIImageView(image: UIImage(named: imageName))
             cell.accessoryView = imageView
+            cell.separatorInset.left = item.drawSeparator ? 0 : .greatestFiniteMagnitude
+            cell.resultLabel.text = item.name.uppercased()
             return cell
         } else {
             // Attribute for comparison group

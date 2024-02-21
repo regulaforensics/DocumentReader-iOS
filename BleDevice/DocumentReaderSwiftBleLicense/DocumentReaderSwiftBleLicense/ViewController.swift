@@ -12,8 +12,6 @@ class ViewController: UIViewController {
     
     enum ReaderState {
         case none
-        case dbLoading(Double)
-        case dbLoaded
         case initializing
         case initialized
         case error(Error)
@@ -32,21 +30,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.text = "Regula 4444"
-        prepareDatabase()
-    }
-    
-    
-    private func prepareDatabase() {
-        self.state = .dbLoading(0)
-        DocReader.shared.prepareDatabase(databaseID: "Full") { progress in
-            self.state = .dbLoading(progress.fractionCompleted)
-        } completion: { success, error in
-            if success {
-                self.state = .dbLoaded
-            } else if let error = error {
-                self.state = .error(error)
-            }
-        }
     }
     
     private func connectToDevice() {
@@ -63,7 +46,6 @@ class ViewController: UIViewController {
         DocReader.shared.initializeReader(config: config) { success, error in
             if success {
                 self.setupFunctionality()
-                self.setupProcessParams()
                 self.state = .initialized
                 self.navigateToScan()
             } else if let error = error {
@@ -74,10 +56,6 @@ class ViewController: UIViewController {
     
     private func setupFunctionality() {
         DocReader.shared.functionality.isUseAuthenticator = true
-    }
-    
-    private func setupProcessParams() {
-        DocReader.shared.processParams.scenario = RGL_SCENARIO_FULL_AUTH
     }
     
     private func navigateToScan() {
@@ -91,12 +69,6 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             switch self.state {
             case .none: break
-            case .dbLoading(let progress):
-                self.display(progress: progress)
-                self.displayLoading(isLoading: true)
-            case .dbLoaded:
-                self.displayDBReady()
-                self.displayLoading(isLoading: false)
             case .initializing:
                 self.displayInitalizing()
                 self.displayLoading(isLoading: true)
@@ -159,9 +131,6 @@ extension ViewController.ReaderState: Equatable {
     static func == (lhs: ViewController.ReaderState, rhs: ViewController.ReaderState) -> Bool {
         switch (lhs, rhs) {
         case (.none, .none): return true
-        case (.dbLoading(let value1), .dbLoading(let value2)):
-            return value1 == value2
-        case (.dbLoaded, .dbLoaded): return true
         case (.initializing, .initializing): return true
         case (.initialized, .initialized): return true
         case (.error(let error1), .error(let error2)):

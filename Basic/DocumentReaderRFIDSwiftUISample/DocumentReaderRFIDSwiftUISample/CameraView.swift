@@ -17,13 +17,6 @@ struct CameraView: View {
         ZStack {
             Color.black.edgesIgnoringSafeArea(.all)
             CameraViewController(reader: reader)
-            VStack {
-                Text("Custom Text Over Scanner")
-                    .foregroundColor(Color.green)
-                    .font(.system(size: 20))
-                    .padding(EdgeInsets(top: 120, leading: 0, bottom: 0, trailing: 0))
-                Spacer()
-            }
         }
     }
 }

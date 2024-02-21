@@ -10,7 +10,6 @@ import DocumentReader
 
 final class DocumentReaderService {
     enum State {
-        case downloadingDatabase(progress: Double)
         case initializingAPI
         case completed
         case error(String)
@@ -33,30 +32,16 @@ final class DocumentReaderService {
             return
         }
 
-        DispatchQueue.global().async {
-            DocReader.shared.prepareDatabase(
-                databaseID: kRegulaDatabaseId,
-                progressHandler: { (inprogress) in
-                    progress(.downloadingDatabase(progress: inprogress.fractionCompleted))
-                },
-                completion: { (success, error) in
-                    if let error = error, !success {
-                        progress(.error("Database error: \(error.localizedDescription)"))
-                        return
-                    }
-                    let config = DocReader.Config(license: licenseData)
-                    DocReader.shared.initializeReader(config: config, completion: { (success, error) in
-                        DispatchQueue.main.async {
-                            progress(.initializingAPI)
-                            if success {
-                                progress(.completed)
-                            } else {
-                                progress(.error("Initialization error: \(error?.localizedDescription ?? "nil")"))
-                            }
-                        }
-                    })
+        let config = DocReader.Config(license: licenseData)
+        DocReader.shared.initializeReader(config: config, completion: { (success, error) in
+            DispatchQueue.main.async {
+                progress(.initializingAPI)
+                if success {
+                    progress(.completed)
+                } else {
+                    progress(.error("Initialization error: \(error?.localizedDescription ?? "nil")"))
                 }
-            )
-        }
+            }
+        })
     }
 }

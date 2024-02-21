@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96760D3A2B8505F100475CB7 /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 96760D392B8505F100475CB7 /* db.dat */; };
 		9D84737528D84AD80007D362 /* DocReader+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84737328D84AD80007D362 /* DocReader+Combine.swift */; };
 		9D84737628D84AD80007D362 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D84737428D84AD80007D362 /* ImagePicker.swift */; };
 		9DBF7ECD28D473FF0025FD4B /* DocumentReaderSwiftUI_sampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBF7ECC28D473FF0025FD4B /* DocumentReaderSwiftUI_sampleApp.swift */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		06F5F38C8392772C12DADC77 /* Pods-DocumentReaderSwiftUI-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderSwiftUI-sample.release.xcconfig"; path = "Target Support Files/Pods-DocumentReaderSwiftUI-sample/Pods-DocumentReaderSwiftUI-sample.release.xcconfig"; sourceTree = "<group>"; };
+		96760D392B8505F100475CB7 /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		9D84737328D84AD80007D362 /* DocReader+Combine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocReader+Combine.swift"; sourceTree = "<group>"; };
 		9D84737428D84AD80007D362 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		9DBF7EC928D473FF0025FD4B /* DocumentReaderSwiftUI-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderSwiftUI-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				9DBF7EDE28D474F20025FD4B /* GalleryView.swift */,
 				9DBF7EDB28D474F20025FD4B /* ResultsView.swift */,
 				9DBF7EE428D475910025FD4B /* regula.license */,
+				96760D392B8505F100475CB7 /* db.dat */,
 				9DBF7ED028D474000025FD4B /* Assets.xcassets */,
 				9DBF7ED228D474000025FD4B /* Preview Content */,
 			);
@@ -175,6 +178,7 @@
 				9DBF7ED428D474000025FD4B /* Preview Assets.xcassets in Resources */,
 				9DBF7ED128D474000025FD4B /* Assets.xcassets in Resources */,
 				9DBF7EE628D475910025FD4B /* regula.license in Resources */,
+				96760D3A2B8505F100475CB7 /* db.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

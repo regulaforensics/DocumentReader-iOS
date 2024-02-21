@@ -23,7 +23,9 @@ class ScanViewController: UIViewController {
     }
     
     private func startScan() {
-        DocReader.shared.showScanner(self) { action, results, error in
+        let config = DocReader.ScannerConfig()
+        config.scenario = RGL_SCENARIO_FULL_AUTH
+        DocReader.shared.showScanner(presenter: self, config: config) { action, results, error in
             if action == .complete {
                 if let results = results {
                     self.showAuthenticityResults(results: results)

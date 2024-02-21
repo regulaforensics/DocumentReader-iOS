@@ -38,52 +38,36 @@ class ViewController: UIViewController {
         // getting license
         guard let dataPath = Bundle.main.path(forResource: "regula.license", ofType: nil) else { return }
         guard let licenseData = try? Data(contentsOf: URL(fileURLWithPath: dataPath)) else { return }
-        
-        DispatchQueue.global().async {
-            
-            DocReader.shared.prepareDatabase(databaseID: "Full", progressHandler: { (progress) in
-                let progressValue = String(format: "%.1f", progress.fractionCompleted * 100)
-                self.initializationLabel.text = "Downloading database: \(progressValue)%"
-            }, completion: { (success, error) in
+
+        let config = DocReader.Config(license: licenseData)
+        DocReader.shared.initializeReader(config: config) { (success, error) in
+            DispatchQueue.main.async {
                 if success {
-                    let config = DocReader.Config(license: licenseData)
-                    DocReader.shared.initializeReader(config: config) { (success, error) in
-                        DispatchQueue.main.async {
-                            if success {
-                                self.activityIndicator.stopAnimating()
-                                self.initializationLabel.isHidden = true
-                                self.userRecognizeImage.isHidden = false
-                                self.useCameraViewControllerButton.isHidden = false
-                                
-                                if DocReader.shared.isRFIDAvailableForUse {
-                                    self.readRFIDLabel.isHidden = false
-                                    self.readRFID.isHidden = false
-                                }
-                                
-                                self.pickerView.isHidden = false
-                                self.pickerView.reloadAllComponents()
-                                self.pickerView.selectRow(0, inComponent: 0, animated: false)
-                              
-                                //set scenario
-                                if let firstScenario = DocReader.shared.availableScenarios.first {
-                                    self.selectedScenario = firstScenario.identifier
-                                }
-                                
-                            } else {
-                                self.activityIndicator.stopAnimating()
-                                self.initializationLabel.text = "Initialization error: \(error?.localizedDescription ?? "unknown")"
-                                print(error?.localizedDescription ?? "unknown")
-                            }
-                        }
+                    self.activityIndicator.stopAnimating()
+                    self.initializationLabel.isHidden = true
+                    self.userRecognizeImage.isHidden = false
+                    self.useCameraViewControllerButton.isHidden = false
+
+                    if DocReader.shared.isRFIDAvailableForUse {
+                        self.readRFIDLabel.isHidden = false
+                        self.readRFID.isHidden = false
                     }
+
+                    self.pickerView.isHidden = false
+                    self.pickerView.reloadAllComponents()
+                    self.pickerView.selectRow(0, inComponent: 0, animated: false)
+
+                    //set scenario
+                    if let firstScenario = DocReader.shared.availableScenarios.first {
+                        self.selectedScenario = firstScenario.identifier
+                    }
+
                 } else {
-                    DispatchQueue.main.async {
-                        self.activityIndicator.stopAnimating()
-                        self.initializationLabel.text = "Database error: \(error?.localizedDescription ?? "unknown")"
-                        print(error?.localizedDescription ?? "unknown")
-                    }
+                    self.activityIndicator.stopAnimating()
+                    self.initializationLabel.text = "Initialization error: \(error?.localizedDescription ?? "unknown")"
+                    print(error?.localizedDescription ?? "unknown")
                 }
-            })
+            }
         }
     }
     

@@ -29,32 +29,21 @@ class ViewController: UIViewController {
             print("Missing Licence File in Bundle")
             return
         }
-        
-        DocReader.shared.prepareDatabase(databaseID: kRegulaDatabaseId) { progress in
-            let percents = String(format: "%.1f", progress.fractionCompleted * 100.0)
-            print("Initializing database: \(percents)%")
-        } completion: { success, error in
-            if let error = error, !success {
-                print("Database error: \(error.localizedDescription)")
-                return
-            }
-            let config = DocReader.Config(license: licenseData)
-            
-            DocReader.shared.initializeReader(config: config, completion: { (success, error) in
-                DispatchQueue.main.async {
-                    if success {
-                        print("DocumentReader initialized")
-                        if DocReader.shared.isRFIDAvailableForUse {
-                            DocReader.shared.addPKDCertificates(certificates: self.getRfidCertificates(bundleName: "Certificates.bundle"))
-                        }
-                        // MRZ scenario, try extract portrait from document binary data with RFID
-                        DocReader.shared.processParams.scenario = RGL_SCENARIO_MRZ
-                    } else {
-                        print("Initialization error: \(error?.localizedDescription ?? "nil")")
+
+        let config = DocReader.Config(license: licenseData)
+
+        DocReader.shared.initializeReader(config: config, completion: { (success, error) in
+            DispatchQueue.main.async {
+                if success {
+                    print("DocumentReader initialized")
+                    if DocReader.shared.isRFIDAvailableForUse {
+                        DocReader.shared.addPKDCertificates(certificates: self.getRfidCertificates(bundleName: "Certificates.bundle"))
                     }
+                } else {
+                    print("Initialization error: \(error?.localizedDescription ?? "nil")")
                 }
-            })
-        }
+            }
+        })
     }
     
     func displayText(results: DocumentReaderResults?) {
@@ -101,7 +90,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showScannerPressed(_ sender: UIButton) {
-        DocReader.shared.showScanner(self) { action, results, error in
+        let config = DocReader.ScannerConfig()
+        config.scenario = RGL_SCENARIO_MRZ
+        DocReader.shared.showScanner(presenter: self, config: config) { action, results, error in
             switch action {
             case .complete:
                 self.startRFID()

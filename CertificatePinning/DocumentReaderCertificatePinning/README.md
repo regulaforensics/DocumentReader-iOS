@@ -11,6 +11,7 @@ The sample project for working with the
 1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
 2. Open the `DocumentReaderCertificatePinning` project in an IDE.
 3. Run pods `pod install`
+4. Add license and database files to the target.
 
 ## How to configure Certificate Pinning
 * Requires iOS 14.0 minimum deployment target 

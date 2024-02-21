@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		8680540A275A3DB00036B3AF /* DocumentReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86805409275A3DB00036B3AF /* DocumentReaderService.swift */; };
 		868341E726F0C11B00644618 /* DocFormat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868341E626F0C11B00644618 /* DocFormat+Extensions.swift */; };
 		86878F0626EF96360082F481 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86878F0526EF96360082F481 /* NSObject+ClassName.swift */; };
+		96760D3E2B850A3B00475CB7 /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 96760D3D2B850A3B00475CB7 /* db.dat */; };
 		9D00FDD225D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00FDD125D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift */; };
 		9D00FDD525D3C34300D6FEF1 /* BarcodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D00FDD425D3C34300D6FEF1 /* BarcodeListViewController.swift */; };
 		9D053B6F25CD6D770014EE23 /* FieldType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D053B6E25CD6D770014EE23 /* FieldType+Extensions.swift */; };
@@ -53,6 +54,8 @@
 		9DA9A410283693DC0063B00E /* layer.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9A40F283693DC0063B00E /* layer.json */; };
 		9DA9A413283780450063B00E /* CustomUIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9A412283780450063B00E /* CustomUIModels.swift */; };
 		9DC45D3025D692AC0077AE4A /* DocReaderFrame+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC45D2F25D692AC0077AE4A /* DocReaderFrame+Extensions.swift */; };
+		9DE55FA92B4FED40003ECE9F /* CheckResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DE55FA72B4FED40003ECE9F /* CheckResultCell.swift */; };
+		9DE55FAA2B4FED40003ECE9F /* CheckResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE55FA82B4FED40003ECE9F /* CheckResultCell.xib */; };
 		9DF08E5225D3C9C700880F7E /* SettingsActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF08E5025D3C9C700880F7E /* SettingsActionCell.swift */; };
 		9DF08E5325D3C9C700880F7E /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DF08E5125D3C9C700880F7E /* SettingsActionCell.xib */; };
 		9DF08E5C25D3F84B00880F7E /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF08E5B25D3F84B00880F7E /* TextFieldViewController.swift */; };
@@ -83,6 +86,7 @@
 		86805409275A3DB00036B3AF /* DocumentReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReaderService.swift; sourceTree = "<group>"; };
 		868341E626F0C11B00644618 /* DocFormat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocFormat+Extensions.swift"; sourceTree = "<group>"; };
 		86878F0526EF96360082F481 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		96760D3D2B850A3B00475CB7 /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		9D00FDD125D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BarcodeTypes+Extensions.swift"; sourceTree = "<group>"; };
 		9D00FDD425D3C34300D6FEF1 /* BarcodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeListViewController.swift; sourceTree = "<group>"; };
 		9D053B6E25CD6D770014EE23 /* FieldType+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldType+Extensions.swift"; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		9DA9A40F283693DC0063B00E /* layer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = layer.json; sourceTree = "<group>"; };
 		9DA9A412283780450063B00E /* CustomUIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIModels.swift; sourceTree = "<group>"; };
 		9DC45D2F25D692AC0077AE4A /* DocReaderFrame+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocReaderFrame+Extensions.swift"; sourceTree = "<group>"; };
+		9DE55FA72B4FED40003ECE9F /* CheckResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckResultCell.swift; sourceTree = "<group>"; };
+		9DE55FA82B4FED40003ECE9F /* CheckResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckResultCell.xib; sourceTree = "<group>"; };
 		9DF08E5025D3C9C700880F7E /* SettingsActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsActionCell.swift; sourceTree = "<group>"; };
 		9DF08E5125D3C9C700880F7E /* SettingsActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
 		9DF08E5B25D3F84B00880F7E /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 				9D33E2C925CA9FE400FF9561 /* DocumentReader-Swift.entitlements */,
 				9D00FDDA25D3C68A00D6FEF1 /* Resources */,
 				9D33E2C425CA9EF500FF9561 /* regula.license */,
+				96760D3D2B850A3B00475CB7 /* db.dat */,
 				9D33E2CB25CAA12200FF9561 /* Certificates.bundle */,
 				9D33E2CC25CAA12200FF9561 /* CertificatesPA.bundle */,
 				9D33E2CD25CAA12200FF9561 /* CertificatesTA.bundle */,
@@ -254,6 +261,8 @@
 				9D658B0D25CC000E00DDB739 /* TextCell.xib */,
 				9D658B1225CC02F700DDB739 /* ImageCell.swift */,
 				9D658B1325CC02F700DDB739 /* ImageCell.xib */,
+				9DE55FA72B4FED40003ECE9F /* CheckResultCell.swift */,
+				9DE55FA82B4FED40003ECE9F /* CheckResultCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 			files = (
 				9D969824284A0BB20005C1BD /* ir.bmp in Resources */,
 				9D658B1525CC02F700DDB739 /* ImageCell.xib in Resources */,
+				96760D3E2B850A3B00475CB7 /* db.dat in Resources */,
 				9D33E2CF25CAA12200FF9561 /* CertificatesPA.bundle in Resources */,
 				9DA9A410283693DC0063B00E /* layer.json in Resources */,
 				9D33E2AC25CA940700FF9561 /* LaunchScreen.storyboard in Resources */,
@@ -384,6 +394,7 @@
 				9D969826284A0BB20005C1BD /* white.bmp in Resources */,
 				9D33E2CE25CAA12200FF9561 /* Certificates.bundle in Resources */,
 				9DF08E5325D3C9C700880F7E /* SettingsActionCell.xib in Resources */,
+				9DE55FAA2B4FED40003ECE9F /* CheckResultCell.xib in Resources */,
 				9D33E2C525CA9EF500FF9561 /* regula.license in Resources */,
 				9D969825284A0BB20005C1BD /* uv.bmp in Resources */,
 				9D658B0F25CC000E00DDB739 /* TextCell.xib in Resources */,
@@ -466,6 +477,7 @@
 				9D33E2A025CA940700FF9561 /* AppDelegate.swift in Sources */,
 				9D658B0225CBD11B00DDB739 /* ResultsViewController.swift in Sources */,
 				8673192D27EAFE1B00B754DF /* OnlineProcessingViewController.swift in Sources */,
+				9DE55FA92B4FED40003ECE9F /* CheckResultCell.swift in Sources */,
 				9D4B75BC25D51EE100EB4EA4 /* CaptureMode+Extensions.swift in Sources */,
 				9D4B75C925D538F200EB4EA4 /* ChildViewController.swift in Sources */,
 				9D00FDD225D2E3DA00D6FEF1 /* BarcodeTypes+Extensions.swift in Sources */,

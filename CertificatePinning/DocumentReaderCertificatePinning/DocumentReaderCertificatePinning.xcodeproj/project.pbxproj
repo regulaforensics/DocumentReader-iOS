@@ -15,6 +15,7 @@
 		5D1F86E12AD6FAD4008D20C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1F86DF2AD6FAD4008D20C0 /* LaunchScreen.storyboard */; };
 		5D6208052AD700AF00311428 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 5D6208042AD700AF00311428 /* regula.license */; };
 		5D6208072AD7019F00311428 /* mrz_sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D6208062AD7019F00311428 /* mrz_sample.jpg */; };
+		96760D342B84F43A00475CB7 /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 96760D332B84F43A00475CB7 /* db.dat */; };
 		C3020D5B0F187CA4DCAA4FA3 /* libPods-DocumentReaderCertificatePinning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC01852C13C78989082CB1FB /* libPods-DocumentReaderCertificatePinning.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		5D1F86E22AD6FAD4008D20C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6208042AD700AF00311428 /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
 		5D6208062AD7019F00311428 /* mrz_sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mrz_sample.jpg; sourceTree = "<group>"; };
+		96760D332B84F43A00475CB7 /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		992C4715CC54BD266DEFF390 /* Pods-DocumentReaderCertificatePinning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCertificatePinning.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReaderCertificatePinning/Pods-DocumentReaderCertificatePinning.debug.xcconfig"; sourceTree = "<group>"; };
 		C5AA83F8F8606548E6C6AC35 /* Pods-DocumentReaderCertificatePinning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCertificatePinning.release.xcconfig"; path = "Target Support Files/Pods-DocumentReaderCertificatePinning/Pods-DocumentReaderCertificatePinning.release.xcconfig"; sourceTree = "<group>"; };
 		DC01852C13C78989082CB1FB /* libPods-DocumentReaderCertificatePinning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DocumentReaderCertificatePinning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				5D1F86D82AD6FAD3008D20C0 /* ViewController.swift */,
 				5D1F86DA2AD6FAD3008D20C0 /* Main.storyboard */,
 				5D6208042AD700AF00311428 /* regula.license */,
+				96760D332B84F43A00475CB7 /* db.dat */,
 				5D1F86DD2AD6FAD4008D20C0 /* Assets.xcassets */,
 				5D6208062AD7019F00311428 /* mrz_sample.jpg */,
 				5D1F86DF2AD6FAD4008D20C0 /* LaunchScreen.storyboard */,
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D1F86E12AD6FAD4008D20C0 /* LaunchScreen.storyboard in Resources */,
+				96760D342B84F43A00475CB7 /* db.dat in Resources */,
 				5D1F86DE2AD6FAD4008D20C0 /* Assets.xcassets in Resources */,
 				5D6208052AD700AF00311428 /* regula.license in Resources */,
 				5D1F86DC2AD6FAD3008D20C0 /* Main.storyboard in Resources */,

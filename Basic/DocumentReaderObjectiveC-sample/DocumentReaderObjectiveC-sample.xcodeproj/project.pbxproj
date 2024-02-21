@@ -31,6 +31,7 @@
 		0AFFDE63205FDCF10012DEAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFDDDD205FD98C0012DEAB /* LaunchScreen.storyboard */; };
 		0AFFDE64205FDCF10012DEAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFDDDB205FD98C0012DEAB /* Assets.xcassets */; };
 		0AFFDE65205FDCF10012DEAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AFFDDD8205FD98C0012DEAB /* Main.storyboard */; };
+		96760D362B84F79800475CB7 /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 96760D352B84F79800475CB7 /* db.dat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		53EAB96549F877EF3838D55D /* Pods-DocumentReaderOCRObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRObjectiveC-sample/Pods-DocumentReaderOCRObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		7624038345E599791CB40CB8 /* Pods-DocumentReaderMRZBarcodeObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeObjectiveC-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeObjectiveC-sample/Pods-DocumentReaderMRZBarcodeObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
 		8410A8BF4DC9722FFB054981 /* Pods-DocumentReaderBoundsObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsObjectiveC-sample/Pods-DocumentReaderBoundsObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		96760D352B84F79800475CB7 /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		97E2FCD4E5FE5282740DA99E /* Pods-DocumentReaderMRZObjectiveC-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZObjectiveC-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZObjectiveC-sample/Pods-DocumentReaderMRZObjectiveC-sample.release.xcconfig"; sourceTree = "<group>"; };
 		BFE8C07F3E140E883732DAD4 /* Pods-DocumentReaderMRZBarcodeObjectiveC-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeObjectiveC-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeObjectiveC-sample/Pods-DocumentReaderMRZBarcodeObjectiveC-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		C6B83B8C94FF5D77E28E5DC1 /* libPods-DocumentReaderOCRObjectiveC-sample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DocumentReaderOCRObjectiveC-sample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +117,7 @@
 				0A5D527C24C5C7D600DF4F1E /* RGPreviewView.m */,
 				0AFFDDD8205FD98C0012DEAB /* Main.storyboard */,
 				0AFFDDDB205FD98C0012DEAB /* Assets.xcassets */,
+				96760D352B84F79800475CB7 /* db.dat */,
 				0AA218DF2060411D0083997B /* regula.license */,
 				0AFFDDDD205FD98C0012DEAB /* LaunchScreen.storyboard */,
 				0AFFDE6A205FDCF20012DEAB /* DocumentReaderFullObjectiveC-sample.plist */,
@@ -222,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96760D362B84F79800475CB7 /* db.dat in Resources */,
 				0AFFDE63205FDCF10012DEAB /* LaunchScreen.storyboard in Resources */,
 				0AFFDE64205FDCF10012DEAB /* Assets.xcassets in Resources */,
 				0AFFDE65205FDCF10012DEAB /* Main.storyboard in Resources */,

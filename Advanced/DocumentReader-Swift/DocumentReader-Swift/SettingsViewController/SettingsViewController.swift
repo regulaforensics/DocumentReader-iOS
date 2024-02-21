@@ -407,7 +407,7 @@ class SettingsViewController: UIViewController {
         let focusCheck = SettingsOptionalBoolItem(title: "Focus Check", object: params.imageQA, keypath: \.focusCheck)
         let glaresCheck = SettingsOptionalBoolItem(title: "Glares Check", object: params.imageQA, keypath: \.glaresCheck)
         let colornessCheck = SettingsOptionalBoolItem(title: "Colorness Check", object: params.imageQA, keypath: \.colornessCheck)
-        let moireCheck = SettingsOptionalBoolItem(title: "Moire Check", object: params.imageQA, keypath: \.moireCheck)
+        let screenCapture = SettingsOptionalBoolItem(title: "Screen capture", object: params.imageQA, keypath: \.screenCapture)
         let imageQualityCheckTypeSettings: [(ImageQualityCheckType, String)] = [
             (.imageGlares, "imageGlares"),
             (.imageFocus, "imageFocus"),
@@ -450,7 +450,7 @@ class SettingsViewController: UIViewController {
             return value.isEmpty ? "nil" : value
         }
 
-        let imageQAGroup = SettingsGroup(title: "Image QA", items: [dpiThreshold, angleThreshold, focusCheck, glaresCheck, colornessCheck, moireCheck, expectedPass])
+        let imageQAGroup = SettingsGroup(title: "Image QA", items: [dpiThreshold, angleThreshold, focusCheck, glaresCheck, colornessCheck, screenCapture, expectedPass])
         apiGroups.append(imageQAGroup)
 
         // Misc
@@ -462,7 +462,6 @@ class SettingsViewController: UIViewController {
                 self.loaderView.startAnimating()
                 DocumentReaderService.shared.initializeDatabaseAndAPI(progress: { state in
                     switch state {
-                    case .downloadingDatabase: break
                     case .initializingAPI: break
                     case .completed:
                         self.view.isUserInteractionEnabled = true

@@ -17,9 +17,6 @@ class ReaderFacade: ObservableObject {
     var isInitialized: Bool = false
     
     @Published
-    var isDatabasePrepared: Bool = false
-    
-    @Published
     var isProcessing: Bool = false
     
     @Published
@@ -61,23 +58,8 @@ class ReaderFacade: ObservableObject {
         }
         
         let config = DocReader.Config(license: data)
-        
-        DocReader.shared
-            .prepareDatabase(databaseID: "Full")
-            .sink { [unowned self] completion in
-                switch completion {
-                case .finished:
-                    self.isDatabasePrepared = true
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            } receiveValue: { [unowned self] progress in
-                self.downloadProgress = Int(progress * 100)
-            }.store(in: &cancellables)
-        
-        $isDatabasePrepared
-            .filter { $0 == true }
-            .flatMap { _ in DocReader.shared.initializeReader(config: config) }
+
+        DocReader.shared.initializeReader(config: config)
             .replaceError(with: false)
             .assign(to: &$isInitialized)
         
