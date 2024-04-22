@@ -349,8 +349,8 @@ class MainViewController: UIViewController {
     }
     
     private func showScannerForManualMultipage() {
-        let config = DocReader.ScannerConfig()
-        config.scenario = selectedScenario
+        guard let selectedScenario = selectedScenario else { return }
+        let config = DocReader.ScannerConfig(scenario: selectedScenario)
         
         DocReader.shared.showScanner(presenter: self, config:config) { [weak self] (action, result, error) in
             guard let self = self else { return }
@@ -541,8 +541,8 @@ class MainViewController: UIViewController {
     }
     
     private func showCameraViewController() {
-        let config = DocReader.ScannerConfig()
-        config.scenario = selectedScenario
+        guard let selectedScenario = selectedScenario else { return }
+        let config = DocReader.ScannerConfig(scenario: selectedScenario)
         
         DocReader.shared.showScanner(presenter: self, config:config) { [weak self] (action, result, error) in
             guard let self = self else { return }

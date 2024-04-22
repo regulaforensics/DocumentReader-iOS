@@ -90,8 +90,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showScannerPressed(_ sender: UIButton) {
-        let config = DocReader.ScannerConfig()
-        config.scenario = RGL_SCENARIO_MRZ
+        let config = DocReader.ScannerConfig(scenario: RGL_SCENARIO_MRZ)
         DocReader.shared.showScanner(presenter: self, config: config) { action, results, error in
             switch action {
             case .complete:

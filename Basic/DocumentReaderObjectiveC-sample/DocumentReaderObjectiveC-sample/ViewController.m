@@ -78,8 +78,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 }
 
 - (IBAction)useCameraViewController:(UIButton *)sender {
-    RGLScannerConfig *config = [[RGLScannerConfig alloc] init];
-    config.scenario = self.selectedScenario;
+    RGLScannerConfig *config = [[RGLScannerConfig alloc] initWithScenario:self.selectedScenario];
     
     [RGLDocReader.shared showScannerFromPresenter:self config:config completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSError * _Nullable error) {
         switch (action) {
@@ -199,8 +198,9 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     [self dismissViewControllerAnimated:YES completion:^{
 
-        RGLRecognizeConfig *config = [[RGLRecognizeConfig alloc] initWithImage:image];
-        config.scenario = self.selectedScenario;
+        RGLRecognizeConfig *config = [[RGLRecognizeConfig alloc] initWithScenario:self.selectedScenario];
+        config.image = image;
+
         [RGLDocReader.shared recognizeWithConfig:config completion:^(RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable results, NSError * _Nullable error) {
             if (action == RGLDocReaderActionComplete) {
                 if (results != nil) {

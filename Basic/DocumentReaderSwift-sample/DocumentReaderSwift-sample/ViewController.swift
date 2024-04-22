@@ -17,9 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var portraitImageView: UIImageView!
     
     @IBOutlet weak var pickerView: UIPickerView!
-    @IBOutlet weak var userRecognizeImage: UIButton!
+    @IBOutlet weak var userRecognizeImageButton: UIButton!
     @IBOutlet weak var useCameraViewControllerButton: UIButton!
-    
+    @IBOutlet weak var readRDFButton: UIButton!
+
+
     @IBOutlet weak var initializationLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var readRFIDLabel: UILabel!
@@ -45,8 +47,9 @@ class ViewController: UIViewController {
                 if success {
                     self.activityIndicator.stopAnimating()
                     self.initializationLabel.isHidden = true
-                    self.userRecognizeImage.isHidden = false
+                    self.userRecognizeImageButton.isHidden = false
                     self.useCameraViewControllerButton.isHidden = false
+                    self.readRDFButton.isHidden = false
 
                     if DocReader.shared.isRFIDAvailableForUse {
                         self.readRFIDLabel.isHidden = false
@@ -72,8 +75,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func useCameraViewController(_ sender: UIButton) {
-        let config = DocReader.ScannerConfig()
-        config.scenario = selectedScenario
+        guard let selectedScenario = selectedScenario else { return }
+        let config = DocReader.ScannerConfig(scenario: selectedScenario)
         
         DocReader.shared.showScanner(presenter: self, config: config) { (action, result, error) in
             if action == .complete {
@@ -167,7 +170,17 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
+    @IBAction private func didPressRecognizePDF(_ sender: Any) {
+        guard let path = Bundle.main.url(forResource: "test", withExtension: "pdf") else { return }
+        guard let data = try? Data(contentsOf: path) else { return }
+        let config = DocReader.RecognizeConfig(imageData: data)
+        config.scenario = self.selectedScenario
+        DocReader.shared.recognize(config: config) { action, results, error in
+            self.handleResult(result: results)
+        }
+    }
+
     func startRFIDReading() {
         DocReader.shared.startRFIDReader(fromPresenter: self, completion: { (action, results, error) in
             switch action {
@@ -189,12 +202,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedScenario = selectedScenario else { return }
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
+        if let image = info[convertFromUIImagePickerControllerInfoKey(.originalImage)] as? UIImage {
             self.dismiss(animated: true, completion: {
-                let config = DocReader.RecognizeConfig(image: image)
-                config.scenario = self.selectedScenario
+                
+                let config = DocReader.RecognizeConfig(scenario: selectedScenario)
+                config.image = image
+
                 DocReader.shared.recognize(config: config) { (action, result, error) in
                     if action == .complete {
                         if result != nil {

@@ -71,8 +71,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func useCameraViewController(_ sender: UIButton) {
-        let config = DocReader.ScannerConfig()
-        config.scenario = RGL_SCENARIO_FULL_PROCESS
+        let config = DocReader.ScannerConfig(scenario: RGL_SCENARIO_FULL_PROCESS)
         
         // Setup backend processing
         let backendProcessingConfig = RGLBackendProcessingConfig()
@@ -211,12 +210,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedScenario = selectedScenario else { return }
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-        if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
+        if let image = info[convertFromUIImagePickerControllerInfoKey(.originalImage)] as? UIImage {
             self.dismiss(animated: true, completion: {
-                let config = DocReader.RecognizeConfig(image: image)
-                config.scenario = self.selectedScenario
+                let config = DocReader.RecognizeConfig(scenario: selectedScenario)
+                config.image = image
                 DocReader.shared.recognize(config: config) { (action, result, error) in
                     if action == .complete {
                         if result != nil {

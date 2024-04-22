@@ -27,39 +27,36 @@
 		0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
 		0A74D5321F8AB14F0055BE75 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A176B1F104CAC0011FB0A /* regula.license */; };
 		0A88C194215559A000CF494D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A88C193215559A000CF494D /* ViewController.swift */; };
-		5DC514352BB6F58D005ACB3B /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 5DC514342BB6F58D005ACB3B /* test.pdf */; };
-		96760D382B84FF6C00475CB7 /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 96760D372B84FF6C00475CB7 /* db.dat */; };
-		986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */; };
+		54B0440175FB5200A5727392 /* Pods_DocumentReaderDatabase_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69DD59466B4EA493ACD6D2D /* Pods_DocumentReaderDatabase_sample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00FBFAA34369D68DA992F1C3 /* Pods-DocumentReaderDatabase-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderDatabase-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderDatabase-sample/Pods-DocumentReaderDatabase-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		07A9E0AF08C8DD66D2CD7517 /* Pods-DocumentReaderDatabase-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderDatabase-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderDatabase-sample/Pods-DocumentReaderDatabase-sample.release.xcconfig"; sourceTree = "<group>"; };
 		0A5A174B1F1038160011FB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A5A17501F1038160011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A5A17521F1038160011FB0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A5A17551F1038170011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A5A176B1F104CAC0011FB0A /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
-		0A74D5381F8AB14F0055BE75 /* DocumentReaderFullSwift-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderFullSwift-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A74D5381F8AB14F0055BE75 /* DocumentReaderDatabase-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DocumentReaderDatabase-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A88C193215559A000CF494D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderFullSwift-sample-Info.plist"; sourceTree = "<group>"; };
-		0AA7BE85234CE48400CB9FE7 /* DocumentReaderFullSwift-sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DocumentReaderFullSwift-sample.entitlements"; sourceTree = "<group>"; };
+		0A8BF70D1F2732F70041CC3E /* DocumentReaderDatabase-sample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DocumentReaderDatabase-sample-Info.plist"; sourceTree = "<group>"; };
 		2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6EE5844FD2EC1464B1A404 /* Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		32792D730FF2A7DF37438337 /* Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		330E5E256629989F12353C04 /* Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBarcodeSwift-sample/Pods-DocumentReaderBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
-		344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderFullSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A635AD05939C1E75AEA6475 /* Pods-DocumentReaderMRZSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZSwift-sample/Pods-DocumentReaderMRZSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		3DF7DD8B5AB5C190D8E7A478 /* Pods_DocumentReaderBoundsSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBoundsSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7640EE3FDF8337261D7988 /* Pods-DocumentReaderOCRSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		5ABFE2EDDD3ED4E3F91CF09D /* Pods-DocumentReaderBoundsSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
-		5DC514342BB6F58D005ACB3B /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
 		6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderBarcodeSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71629B858F96A0ADCCB4CC58 /* Pods-DocumentReaderOCRSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderOCRSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderOCRSwift-sample/Pods-DocumentReaderOCRSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		8D35ABF0CCD9D2267A084733 /* Pods_DocumentReaderOCRSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderOCRSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A121814324EC9A2A4EACC7 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderFullSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
-		96760D372B84FF6C00475CB7 /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
 		9A5CBA561D63011A97805602 /* Pods-DocumentReaderCoreSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderCoreSwift-sample/Pods-DocumentReaderCoreSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		B91092DB30D60A419F142CD6 /* Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderBoundsSwift-sample/Pods-DocumentReaderBoundsSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		C69DD59466B4EA493ACD6D2D /* Pods_DocumentReaderDatabase_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderDatabase_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderMRZSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderFullSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
 		EB1904DEEC1318CF4E881193 /* Pods-DocumentReaderMRZSwift-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZSwift-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZSwift-sample/Pods-DocumentReaderMRZSwift-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */,
+				54B0440175FB5200A5727392 /* Pods_DocumentReaderDatabase_sample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +79,7 @@
 		0A5A173F1F1038160011FB0A = {
 			isa = PBXGroup;
 			children = (
-				0AA7BE85234CE48400CB9FE7 /* DocumentReaderFullSwift-sample.entitlements */,
-				0A5A174A1F1038160011FB0A /* DocumentReaderSwift-sample */,
+				0A5A174A1F1038160011FB0A /* DocumentReaderDatabase-sample */,
 				0A5A17491F1038160011FB0A /* Products */,
 				6CC4F250B38ACBE97732F056 /* Pods */,
 				11EE090EBA82249BAE2834A8 /* Frameworks */,
@@ -93,12 +89,12 @@
 		0A5A17491F1038160011FB0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A74D5381F8AB14F0055BE75 /* DocumentReaderFullSwift-sample.app */,
+				0A74D5381F8AB14F0055BE75 /* DocumentReaderDatabase-sample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0A5A174A1F1038160011FB0A /* DocumentReaderSwift-sample */ = {
+		0A5A174A1F1038160011FB0A /* DocumentReaderDatabase-sample */ = {
 			isa = PBXGroup;
 			children = (
 				0A5A174B1F1038160011FB0A /* AppDelegate.swift */,
@@ -106,12 +102,10 @@
 				0A5A174F1F1038160011FB0A /* Main.storyboard */,
 				0A5A17521F1038160011FB0A /* Assets.xcassets */,
 				0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */,
-				5DC514342BB6F58D005ACB3B /* test.pdf */,
 				0A5A176B1F104CAC0011FB0A /* regula.license */,
-				96760D372B84FF6C00475CB7 /* db.dat */,
-				0A8BF70D1F2732F70041CC3E /* DocumentReaderFullSwift-sample-Info.plist */,
+				0A8BF70D1F2732F70041CC3E /* DocumentReaderDatabase-sample-Info.plist */,
 			);
-			path = "DocumentReaderSwift-sample";
+			path = "DocumentReaderDatabase-sample";
 			sourceTree = "<group>";
 		};
 		11EE090EBA82249BAE2834A8 /* Frameworks */ = {
@@ -122,8 +116,8 @@
 				6F33B2575468747B3C4CB860 /* Pods_DocumentReaderBarcodeSwift_sample.framework */,
 				CE11C0B361610A56D7B6D8B8 /* Pods_DocumentReaderMRZSwift_sample.framework */,
 				2B25E460D115904C1E6C941A /* Pods_DocumentReaderMRZBarcodeSwift_sample.framework */,
-				344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */,
 				8D35ABF0CCD9D2267A084733 /* Pods_DocumentReaderOCRSwift_sample.framework */,
+				C69DD59466B4EA493ACD6D2D /* Pods_DocumentReaderDatabase_sample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,6 +139,8 @@
 				CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */,
 				4A7640EE3FDF8337261D7988 /* Pods-DocumentReaderOCRSwift-sample.debug.xcconfig */,
 				71629B858F96A0ADCCB4CC58 /* Pods-DocumentReaderOCRSwift-sample.release.xcconfig */,
+				00FBFAA34369D68DA992F1C3 /* Pods-DocumentReaderDatabase-sample.debug.xcconfig */,
+				07A9E0AF08C8DD66D2CD7517 /* Pods-DocumentReaderDatabase-sample.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -152,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0A74D5251F8AB14F0055BE75 /* DocumentReaderFullSwift-sample */ = {
+		0A74D5251F8AB14F0055BE75 /* DocumentReaderDatabase-sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A74D5351F8AB14F0055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderFullSwift-sample" */;
+			buildConfigurationList = 0A74D5351F8AB14F0055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderDatabase-sample" */;
 			buildPhases = (
 				0A74D5261F8AB14F0055BE75 /* [CP] Check Pods Manifest.lock */,
 				0A74D5271F8AB14F0055BE75 /* Sources */,
@@ -166,9 +162,9 @@
 			);
 			dependencies = (
 			);
-			name = "DocumentReaderFullSwift-sample";
+			name = "DocumentReaderDatabase-sample";
 			productName = "DocumentReaderSwift-sample";
-			productReference = 0A74D5381F8AB14F0055BE75 /* DocumentReaderFullSwift-sample.app */;
+			productReference = 0A74D5381F8AB14F0055BE75 /* DocumentReaderDatabase-sample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,12 +178,13 @@
 				ORGANIZATIONNAME = "Dmitry Smolyakov";
 				TargetAttributes = {
 					0A74D5251F8AB14F0055BE75 = {
+						DevelopmentTeam = H6WR54S268;
 						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 0A5A17431F1038160011FB0A /* Build configuration list for PBXProject "DocumentReaderSwift-sample" */;
+			buildConfigurationList = 0A5A17431F1038160011FB0A /* Build configuration list for PBXProject "DocumentReaderDatabase-sample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -201,7 +198,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A74D5251F8AB14F0055BE75 /* DocumentReaderFullSwift-sample */,
+				0A74D5251F8AB14F0055BE75 /* DocumentReaderDatabase-sample */,
 				0AB43C551F11069500D75A11 /* Pod install */,
 			);
 		};
@@ -212,12 +209,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96760D382B84FF6C00475CB7 /* db.dat in Resources */,
 				0A74D52F1F8AB14F0055BE75 /* LaunchScreen.storyboard in Resources */,
 				0A74D5301F8AB14F0055BE75 /* Assets.xcassets in Resources */,
 				0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */,
 				0A74D5321F8AB14F0055BE75 /* regula.license in Resources */,
-				5DC514352BB6F58D005ACB3B /* test.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +230,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DocumentReaderFullSwift-sample-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DocumentReaderDatabase-sample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -248,7 +243,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderDatabase-sample/Pods-DocumentReaderDatabase-sample-frameworks.sh",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/DocumentReader/DocumentReader.framework/DocumentReader",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/DocumentReaderFullRFID/DocumentReaderCore.framework/DocumentReaderCore",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/RegulaCommon/RegulaCommon.framework/RegulaCommon",
@@ -261,7 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderFullSwift-sample/Pods-DocumentReaderFullSwift-sample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DocumentReaderDatabase-sample/Pods-DocumentReaderDatabase-sample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		0AB43C591F1106A000D75A11 /* Pod install */ = {
@@ -425,14 +420,14 @@
 		};
 		0A74D5361F8AB14F0055BE75 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93A121814324EC9A2A4EACC7 /* Pods-DocumentReaderFullSwift-sample.debug.xcconfig */;
+			baseConfigurationReference = 00FBFAA34369D68DA992F1C3 /* Pods-DocumentReaderDatabase-sample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "DocumentReaderFullSwift-sample.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
+				DEVELOPMENT_TEAM = H6WR54S268;
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderDatabase-sample/DocumentReaderDatabase-sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
@@ -445,14 +440,14 @@
 		};
 		0A74D5371F8AB14F0055BE75 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF0BED9A71BCF6B5D11941BD /* Pods-DocumentReaderFullSwift-sample.release.xcconfig */;
+			baseConfigurationReference = 07A9E0AF08C8DD66D2CD7517 /* Pods-DocumentReaderDatabase-sample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "DocumentReaderFullSwift-sample.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
+				DEVELOPMENT_TEAM = H6WR54S268;
+				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderDatabase-sample/DocumentReaderDatabase-sample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
@@ -485,7 +480,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0A5A17431F1038160011FB0A /* Build configuration list for PBXProject "DocumentReaderSwift-sample" */ = {
+		0A5A17431F1038160011FB0A /* Build configuration list for PBXProject "DocumentReaderDatabase-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A5A17581F1038170011FB0A /* Debug */,
@@ -494,7 +489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A74D5351F8AB14F0055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderFullSwift-sample" */ = {
+		0A74D5351F8AB14F0055BE75 /* Build configuration list for PBXNativeTarget "DocumentReaderDatabase-sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0A74D5361F8AB14F0055BE75 /* Debug */,

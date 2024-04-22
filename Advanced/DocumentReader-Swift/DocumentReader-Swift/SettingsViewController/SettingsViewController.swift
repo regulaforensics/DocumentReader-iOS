@@ -121,7 +121,7 @@ class SettingsViewController: UIViewController {
         let functionality = DocReader.shared.functionality
         let params = DocReader.shared.processParams
 
-        // 1. Buttons
+        // Buttons
         let torchButton = SettingsBoolItem(title: "Torch button", object: functionality, keypath: \.showTorchButton)
         let cameraSwitchButton = SettingsBoolItem(title: "Camera Switch button", object: functionality, keypath: \.showCameraSwitchButton)
         let captureButton = SettingsBoolItem(title: "Capture button", object: functionality, keypath: \.showCaptureButton)
@@ -140,7 +140,7 @@ class SettingsViewController: UIViewController {
         let buttonsGroup = SettingsGroup(title: "Buttons", items: [torchButton, cameraSwitchButton, captureButton, delayFromStart, delayFromDetect, changeFrameButton, closeButton])
         apiGroups.append(buttonsGroup)
         
-        // 2. Document processing
+        // Document processing
         let multipageProcessing = SettingsOptionalBoolItem(title: "Multipage processing", object: params, keypath: \.multipageProcessing)
         let doublePageSpread = SettingsOptionalBoolItem(title: "Double-page spread processing", object: params, keypath: \.doublePageSpread)
         let manualCrop = SettingsOptionalBoolItem(title: "Manual crop", object: params, keypath: \.manualCrop)
@@ -148,20 +148,14 @@ class SettingsViewController: UIViewController {
         let docProcessingGroup = SettingsGroup(title: "Document Processing", items: [multipageProcessing, doublePageSpread, manualCrop, shouldReturnPackageForReprocess])
         apiGroups.append(docProcessingGroup)
         
-        // 3. Authenticity
-
-        let checkHologram = SettingsOptionalBoolItem(title: "Check hologram", object: params, keypath: \.checkHologram)
-        let authenticityGroup = SettingsGroup(title: "Authenticity", items: [checkHologram])
-        apiGroups.append(authenticityGroup)
-        
-        // 4. Timeouts
+        // Timeouts
         let timeoutItem = SettingsOptionalIntItem(title: "Timeout", format: "%d sec", object: params, keypath: \.timeout)
         let timeoutFromFirstDetectItem = SettingsOptionalIntItem(title: "Timeout from first detect", format: "%d sec", object: params, keypath: \.timeoutFromFirstDetect)
         let timeoutFromFirstDocTypeItem = SettingsOptionalIntItem(title: "Timeout from first document type", format: "%d sec", object: params, keypath: \.timeoutFromFirstDocType)
         let timeoutsGroup = SettingsGroup(title: "Timeouts", items: [timeoutItem, timeoutFromFirstDetectItem, timeoutFromFirstDocTypeItem])
         apiGroups.append(timeoutsGroup)
         
-        // 5. Display formats
+        // Display formats
         let dateFormat = SettingsActionItem(title: "Date format") { [weak self] in
             guard let self = self else { return }
             self.showDateFormats() { self.tableView.reloadData() }
@@ -177,7 +171,7 @@ class SettingsViewController: UIViewController {
         let displayFormatsGroup = SettingsGroup(title: "Display formats", items: [dateFormat, measureFormat])
         apiGroups.append(displayFormatsGroup)
         
-        // 6. Logs
+        // Logs
         let showLogs = SettingsOptionalBoolItem(title: "Show logs", object: params, keypath: \.logs)
         let saveLogs = SettingsOptionalBoolItem(title: "Save logs", object: params, keypath: \.debugSaveLogs)
         let saveImages = SettingsOptionalBoolItem(title: "Save images", object: params, keypath: \.debugSaveImages)
@@ -187,7 +181,7 @@ class SettingsViewController: UIViewController {
         let logsGroup = SettingsGroup(title: "Logs", items: [showLogs, saveLogs, saveImages, saveCroppedImages, saveRfidSession])
         apiGroups.append(logsGroup)
         
-        // 7. Scenarios
+        // Scenarios
         let captureButtonScenario = SettingsActionItem(title: "Capture button scenario") { [weak self] in
             guard let self = self else { return }
             self.showCaptureButtonScenarioList { self.tableView.reloadData() }
@@ -198,7 +192,7 @@ class SettingsViewController: UIViewController {
         let scenariosGroup = SettingsGroup(title: "Scenarios", items: [captureButtonScenario])
         apiGroups.append(scenariosGroup)
         
-        // 8. Barcode types
+        // Barcode types
         let doBarcodes = SettingsActionItem(title: "Do barcodes") { [weak self] in
             guard let self = self else { return }
             self.showBarcodeTypesList() { self.tableView.reloadData() }
@@ -211,7 +205,7 @@ class SettingsViewController: UIViewController {
         let barcodesGroup = SettingsGroup(title: "Barcode types", items: [doBarcodes, barcodesParser])
         apiGroups.append(barcodesGroup)
         
-        // 9. Filters
+        // Filters
         let documentIdList = SettingsActionItem(title: "Document ID List") { [weak self] in
             guard let self = self else { return }
             self.showDocumentIdEditor() { self.tableView.reloadData() }
@@ -234,7 +228,7 @@ class SettingsViewController: UIViewController {
         let filtersGroup = SettingsGroup(title: "Filters", items: [documentIdList, fieldTypeFilter])
         apiGroups.append(filtersGroup)
         
-        // 10. Detection
+        // Detection
         let focusingCheck = SettingsOptionalBoolItem(title: "Disable focusing check", object: params, keypath: \.disableFocusingCheck)
         let perspectiveAngle = SettingsOptionalIntItem(title: "Perspective angle", object: params, keypath: \.perspectiveAngle)
         let motionDetection = SettingsBoolItem(title: "Motion detection") { enabled in
@@ -250,7 +244,7 @@ class SettingsViewController: UIViewController {
         let detectionGroup = SettingsGroup(title: "Detection", items: [focusingCheck, perspectiveAngle, motionDetection, focusingDetection])
         apiGroups.append(detectionGroup)
 
-        // 11. Output images
+        // Output images
         let returnUncroppedImage = SettingsOptionalBoolItem(title: "Return uncropped image", object: params, keypath: \.returnUncroppedImage)
         let integralImage = SettingsOptionalBoolItem(title: "Integral image", object: params, keypath: \.integralImage)
         let minimumDPI = SettingsOptionalIntItem(title: "Minimum DPI", format: "%d", object: params, keypath: \.minDPI)
@@ -258,7 +252,7 @@ class SettingsViewController: UIViewController {
         let outputImagesGroup = SettingsGroup(title: "Output images", items: [returnUncroppedImage, integralImage, minimumDPI, returnCroppedBarcode])
         apiGroups.append(outputImagesGroup)
 
-        // 12. Custom params
+        // Custom params
         let customParams = SettingsActionItem(title: "Custom params") { [weak self] in
             guard let self = self else { return }
             self.showCustomParams() { self.tableView.reloadData() }
@@ -268,7 +262,7 @@ class SettingsViewController: UIViewController {
         let customParamsGroup = SettingsGroup(title: "Custom params", items: [customParams])
         apiGroups.append(customParamsGroup)
 
-        // 13. Scanning mode
+        // Scanning mode
         let captureMode = SettingsActionItem(title: "Capture mode") { [weak self] in
             guard let self = self else { return }
             self.showCaptureModeList { self.tableView.reloadData() }
@@ -279,7 +273,7 @@ class SettingsViewController: UIViewController {
         let scanningModeGroup = SettingsGroup(title: "Scanning mode", items: [captureMode])
         apiGroups.append(scanningModeGroup)
 
-        // 14. Video settings
+        // Video settings
         let adjustZoom = SettingsBoolItem(title: "Adjust zoom level") { enabled in
             ApplicationSettings.shared.functionality.isZoomEnabled = enabled
         } getter: {
@@ -293,7 +287,7 @@ class SettingsViewController: UIViewController {
         let videoSettingsGroup = SettingsGroup(title: "Video settings", items: [adjustZoom, zoomFactor])
         apiGroups.append(videoSettingsGroup)
 
-        // 15. Capture device position
+        // Capture device position
         let cameraPosition = SettingsActionItem(title: "Camera position") { [weak self] in
             guard let self = self else { return }
             self.showCameraPositionList { self.tableView.reloadData() }
@@ -304,7 +298,7 @@ class SettingsViewController: UIViewController {
         let cameraPositionGroup = SettingsGroup(title: "Capture device position", items: [cameraPosition])
         apiGroups.append(cameraPositionGroup)
 
-        // 16. Extra info
+        // Extra info
         let showMetadata = SettingsBoolItem(title: "Show metadata") { enabled in
             ApplicationSettings.shared.functionality.showMetadataInfo = enabled
         } getter: {
@@ -313,7 +307,7 @@ class SettingsViewController: UIViewController {
         let extraInfoGroup = SettingsGroup(title: "Extra info", items: [showMetadata])
         apiGroups.append(extraInfoGroup)
 
-        // 17. Camera frame
+        // Camera frame
         let cameraFrame = SettingsActionItem(title: "Frame type") { [weak self] in
             guard let self = self else { return }
             self.showCameraFrameList { self.tableView.reloadData() }
@@ -324,7 +318,7 @@ class SettingsViewController: UIViewController {
         let cameraFrameGroup = SettingsGroup(title: "Camera frame", items: [cameraFrame])
         apiGroups.append(cameraFrameGroup)
 
-        // 18. Recognition params
+        // Recognition params
         let resultTypeOutput = SettingsActionItem(title: "Result type output") { [weak self] in
             guard let self = self else { return }
             self.showIntegerArrayEditor(title: "Result type output", inputArray: DocReader.shared.processParams.resultTypeOutput as? [Int]) { output in
@@ -401,7 +395,7 @@ class SettingsViewController: UIViewController {
         let recognitionParamsGroup = SettingsGroup(title: "Recognition params", items: [resultTypeOutput, generateDoublePageSpreadImage, imageDpiOutMax, alreadyCropped, forceDocID, matchTextFieldMask, fastDocDetect, updateOCRValidityByGlare, noGraphics, documentAreaMin, forceDocFormat, multiDocOnImage, shiftExpiryDate, minimalHolderAge, mrzFormatsFilter, forceReadMrzBeforeLocate])
         apiGroups.append(recognitionParamsGroup)
 
-        // 19. Image QA
+        // Image QA
         let dpiThreshold = SettingsOptionalIntItem(title: "DPI Treshold", object: params.imageQA, keypath: \.dpiThreshold)
         let angleThreshold = SettingsOptionalIntItem(title: "Angle Threshold", object: params.imageQA, keypath: \.angleThreshold)
         let focusCheck = SettingsOptionalBoolItem(title: "Focus Check", object: params.imageQA, keypath: \.focusCheck)

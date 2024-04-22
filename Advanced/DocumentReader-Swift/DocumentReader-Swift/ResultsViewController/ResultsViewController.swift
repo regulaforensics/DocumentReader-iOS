@@ -155,6 +155,7 @@ class ResultsViewController: UIViewController {
             groupedItems[index].items = attributes
         }
  
+        groupedItems = groupedItems.filter { !$0.items.isEmpty }
         if !groupedItems.isEmpty {
             groups.append(DataGroup(title: "Compare", items: groupedItems))
         }
@@ -360,8 +361,9 @@ extension ResultsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard sectionsData.count > 0 else { return }
         tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-        guard sectionsData[0].items.count > 0 else { return }
+        guard sectionsData[row].items.count > 0 else { return }
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+     
     }
 }
 

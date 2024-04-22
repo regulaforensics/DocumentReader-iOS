@@ -161,8 +161,8 @@ class ReaderFacade: ObservableObject {
     
     private func recognize(image: UIImage) -> AnyPublisher<DocumentReaderResults, Error> {
         isProcessing = true
-        let config = DocReader.RecognizeConfig(image: image)
-        config.scenario = selectedScenario
+        let config = DocReader.RecognizeConfig(scenario: selectedScenario)
+        config.image = image
         
         let recognize = DocReader.shared
             .recognize(config: config)
