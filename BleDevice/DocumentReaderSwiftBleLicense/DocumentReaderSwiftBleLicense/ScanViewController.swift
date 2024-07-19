@@ -28,8 +28,11 @@ class ScanViewController: UIViewController {
             if action == .complete {
                 if let results = results {
                     self.showAuthenticityResults(results: results)
+                    self.showGraphicResults(results: results)
+                    if self.isRFIDChipAvailable(results: results) {
+                        self.startScanRFID()
+                    }
                 }
-                self.startScanRFID()
             } else if let error = error  {
                 print(error)
             }
@@ -103,7 +106,13 @@ class ScanViewController: UIViewController {
                 }
             })
     }
-    
+
+    private func isRFIDChipAvailable(results: DocumentReaderResults) -> Bool {
+        return results.getTextFieldValueByType(fieldType: .ft_MRZ_Strings_ICAO_RFID) != nil ||
+        results.getTextFieldValueByType(fieldType: .ft_MRZ_Strings) != nil ||
+        results.getTextFieldValueByType(fieldType: .ft_Card_Access_Number) != nil
+    }
+
     //MARK: - Actions
     @IBAction private func didPressStartButton(_ sender: Any) {
         startScan()

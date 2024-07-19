@@ -88,11 +88,11 @@ class ResultsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(UINib.init(nibName: kTextCellId, bundle: nil),
+        tableView.register(UINib(nibName: kTextCellId, bundle: nil),
                            forCellReuseIdentifier: kTextCellId)
-        tableView.register(UINib.init(nibName: kImageCellId, bundle: nil),
+        tableView.register(UINib(nibName: kImageCellId, bundle: nil),
                            forCellReuseIdentifier: kImageCellId)
-        tableView.register(UINib.init(nibName: kCheckResultCellId, bundle: nil),
+        tableView.register(UINib(nibName: kCheckResultCellId, bundle: nil),
                            forCellReuseIdentifier: kCheckResultCellId)
 
         let statusImageName = results.status.overallStatus == .ok ? "status_ok" : results.status.overallStatus == CheckResult.error ? "status_not_ok" : "status_undefined"
@@ -224,7 +224,7 @@ class ResultsViewController: UIViewController {
         if let authenticityResults = results.authenticityResults {
             for check in authenticityResults.checks ?? [] {
                 switch check.type {
-                case .uvLuminescence, .barcodeFormatCheck:
+                case .uvLuminescence, .barcodeFormatCheck, .photoEmbedType:
                     var group = GroupedAttributes(type: "\(check.typeName)", items: [])
                     var index = 0
                     for element in check.elements ?? [] {

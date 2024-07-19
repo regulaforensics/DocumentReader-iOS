@@ -11,9 +11,11 @@ The sample project for working with the
 1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
 2. Open the `DocumentReaderSwiftBleLicense` project in an IDE.
 3. Run pods `pod install`
+4. Add database file to the target:
+- copy the database file db.dat from [Client Portal](https://client.regulaforensics.com/customer/databases) to the project:`BleDevice/DocumentReaderSwiftBleLicense/DocumentReaderSwiftBleLicense`.
 
 ## Documentation
 The documentation on the SDK can be found [here](https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile?utm_source=github).
 
 ## Additional information
-If you have any technical questions or suggestions, feel free to [contact](mailto:android.support@regulaforensics.com) us or create an issue [here](https://github.com/regulaforensics/DocumentReader-Android/issues).
+If you have any technical questions or suggestions, feel free to [contact](mailto:support@regulaforensics.com) us or create an issue [here](https://github.com/regulaforensics/DocumentReader-iOS/issues).
