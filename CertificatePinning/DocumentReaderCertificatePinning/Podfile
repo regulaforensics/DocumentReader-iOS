@@ -3,5 +3,5 @@
 
 target 'DocumentReaderCertificatePinning' do
   pod 'DocumentReader', '~> 7.3.0'
-  pod 'DocumentReaderMRZ', '~> 6.9'
+  pod 'DocumentReaderMRZ', '~> 7.3.0'
 end
