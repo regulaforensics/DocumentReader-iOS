@@ -1,21 +1,40 @@
-# Regula Document Reader (iOS version)
-The sample project for working with the 
-[Mobile document authenticator Regula 1120](https://regulaforensics.com/en/products/machine_verification/1120/).
+[![Version](https://img.shields.io/cocoapods/v/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
+[![License](https://img.shields.io/cocoapods/l/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
+[![Platform](https://img.shields.io/cocoapods/p/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
 
-# Content
-* [How to build the demo application](#how-to-build-the-demo-application)
+# Document Reader SDK BLE Sample Project (iOS)
+
+* [Overview](#overview)
+* [Installation](#installation)
 * [Documentation](#documentation)
-* [Additional information](#additional-information)
+* [Demo Application](#demo-application)
+* [Technical Support](#technical-support)
+* [Business Enquiries](#business-enquiries)
 
-## How to build the demo application
-1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
+## Overview
+
+Sample project in Swift, demonstrating the Document Reader SDK integration with the device <a target="_blank" href="https://docs.regulaforensics.com/develop/1120/">Mobile Document Authenticator Regula 1120</a>.
+
+## Installation
+
+1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`
 2. Open the `DocumentReaderSwiftBleLicense` project in an IDE.
 3. Run pods `pod install`
 4. Add database file to the target:
-- copy the database file db.dat from [Client Portal](https://client.regulaforensics.com/customer/databases) to the project:`BleDevice/DocumentReaderSwiftBleLicense/DocumentReaderSwiftBleLicense`.
+    - Copy the database file `db.dat` from the [Client Portal](https://client.regulaforensics.com/customer/databases) to the project:`BleDevice/DocumentReaderSwiftBleLicense/DocumentReaderSwiftBleLicense`
 
 ## Documentation
-The documentation on the SDK can be found [here](https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile?utm_source=github).
 
-## Additional information
-If you have any technical questions or suggestions, feel free to [contact](mailto:support@regulaforensics.com) us or create an issue [here](https://github.com/regulaforensics/DocumentReader-iOS/issues).
+<a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/">Document Reader SDK Mobile Documentation</a>
+
+## Demo Application
+
+<a target="_blank" href="https://apps.apple.com/us/app/regula-document-reader/id1001303920">Regula Document Reader iOS Demo Application in the App Store</a>
+
+## Technical Support
+
+To submit a request to the Support Team, visit <a target="_blank" href="https://support.regulaforensics.com/hc/en-us/requests/new?utm_source=github">Regula Help Center</a>.
+
+## Business Enquiries
+
+To discuss business opportunities, fill the <a target="_blank" href="https://explore.regula.app/docs-support-request">Enquiry Form</a> and specify your scenarios, applications, and technical requirements.

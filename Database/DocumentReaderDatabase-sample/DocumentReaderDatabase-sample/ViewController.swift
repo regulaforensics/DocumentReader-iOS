@@ -12,13 +12,20 @@ import DocumentReader
 class ViewController: UIViewController {
 
     @IBOutlet private var resultLabel: UILabel!
-
+    @IBOutlet weak var initButton: UIButton!
+    @IBOutlet weak var deinitButton: UIButton!
+  
     private let databaseID = "Full"
     private var selectedScenario: String?
     private weak var alertViewController: UIAlertController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if Bundle.main.path(forResource: "regula.license", ofType: nil) == nil {
+            initButton.isEnabled = false
+            deinitButton.isEnabled = false
+        }
     }
 
     @IBAction private func didPressPrepareDatabase(sender: Any) {
@@ -32,6 +39,7 @@ class ViewController: UIViewController {
                 self?.dismiss(animated: true)
                 if success {
                     self?.resultLabel.text = "Database prepared"
+                    self?.initButton.isEnabled = true
                 } else if let error = error {
                     self?.resultLabel.text = "Database prepare error: \(error.localizedDescription)"
                 }
@@ -43,6 +51,7 @@ class ViewController: UIViewController {
         DocReader.shared.removeDatabase { [weak self] success, error in
             if success {
                 self?.resultLabel.text = "Database removed"
+                self?.initButton.isEnabled = false
             } else if let error = error {
                 self?.resultLabel.text = "Database remove error: \(error.localizedDescription)"
             }
@@ -72,6 +81,7 @@ class ViewController: UIViewController {
                 self?.dismiss(animated: true)
                 if success {
                     self?.resultLabel.text = "Database prepared"
+                    self?.initButton.isEnabled = true
                 } else if let error = error {
                     self?.resultLabel.text = "Database prepare error: \(error.localizedDescription)"
                 }
@@ -87,8 +97,10 @@ class ViewController: UIViewController {
         DocReader.shared.initializeReader(config: config) { (success, error) in
             if success {
                 self.resultLabel.text = "Reader initialized"
+                self.deinitButton.isEnabled = true
             } else if let error = error {
                 self.resultLabel.text = "Reader initialize error: \(error.localizedDescription)"
+                self.deinitButton.isEnabled = false
             }
         }
     }
@@ -96,6 +108,7 @@ class ViewController: UIViewController {
     @IBAction private func didTapDeinitializeReader(_ sender: Any) {
         DocReader.shared.deinitializeReader()
         resultLabel.text = "Reader deinitialized"
+        deinitButton.isEnabled = false
     }
 
     private func displayAlert(title: String, cancel: (() -> Void)?) {

@@ -2,59 +2,43 @@
 [![License](https://img.shields.io/cocoapods/l/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
 [![Platform](https://img.shields.io/cocoapods/p/DocumentReader.svg?style=flat)](http://cocoapods.org/pods/DocumentReader)
 
-# Regula Document Reader SDK (iOS version)
-Regula Document Reader SDK allows you to read various kinds of identification documents, passports, driving licenses, ID cards, etc. All processing is performed completely ***offline*** on your device. No any data leaving your device.
+# Regula Document Reader Mobile SDK (iOS)
 
-You can use native camera to scan the documents or image from gallery for extract all data from it.
-
-We have provided sample projects that demonstrate the ***API*** calls you can use to interact with the Document Reader library.
-
-<img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_1.jpg" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_2.jpg" width="250"> <img src="https://img.regulaforensics.com/Screenshots/SDK-5.0/iPhone_XS_Max_3.jpg" width="250">
-
-# Content
-* [How to build demo application](#how-to-build-demo-application)
-* [Troubleshooting license issues](#troubleshooting-license-issues)
+* [Overview](#overview)
 * [Documentation](#documentation)
-* [Additional information](#additional-information)
+* [Demo Application](#demo-application)
+* [Technical Support](#technical-support)
+* [Business Enquiries](#business-enquiries)
 
-## How to build demo application
-1. Get the trial license at [client.regulaforensics.com](https://client.regulaforensics.com/) (`regula.license` file).
-1. Get the trial database at [client.regulaforensics.com/customer/databases](https://client.regulaforensics.com/customer/databases) (`db.dat`)
-1. Download or clone the current repository using the command `git clone https://github.com/regulaforensics/DocumentReader-iOS.git`.
-1. Repository structure and steps to build the projects:
-    1. `Advanced` folder contains the advanced sample project with almost all available features. To build it, do the following steps:
-        1. Go to the `Advanced` folder. There you will find the project written in Swift.
-        1. Go to the project folder.
-        1. Install Pods: open Terminal within the root project folder and run `pod install` command.
-        1. Copy the license file to the project: `Advanced/DocumentReader-Swift/DocumentReader-Swift`.
-        1. Copy the database file to the project: `Advanced/DocumentReader-Swift/DocumentReader-Swift`.
-        1. Open the project in Xcode (`DocumentReader-Swift.xcworkspace` file).
-        1. Change the Bundle Identifier to that you specified in your license file.
-        1. Run the project.
-    
-    1. `Basic` folder contains the basic sample project with only main features. To build it, do the following steps:
-        1. Go to the `Basic` folder. There you will two projects: one is written in Swift, another in Objective-C.
-        1. Go to the project folder: `DocumentReaderObjectiveC-sample` or `DocumentReaderSwift-sample`.
-        1. Install Pods: open Terminal within the root project folder and run `pod install` command.
-        1. Copy the license file to the project: `Basic/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample` or `Basic/DocumentReaderSwift-sample/DocumentReaderSwift-sample`.
-        1. Copy the database file to the project: `Basic/DocumentReaderObjectiveC-sample/DocumentReaderObjectiveC-sample` or `Basic/DocumentReaderSwift-sample/DocumentReaderSwift-sample`.
-        1. Open the project in Xcode (`DocumentReaderObjectiveC-sample.xcworkspace` or `DocumentReaderSwift-sample.xcworkspace` file).
-        1. Change the Bundle Identifier to that you specified in your license file.
-        1. Run the project.
+## Overview
 
-## Troubleshooting license issues
-If you have issues with license verification when running the application, please verify that next is true:
-* The OS, which you use, is specified in the license (iOS).
-* The Bundle Identifier, which you use, is specified in the license.
-* The license is valid (not expired).
-* The date and time on the device, where you run the application, are valid.
-* You use the latest release version of the Document Reader SDK.
-* You placed the license into the correct folder.
+Regula Document Reader SDK is a powerful tool that helps to read and verify identity documents. You can find more information about the SDK on the <a href="https://regulaforensics.com/products/document-reader-sdk" target="_blank">Regula website</a>.
+
+There are several sample projects, see the details in the table below.
+
+| Samples                                                                    | Description                                                                                                                                                                                                                      |
+|:---------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Basic Configuration](Basic)                                               | Demonstrates the general principles of integrating the Mobile SDK with a minimum of code needed.                                                                                                                                 |
+| [Advanced Configuration](Advanced/DocumentReader-Swift)                    | Demonstrates a variety of customization options.                                                                                                                                                                                 |
+| [Database](Database/DocumentReaderDatabase-sample)                         | Demonstrates the options for the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/getting-started/database/">database usage</a>.                                                          |
+| [Server-Side Verification](BackendProcessing)                              | Demonstrates how to set up and use the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/overview/architecture/#complete-server-side-verification">Complete Server-Side Verification</a> feature. |
+| [RFID Certificates](RfidCertificates/RfidCertificates-Default-Swift)       | Demonstrates how to use certificates needed for the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/configuration/rfid/">RFID chip processing</a>.                                       |
+| [Certificate Pinning](CertificatePinning/DocumentReaderCertificatePinning) | Demonstrates how to set up and use the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/security/certificate-pinning/">Certificate Pinning</a> feature.                                   |
+| [Regula 1120](BleDevice/DocumentReaderSwiftBleLicense)                     | Demonstrates integration with the BLE device <a target="_blank" href="https://docs.regulaforensics.com/develop/1120/">Mobile Document Authenticator Regula 1120</a>.                                                             |
+| [Online Processing](OnlineProcessing)                                      | Demonstrates how to set up and use the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/overview/architecture/#online-processing">Online Processing</a> feature.                                 |
 
 ## Documentation
-You can find documentation on API [here](https://docs.regulaforensics.com/ios).
 
-## Additional information
-If you have any technical questions, feel free to [contact](mailto:support@regulaforensics.com) us or create issue [here](https://github.com/regulaforensics/DocumentReader-iOS/issues).
+<a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/">Document Reader SDK Mobile Documentation</a>
 
-To use our SDK in your own app you need to [purchase](https://pipedrivewebforms.com/form/394a3706041290a04fbd0d18e7d7810f1841159) a commercial license.
+## Demo Application
+
+<a target="_blank" href="https://apps.apple.com/us/app/regula-document-reader/id1001303920">Regula Document Reader iOS Demo Application in the App Store</a>
+
+## Technical Support
+
+To submit a request to the Support Team, visit <a target="_blank" href="https://support.regulaforensics.com/hc/en-us/requests/new?utm_source=github">Regula Help Center</a>.
+
+## Business Enquiries
+
+To discuss business opportunities, fill the <a target="_blank" href="https://explore.regula.app/docs-support-request">Enquiry Form</a> and specify your scenarios, applications, and technical requirements.

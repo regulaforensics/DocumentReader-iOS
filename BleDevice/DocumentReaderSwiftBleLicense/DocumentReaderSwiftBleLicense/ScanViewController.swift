@@ -108,9 +108,7 @@ class ScanViewController: UIViewController {
     }
 
     private func isRFIDChipAvailable(results: DocumentReaderResults) -> Bool {
-        return results.getTextFieldValueByType(fieldType: .ft_MRZ_Strings_ICAO_RFID) != nil ||
-        results.getTextFieldValueByType(fieldType: .ft_MRZ_Strings) != nil ||
-        results.getTextFieldValueByType(fieldType: .ft_Card_Access_Number) != nil
+        return results.chipPage != 0
     }
 
     //MARK: - Actions
