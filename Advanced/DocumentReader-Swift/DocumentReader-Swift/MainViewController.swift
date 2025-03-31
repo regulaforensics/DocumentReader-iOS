@@ -466,7 +466,11 @@ class MainViewController: UIViewController {
                     }
                     self.showResultScreen(results)
                 case .error:
-                    print("Error")
+                    guard let results = opticalResults else {
+                        return
+                    }
+                    self.showResultScreen(results)
+                    print("Error reading RFID")
                 default:
                     break
                 }

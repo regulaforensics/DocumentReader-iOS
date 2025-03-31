@@ -1,7 +1,7 @@
-platform :ios, '12.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'BackendProcessing' do
-  pod 'DocumentReader', '~> 7.5.0'
-  pod 'DocumentReaderFullRFID', '~> 7.5.0'
+  pod 'DocumentReader', '~> 7.6.0'
+  pod 'DocumentReaderFullRFID', '~> 7.6.0'
 end

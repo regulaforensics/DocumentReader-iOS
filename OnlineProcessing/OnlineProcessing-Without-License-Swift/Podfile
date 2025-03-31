@@ -4,6 +4,6 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'OnlineProcessing-Without-License-Swift' do
-  pod 'DocumentReader', '~> 7.5.0'
-  pod 'DocumentReaderFullRFID', '~> 7.5.0'
+  pod 'DocumentReader', '~> 7.6.0'
+  pod 'DocumentReaderFullRFID', '~> 7.6.0'
 end
