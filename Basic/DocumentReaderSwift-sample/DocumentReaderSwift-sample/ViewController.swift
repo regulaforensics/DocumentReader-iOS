@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         guard let selectedScenario = selectedScenario else { return }
         let config = DocReader.ScannerConfig(scenario: selectedScenario)
         
-        DocReader.shared.showScanner(presenter: self, config: config) { (action, result, error) in
+        DocReader.shared.startScanner(presenter: self, config: config) { (action, result, error) in
             if action == .complete {
                 print("Completed")
                 if self.readRFID.isOn && result?.chipPage != 0 {

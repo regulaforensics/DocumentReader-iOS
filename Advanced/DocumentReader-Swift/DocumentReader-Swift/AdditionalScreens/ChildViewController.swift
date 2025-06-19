@@ -53,7 +53,7 @@ class ChildViewController: UIViewController {
         DocReader.shared.processParams.scenario = scenario
         DocReader.shared.functionality.orientation = .all
         
-        let vc = DocReader.shared.prepareCameraViewController(cameraHandler: { [weak self] (action, results, error) in
+        let vc = DocReader.shared.prepareCameraViewControllerForStart(cameraHandler: { [weak self] (action, results, error) in
             guard let self = self else { return }
             switch action {
             case .complete, .processTimeout:

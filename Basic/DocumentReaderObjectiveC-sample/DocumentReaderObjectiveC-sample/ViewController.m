@@ -80,7 +80,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate, RGRecognizeImag
 - (IBAction)useCameraViewController:(UIButton *)sender {
     RGLScannerConfig *config = [[RGLScannerConfig alloc] initWithScenario:self.selectedScenario];
     
-    [RGLDocReader.shared showScannerFromPresenter:self config:config completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSError * _Nullable error) {
+    [RGLDocReader.shared startScannerFromPresenter:self config:config completion:^(enum RGLDocReaderAction action, RGLDocumentReaderResults * _Nullable result, NSError * _Nullable error) {
         switch (action) {
             case RGLDocReaderActionCancel: {
                 NSLog(@"Cancelled by user");

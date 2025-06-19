@@ -122,7 +122,7 @@ class ReaderFacade: ObservableObject {
         
         let future = Future<(DocumentReaderResults), Error> { promise in
             
-            controller = DocReader.shared.prepareCameraViewController { action, result, error in
+            controller = DocReader.shared.prepareCameraViewControllerForStart { action, result, error in
                 switch action {
                 case .complete:
                     promise(.success(result!))

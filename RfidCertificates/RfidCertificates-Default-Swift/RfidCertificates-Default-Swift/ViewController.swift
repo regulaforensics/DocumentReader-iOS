@@ -91,7 +91,7 @@ class ViewController: UIViewController {
 
     @IBAction func showScannerPressed(_ sender: UIButton) {
         let config = DocReader.ScannerConfig(scenario: RGL_SCENARIO_MRZ)
-        DocReader.shared.showScanner(presenter: self, config: config) { action, results, error in
+        DocReader.shared.startScanner(presenter: self, config: config) { action, results, error in
             switch action {
             case .complete:
                 self.startRFID()

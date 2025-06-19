@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         backendProcessingConfig.url = "https://api.regulaforensics.com"
         DocReader.shared.processParams.backendProcessingConfig = backendProcessingConfig
         
-        DocReader.shared.showScanner(presenter: self, config: config) { (action, result, error) in
+        DocReader.shared.startScanner(presenter: self, config: config) { (action, result, error) in
             if action == .complete {
                 print("Completed")
                 if self.readRFID.isOn && result?.chipPage != 0 {

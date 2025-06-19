@@ -117,7 +117,7 @@ class MainViewController: UIViewController {
     
     private func initSections() {
         // 1. Default
-        let defaultScanner = CustomizationItem("Default (showScanner)") {
+        let defaultScanner = CustomizationItem("Default (startScanner)") {
             DocReader.shared.functionality = ApplicationSettings.shared.functionality
         }
         defaultScanner.resetFunctionality = false
@@ -144,7 +144,7 @@ class MainViewController: UIViewController {
             // Manual multipage mode
             DocReader.shared.functionality.manualMultipageMode = true
             DocReader.shared.startNewSession()
-            self.showScannerForManualMultipage()
+            self.startScannerForManualMultipage()
         }
         manualMultipageMode.resetFunctionality = false
         manualMultipageMode.actionType = .custom
@@ -348,11 +348,11 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func showScannerForManualMultipage() {
+    private func startScannerForManualMultipage() {
         guard let selectedScenario = selectedScenario else { return }
         let config = DocReader.ScannerConfig(scenario: selectedScenario)
         
-        DocReader.shared.showScanner(presenter: self, config:config) { [weak self] (action, result, error) in
+        DocReader.shared.startScanner(presenter: self, config:config) { [weak self] (action, result, error) in
             guard let self = self else { return }
             switch action {
             case .cancel:
@@ -365,7 +365,7 @@ class MainViewController: UIViewController {
                 if results.morePagesAvailable != 0 {
                     // Scan next page in manual mode
                     DocReader.shared.startNewPage()
-                    self.showScannerForManualMultipage()
+                    self.startScannerForManualMultipage()
                 } else if !results.isResultsEmpty() {
                     self.showResultScreen(results)
                     DocReader.shared.functionality.manualMultipageMode = false
@@ -548,7 +548,7 @@ class MainViewController: UIViewController {
         guard let selectedScenario = selectedScenario else { return }
         let config = DocReader.ScannerConfig(scenario: selectedScenario)
         
-        DocReader.shared.showScanner(presenter: self, config:config) { [weak self] (action, result, error) in
+        DocReader.shared.startScanner(presenter: self, config:config) { [weak self] (action, result, error) in
             guard let self = self else { return }
             
             switch action {

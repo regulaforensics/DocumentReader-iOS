@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         onlineProcessingConfig.processParams?.scenario = RGL_SCENARIO_FULL_PROCESS
 
         let config = DocReader.ScannerConfig(scenario: RGL_SCENARIO_FULL_PROCESS, onlineProcessingConfig: onlineProcessingConfig)
-        DocReader.shared.showScanner(presenter: self, config: config) { action, results, error in
+        DocReader.shared.startScanner(presenter: self, config: config) { action, results, error in
             self.showResults(results: results)
         }
     }
