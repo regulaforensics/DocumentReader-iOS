@@ -88,6 +88,8 @@ class MainViewController: UIViewController {
         
         scenarioPicker.dataSource = self
         scenarioPicker.delegate = self
+
+        DocReader.shared.rfidDelegate = self
     }
     
     @IBAction func settingsAction(_ sender: UIBarButtonItem) {
@@ -455,7 +457,7 @@ class MainViewController: UIViewController {
             DocReader.shared.startRFIDReader(fromPresenter: self, completion: { [weak self] (action, results, error) in
                 guard let self = self else { return }
                 switch action {
-                case .complete:
+                case .complete, .processTimeout:
                     guard let results = results else {
                         return
                     }

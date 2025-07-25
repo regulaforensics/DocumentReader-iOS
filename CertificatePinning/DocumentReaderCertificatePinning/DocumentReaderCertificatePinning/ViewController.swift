@@ -32,7 +32,9 @@ class ViewController: UIViewController {
   
   @IBAction func didPressRecognizeButton(_ sender: Any) {
     guard let image = UIImage(named: "mrz_sample.jpg") else { return }
-    let config = DocReader.RecognizeConfig(image: image)
+
+    let config = DocReader.RecognizeConfig(scenario: RGL_SCENARIO_MRZ)
+    config.image = image
     config.onlineProcessingConfig = .init(mode: .auto)
     config.onlineProcessingConfig?.processParams?.scenario = RGL_SCENARIO_MRZ
     DocReader.shared.recognize(config: config) { action, results, error in

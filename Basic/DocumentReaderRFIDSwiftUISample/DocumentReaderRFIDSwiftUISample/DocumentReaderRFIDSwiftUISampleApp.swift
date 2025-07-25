@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct DocumentReaderRFIDSwiftUISampleApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView(reader: ReaderFacade())
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContentView(reader: ReaderFacade())
     }
+  }
 }

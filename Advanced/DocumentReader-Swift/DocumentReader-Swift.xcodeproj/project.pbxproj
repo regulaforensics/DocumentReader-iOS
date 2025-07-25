@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786ADC372E267253003F0214 /* CertificatesTA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 786ADC362E267253003F0214 /* CertificatesTA.bundle */; };
 		8640EC3226F9C35700C8FF4F /* MRZFormat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8640EC3126F9C35700C8FF4F /* MRZFormat+Extensions.swift */; };
 		8673192D27EAFE1B00B754DF /* OnlineProcessingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673192C27EAFE1B00B754DF /* OnlineProcessingViewController.swift */; };
 		8680540A275A3DB00036B3AF /* DocumentReaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86805409275A3DB00036B3AF /* DocumentReaderService.swift */; };
@@ -25,7 +26,6 @@
 		9D33E2C525CA9EF500FF9561 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2C425CA9EF500FF9561 /* regula.license */; };
 		9D33E2CE25CAA12200FF9561 /* Certificates.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2CB25CAA12200FF9561 /* Certificates.bundle */; };
 		9D33E2CF25CAA12200FF9561 /* CertificatesPA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2CC25CAA12200FF9561 /* CertificatesPA.bundle */; };
-		9D33E2D025CAA12200FF9561 /* CertificatesTA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2CD25CAA12200FF9561 /* CertificatesTA.bundle */; };
 		9D4B75BC25D51EE100EB4EA4 /* CaptureMode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B75BB25D51EE100EB4EA4 /* CaptureMode+Extensions.swift */; };
 		9D4B75BF25D521C800EB4EA4 /* AVCaptureDevicePosition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B75BE25D521C800EB4EA4 /* AVCaptureDevicePosition+Extensions.swift */; };
 		9D4B75C225D5233A00EB4EA4 /* MeasureSystem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B75C125D5233A00EB4EA4 /* MeasureSystem+Extensions.swift */; };
@@ -81,6 +81,7 @@
 		0BBE1365BE97A7AE1B68DF58 /* Pods-DocumentReader-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-Swift.release.xcconfig"; path = "Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		0DC5DA1B48C6A7B2425AF7F0 /* Pods_DocumentReader_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReader_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2391B685CCD628B0DFA19E1A /* Pods-DocumentReader-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReader-Swift.debug.xcconfig"; path = "Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		786ADC362E267253003F0214 /* CertificatesTA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CertificatesTA.bundle; sourceTree = "<group>"; };
 		8640EC3126F9C35700C8FF4F /* MRZFormat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MRZFormat+Extensions.swift"; sourceTree = "<group>"; };
 		8673192C27EAFE1B00B754DF /* OnlineProcessingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineProcessingViewController.swift; sourceTree = "<group>"; };
 		86805409275A3DB00036B3AF /* DocumentReaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentReaderService.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		9D33E2C925CA9FE400FF9561 /* DocumentReader-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DocumentReader-Swift.entitlements"; sourceTree = "<group>"; };
 		9D33E2CB25CAA12200FF9561 /* Certificates.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Certificates.bundle; sourceTree = "<group>"; };
 		9D33E2CC25CAA12200FF9561 /* CertificatesPA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CertificatesPA.bundle; sourceTree = "<group>"; };
-		9D33E2CD25CAA12200FF9561 /* CertificatesTA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CertificatesTA.bundle; sourceTree = "<group>"; };
 		9D4B75BB25D51EE100EB4EA4 /* CaptureMode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureMode+Extensions.swift"; sourceTree = "<group>"; };
 		9D4B75BE25D521C800EB4EA4 /* AVCaptureDevicePosition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevicePosition+Extensions.swift"; sourceTree = "<group>"; };
 		9D4B75C125D5233A00EB4EA4 /* MeasureSystem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeasureSystem+Extensions.swift"; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 				96760D3D2B850A3B00475CB7 /* db.dat */,
 				9D33E2CB25CAA12200FF9561 /* Certificates.bundle */,
 				9D33E2CC25CAA12200FF9561 /* CertificatesPA.bundle */,
-				9D33E2CD25CAA12200FF9561 /* CertificatesTA.bundle */,
+				786ADC362E267253003F0214 /* CertificatesTA.bundle */,
 			);
 			path = "DocumentReader-Swift";
 			sourceTree = "<group>";
@@ -391,6 +391,7 @@
 				9D33E2AC25CA940700FF9561 /* LaunchScreen.storyboard in Resources */,
 				9D33E2A925CA940700FF9561 /* Assets.xcassets in Resources */,
 				9D33E2A725CA940700FF9561 /* Main.storyboard in Resources */,
+				786ADC372E267253003F0214 /* CertificatesTA.bundle in Resources */,
 				9D969826284A0BB20005C1BD /* white.bmp in Resources */,
 				9D33E2CE25CAA12200FF9561 /* Certificates.bundle in Resources */,
 				9DF08E5325D3C9C700880F7E /* SettingsActionCell.xib in Resources */,
@@ -400,7 +401,6 @@
 				9D658B0F25CC000E00DDB739 /* TextCell.xib in Resources */,
 				9D9560B825D286D100C0673F /* SettingsSwitchCell.xib in Resources */,
 				9D228CA12A3C94C90023387E /* buttons.json in Resources */,
-				9D33E2D025CAA12200FF9561 /* CertificatesTA.bundle in Resources */,
 				9D6D108D25D29CC2001E9158 /* SettingsStepperCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,9 +438,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DocumentReader-Swift/Pods-DocumentReader-Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
