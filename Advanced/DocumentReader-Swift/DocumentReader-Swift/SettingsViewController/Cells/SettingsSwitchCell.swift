@@ -21,7 +21,7 @@ class SettingsSwitchCell: UITableViewCell {
         didSet {
             guard let item = item else { return }
             titleLabel.text = item.title
-            switchControl.setOn(item.getter(), animated: true)
+            switchControl.setOn(item.getter(), animated: false)
         }
     }
     
