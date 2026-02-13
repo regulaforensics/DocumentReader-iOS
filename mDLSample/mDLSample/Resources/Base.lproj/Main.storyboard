@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mDLSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VvM-P4-45i">
+                                <rect key="frame" x="0.0" y="118" width="393" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cfE-YR-r8S">
+                                <rect key="frame" x="0.0" y="534" width="393" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTj-sZ-TXI">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="41.666666666666664"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="AGE"/>
+                                        <connections>
+                                            <action selector="agePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jwe-Wo-wwF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hpT-zQ-Uvm">
+                                        <rect key="frame" x="0.0" y="41.666666666666629" width="393" height="41.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="STANDART ID"/>
+                                        <connections>
+                                            <action selector="standartIdPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ncq-Fl-kQ0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YL-OT-aIX">
+                                        <rect key="frame" x="0.0" y="83.333333333333371" width="393" height="41.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="TRAVEL"/>
+                                        <connections>
+                                            <action selector="travelPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSh-mF-aJQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otb-am-0e6">
+                                        <rect key="frame" x="0.0" y="125.00000000000001" width="393" height="41.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="DRIVER'S LICENSE"/>
+                                        <connections>
+                                            <action selector="driversLicensePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvZ-o1-dkN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MR-6N-X2R">
+                                        <rect key="frame" x="0.0" y="166.66666666666663" width="393" height="41.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="READ ALL BY BLE"/>
+                                        <connections>
+                                            <action selector="readAllBlePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4r9-mC-nCB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmO-zB-jKK">
+                                        <rect key="frame" x="0.0" y="208.33333333333337" width="393" height="41.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="READ ALL BY NFC"/>
+                                        <connections>
+                                            <action selector="readAllNfcPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AxH-4u-lky"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="z5u-S2-oWL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cfE-YR-r8S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Do-cU-haR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cfE-YR-r8S" secondAttribute="trailing" id="8le-3O-CBr"/>
+                            <constraint firstItem="VvM-P4-45i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="An1-nf-8gP"/>
+                            <constraint firstItem="VvM-P4-45i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IAL-3W-yXp"/>
+                            <constraint firstItem="VvM-P4-45i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LRd-C2-hcM"/>
+                            <constraint firstItem="cfE-YR-r8S" firstAttribute="top" secondItem="VvM-P4-45i" secondAttribute="bottom" constant="16" id="Mew-zq-NDb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cfE-YR-r8S" secondAttribute="bottom" id="eOF-4D-Sdc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="VvM-P4-45i" id="hdA-MP-neT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="48.091603053435115" y="22.535211267605636"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

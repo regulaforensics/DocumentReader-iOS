@@ -3,7 +3,12 @@
 platform :ios, '13.0'
 use_frameworks!
 
-target 'DocumentReaderDatabase-sample' do
+target 'DocumentReaderFullSwift-sample' do
   pod 'DocumentReader', '~> 9.2.0'
   pod 'DocumentReaderFullRFID', '~> 9.2.0'
+end
+
+target 'AppClip-sample' do
+  pod 'DocumentReader', '~> 9.2.0'
+  pod 'DocumentReaderMRZRFID', '~> 9.2.0'
 end
