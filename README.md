@@ -26,6 +26,7 @@ There are several sample projects, see the details in the table below.
 | [Certificate Pinning](CertificatePinning/DocumentReaderCertificatePinning) | Demonstrates how to set up and use the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/mobile/security/certificate-pinning/">Certificate Pinning</a> feature.                                   |
 | [Regula 1120](BleDevice/DocumentReaderSwiftBleLicense)                     | Demonstrates integration with the BLE device <a target="_blank" href="https://docs.regulaforensics.com/develop/1120/">Mobile Document Authenticator Regula 1120</a>.                                                             |
 | [Online Processing](OnlineProcessing)                                      | Demonstrates how to set up and use the <a target="_blank" href="https://docs.regulaforensics.com/develop/doc-reader-sdk/overview/architecture/#online-processing">Online Processing</a> feature.                                 |
+| [UniversalTag](UniversalTag/UniversalTag-sample) | Demonstrates integration with the BLE device. |
 
 ## Documentation
 
