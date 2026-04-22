@@ -21,6 +21,7 @@ There are several sample projects, see the details in the table below.
 | [Swift project](DocumentReaderSwift-sample)                            | Sample project in Swift, demonstrating the Document Reader SDK basic functionality. UI elements are not included.                             |
 | [Objective-C project](DocumentReaderObjectiveC-sample)                 | Sample project in Objective-C, demonstrating the Document Reader SDK basic functionality. UI elements are not included.                       |
 | [SwiftUI project](DocumentReaderSwiftUI-sample)                        | Sample project in Swift, demonstrating the Document Reader SDK basic functionality. Also includes the sample UI implementation.               |
+| [RFID-only project](DocumentReaderRFIDOnly-sample)                     | Sample project in Swift, demonstrating RFID-only reading with the Document Reader SDK. Also includes the sample UI implementation.           |
 | [SwiftUI project with custom RFID UI](DocumentReaderRFIDSwiftUISample) | Sample project in Swift, demonstrating the Document Reader SDK capabilities of reading RFID chip. Also includes the sample UI implementation. |
 
 ## Documentation

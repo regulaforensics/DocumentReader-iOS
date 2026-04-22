@@ -1,0 +1,11 @@
+platform :ios, '13.0'
+
+target 'RFIDOnly-sample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for RFIDOnly-sample
+  pod 'DocumentReader', '~> 9.3.0'
+  pod 'DocumentReaderRFID', '~> 9.3.0'
+
+end

@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7846F0502F7A56C100F8EB58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846F0462F7A56C100F8EB58 /* AppDelegate.swift */; };
+		7846F0512F7A56C100F8EB58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846F04D2F7A56C100F8EB58 /* SceneDelegate.swift */; };
+		7846F0522F7A56C100F8EB58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7846F04E2F7A56C100F8EB58 /* ViewController.swift */; };
+		7846F0532F7A56C100F8EB58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7846F0472F7A56C100F8EB58 /* Assets.xcassets */; };
+		7846F0552F7A56C100F8EB58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7846F04A2F7A56C100F8EB58 /* LaunchScreen.storyboard */; };
+		7846F0562F7A56C100F8EB58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7846F04C2F7A56C100F8EB58 /* Main.storyboard */; };
+		78F307222F87E1A40048DF68 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 78F307212F87E1A40048DF68 /* regula.license */; };
+		A498F90A1190BE7168F81501 /* Pods_RFIDOnly_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E7126FA570C7D3A9EE6C79 /* Pods_RFIDOnly_sample.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2313DC84886859A31C43403D /* Pods-RFIDOnly-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RFIDOnly-sample.release.xcconfig"; path = "Target Support Files/Pods-RFIDOnly-sample/Pods-RFIDOnly-sample.release.xcconfig"; sourceTree = "<group>"; };
+		78109B627EB2D16BAE023C61 /* Pods-RfidSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RfidSample.release.xcconfig"; path = "Target Support Files/Pods-RfidSample/Pods-RfidSample.release.xcconfig"; sourceTree = "<group>"; };
+		7846F01E2F7A522400F8EB58 /* RFIDOnly-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RFIDOnly-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7846F0462F7A56C100F8EB58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7846F0472F7A56C100F8EB58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7846F0482F7A56C100F8EB58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7846F0492F7A56C100F8EB58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7846F04B2F7A56C100F8EB58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7846F04D2F7A56C100F8EB58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7846F04E2F7A56C100F8EB58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78F307212F87E1A40048DF68 /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
+		78F307252F87E57A0048DF68 /* RfidSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RfidSample.entitlements; sourceTree = "<group>"; };
+		88E7126FA570C7D3A9EE6C79 /* Pods_RFIDOnly_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RFIDOnly_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF66079BBB61031600B64259 /* Pods-OnlyRFID-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlyRFID-sample.debug.xcconfig"; path = "Target Support Files/Pods-OnlyRFID-sample/Pods-OnlyRFID-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		AFF74CB07AAED48EE5409CE9 /* Pods-RFIDOnly-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RFIDOnly-sample.debug.xcconfig"; path = "Target Support Files/Pods-RFIDOnly-sample/Pods-RFIDOnly-sample.debug.xcconfig"; sourceTree = "<group>"; };
+		B0A88C5F9D3DA27BD8C3E3BF /* Pods-OnlyRFID-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlyRFID-sample.release.xcconfig"; path = "Target Support Files/Pods-OnlyRFID-sample/Pods-OnlyRFID-sample.release.xcconfig"; sourceTree = "<group>"; };
+		D003DD16D4BBFC0AE7A52CD7 /* Pods-RfidSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RfidSample.debug.xcconfig"; path = "Target Support Files/Pods-RfidSample/Pods-RfidSample.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7846F01B2F7A522400F8EB58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A498F90A1190BE7168F81501 /* Pods_RFIDOnly_sample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D6D24E0B1206C8D2307718 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88E7126FA570C7D3A9EE6C79 /* Pods_RFIDOnly_sample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15D6CACA1BD47C42C0DFCB6E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D003DD16D4BBFC0AE7A52CD7 /* Pods-RfidSample.debug.xcconfig */,
+				78109B627EB2D16BAE023C61 /* Pods-RfidSample.release.xcconfig */,
+				AF66079BBB61031600B64259 /* Pods-OnlyRFID-sample.debug.xcconfig */,
+				B0A88C5F9D3DA27BD8C3E3BF /* Pods-OnlyRFID-sample.release.xcconfig */,
+				AFF74CB07AAED48EE5409CE9 /* Pods-RFIDOnly-sample.debug.xcconfig */,
+				2313DC84886859A31C43403D /* Pods-RFIDOnly-sample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7846F0152F7A522400F8EB58 = {
+			isa = PBXGroup;
+			children = (
+				7846F04F2F7A56C100F8EB58 /* RFIDOnly-sample */,
+				7846F01F2F7A522400F8EB58 /* Products */,
+				15D6CACA1BD47C42C0DFCB6E /* Pods */,
+				04D6D24E0B1206C8D2307718 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7846F01F2F7A522400F8EB58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7846F01E2F7A522400F8EB58 /* RFIDOnly-sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7846F04F2F7A56C100F8EB58 /* RFIDOnly-sample */ = {
+			isa = PBXGroup;
+			children = (
+				78F307252F87E57A0048DF68 /* RfidSample.entitlements */,
+				7846F0462F7A56C100F8EB58 /* AppDelegate.swift */,
+				7846F0472F7A56C100F8EB58 /* Assets.xcassets */,
+				7846F0482F7A56C100F8EB58 /* Info.plist */,
+				7846F04A2F7A56C100F8EB58 /* LaunchScreen.storyboard */,
+				7846F04C2F7A56C100F8EB58 /* Main.storyboard */,
+				7846F04D2F7A56C100F8EB58 /* SceneDelegate.swift */,
+				7846F04E2F7A56C100F8EB58 /* ViewController.swift */,
+				78F307212F87E1A40048DF68 /* regula.license */,
+			);
+			path = "RFIDOnly-sample";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7846F01D2F7A522400F8EB58 /* RFIDOnly-sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7846F0312F7A522600F8EB58 /* Build configuration list for PBXNativeTarget "RFIDOnly-sample" */;
+			buildPhases = (
+				6792E681B28BBA21C8EBA70F /* [CP] Check Pods Manifest.lock */,
+				7846F01A2F7A522400F8EB58 /* Sources */,
+				7846F01B2F7A522400F8EB58 /* Frameworks */,
+				7846F01C2F7A522400F8EB58 /* Resources */,
+				56FAB6475C293CDDFD9E919D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RFIDOnly-sample";
+			productName = RfidSample;
+			productReference = 7846F01E2F7A522400F8EB58 /* RFIDOnly-sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7846F0162F7A522400F8EB58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2640;
+				LastUpgradeCheck = 2640;
+				TargetAttributes = {
+					7846F01D2F7A522400F8EB58 = {
+						CreatedOnToolsVersion = 26.4;
+					};
+				};
+			};
+			buildConfigurationList = 7846F0192F7A522400F8EB58 /* Build configuration list for PBXProject "RFIDOnly-sample" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7846F0152F7A522400F8EB58;
+			minimizedProjectReferenceProxies = 1;
+			productRefGroup = 7846F01F2F7A522400F8EB58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7846F01D2F7A522400F8EB58 /* RFIDOnly-sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7846F01C2F7A522400F8EB58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7846F0532F7A56C100F8EB58 /* Assets.xcassets in Resources */,
+				7846F0552F7A56C100F8EB58 /* LaunchScreen.storyboard in Resources */,
+				7846F0562F7A56C100F8EB58 /* Main.storyboard in Resources */,
+				78F307222F87E1A40048DF68 /* regula.license in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		56FAB6475C293CDDFD9E919D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RFIDOnly-sample/Pods-RFIDOnly-sample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RFIDOnly-sample/Pods-RFIDOnly-sample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RFIDOnly-sample/Pods-RFIDOnly-sample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6792E681B28BBA21C8EBA70F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RFIDOnly-sample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7846F01A2F7A522400F8EB58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7846F0502F7A56C100F8EB58 /* AppDelegate.swift in Sources */,
+				7846F0512F7A56C100F8EB58 /* SceneDelegate.swift in Sources */,
+				7846F0522F7A56C100F8EB58 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7846F04A2F7A56C100F8EB58 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7846F0492F7A56C100F8EB58 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7846F04C2F7A56C100F8EB58 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7846F04B2F7A56C100F8EB58 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7846F0322F7A522600F8EB58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFF74CB07AAED48EE5409CE9 /* Pods-RFIDOnly-sample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RFIDOnly-sample/RfidSample.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H6WR54S268;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RFIDOnly-sample/Info.plist";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "NFC tag to read NDEF messages";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regula.documentreader.RfidSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7846F0332F7A522600F8EB58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2313DC84886859A31C43403D /* Pods-RFIDOnly-sample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "RFIDOnly-sample/RfidSample.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H6WR54S268;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RFIDOnly-sample/Info.plist";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "NFC tag to read NDEF messages";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.regula.documentreader.RfidSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		7846F0342F7A522600F8EB58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7846F0352F7A522600F8EB58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7846F0192F7A522400F8EB58 /* Build configuration list for PBXProject "RFIDOnly-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7846F0342F7A522600F8EB58 /* Debug */,
+				7846F0352F7A522600F8EB58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7846F0312F7A522600F8EB58 /* Build configuration list for PBXNativeTarget "RFIDOnly-sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7846F0322F7A522600F8EB58 /* Debug */,
+				7846F0332F7A522600F8EB58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7846F0162F7A522400F8EB58 /* Project object */;
+}
