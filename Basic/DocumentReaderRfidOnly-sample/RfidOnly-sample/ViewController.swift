@@ -10,7 +10,9 @@ class ViewController: UIViewController {
         case can
         case pin
         case puk
+        case pinEsign
         case sai
+        case mrzHash
 
         var title: String {
             switch self {
@@ -18,7 +20,9 @@ class ViewController: UIViewController {
             case .can: return "CAN"
             case .pin: return "PIN"
             case .puk: return "PUK"
+            case .pinEsign: return "ePIN"
             case .sai: return "SAI"
+            case .mrzHash: return "Hash"
             }
         }
 
@@ -28,7 +32,9 @@ class ViewController: UIViewController {
             case .can: return .can
             case .pin: return .pin
             case .puk: return .puk
+            case .pinEsign: return .pinEsign
             case .sai: return .sai
+            case .mrzHash: return .mrzHash
             }
         }
 
@@ -42,8 +48,12 @@ class ViewController: UIViewController {
                 return "PIN (access code)"
             case .puk:
                 return "PUK (unlock code)"
+            case .pinEsign:
+                return "eSign PIN"
             case .sai:
                 return "SAI (Scanning Area Identifier)"
+            case .mrzHash:
+                return "MRZ hash"
             }
         }
     }
@@ -291,6 +301,7 @@ class ViewController: UIViewController {
         storeCurrentPasswordValue()
         clearResults()
 
+        DocReader.shared.startNewSession()
         DocReader.shared.processParams.scenario = RGL_SCENARIO_RFID
 
         let rfid = DocReader.shared.rfidScenario
@@ -299,7 +310,9 @@ class ViewController: UIViewController {
         switch selectedKeyType {
         case .mrz:
             rfid.mrz = normalizedMRZ
-        case .can, .pin, .puk, .sai:
+        case .mrzHash:
+            rfid.mrzHash = passwordValues[selectedKeyType] ?? ""
+        case .can, .pin, .puk, .pinEsign, .sai:
             rfid.password = passwordValues[selectedKeyType] ?? ""
         }
 
