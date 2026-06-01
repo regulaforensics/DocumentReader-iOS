@@ -389,10 +389,7 @@ class SettingsViewController: UIViewController {
             return value.isEmpty ? "nil" : value
         }
 
-        let forceReadMrzBeforeLocate = SettingsOptionalBoolItem(title: "Force Read Mrz Before Locate", object: params, keypath: \.forceReadMrzBeforeLocate)
-
-
-        let recognitionParamsGroup = SettingsGroup(title: "Recognition params", items: [resultTypeOutput, generateDoublePageSpreadImage, imageDpiOutMax, alreadyCropped, forceDocID, matchTextFieldMask, fastDocDetect, updateOCRValidityByGlare, noGraphics, documentAreaMin, forceDocFormat, multiDocOnImage, shiftExpiryDate, minimalHolderAge, mrzFormatsFilter, forceReadMrzBeforeLocate])
+        let recognitionParamsGroup = SettingsGroup(title: "Recognition params", items: [resultTypeOutput, generateDoublePageSpreadImage, imageDpiOutMax, alreadyCropped, forceDocID, matchTextFieldMask, fastDocDetect, updateOCRValidityByGlare, noGraphics, documentAreaMin, forceDocFormat, multiDocOnImage, shiftExpiryDate, minimalHolderAge, mrzFormatsFilter])
         apiGroups.append(recognitionParamsGroup)
 
         // Image QA
