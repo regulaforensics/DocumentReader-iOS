@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
+source 'https://github.com/regulaforensics/podspecs.git'
+
 platform :ios, '13.0'
 use_frameworks!
 
 target 'mDLSample' do 
-  pod 'BTDevice', '~> 9.4.0'
-  pod 'DocumentReader', '~> 9.5.0'
-  pod 'DocumentReaderBarcodeMRZRFID', '~> 9.5.0'
+  pod 'BTDevice', '~> 9.6.0'
+  pod 'DocumentReader', '~> 9.6.0'
+  pod 'DocumentReaderBarcodeMRZRFID', '~> 9.6.0'
 end

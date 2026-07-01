@@ -1,3 +1,5 @@
+source 'https://github.com/regulaforensics/podspecs.git'
+
 # Uncomment the next line to define a global platform for your project
 platform :ios, '13.0'
 
@@ -6,6 +8,6 @@ target 'DocumentReaderSwiftUI-sample' do
   use_frameworks!
 
   # Pods for DocumentReaderSwiftUI-sample
-  pod 'DocumentReader', '~> 9.5.0'
-  pod 'DocumentReaderFullRFID', '~> 9.5.0'
+  pod 'DocumentReader', '~> 9.6.0'
+  pod 'DocumentReaderFullRFID', '~> 9.6.0'
 end

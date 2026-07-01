@@ -1,3 +1,5 @@
+source 'https://github.com/regulaforensics/podspecs.git'
+
 platform :ios, '13.0'
 
 target 'RFIDOnly-sample' do
@@ -5,7 +7,7 @@ target 'RFIDOnly-sample' do
   use_frameworks!
 
   # Pods for RFIDOnly-sample
-  pod 'DocumentReader', '~> 9.5.0'
-  pod 'DocumentReaderRFID', '~> 9.5.0'
+  pod 'DocumentReader', '~> 9.6.0'
+  pod 'DocumentReaderRFID', '~> 9.6.0'
 
 end
