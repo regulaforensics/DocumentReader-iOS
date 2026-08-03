@@ -4,6 +4,6 @@ source 'https://github.com/regulaforensics/podspecs.git'
 platform :ios, '13.0'
 
 target 'DocumentReaderCertificatePinning' do
-  pod 'DocumentReader', '~> 9.6.0'
-  pod 'DocumentReaderMRZ', '~> 9.6.0'
+  pod 'DocumentReader', '~> 9.7.0'
+  pod 'DocumentReaderMRZ', '~> 9.7.0'
 end

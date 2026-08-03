@@ -6,7 +6,7 @@ platform :ios, '13.0'
 use_frameworks!
 
 target 'mDLSample' do 
-  pod 'BTDevice', '~> 9.6.0'
-  pod 'DocumentReader', '~> 9.6.0'
-  pod 'DocumentReaderBarcodeMRZRFID', '~> 9.6.0'
+  pod 'BTDevice', '~> 9.7.0'
+  pod 'DocumentReader', '~> 9.7.0'
+  pod 'DocumentReaderBarcodeMRZRFID', '~> 9.7.0'
 end
