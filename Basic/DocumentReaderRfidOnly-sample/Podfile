@@ -7,7 +7,7 @@ target 'RFIDOnly-sample' do
   use_frameworks!
 
   # Pods for RFIDOnly-sample
-  pod 'DocumentReader', '~> 9.7.0'
-  pod 'DocumentReaderRFID', '~> 9.7.0'
+  pod 'DocumentReader', '~> 9.8.0'
+  pod 'DocumentReaderRFID', '~> 9.8.0'
 
 end
