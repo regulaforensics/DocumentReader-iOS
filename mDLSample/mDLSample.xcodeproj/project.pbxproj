@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B7A7427305C00000016A811 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A7428305C00000016A811 /* SceneDelegate.swift */; };
 		9DB5C1E02EF69EFC004B4199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB5C1D72EF69EFC004B4199 /* AppDelegate.swift */; };
 		9DB5C1E12EF69EFC004B4199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB5C1DE2EF69EFC004B4199 /* ViewController.swift */; };
 		9DB5C1E22EF69EFC004B4199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB5C1D82EF69EFC004B4199 /* Assets.xcassets */; };
@@ -17,9 +18,14 @@
 		9DB5C1ED2EF6B0C6004B4199 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB5C1EB2EF6B0C6004B4199 /* ImageTableViewCell.swift */; };
 		9DB5C1EE2EF6B0C6004B4199 /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB5C1EC2EF6B0C6004B4199 /* ImageTableViewCell.xib */; };
 		9DCF07292F1FA82B001AC90B /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 9DCF07282F1FA82B001AC90B /* regula.license */; };
+		E1877A0FB7C2DA17F0739E80 /* Pods_mDLSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127764A07E8EFD494516D22D /* Pods_mDLSample.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B7A7428305C00000016A811 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0EBB3C0181CE07014CB92C8F /* Pods-mDLSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mDLSample.debug.xcconfig"; path = "Target Support Files/Pods-mDLSample/Pods-mDLSample.debug.xcconfig"; sourceTree = "<group>"; };
+		127764A07E8EFD494516D22D /* Pods_mDLSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mDLSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA528B84816031C2BC26C6D /* Pods-mDLSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mDLSample.release.xcconfig"; path = "Target Support Files/Pods-mDLSample/Pods-mDLSample.release.xcconfig"; sourceTree = "<group>"; };
 		9DB5C1D72EF69EFC004B4199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DB5C1D82EF69EFC004B4199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB5C1D92EF69EFC004B4199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,12 +47,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1877A0FB7C2DA17F0739E80 /* Pods_mDLSample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		864A99CD55A6F7AB0B61CD8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				127764A07E8EFD494516D22D /* Pods_mDLSample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9DB5C1DF2EF69EFC004B4199 /* mDLSample */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +70,7 @@
 				9DB5C1F62EF6B597004B4199 /* Resources */,
 				9DB5C1EA2EF6B0B1004B4199 /* Cells */,
 				9DB5C1D72EF69EFC004B4199 /* AppDelegate.swift */,
+				7B7A7428305C00000016A811 /* SceneDelegate.swift */,
 				9DB5C1DE2EF69EFC004B4199 /* ViewController.swift */,
 				9DB5C1D92EF69EFC004B4199 /* Info.plist */,
 			);
@@ -89,6 +105,7 @@
 				9DB5C1DF2EF69EFC004B4199 /* mDLSample */,
 				9DCDFDA82EF044B200B2A473 /* Products */,
 				E9897C99DE807A76F140FA60 /* Pods */,
+				864A99CD55A6F7AB0B61CD8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +120,8 @@
 		E9897C99DE807A76F140FA60 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				0EBB3C0181CE07014CB92C8F /* Pods-mDLSample.debug.xcconfig */,
+				8BA528B84816031C2BC26C6D /* Pods-mDLSample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -114,9 +133,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DCDFDBA2EF044B500B2A473 /* Build configuration list for PBXNativeTarget "mDLSample" */;
 			buildPhases = (
+				C496214E9935E0D625D2A633 /* [CP] Check Pods Manifest.lock */,
 				9DCDFDA32EF044B200B2A473 /* Sources */,
 				9DCDFDA42EF044B200B2A473 /* Frameworks */,
 				9DCDFDA52EF044B200B2A473 /* Resources */,
+				F3A29A5FFB58951FC6F9E757 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,6 +199,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C496214E9935E0D625D2A633 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mDLSample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3A29A5FFB58951FC6F9E757 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mDLSample/Pods-mDLSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mDLSample/Pods-mDLSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mDLSample/Pods-mDLSample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9DCDFDA32EF044B200B2A473 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -186,6 +249,7 @@
 				9DB5C1E82EF6B0AC004B4199 /* TextTableViewCell.swift in Sources */,
 				9DB5C1ED2EF6B0C6004B4199 /* ImageTableViewCell.swift in Sources */,
 				9DB5C1E02EF69EFC004B4199 /* AppDelegate.swift in Sources */,
+				7B7A7427305C00000016A811 /* SceneDelegate.swift in Sources */,
 				9DB5C1E12EF69EFC004B4199 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +278,7 @@
 /* Begin XCBuildConfiguration section */
 		9DCDFDBB2EF044B500B2A473 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EBB3C0181CE07014CB92C8F /* Pods-mDLSample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -248,6 +313,7 @@
 		};
 		9DCDFDBC2EF044B500B2A473 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BA528B84816031C2BC26C6D /* Pods-mDLSample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

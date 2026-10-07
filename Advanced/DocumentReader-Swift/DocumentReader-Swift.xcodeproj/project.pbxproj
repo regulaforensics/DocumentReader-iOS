@@ -26,6 +26,7 @@
 		9D33E2C525CA9EF500FF9561 /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2C425CA9EF500FF9561 /* regula.license */; };
 		9D33E2CE25CAA12200FF9561 /* Certificates.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2CB25CAA12200FF9561 /* Certificates.bundle */; };
 		9D33E2CF25CAA12200FF9561 /* CertificatesPA.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9D33E2CC25CAA12200FF9561 /* CertificatesPA.bundle */; };
+		9D33E2D225CA940700FF9561 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D33E2D125CA940700FF9561 /* SceneDelegate.swift */; };
 		9D4B75BC25D51EE100EB4EA4 /* CaptureMode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B75BB25D51EE100EB4EA4 /* CaptureMode+Extensions.swift */; };
 		9D4B75BF25D521C800EB4EA4 /* AVCaptureDevicePosition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B75BE25D521C800EB4EA4 /* AVCaptureDevicePosition+Extensions.swift */; };
 		9D4B75C225D5233A00EB4EA4 /* MeasureSystem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B75C125D5233A00EB4EA4 /* MeasureSystem+Extensions.swift */; };
@@ -103,6 +104,7 @@
 		9D33E2C925CA9FE400FF9561 /* DocumentReader-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DocumentReader-Swift.entitlements"; sourceTree = "<group>"; };
 		9D33E2CB25CAA12200FF9561 /* Certificates.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Certificates.bundle; sourceTree = "<group>"; };
 		9D33E2CC25CAA12200FF9561 /* CertificatesPA.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CertificatesPA.bundle; sourceTree = "<group>"; };
+		9D33E2D125CA940700FF9561 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9D4B75BB25D51EE100EB4EA4 /* CaptureMode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CaptureMode+Extensions.swift"; sourceTree = "<group>"; };
 		9D4B75BE25D521C800EB4EA4 /* AVCaptureDevicePosition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevicePosition+Extensions.swift"; sourceTree = "<group>"; };
 		9D4B75C125D5233A00EB4EA4 /* MeasureSystem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MeasureSystem+Extensions.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				9D9560B425D283FB00C0673F /* SettingsViewController */,
 				9D83E70825D41203009DE46F /* AdditionalScreens */,
 				9D33E29F25CA940700FF9561 /* AppDelegate.swift */,
+				9D33E2D125CA940700FF9561 /* SceneDelegate.swift */,
 				9D33E2A325CA940700FF9561 /* MainViewController.swift */,
 				86805409275A3DB00036B3AF /* DocumentReaderService.swift */,
 				9D228CA02A3C94C80023387E /* buttons.json */,
@@ -479,6 +482,7 @@
 				9D33E2A425CA940700FF9561 /* MainViewController.swift in Sources */,
 				9D053B6F25CD6D770014EE23 /* FieldType+Extensions.swift in Sources */,
 				9D33E2A025CA940700FF9561 /* AppDelegate.swift in Sources */,
+				9D33E2D225CA940700FF9561 /* SceneDelegate.swift in Sources */,
 				9D658B0225CBD11B00DDB739 /* ResultsViewController.swift in Sources */,
 				8673192D27EAFE1B00B754DF /* OnlineProcessingViewController.swift in Sources */,
 				9DE55FA92B4FED40003ECE9F /* CheckResultCell.swift in Sources */,
@@ -569,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -624,7 +628,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

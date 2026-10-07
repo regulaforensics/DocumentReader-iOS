@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5A174B1F1038160011FB0A /* AppDelegate.swift */; };
+		7A6DB92E11DD2DB599E24EE4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D36F110746A220BA2F75936 /* SceneDelegate.swift */; };
 		0A74D52F1F8AB14F0055BE75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17541F1038170011FB0A /* LaunchScreen.storyboard */; };
 		0A74D5301F8AB14F0055BE75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A17521F1038160011FB0A /* Assets.xcassets */; };
 		0A74D5311F8AB14F0055BE75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5A174F1F1038160011FB0A /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		0A5A174B1F1038160011FB0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2D36F110746A220BA2F75936 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0A5A17501F1038160011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A5A17521F1038160011FB0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A5A17551F1038170011FB0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				0A5A174B1F1038160011FB0A /* AppDelegate.swift */,
+				2D36F110746A220BA2F75936 /* SceneDelegate.swift */,
 				0A88C193215559A000CF494D /* ViewController.swift */,
 				A07449DE2F2A017900DFC4D3 /* StatusView.swift */,
 				A0C5F3802F2358C200546302 /* DeviceAdapter.swift */,
@@ -279,6 +282,7 @@
 				A0C5F3812F2358C200546302 /* DeviceAdapter.swift in Sources */,
 				0A88C194215559A000CF494D /* ViewController.swift in Sources */,
 				0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */,
+				7A6DB92E11DD2DB599E24EE4 /* SceneDelegate.swift in Sources */,
 				A07449DF2F2A018100DFC4D3 /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -407,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -430,7 +434,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,7 +458,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";

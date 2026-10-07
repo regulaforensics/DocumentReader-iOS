@@ -29,7 +29,7 @@ Sample project in Swift, demonstrating how to set up and use the <a target="_bla
 
 ## Configuration of Certificate Pinning
 
-**Note:** Requires iOS 14.0 minimum deployment target.
+**Note:** Requires iOS 15.0 minimum deployment target.
 
 Check the [official Apple documentation for Identity Pinning](https://developer.apple.com/news/?id=g9ejcf8y) for iOS devices.
 

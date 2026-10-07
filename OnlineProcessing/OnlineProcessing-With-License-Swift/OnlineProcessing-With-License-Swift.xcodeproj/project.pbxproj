@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1586DAB3F2A3A8BEF5450E05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF61F813852E1E9ECFFD6265 /* SceneDelegate.swift */; };
 		9D7E898B2CB3E38600FCA16C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E89822CB3E38600FCA16C /* AppDelegate.swift */; };
 		9D7E898C2CB3E38600FCA16C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7E89892CB3E38600FCA16C /* ViewController.swift */; };
 		9D7E898D2CB3E38600FCA16C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E89832CB3E38600FCA16C /* Assets.xcassets */; };
@@ -14,9 +15,12 @@
 		9D7E89902CB3E38600FCA16C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E89882CB3E38600FCA16C /* Main.storyboard */; };
 		9D7E89922CB3ECFC00FCA16C /* regula.license in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E89912CB3ECFC00FCA16C /* regula.license */; };
 		9D7E89942CB3F93700FCA16C /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 9D7E89932CB3F93700FCA16C /* db.dat */; };
+		A29929D89A8DC9E87339E691 /* Pods_OnlineProcessing_With_License_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6B4D65BDF1C833E86C7656 /* Pods_OnlineProcessing_With_License_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A6B4D65BDF1C833E86C7656 /* Pods_OnlineProcessing_With_License_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineProcessing_With_License_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		748C1E549E7537C2041C9D8F /* Pods-OnlineProcessing-With-License-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineProcessing-With-License-Swift.release.xcconfig"; path = "Target Support Files/Pods-OnlineProcessing-With-License-Swift/Pods-OnlineProcessing-With-License-Swift.release.xcconfig"; sourceTree = "<group>"; };
 		9D7E895C2CB3E0B700FCA16C /* OnlineProcessing-With-License-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OnlineProcessing-With-License-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7E89822CB3E38600FCA16C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D7E89832CB3E38600FCA16C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		9D7E89892CB3E38600FCA16C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D7E89912CB3ECFC00FCA16C /* regula.license */ = {isa = PBXFileReference; lastKnownFileType = file; path = regula.license; sourceTree = "<group>"; };
 		9D7E89932CB3F93700FCA16C /* db.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.dat; sourceTree = "<group>"; };
+		DF61F813852E1E9ECFFD6265 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E335BAEC3FB228A131CE4B67 /* Pods-OnlineProcessing-With-License-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineProcessing-With-License-Swift.debug.xcconfig"; path = "Target Support Files/Pods-OnlineProcessing-With-License-Swift/Pods-OnlineProcessing-With-License-Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,18 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A29929D89A8DC9E87339E691 /* Pods_OnlineProcessing_With_License_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5044F1DE056E15F95800F5DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A6B4D65BDF1C833E86C7656 /* Pods_OnlineProcessing_With_License_Swift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D7E89532CB3E0B700FCA16C = {
 			isa = PBXGroup;
 			children = (
 				9D7E898A2CB3E38600FCA16C /* OnlineProcessing-With-License-Swift */,
 				9D7E895D2CB3E0B700FCA16C /* Products */,
 				E526DB017A30069487B8824C /* Pods */,
+				5044F1DE056E15F95800F5DA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +78,7 @@
 				9D7E89932CB3F93700FCA16C /* db.dat */,
 				9D7E89912CB3ECFC00FCA16C /* regula.license */,
 				9D7E89822CB3E38600FCA16C /* AppDelegate.swift */,
+				DF61F813852E1E9ECFFD6265 /* SceneDelegate.swift */,
 				9D7E89892CB3E38600FCA16C /* ViewController.swift */,
 				9D7E89832CB3E38600FCA16C /* Assets.xcassets */,
 				9D7E89842CB3E38600FCA16C /* Info.plist */,
@@ -74,6 +91,8 @@
 		E526DB017A30069487B8824C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				E335BAEC3FB228A131CE4B67 /* Pods-OnlineProcessing-With-License-Swift.debug.xcconfig */,
+				748C1E549E7537C2041C9D8F /* Pods-OnlineProcessing-With-License-Swift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -85,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D7E896F2CB3E0B900FCA16C /* Build configuration list for PBXNativeTarget "OnlineProcessing-With-License-Swift" */;
 			buildPhases = (
+				045CBAFD89EF7CC2F212F7C7 /* [CP] Check Pods Manifest.lock */,
 				9D7E89582CB3E0B700FCA16C /* Sources */,
 				9D7E89592CB3E0B700FCA16C /* Frameworks */,
 				9D7E895A2CB3E0B700FCA16C /* Resources */,
+				1D1FD184647EDF56E5EF8116 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,12 +167,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		045CBAFD89EF7CC2F212F7C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineProcessing-With-License-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D1FD184647EDF56E5EF8116 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineProcessing-With-License-Swift/Pods-OnlineProcessing-With-License-Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OnlineProcessing-With-License-Swift/Pods-OnlineProcessing-With-License-Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OnlineProcessing-With-License-Swift/Pods-OnlineProcessing-With-License-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9D7E89582CB3E0B700FCA16C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9D7E898B2CB3E38600FCA16C /* AppDelegate.swift in Sources */,
+				1586DAB3F2A3A8BEF5450E05 /* SceneDelegate.swift in Sources */,
 				9D7E898C2CB3E38600FCA16C /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,6 +244,7 @@
 /* Begin XCBuildConfiguration section */
 		9D7E89702CB3E0B900FCA16C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E335BAEC3FB228A131CE4B67 /* Pods-OnlineProcessing-With-License-Swift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -210,6 +275,7 @@
 		};
 		9D7E89712CB3E0B900FCA16C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 748C1E549E7537C2041C9D8F /* Pods-OnlineProcessing-With-License-Swift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -2,15 +2,28 @@
 
 source 'https://github.com/regulaforensics/podspecs.git'
 
-platform :ios, '13.0'
+platform :ios, '15.0'
+DEPLOYMENT_TARGET_IOS = '15.0'
 use_frameworks!
 
 target 'DocumentReaderFullSwift-sample' do
-  pod 'DocumentReader', '~> 9.8.0'
-  pod 'DocumentReaderFullRFID', '~> 9.8.0'
+  pod 'DocumentReader', '~> 9.9.0'
+  pod 'DocumentReaderFullRFID', '~> 9.9.0'
 end
 
 target 'AppClip-sample' do
-  pod 'DocumentReader', '~> 9.8.0'
-  pod 'DocumentReaderMRZRFID', '~> 9.8.0'
+  pod 'DocumentReader', '~> 9.9.0'
+  pod 'DocumentReaderMRZRFID', '~> 9.9.0'
+end
+
+post_install do |installer|
+  desired_ios = Gem::Version.new(DEPLOYMENT_TARGET_IOS)
+
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      settings = config.build_settings
+      actual = Gem::Version.new(settings['IPHONEOS_DEPLOYMENT_TARGET'] || '0')
+      settings['IPHONEOS_DEPLOYMENT_TARGET'] = DEPLOYMENT_TARGET_IOS if actual < desired_ios
+    end
+  end
 end

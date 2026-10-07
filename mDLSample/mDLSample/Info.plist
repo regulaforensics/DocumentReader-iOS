@@ -6,18 +6,33 @@
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneConfigurationName</key>
+					<string>Default Configuration</string>
+					<key>UISceneDelegateClassName</key>
+					<string>SceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
 	</dict>
 	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
 	<array>
-		<string>A0000002471001</string>
-		<string>E80704007F00070302</string>
-		<string>A000000167455349474E</string>
-		<string>A0000002480100</string>
-		<string>A0000002480200</string>
-		<string>A0000002480300</string>
-		<string>A0000002480400</string>
-		<string>A00000045645444C2D3031</string>
-		<string>D2760000850101</string>
+        <string>D2760000850101</string>
+        <string>E80704007F00070302</string>
+        <string>A000000167455349474E</string>
+        <string>A0000002471001</string>
+        <string>A0000002472001</string>
+        <string>A0000002480100</string>
+        <string>A0000002480200</string>
+        <string>A0000002480300</string>
+        <string>A0000002480400</string>
+        <string>A00000045645444C2D3031</string>
 	</array>
 </dict>
 </plist>

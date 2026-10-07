@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5CB9A82632463F03EDBE2274 /* Pods_DocumentReaderSwiftBleLicense.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EC8B0BE4A4E36E796F30E7 /* Pods_DocumentReaderSwiftBleLicense.framework */; };
 		5D908BB2292FAC0300FD2E35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D908BB1292FAC0300FD2E35 /* AppDelegate.swift */; };
+		4433BD562482043D6FB496CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3CA68F2371203BEA995CE /* SceneDelegate.swift */; };
 		5D908BB6292FAC0300FD2E35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D908BB5292FAC0300FD2E35 /* ViewController.swift */; };
 		5D908BB9292FAC0300FD2E35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D908BB7292FAC0300FD2E35 /* Main.storyboard */; };
 		5D908BBB292FAC0400FD2E35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D908BBA292FAC0400FD2E35 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		40EC8B0BE4A4E36E796F30E7 /* Pods_DocumentReaderSwiftBleLicense.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderSwiftBleLicense.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D908BAE292FAC0300FD2E35 /* DocumentReaderSwiftBleLicense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DocumentReaderSwiftBleLicense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D908BB1292FAC0300FD2E35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7EC3CA68F2371203BEA995CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5D908BB5292FAC0300FD2E35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D908BB8292FAC0300FD2E35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5D908BBA292FAC0400FD2E35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				5D908BB1292FAC0300FD2E35 /* AppDelegate.swift */,
+				7EC3CA68F2371203BEA995CE /* SceneDelegate.swift */,
 				5D908BB5292FAC0300FD2E35 /* ViewController.swift */,
 				5D908BC62930AB4800FD2E35 /* ScanViewController.swift */,
 				5D908BB7292FAC0300FD2E35 /* Main.storyboard */,
@@ -214,6 +217,7 @@
 			files = (
 				5D908BB6292FAC0300FD2E35 /* ViewController.swift in Sources */,
 				5D908BB2292FAC0300FD2E35 /* AppDelegate.swift in Sources */,
+				4433BD562482043D6FB496CC /* SceneDelegate.swift in Sources */,
 				5D908BC72930AB4800FD2E35 /* ScanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +294,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -344,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -376,7 +380,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -415,7 +419,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

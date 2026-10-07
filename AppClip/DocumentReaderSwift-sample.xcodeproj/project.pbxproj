@@ -36,6 +36,7 @@
 		7898609B2EF432CA00502CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7898608F2EF432CA00502CDA /* Assets.xcassets */; };
 		7898609D2EF432CA00502CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789860922EF432CA00502CDA /* LaunchScreen.storyboard */; };
 		7898609E2EF432CA00502CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 789860942EF432CA00502CDA /* Main.storyboard */; };
+		7B7A7423305BFA590016A811 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A7422305BFA590016A811 /* SceneDelegate.swift */; };
 		7E9BDCC76ED91C2E7416A328 /* Pods_AppClip_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4D95C483FE4D70147D6C63 /* Pods_AppClip_sample.framework */; };
 		96760D382B84FF6C00475CB7 /* db.dat in Resources */ = {isa = PBXBuildFile; fileRef = 96760D372B84FF6C00475CB7 /* db.dat */; };
 		986F42D52622CBF21BB79E2D /* Pods_DocumentReaderFullSwift_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 344F549D103C377B1F9E0E8A /* Pods_DocumentReaderFullSwift_sample.framework */; };
@@ -98,6 +99,7 @@
 		789860932EF432CA00502CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		789860952EF432CA00502CDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		789860962EF432CA00502CDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7B7A7422305BFA590016A811 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		813B57DD42DCC8E63040F435 /* Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DocumentReaderMRZBarcodeSwift-sample/Pods-DocumentReaderMRZBarcodeSwift-sample.debug.xcconfig"; sourceTree = "<group>"; };
 		8D35ABF0CCD9D2267A084733 /* Pods_DocumentReaderOCRSwift_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DocumentReaderOCRSwift_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9344CA2D13AC776168978B39 /* Pods-AppClip-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppClip-sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppClip-sample/Pods-AppClip-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				0A5A174B1F1038160011FB0A /* AppDelegate.swift */,
+				7B7A7422305BFA590016A811 /* SceneDelegate.swift */,
 				0A88C193215559A000CF494D /* ViewController.swift */,
 				0A5A174F1F1038160011FB0A /* Main.storyboard */,
 				0A5A17521F1038160011FB0A /* Assets.xcassets */,
@@ -443,6 +446,7 @@
 			files = (
 				0A88C194215559A000CF494D /* ViewController.swift in Sources */,
 				0A74D5291F8AB14F0055BE75 /* AppDelegate.swift in Sources */,
+				7B7A7423305BFA590016A811 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -604,7 +608,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -623,7 +627,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6WR54S268;
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -643,7 +647,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H6WR54S268;
 				INFOPLIST_FILE = "$(SRCROOT)/DocumentReaderSwift-sample/DocumentReaderFullSwift-sample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = regula.DocumentReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
