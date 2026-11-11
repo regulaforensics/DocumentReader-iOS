@@ -1,12 +1,12 @@
 source 'https://github.com/regulaforensics/podspecs.git'
 
-platform :ios, '15.0'
-DEPLOYMENT_TARGET_IOS = '15.0'
+platform :ios, '16.0'
+DEPLOYMENT_TARGET_IOS = '16.0'
 use_frameworks!
 
 target 'BackendProcessing' do
-  pod 'DocumentReader', '~> 9.9.0'
-  pod 'DocumentReaderFullRFID', '~> 9.9.0'
+  pod 'DocumentReader', '~> 9.10.0'
+  pod 'DocumentReaderFullRFID', '~> 9.10.0'
 end
 
 post_install do |installer|
