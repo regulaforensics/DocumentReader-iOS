@@ -61,7 +61,7 @@ final class OnlineProcessingViewController: UIViewController {
     }()
 
     lazy var loaderView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .gray)
+        let view = UIActivityIndicatorView(style: .medium)
         view.hidesWhenStopped = true
         view.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00)
         view.layer.cornerRadius = 8
@@ -122,11 +122,7 @@ final class OnlineProcessingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "close-icon"), style: .plain, target: self, action: #selector(self.handleCloseButtonPress))
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemBackground
-        } else {
-            view.backgroundColor = .white
-        }
+        view.backgroundColor = .systemBackground
     }
 
     @objc func handleCloseButtonPress() {
@@ -278,11 +274,7 @@ final class OnlineProcessingViewController: UIViewController {
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert manager, OK button tittle"), style: .cancel, handler: nil))
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .default, handler: { action in
                         guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-                        if #available(iOS 10.0, *) {
-                            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                        } else {
-                            UIApplication.shared.openURL(settingsURL)
-                        }
+                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                     }))
                     self.present(alertController, animated: true, completion: nil)
                     print("PHPhotoLibrary status: denied")

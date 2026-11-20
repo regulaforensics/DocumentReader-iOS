@@ -1181,6 +1181,71 @@ extension FieldType {
         case .ft_VaccinationCertificateIdentifier: return ".ft_VaccinationCertificateIdentifier"
         case .ft_First_Name: return ".ft_First_Name"
         case .ft_Date_of_Arrival: return ".ft_Date_of_Arrival"
+        case .ft_Address_Block_Number: return ".ft_Address_Block_Number"
+        case .ft_Address_Building_Type: return ".ft_Address_Building_Type"
+        case .ft_Address_City_Sector: return ".ft_Address_City_Sector"
+        case .ft_Address_City_Type: return ".ft_Address_City_Type"
+        case .ft_Address_County_Type: return ".ft_Address_County_Type"
+        case .ft_Address_Entrance: return ".ft_Address_Entrance"
+        case .ft_Address_Floor_Number: return ".ft_Address_Floor_Number"
+        case .ft_Address_Street_Number: return ".ft_Address_Street_Number"
+        case .ft_Address_Street_Type: return ".ft_Address_Street_Type"
+        case .ft_Airline_Code: return ".ft_Airline_Code"
+        case .ft_Commercial_Indicator: return ".ft_Commercial_Indicator"
+        case .ft_Consul: return ".ft_Consul"
+        case .ft_DLClassCode_B3_From: return ".ft_DLClassCode_B3_From"
+        case .ft_DLClassCode_B3_Notes: return ".ft_DLClassCode_B3_Notes"
+        case .ft_DLClassCode_B3_To: return ".ft_DLClassCode_B3_To"
+        case .ft_DLClassCode_EB_From: return ".ft_DLClassCode_EB_From"
+        case .ft_DLClassCode_EB_Notes: return ".ft_DLClassCode_EB_Notes"
+        case .ft_DLClassCode_EB_To: return ".ft_DLClassCode_EB_To"
+        case .ft_DLClassCode_EC1_From: return ".ft_DLClassCode_EC1_From"
+        case .ft_DLClassCode_EC1_Notes: return ".ft_DLClassCode_EC1_Notes"
+        case .ft_DLClassCode_EC1_To: return ".ft_DLClassCode_EC1_To"
+        case .ft_DLClassCode_EC_From: return ".ft_DLClassCode_EC_From"
+        case .ft_DLClassCode_EC_Notes: return ".ft_DLClassCode_EC_Notes"
+        case .ft_DLClassCode_EC_To: return ".ft_DLClassCode_EC_To"
+        case .ft_DLClassCode_PW_From: return ".ft_DLClassCode_PW_From"
+        case .ft_DLClassCode_PW_Notes: return ".ft_DLClassCode_PW_Notes"
+        case .ft_DLClassCode_PW_To: return ".ft_DLClassCode_PW_To"
+        case .ft_DLClassCode_RM_From: return ".ft_DLClassCode_RM_From"
+        case .ft_DLClassCode_RM_Notes: return ".ft_DLClassCode_RM_Notes"
+        case .ft_DLClassCode_RM_To: return ".ft_DLClassCode_RM_To"
+        case .ft_DTC_DateOfExpiry: return ".ft_DTC_DateOfExpiry"
+        case .ft_DTC_ID: return ".ft_DTC_ID"
+        case .ft_DTC_Version: return ".ft_DTC_Version"
+        case .ft_Data_DateOfExpiry: return ".ft_Data_DateOfExpiry"
+        case .ft_Date_of_First_Positive_Test_Result: return ".ft_Date_of_First_Positive_Test_Result"
+        case .ft_Date_of_Retirement: return ".ft_Date_of_Retirement"
+        case .ft_Date_of_SpecimenCollection: return ".ft_Date_of_SpecimenCollection"
+        case .ft_Digital_Travel_Authorization_Number: return ".ft_Digital_Travel_Authorization_Number"
+        case .ft_Document_Status: return ".ft_Document_Status"
+        case .ft_EF_CardAccess: return ".ft_EF_CardAccess"
+        case .ft_Email: return ".ft_Email"
+        case .ft_Expiry_Timestamp: return ".ft_Expiry_Timestamp"
+        case .ft_First_Issue_Date_CheckDigit: return ".ft_First_Issue_Date_CheckDigit"
+        case .ft_First_Issue_Date_Checksum: return ".ft_First_Issue_Date_Checksum"
+        case .ft_First_Surname: return ".ft_First_Surname"
+        case .ft_Fourth_Name: return ".ft_Fourth_Name"
+        case .ft_GrandfatherName_Maternal: return ".ft_GrandfatherName_Maternal"
+        case .ft_Issuing_State_Code_Alpha2: return ".ft_Issuing_State_Code_Alpha2"
+        case .ft_Jurisdiction_Specific_Data: return ".ft_Jurisdiction_Specific_Data"
+        case .ft_Last_Name: return ".ft_Last_Name"
+        case .ft_MVC_Agency: return ".ft_MVC_Agency"
+        case .ft_MethodOfTesting: return ".ft_MethodOfTesting"
+        case .ft_Month_of_Birth: return ".ft_Month_of_Birth"
+        case .ft_Nationality_Code_Alpha2: return ".ft_Nationality_Code_Alpha2"
+        case .ft_Non_Domiciled_Indicator: return ".ft_Non_Domiciled_Indicator"
+        case .ft_Place_Of_Birth_City: return ".ft_Place_Of_Birth_City"
+        case .ft_ResultOfTesting: return ".ft_ResultOfTesting"
+        case .ft_Second_Name: return ".ft_Second_Name"
+        case .ft_Short_Flight_Number: return ".ft_Short_Flight_Number"
+        case .ft_Signature: return ".ft_Signature"
+        case .ft_Third_Name: return ".ft_Third_Name"
+        case .ft_TypeOfTesting: return ".ft_TypeOfTesting"
+        case .ft_UniqueCertificateIdentifier: return ".ft_UniqueCertificateIdentifier"
+        case .ft_Year_Of_Birth: return ".ft_Year_Of_Birth"
+        case .ft_Year_Of_Expiry: return ".ft_Year_Of_Expiry"
         @unknown default:
             return ""
         }
@@ -1348,8 +1413,31 @@ extension FieldType {
         .ft_DLClassCode_NT_From, .ft_DLClassCode_NT_To, .ft_DLClassCode_NT_Notes,
         .ft_DLClassCode_TN_From, .ft_DLClassCode_TN_To, .ft_DLClassCode_TN_Notes,
         .ft_DLClassCode_D3_From, .ft_DLClassCode_D3_To, .ft_DLClassCode_D3_Notes,
-        .ft_Alt_Date_Of_Expiry, .ft_DLClassCode_CD_Notes, ft_Payment_Period_To,
+        .ft_Alt_Date_Of_Expiry, .ft_DLClassCode_CD_From, .ft_DLClassCode_CD_To,
+        .ft_DLClassCode_CD_Notes, .ft_Payment_Period_To,
         .ft_Payment_Period_From, .ft_Issuer_Identification_Number, .ft_VaccinationCertificateIdentifier,
         .ft_First_Name, .ft_Date_of_Arrival,
+        .ft_Address_Block_Number, .ft_Address_Building_Type, .ft_Address_City_Sector,
+        .ft_Address_City_Type, .ft_Address_County_Type, .ft_Address_Entrance,
+        .ft_Address_Floor_Number, .ft_Address_Street_Number, .ft_Address_Street_Type,
+        .ft_Airline_Code, .ft_Commercial_Indicator, .ft_Consul, .ft_DLClassCode_B3_From,
+        .ft_DLClassCode_B3_Notes, .ft_DLClassCode_B3_To, .ft_DLClassCode_EB_From,
+        .ft_DLClassCode_EB_Notes, .ft_DLClassCode_EB_To, .ft_DLClassCode_EC1_From,
+        .ft_DLClassCode_EC1_Notes, .ft_DLClassCode_EC1_To, .ft_DLClassCode_EC_From,
+        .ft_DLClassCode_EC_Notes, .ft_DLClassCode_EC_To, .ft_DLClassCode_PW_From,
+        .ft_DLClassCode_PW_Notes, .ft_DLClassCode_PW_To, .ft_DLClassCode_RM_From,
+        .ft_DLClassCode_RM_Notes, .ft_DLClassCode_RM_To, .ft_DTC_DateOfExpiry,
+        .ft_DTC_ID, .ft_DTC_Version, .ft_Data_DateOfExpiry,
+        .ft_Date_of_First_Positive_Test_Result, .ft_Date_of_Retirement,
+        .ft_Date_of_SpecimenCollection, .ft_Digital_Travel_Authorization_Number,
+        .ft_Document_Status, .ft_EF_CardAccess, .ft_Email, .ft_Expiry_Timestamp,
+        .ft_First_Issue_Date_CheckDigit, .ft_First_Issue_Date_Checksum, .ft_First_Surname,
+        .ft_Fourth_Name, .ft_GrandfatherName_Maternal, .ft_Issuing_State_Code_Alpha2,
+        .ft_Jurisdiction_Specific_Data, .ft_Last_Name, .ft_MVC_Agency,
+        .ft_MethodOfTesting, .ft_Month_of_Birth, .ft_Nationality_Code_Alpha2,
+        .ft_Non_Domiciled_Indicator, .ft_Place_Of_Birth_City, .ft_ResultOfTesting,
+        .ft_Second_Name, .ft_Short_Flight_Number, .ft_Signature, .ft_Third_Name,
+        .ft_TypeOfTesting, .ft_UniqueCertificateIdentifier, .ft_Year_Of_Birth,
+        .ft_Year_Of_Expiry,
     ]
 }

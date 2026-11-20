@@ -8,8 +8,7 @@
 
 import DocumentReader
 
-extension DocFormat: CaseIterable {
-    public typealias AllCases = [DocFormat]
+extension DocFormat {
 
     public static var allCases: [DocFormat] = [
         .ID1,
@@ -27,10 +26,11 @@ extension DocFormat: CaseIterable {
         .custom,
         .photo,
         .flexible,
+        .unknown,
     ]
 }
 
-extension DocFormat: LosslessStringConvertible {
+extension DocFormat {
     public var description: String {
         switch self {
         case .ID1: return "ID1"

@@ -8,8 +8,7 @@
 
 import DocumentReader
 
-extension MRZFormat: CaseIterable {
-    public typealias AllCases = [MRZFormat]
+extension MRZFormat {
 
     public static var allCases: [MRZFormat] = [
         .IDL,
@@ -21,7 +20,7 @@ extension MRZFormat: CaseIterable {
     ]
 }
 
-extension MRZFormat: LosslessStringConvertible {
+extension MRZFormat {
     public var description: String {
         switch self {
         case .IDL: return "IDL"

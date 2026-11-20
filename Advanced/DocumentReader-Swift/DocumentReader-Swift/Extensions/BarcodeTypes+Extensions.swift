@@ -60,6 +60,8 @@ extension BarcodeType {
             return ".ALL_1D"
         case .code11:
             return ".code11"
+        case .JABCODE:
+          return ".JABCODE"
         @unknown default:
             return ""
         }

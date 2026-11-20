@@ -38,9 +38,17 @@ extension ResultType {
         case .fingerprintTemplateISO: return ".fingerprintTemplateISO"
         case .inputImageQuality: return ".inputImageQuality"
         case .status: return ".status"
+        case .livePortrait: return ".livePortrait"
+        case .portraitComparison: return ".portraitComparison"
+        case .extPortrait: return ".extPortrait"
+        case .text: return ".text"
         case .images: return ".images"
+        case .rfidSession: return ".rfidSession"
+        case .encryptedRCL: return ".encryptedRCL"
+        case .license: return ".license"
         case .mrzPosition: return ".mrzPosition"
         case .barcodePosition: return ".barcodePosition"
+        case .bsixmLv2: return ".bsixmLv2"
         case .documentPosition: return ".documentPosition"
         case .custom: return ".custom"
         case .rfidRawData: return ".rfidRawData"
@@ -48,6 +56,10 @@ extension ResultType {
         case .rfidImageData: return ".rfidImageData"
         case .rfidBinaryData: return ".rfidBinaryData"
         case .rfidOriginalGraphics: return ".rfidOriginalGraphics"
+        case .rfidDTCVC: return ".rfidDTCVC"
+        case .mdlParsedReponse: return ".mdlParsedReponse"
+        case .VDSNC: return ".VDSNC"
+        case .VDS: return ".VDS"
         @unknown default:
             return ""
         }
@@ -62,7 +74,10 @@ extension ResultType {
         .visualOCRExtended, .barCodesTextData, .barCodesImageData, .authenticity,
         .expertAnalyze, .ocrLexicalAnalyzeEx, .eosImage, .bayer, .magneticStripe,
         .magneticStripeTextData, .fieldFileImage, .databaseCheck, .fingerprintTemplateISO,
-        .inputImageQuality, .mrzPosition, .barcodePosition, .documentPosition, .custom,
-        .rfidRawData, .rfidTextData, .rfidImageData, .rfidBinaryData, .rfidOriginalGraphics, .images
+        .inputImageQuality, .status, .livePortrait, .portraitComparison, .extPortrait,
+        .text, .images, .rfidSession, .encryptedRCL, .license, .mrzPosition,
+        .barcodePosition, .bsixmLv2, .documentPosition, .custom, .rfidRawData,
+        .rfidTextData, .rfidImageData, .rfidBinaryData, .rfidOriginalGraphics,
+        .rfidDTCVC, .mdlParsedReponse, .VDSNC, .VDS
     ]
 }

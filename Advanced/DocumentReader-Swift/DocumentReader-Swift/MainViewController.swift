@@ -601,12 +601,9 @@ class MainViewController: UIViewController {
                     let alertController = UIAlertController(title: NSLocalizedString("Gallery Unavailable", comment: "Alert eror title"), message: message, preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Alert manager, OK button tittle"), style: .cancel, handler: nil))
                     alertController.addAction(UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .default, handler: { action in
-                        if #available(iOS 10.0, *) {
-                            guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
-                            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
-                        } else {
-                            UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
-                        }
+
+                        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+                        UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
                     }))
                     self.present(alertController, animated: true, completion: nil)
                     print("PHPhotoLibrary status: denied")
@@ -926,7 +923,7 @@ extension MainViewController: UIImagePickerControllerDelegate, UINavigationContr
             let config = DocReader.RecognizeConfig(images:self.pickerImages)
             config.scenario = self.selectedScenario
             DocReader.shared.recognize(config: config, completion: { [weak self] (action, results, error) in
-                guard let self = self else { return }
+                guard let self else { return }
                 if action == .complete {
                     guard let results = results else {
                         print("Completed without result")

@@ -369,7 +369,6 @@ extension ResultsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
 
 extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -423,15 +422,15 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.lcidLabel.text = ""
             }
             guard let value = item.valid else {
-                cell.valueLabel.textColor = .black
+                cell.valueLabel.textColor = .label
                 return cell
             }
             if value == .ok {
-                cell.valueLabel.textColor = .green
+                cell.valueLabel.textColor = .systemGreen
             } else if value == .error {
-                cell.valueLabel.textColor = .red
+                cell.valueLabel.textColor = .systemRed
             } else {
-                cell.valueLabel.textColor = .black
+                cell.valueLabel.textColor = .label
             }
             cell.separatorInset.left = item.drawSeparator ? 0 : .greatestFiniteMagnitude
             return cell
@@ -460,6 +459,7 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: kComparisonCellId) else {
                 return UITableViewCell()
             }
+            cell.backgroundColor  = .clear
             cell.textLabel?.text = item.name.uppercased()
             cell.tintColor = item.equality ? .green : .red
             return cell
@@ -482,18 +482,18 @@ extension ResultsViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let headerView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: headerHeight)))
-        
+        headerView.backgroundColor = .secondarySystemBackground
         let label = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 0, height: headerHeight)))
         label.text = title
-        label.textColor = .black
+        label.textColor = .label
         label.textAlignment = .left
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.backgroundColor = UIColor.init(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+        label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(label)
         
         let button = UIButton(type: .infoLight)
-        button.backgroundColor = UIColor.init(hue: 0, saturation: 0, brightness: 0.9, alpha: 1)
+        button.backgroundColor = .clear
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(infoButtonAction(_:)), for: .touchUpInside)
         headerView.addSubview(button)

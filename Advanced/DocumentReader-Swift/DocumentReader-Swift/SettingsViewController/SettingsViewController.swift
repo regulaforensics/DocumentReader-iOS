@@ -14,7 +14,7 @@ class SettingsViewController: UIViewController {
     private let segmentedControl = UISegmentedControl(items: ["Application", "API"])
 
     lazy var loaderView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .gray)
+        let view = UIActivityIndicatorView(style: .medium)
         view.hidesWhenStopped = true
         return view
     }()
